@@ -1,0 +1,24 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-input-group{
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  &:before{
+    @include borderLine('top');
+  }
+  &:after{
+    @include borderLine('bottom');
+  }
+  &.noborder-top{
+    &:before{
+      border: none !important;
+    }
+  }
+  &.noborder-bottom{
+    &:after{
+      border: none !important;
+    }
+  }
+}

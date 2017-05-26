@@ -1,0 +1,243 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-input{
+  width: 100%;
+  padding: 1.5rem;
+  display: block;
+  position: relative;
+  display: flex;
+  -webkit-box-flex: 1;
+  overflow: hidden;
+  font-size: 1.4rem;
+  .c-input-head,
+  .c-input-body{
+    &:empty{
+      &:before{
+        content: " ";
+      }
+    }
+  }
+  .c-input-head{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 11rem;
+    color: var(--text);
+  }
+  .c-input-body{
+    flex: 1;
+    input[type=text],
+    input[type=number],
+    input[type=tel],
+    input[type=email],
+    .input{
+      border: none;
+      width: 100%;
+      height: 2rem;
+      line-height: 2rem;
+      font-size: 1.4rem;
+      background: transparent;
+      vertical-align: top;
+    }
+    textarea,
+    .textarea{
+      border: none;
+      width: 100%;
+      line-height: 2rem;
+      font-size: 1.4rem;
+      background: transparent;
+      vertical-align: top;
+      min-height: 6rem;
+    }
+  }
+  &.c-input-fullline{
+    &:before{
+      left: 0;
+    }
+  }
+  &.c-input-addon{
+    .c-input-body{
+      input[type=text],
+      input[type=number],
+      input[type=tel],
+      input[type=email],
+      .input{
+        text-align: right;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      select{
+        border: none;
+        background: transparent;
+        width: 100%;
+        direction: rtl;
+        font-size: 1.4rem;
+        &.light{
+          color: var(--text-light);
+        }
+      }
+    }
+  }
+  &.c-input-next{
+    .c-input-body{
+      padding-right: 1rem;
+      &:after{
+        content: " ";
+        transform: rotate(-45deg);
+        border: solid var(--border);
+        border-width: 0 .1rem .1rem 0;
+        width: 1rem;
+        height: 1rem;
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+      }
+    }
+  }
+  &.c-input-checked{
+    .c-input-body{
+      padding-right: 2rem;
+      &:after{
+        content: " ";
+        transform:rotate(45deg);
+        border: solid var(--primary);
+        border-width: 0 .2rem .2rem 0;
+        width: .8rem;
+        height: 1.6rem;
+        display: block;
+        position: absolute;
+        top: 1.6rem;
+        right: 2rem;
+      }
+    }
+  }
+  &.c-input-icon{
+    padding-left: 5.5rem;
+    .c-input-head{
+      min-width: 14rem;
+      i{
+        position: absolute;
+        left: 1.5rem;
+        top: 1rem;
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #fff;
+        border-radius: 100%;
+      }
+    }
+  }
+  .upload{
+    width: 100%;
+    .upload-title{
+      position: relative;
+      line-height: 2rem;
+      height: 2rem;
+      margin-bottom: 1rem;
+      b{
+        position: absolute;
+        right: 0;
+        line-height: 2rem;
+        height: 2rem;
+      }
+    }
+    .upload-files{
+      width: 100%;
+      overflow: hidden;
+      vertical-align: top;
+      ul{
+        margin-top: -1rem;
+        float: left;
+        li{
+          position: relative;
+          width: 6rem;
+          height: 6rem;
+          margin: 1rem 1rem 0 0;
+          float: left;
+          img{
+            width: 6rem;
+            height: 6rem;
+          }
+          i{
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, .75);
+            border-radius: 0 0 100% 0;
+            &:before{
+              content: "+";
+              color: #fff;
+              left: -.2rem;
+              top: -.2rem;
+              height: 2rem;
+              width: 2rem;
+              text-align: center;
+              vertical-align: top;
+              line-height: 2rem;
+              transform: rotate(45deg);
+              position: absolute;
+              font-family: Arial;
+            }
+          }
+        }
+      }
+      .upload-btn{
+        float: left;
+        position: relative;
+        margin: 1rem 1rem 0 0;
+        width: 6rem;
+        height: 6rem;
+        border: .1rem solid var(--border);
+        input[type=file]{
+          right: 0 !important;
+          top: 0 !important;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+        &:before,
+        &:after{
+          content: " ";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: var(--border);
+        }
+        &:before{
+          width: .2rem;
+          height: 3.95rem;
+        }
+        &:after{
+          width: 3.95rem;
+          height: .2rem;
+        }
+      }
+    }
+  }
+  &:before{
+    @include borderLine('top', 1.5rem);
+  }
+  &:first-child{
+    &:before{
+      border: none;
+    }
+  }
+  &.noborder-top{
+    &:before{
+      border: none !important;
+    }
+  }
+  &.noborder-bottom{
+    &:after{
+      border: none !important;
+    }
+  }
+}

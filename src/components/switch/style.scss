@@ -1,0 +1,67 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-switch{
+  position: relative;
+  label{
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 5.2rem;
+    height: 3.2rem;
+    .switch-core{
+      display: inline-block;
+      position: relative;
+      width: 5.2rem;
+      height: 3.2rem;
+      border: .1rem solid var(--border);
+      border-radius: 1.6rem;
+      background: var(--border);
+      &:after,
+      &:before{
+        content: " ";
+        top: 0;
+        left: 0;
+        position: absolute;
+        transition: transform .3s;
+        border-radius: 1.5rem;
+      }
+      &:after{
+        width: 3rem;
+        height: 3rem;
+        background-color: #fff;
+        box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .4);
+      }
+      &:before{
+        width: 5rem;
+        height: 3rem;
+        background-color: #fdfdfd;
+      }
+    }
+    input[type=checkbox]{
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      &:checked {
+        + .switch-core{
+          border-color: var(--primary);
+          background-color: var(--primary);
+          &:before{
+            transform: scale(0);
+          }
+          &:after{
+            transform: translateX(2rem);
+          }
+        }
+      }
+    }
+  }
+}

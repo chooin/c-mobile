@@ -1,0 +1,28 @@
+{
+  "name": "c-mobile",
+  "version": "0.0.16",
+  "description": "A Vue.js 2.0 components for mobile",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chooin/c-mobile.git"
+  },
+  "keywords": [
+    "vue",
+    "components",
+    "vue-components"
+  ],
+  "author": "Devin.Zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chooin/c-mobile/issues"
+  },
+  "homepage": "https://github.com/Chooin/c-mobile#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5"
+  }
+}

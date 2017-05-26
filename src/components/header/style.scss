@@ -1,0 +1,101 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-header{
+  position: relative;
+  z-index: 1;
+  height: 5rem;
+  width: 100%;
+  background: #fff;
+  h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    width: 60%;
+    font-size: 1.8rem;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .left,
+  .right{
+    position: absolute;
+    top: 0;
+    height: 5rem;
+    line-height: 5rem;
+    z-index: 1;
+    padding: 0 1rem;
+    color: var(--text);
+    max-width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .left{
+    left: 0;
+    &.back{
+      padding-left: 3rem;
+      &:after{
+        content: " ";
+        transform: rotate(135deg);
+        border: solid var(--text);
+        border-width: 0 .1rem .1rem 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        display: block;
+        position: absolute;
+        top: 1.9rem;
+        left: 1.5rem;
+      }
+    }
+  }
+  .right{
+    right: 0;
+  }
+  &.primary,
+  &.success,
+  &.warning,
+  &.danger{
+    h1,
+    .left,
+    .right{
+      color: #fff;
+    }
+    .left,
+    .right{
+      &.back{
+        &:after{
+          border-color: #fff;
+        }
+      }
+    }
+    &:after{
+      border: none;
+    }
+  }
+  &.primary{
+    background: var(--primary);
+  }
+  &.success{
+    background: var(--success);
+  }
+  &.warning{
+    background: var(--warning);
+  }
+  &.danger{
+    background: var(--danger);
+  }
+  &:after{
+    @include borderLine('bottom');
+  }
+  &.noborder-bottom{
+    &:after{
+      border-bottom: none;
+    }
+  }
+}

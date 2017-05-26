@@ -1,0 +1,110 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-btn,
+.c-btn:hover,
+.c-btn-o,
+.c-btn-o:hover{
+  text-align: center;
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 1;
+  line-height: 2rem;
+  border: none;
+
+  &[disabled=disabled],
+  &.disabled{
+    opacity: .75;
+    cursor: not-allowed;
+  }
+}
+
+.c-btn,
+.c-btn:hover{
+  color: var(--text);
+  border-radius: .3rem;
+
+  &.primary,
+  &.primary:hover{
+    color: #fff;
+    background: var(--primary);
+  }
+
+  &.success,
+  &.success:hover{
+    color: #fff;
+    background: var(--success);
+  }
+
+  &.warning,
+  &.warning:hover{
+    color: #fff;
+    background: var(--warning);
+  }
+
+  &.danger,
+  &.danger:hover{
+    color: #fff;
+    background: var(--danger);
+  }
+}
+
+.c-btn-o,
+.c-btn-o:hover{
+  color: var(--text);
+  border-radius: .3rem;
+  padding: 1.4rem 1rem;
+  position: relative;
+
+  &.primary,
+  &.primary:hover{
+    color: var(--primary);
+    &:after{
+      border-color: var(--primary);
+    }
+  }
+
+  &.success,
+  &.success:hover{
+    color: var(--success);
+    &:after{
+      border-color: var(--success);
+    }
+  }
+
+  &.warning,
+  &.warning:hover{
+    color: var(--warning);
+    &:after{
+      border-color: var(--warning);
+    }
+  }
+
+  &.danger,
+  &.danger:hover{
+    color: var(--danger);
+    &:after{
+      border-color: var(--danger);
+    }
+  }
+
+  &:after{
+    @include borderLine('round');
+    border-radius: .3rem;
+  }
+}
+
+.c-btn,
+.c-btn-o{
+  &.suspend{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,101 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-tabbar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  height: 5rem;
+  width: 100%;
+  background: #f5f5f5;
+  display: flex;
+  -webkit-box-flex: 1;
+  a{
+    position: relative;
+    padding: .5rem 0;
+    height: 5rem;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    i{
+      height: 2.4rem;
+      line-height: 2.4rem;
+      font-size: 2rem;
+      display: block;
+      color: var(--text);
+    }
+    span{
+      font-size: 1.2rem;
+      height: 1.6rem;
+      line-height: 1.6rem;
+      display: block;
+      color: var(--text);
+    }
+    b{
+      position: absolute;
+      left: 50%;
+      top: .5rem;
+      transform: translateX(-50%);
+      margin-left: 2rem;
+      height: 1.6rem;
+      min-width: 1.6rem;
+      line-height: 1.6rem;
+      padding: 0 .5rem;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 1.6rem;
+      &:empty{
+        display: none;
+      }
+    }
+  }
+  &.primary{
+    .current{
+      i,
+      span{
+        color: var(--primary);
+      }
+    }
+    b{
+      background: var(--primary);
+    }
+  }
+  &.success{
+    .current{
+      i,
+      span{
+        color: var(--success);
+      }
+    }
+    b{
+      background: var(--success);
+    }
+  }
+  &.warning{
+    .current{
+      i,
+      span{
+        color: var(--warning);
+      }
+    }
+    b{
+      background: var(--warning);
+    }
+  }
+  &.danger{
+    .current{
+      i,
+      span{
+        color: var(--danger);
+      }
+    }
+    b{
+      background: var(--danger);
+    }
+  }
+  &:before{
+    @include borderLine('top');
+  }
+}

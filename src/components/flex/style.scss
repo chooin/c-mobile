@@ -1,0 +1,12 @@
+@import '../../assets/scss/base/variables';
+@import '../../assets/scss/base/mixins';
+
+.c-flex{
+  display: flex;
+  -webkit-box-flex: 1;
+  width: 100%;
+  .c-flex-item{
+    display: block;
+    flex: 1;
+  }
+}

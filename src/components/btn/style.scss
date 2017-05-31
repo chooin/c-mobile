@@ -4,7 +4,7 @@
 .c-btn,
 .c-btn:hover,
 .c-btn-o,
-.c-btn-o:hover{
+.c-btn-o:hover {
   text-align: center;
   font-size: 1.6rem;
   width: 100%;
@@ -17,90 +17,90 @@
   border: none;
 
   &[disabled=disabled],
-  &.disabled{
+  &.disabled {
     opacity: .75;
     cursor: not-allowed;
   }
 }
 
 .c-btn,
-.c-btn:hover{
+.c-btn:hover {
   color: var(--text);
   border-radius: .3rem;
 
   &.primary,
-  &.primary:hover{
+  &.primary:hover {
     color: #fff;
     background: var(--primary);
   }
 
   &.success,
-  &.success:hover{
+  &.success:hover {
     color: #fff;
     background: var(--success);
   }
 
   &.warning,
-  &.warning:hover{
+  &.warning:hover {
     color: #fff;
     background: var(--warning);
   }
 
   &.danger,
-  &.danger:hover{
+  &.danger:hover {
     color: #fff;
     background: var(--danger);
   }
 }
 
 .c-btn-o,
-.c-btn-o:hover{
+.c-btn-o:hover {
   color: var(--text);
   border-radius: .3rem;
   padding: 1.4rem 1rem;
   position: relative;
 
   &.primary,
-  &.primary:hover{
+  &.primary:hover {
     color: var(--primary);
-    &:after{
+    &:after {
       border-color: var(--primary);
     }
   }
 
   &.success,
-  &.success:hover{
+  &.success:hover {
     color: var(--success);
-    &:after{
+    &:after {
       border-color: var(--success);
     }
   }
 
   &.warning,
-  &.warning:hover{
+  &.warning:hover {
     color: var(--warning);
-    &:after{
+    &:after {
       border-color: var(--warning);
     }
   }
 
   &.danger,
-  &.danger:hover{
+  &.danger:hover {
     color: var(--danger);
-    &:after{
+    &:after {
       border-color: var(--danger);
     }
   }
 
-  &:after{
+  &:after {
     @include borderLine('round');
     border-radius: .3rem;
   }
 }
 
 .c-btn,
-.c-btn-o{
-  &.suspend{
+.c-btn-o {
+  &.suspend {
     position: fixed;
     bottom: 0;
     left: 0;

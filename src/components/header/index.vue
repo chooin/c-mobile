@@ -9,6 +9,9 @@
       :class="{
         back: _left.back
       }"
+      :style="{
+        color: _left.color
+      }"
       @click="handleLeftClick"
       v-if="_left.text || _left.back">
       {{ _left.text }}
@@ -17,6 +20,9 @@
     <a
       href="javascript:;"
       class="right"
+      :style="{
+        color: _right.color
+      }"
       @click="handleRightClick"
       v-if="_right.text">
       {{ _right.text }}
@@ -75,6 +81,7 @@ export default {
         return Object.assign({
           text: null,
           to: null,
+          color: null,
           back: false,
           click: null
         }, this.left)
@@ -85,6 +92,7 @@ export default {
         return Object.assign({
           text: null,
           to: null,
+          color: null,
           click () {}
         }, this.right)
       }

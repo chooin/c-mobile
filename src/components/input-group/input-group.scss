@@ -1,23 +1,23 @@
 @import '../../assets/scss/base/variables';
 @import '../../assets/scss/base/mixins';
 
-.c-input-group{
+.c-input-group {
   background: #fff;
   position: relative;
   overflow: hidden;
-  &:before{
+  &:before {
     @include borderLine('top');
   }
-  &:after{
+  &:after {
     @include borderLine('bottom');
   }
-  &.noborder-top{
-    &:before{
+  &.noborder-top {
+    &:before {
       border: none !important;
     }
   }
-  &.noborder-bottom{
-    &:after{
+  &.noborder-bottom {
+    &:after {
       border: none !important;
     }
   }

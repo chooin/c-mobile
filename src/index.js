@@ -7,6 +7,7 @@ import { InputGroup, Input, InputHead, InputBody } from './components/input-grou
 import Switch from './components/switch'
 import { Tab, TabItem } from './components/tab'
 import { Tabbar, TabbarItem } from './components/tabbar'
+// import Toast from './components/toast/main'
 
 const components = [
   Btn,
@@ -26,11 +27,17 @@ const components = [
 ]
 
 const install = (Vue, opts = {}) => {
-  if (install.installed) return
+  if (install.installed) {
+    return
+  } else {
+    install.installed = true
+  }
 
   components.map(component => {
     Vue.component(component.name, component)
   })
+
+  // Vue.prototype.$Toast = Toast
 }
 
 export default {

@@ -1,9 +1,9 @@
 @import '../../assets/scss/base/variables';
 @import '../../assets/scss/base/mixins';
 
-.c-switch{
+.c-switch {
   position: relative;
-  label{
+  label {
     vertical-align: top;
     display: inline-block;
     position: relative;
@@ -13,7 +13,7 @@
     top: 0;
     width: 5.2rem;
     height: 3.2rem;
-    .switch-core{
+    .switch-core {
       display: inline-block;
       position: relative;
       width: 5.2rem;
@@ -22,7 +22,7 @@
       border-radius: 1.6rem;
       background: var(--border);
       &:after,
-      &:before{
+      &:before {
         content: " ";
         top: 0;
         left: 0;
@@ -30,19 +30,19 @@
         transition: transform .3s;
         border-radius: 1.5rem;
       }
-      &:after{
+      &:after {
         width: 3rem;
         height: 3rem;
         background-color: #fff;
         box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .4);
       }
-      &:before{
+      &:before {
         width: 5rem;
         height: 3rem;
         background-color: #fdfdfd;
       }
     }
-    input[type=checkbox]{
+    input[type=checkbox] {
       width: 100%;
       height: 100%;
       z-index: 1;
@@ -50,14 +50,14 @@
       left: 0;
       top: 0;
       opacity: 0;
-      &:checked {
-        + .switch-core{
+      &:checked  {
+        + .switch-core {
           border-color: var(--primary);
           background-color: var(--primary);
-          &:before{
+          &:before {
             transform: scale(0);
           }
-          &:after{
+          &:after {
             transform: translateX(2rem);
           }
         }

@@ -1,4 +1,4 @@
-Vue 2.0 手机版组件库
+A Vue.js 2.0 components for mobile
 
 install
 

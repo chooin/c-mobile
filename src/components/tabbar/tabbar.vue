@@ -1,6 +1,6 @@
 <template>
   <div class="c-tabbar"
-    :class="[type ? type : '']">
+    :class="[type]">
     <slot></slot>
   </div>
 </template>

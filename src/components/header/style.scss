@@ -1,13 +1,13 @@
 @import '../../assets/scss/base/variables';
 @import '../../assets/scss/base/mixins';
 
-.c-header{
+.c-header {
   position: relative;
   z-index: 1;
   height: 5rem;
   width: 100%;
   background: #fff;
-  h1{
+  h1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,7 +23,7 @@
     text-overflow: ellipsis;
   }
   .left,
-  .right{
+  .right {
     position: absolute;
     top: 0;
     height: 5rem;
@@ -36,11 +36,11 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .left{
+  .left {
     left: 0;
-    &.back{
+    &.back {
       padding-left: 3rem;
-      &:after{
+      &:after {
         content: " ";
         transform: rotate(135deg);
         border: solid var(--text);
@@ -54,47 +54,47 @@
       }
     }
   }
-  .right{
+  .right {
     right: 0;
   }
   &.primary,
   &.success,
   &.warning,
-  &.danger{
+  &.danger {
     h1,
     .left,
-    .right{
+    .right {
       color: #fff;
     }
     .left,
-    .right{
-      &.back{
-        &:after{
+    .right {
+      &.back {
+        &:after {
           border-color: #fff;
         }
       }
     }
-    &:after{
+    &:after {
       border: none;
     }
   }
-  &.primary{
+  &.primary {
     background: var(--primary);
   }
-  &.success{
+  &.success {
     background: var(--success);
   }
-  &.warning{
+  &.warning {
     background: var(--warning);
   }
-  &.danger{
+  &.danger {
     background: var(--danger);
   }
-  &:after{
+  &:after {
     @include borderLine('bottom');
   }
-  &.noborder-bottom{
-    &:after{
+  &.noborder-bottom {
+    &:after {
       border-bottom: none;
     }
   }

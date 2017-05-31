@@ -1,32 +1,27 @@
 @import '../../assets/scss/base/variables';
 @import '../../assets/scss/base/mixins';
 
-.c-icon{
+.c-icon {
   color: var(--text);
   border-radius: .3rem;
 
-  &.white{
+  &.white {
     color: #fff;
-    border-radius: .3rem;
   }
 
-  &.primary{
+  &.primary {
     color: var(--primary);
-    border-radius: .3rem;
   }
 
-  &.success{
+  &.success {
     color: var(--success);
-    border-radius: .3rem;
   }
 
-  &.warning{
+  &.warning {
     color: var(--warning);
-    border-radius: .3rem;
   }
 
-  &.danger{
+  &.danger {
     color: var(--danger);
-    border-radius: .3rem;
   }
 }

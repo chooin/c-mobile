@@ -1,0 +1,13 @@
+.v-flex {
+  .c-flex {
+    .c-flex-item {
+      line-height: 4rem;
+      color: #fff;
+      background: #bbb;
+      text-align: center;
+      &:nth-of-type(odd) {
+        background: #000;
+      }
+    }
+  }
+}

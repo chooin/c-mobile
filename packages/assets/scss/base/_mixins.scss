@@ -1,4 +1,4 @@
-@mixin borderLine($direction: round, $offset: 0){
+@mixin borderLine($direction: round, $offset: 0) {
   content: " ";
   position: absolute;
   z-index: 1;

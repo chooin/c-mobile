@@ -4,7 +4,7 @@
     <div class="c-input-upload-files">
       <slot></slot>
       <div class="c-input-upload-btn" v-show="allowUpload">
-        <input type="file" v-show="!wechatUpload">
+        <input type="file" v-show="showUploadInput">
       </div>
     </div>
   </div>
@@ -22,9 +22,9 @@ export default {
       type: Boolean,
       default: true
     },
-    wechatUpload: {
+    showUploadInput: {
       type: Boolean,
-      default: false
+      default: true
     }
   }
 }

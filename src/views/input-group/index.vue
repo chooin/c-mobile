@@ -2,7 +2,7 @@
   <div class="v-input-group">
     <h4 class="pl-15">修改用户资料</h4>
     <c-input-group>
-      <c-input-upload title="上传图片" allow-upload wechat-upload>
+      <c-input-upload title="上传图片" allow-upload :show-upload-input="false">
         <c-input-upload-file
           src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg"
         />

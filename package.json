@@ -4,7 +4,6 @@
   "description": "A Vue.js 2.0 components for mobile",
   "main": "packages/index.js",
   "author": "zhuning <chooin@126.com>",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

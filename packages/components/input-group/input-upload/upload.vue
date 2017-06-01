@@ -1,6 +1,7 @@
 <template>
   <div class="c-input-upload">
     <div class="c-input-upload-title" v-show="title">{{ title }}</div>
+    <div class="c-input-upload-amount" v-show="amount">{{ amount }}</div>
     <div class="c-input-upload-files">
       <slot></slot>
       <div class="c-input-upload-btn" v-show="allowUpload">
@@ -25,6 +26,10 @@ export default {
     showUploadInput: {
       type: Boolean,
       default: true
+    },
+    amount: {
+      type: String,
+      default: null
     }
   }
 }

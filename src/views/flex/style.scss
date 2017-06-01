@@ -1,0 +1,16 @@
+.v-flex {
+  section{
+    margin: 1.5rem 0;
+  }
+  .c-flex {
+    .c-flex-item {
+      line-height: 5rem;
+      color: #fff;
+      background: rgba(0, 153, 229, .7);
+      text-align: center;
+      &:nth-of-type(odd) {
+        background: rgb(0, 153, 229);
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@
 
   &[disabled=disabled],
   &.disabled {
-    opacity: .75;
+    opacity: .6;
     cursor: not-allowed;
   }
 }
@@ -111,6 +111,7 @@
 
 .c-btn + .c-btn,
 .c-btn + .c-btn-o,
+.c-btn-o +.c-btn,
 .c-btn-o + .c-btn-o {
   margin-top: 1.5rem;
 }

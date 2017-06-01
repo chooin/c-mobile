@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Btn from '@/views/btn/index'
-import Flex from '@/views/flex/index'
-import Header from '@/views/header/index'
+import Index from '@/views/index'
+import Btn from '@/views/btn'
+import Flex from '@/views/flex'
+import Header from '@/views/header'
+import Switch from '@/views/switch'
+import InputGroup from '@/views/input-group'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/index',
+      component: Index
+    },
     {
       path: '/btn',
       component: Btn
@@ -20,6 +27,18 @@ export default new Router({
     {
       path: '/header',
       component: Header
+    },
+    {
+      path: '/switch',
+      component: Switch
+    },
+    {
+      path: '/input-group',
+      component: InputGroup
+    },
+    {
+      path: '/*',
+      redirect: '/index'
     }
   ]
 })

@@ -36,15 +36,15 @@ a {
   font-family: 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', Arial, sans-serif;
   font-size: 1.4rem;
 }
+body {
+  background: #f0f0f0;
+}
 // // 点击a标签没有灰色背景
 // a {
 //   -webkit-tap-highlight-color: transparent;
 //   -webkit-touch-callout: none;
 //   -webkit-user-select: none;
 // }
-body {
-  background: #f0f0f0;
-}
 .container {
   width: 100%;
   padding-left: 1rem;

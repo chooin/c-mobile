@@ -1,5 +1,5 @@
 <template>
-  <div class="c-input"
+  <label class="c-input"
     :class="{
       'c-input-addon': addon,
       'c-input-next': next,
@@ -9,7 +9,7 @@
     }"
     @click="handleClick">
     <slot></slot>
-  </div>
+  </label>
 </template>
 
 <script>

@@ -3,9 +3,8 @@
 
 .c-icon {
   color: var(--text);
-  display: inline-block;
+  display: block;
   border-radius: .3rem;
-  font-size: 1.4rem;
   position: relative;
 
   &:before {

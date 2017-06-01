@@ -5,7 +5,6 @@
       'c-input-next': next,
       'c-input-icon': icon,
       'c-input-checked': checked,
-      'c-input-switch': _switch,
       'noborder-top': noborderTop
     }]"
     @click="handleClick">
@@ -30,10 +29,6 @@ export default {
       default: false
     },
     checked: {
-      type: Boolean,
-      default: false
-    },
-    switch: {
       type: Boolean,
       default: false
     },

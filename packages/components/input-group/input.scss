@@ -85,6 +85,19 @@
           color: var(--text-light);
         }
       }
+      .c-switch {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+      }
+      .c-btn,
+      .c-btn-o {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+      }
     }
   }
   &.c-input-next {
@@ -122,16 +135,6 @@
       }
     }
   }
-  &.c-input-switch {
-    .c-input-body {
-      .c-switch {
-        position: absolute;
-        top: 50%;
-        right: 1.5rem;
-        transform: translateY(-50%);
-      }
-    }
-  }
   &.c-input-icon {
     padding-left: 5.5rem;
     .c-input-head {
@@ -139,7 +142,8 @@
       i {
         position: absolute;
         left: 1.5rem;
-        top: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }

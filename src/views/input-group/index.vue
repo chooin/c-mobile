@@ -85,12 +85,20 @@
         <c-input-body>
         </c-input-body>
       </c-input>
-      <c-input addon switch>
+      <c-input addon>
         <c-input-head>
           自动定位
         </c-input-head>
         <c-input-body>
           <c-switch type="primary" />
+        </c-input-body>
+      </c-input>
+      <c-input addon>
+        <c-input-head>
+          订阅
+        </c-input-head>
+        <c-input-body>
+          <c-btn type="primary" small>订阅</c-btn>
         </c-input-body>
       </c-input>
       <c-input>

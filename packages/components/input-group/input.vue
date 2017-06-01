@@ -1,12 +1,13 @@
 <template>
   <label class="c-input"
-    :class="{
+    :class="[{
       'c-input-addon': addon,
       'c-input-next': next,
       'c-input-icon': icon,
       'c-input-checked': checked,
+      'c-input-switch': _switch,
       'noborder-top': noborderTop
-    }"
+    }]"
     @click="handleClick">
     <slot></slot>
   </label>
@@ -32,6 +33,10 @@ export default {
       type: Boolean,
       default: false
     },
+    switch: {
+      type: Boolean,
+      default: false
+    },
     to: {
       type: Object,
       default: null
@@ -39,6 +44,13 @@ export default {
     noborderTop: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    _switch: { // 比较尴尬 switch 和 javascript swicth 冲突
+      get () {
+        return this.switch
+      }
     }
   },
   methods: {

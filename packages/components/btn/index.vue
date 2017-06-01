@@ -1,12 +1,13 @@
 <template>
   <div
     :class="[
-      type ? type : '',
+      type,
       {
         'c-btn': !o,
         'c-btn-o': o,
         disabled,
-        suspend
+        suspend,
+        small
       }
     ]"
     @click="handleClick">
@@ -31,6 +32,10 @@ export default {
       default: false
     },
     suspend: {
+      type: Boolean,
+      default: false
+    },
+    small: {
       type: Boolean,
       default: false
     },

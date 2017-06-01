@@ -5,6 +5,7 @@
     <router-link :to="{ path: '/header' }">header</router-link>
     <router-link :to="{ path: '/switch' }">switch</router-link>
     <router-link :to="{ path: '/input-group' }">input-group</router-link>
+    <router-link :to="{ path: '/icon' }">icon</router-link>
   </div>
 </template>
 

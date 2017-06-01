@@ -53,13 +53,61 @@
       opacity: 0;
       &:checked  {
         + .switch-core {
-          border-color: var(--primary);
-          background-color: var(--primary);
+          border-color: var(--text);
+          background-color: var(--text);
           &:before {
             transform: scale(0);
           }
           &:after {
             transform: translateX(2rem);
+          }
+        }
+      }
+    }
+  }
+  &.primary {
+    label {
+      input[type=checkbox] {
+        &:checked  {
+          + .switch-core {
+            border-color: var(--primary);
+            background-color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+  &.success {
+    label {
+      input[type=checkbox] {
+        &:checked  {
+          + .switch-core {
+            border-color: var(--success);
+            background-color: var(--success);
+          }
+        }
+      }
+    }
+  }
+  &.warning {
+    label {
+      input[type=checkbox] {
+        &:checked  {
+          + .switch-core {
+            border-color: var(--warning);
+            background-color: var(--warning);
+          }
+        }
+      }
+    }
+  }
+  &.danger {
+    label {
+      input[type=checkbox] {
+        &:checked  {
+          + .switch-core {
+            border-color: var(--danger);
+            background-color: var(--danger);
           }
         }
       }

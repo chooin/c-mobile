@@ -1,6 +1,15 @@
 <template>
   <div class="v-switch">
-    <c-switch v-model="value" /> {{ value }}
+    <c-switch v-model="value" @change="change" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" type="primary" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" type="success" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" type="warning" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" type="danger" /> {{ value }}
+    <div style="height: 1.5rem"></div>
   </div>
 </template>
 
@@ -9,6 +18,11 @@ export default {
   data () {
     return {
       value: false
+    }
+  },
+  methods: {
+    change () {
+      console.log(`值改变，当前值: ${this.value}`)
     }
   }
 }

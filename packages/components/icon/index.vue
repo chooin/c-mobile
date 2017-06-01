@@ -3,11 +3,15 @@
     class="c-icon"
     :class="[
       `icon-${name}`,
+      round ? 'round' : '',
+      backgroundColor ? 'small' : '',
       type
     ]"
     :style="{
-      backgroundColor,
+      width: size,
+      height: size,
       fontSize: size,
+      backgroundColor,
       color
     }">
   </i>
@@ -37,6 +41,10 @@ export default {
     size: {
       type: String,
       default: ''
+    },
+    round: {
+      type: Boolean,
+      default: false
     }
   }
 }

@@ -7,6 +7,7 @@ import Flex from '@/views/flex'
 import Header from '@/views/header'
 import Switch from '@/views/switch'
 import InputGroup from '@/views/input-group'
+import Icon from '@/views/icon'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
     {
       path: '/input-group',
       component: InputGroup
+    },
+    {
+      path: '/icon',
+      component: Icon
     },
     {
       path: '/*',

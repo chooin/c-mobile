@@ -1,7 +1,7 @@
 <template>
   <div class="c-header"
     :class="[
-      type ? type : ''
+      type
     ]">
     <a
       href="javascript:;"

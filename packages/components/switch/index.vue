@@ -1,5 +1,9 @@
 <template>
-  <div class="c-switch">
+  <div
+    class="c-switch"
+    :class="[
+      type
+    ]">
     <label>
       <input type="checkbox" @change="handleChange" v-model="_value">
       <span class="switch-core"></span>
@@ -14,6 +18,10 @@ export default {
     value: {
       type: Boolean,
       default: false
+    },
+    type: {
+      type: String,
+      default: ''
     }
   },
   methods: {

@@ -21,6 +21,13 @@
     opacity: .6;
     cursor: not-allowed;
   }
+
+  &.small{
+    display: inline-block;
+    width: auto;
+    padding: .5rem 1rem;
+    font-size: 1.4rem;
+  }
 }
 
 .c-btn,
@@ -109,9 +116,9 @@
   }
 }
 
-.c-btn + .c-btn,
-.c-btn + .c-btn-o,
-.c-btn-o +.c-btn,
-.c-btn-o + .c-btn-o {
+.c-btn:not(.small) + .c-btn:not(.small),
+.c-btn:not(.small) + .c-btn-o:not(.small),
+.c-btn-o:not(.small) +.c-btn:not(.small),
+.c-btn-o:not(.small) + .c-btn-o:not(.small) {
   margin-top: 1.5rem;
 }

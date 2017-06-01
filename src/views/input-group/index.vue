@@ -10,6 +10,14 @@
           <input type="text" placeholder="请输入姓名">
         </c-input-body>
       </c-input>
+      <c-input>
+        <c-input-head>
+          您的姓名
+        </c-input-head>
+        <c-input-body>
+          <div class="input">Devin</div>
+        </c-input-body>
+      </c-input>
       <c-input addon>
         <c-input-head>
           您的姓名
@@ -49,9 +57,45 @@
           <input type="text" placeholder="请输入姓名">
         </c-input-body>
       </c-input>
+      <c-input addon next icon>
+        <c-input-head>
+          <c-icon name="user" background-color="var(--primary)" color="#fff" size="3rem" round />Devin
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input addon next icon>
+        <c-input-head>
+          <c-icon name="search" color="var(--text)" size="3rem" />搜索
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input addon next icon>
+        <c-input-head>
+          <c-icon name="wishlist" background-color="var(--warning)" color="#fff" size="3rem" />收藏
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input addon next icon>
+        <c-input-head>
+          <c-icon name="wishlisted" background-color="var(--danger)" color="#fff" size="3rem" round />已收藏
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input addon switch>
+        <c-input-head>
+          自动定位
+        </c-input-head>
+        <c-input-body>
+          <c-switch type="primary" />
+        </c-input-body>
+      </c-input>
       <c-input>
         <c-input-body>
-          <textarea placeholder="请输入姓名"></textarea>
+          <textarea placeholder="请输入个人信息"></textarea>
         </c-input-body>
       </c-input>
       <c-input>
@@ -60,6 +104,7 @@
         </c-input-body>
       </c-input>
     </c-input-group>
+
     <h4 class="pl-15">选择城市</h4>
     <c-input-group>
       <c-input>
@@ -77,6 +122,88 @@
         </c-input-body>
       </c-input>
     </c-input-group>
+
+    <h4 class="pl-15">没有上下边框</h4>
+    <c-input-group noborder>
+      <c-input>
+        <c-input-head>
+          您的姓名
+        </c-input-head>
+        <c-input-body>
+          <input type="text" placeholder="请输入姓名">
+        </c-input-body>
+      </c-input>
+    </c-input-group>
+
+    <h4 class="pl-15">没有上边框</h4>
+    <c-input-group noborder-top>
+      <c-input>
+        <c-input-head>
+          您的姓名
+        </c-input-head>
+        <c-input-body>
+          <input type="text" placeholder="请输入姓名">
+        </c-input-body>
+      </c-input>
+    </c-input-group>
+
+    <h4 class="pl-15">没有下边框</h4>
+    <c-input-group noborder-bottom>
+      <c-input>
+        <c-input-head>
+          您的姓名
+        </c-input-head>
+        <c-input-body>
+          <input type="text" placeholder="请输入姓名">
+        </c-input-body>
+      </c-input>
+    </c-input-group>
+
+    <h4 class="pl-15">中间的没有上边框</h4>
+    <c-input-group>
+      <c-input>
+        <c-input-head>
+          浦东新区
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input noborder-top>
+        <c-input-head>
+          黄浦区
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input>
+        <c-input-head>
+          黄浦区
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+    </c-input-group>
+
+    <h4 class="pl-15">日期</h4>
+    <c-input-group>
+      <c-input addon>
+        <c-input-head>
+          选择日子
+        </c-input-head>
+        <c-input-body>
+          <input type="date">
+        </c-input-body>
+      </c-input>
+      <c-input addon>
+        <c-input-head>
+          选择时间
+        </c-input-head>
+        <c-input-body>
+          <input type="datetime-local">
+        </c-input-body>
+      </c-input>
+    </c-input-group>
+
     <h4 class="pl-15">图片上传</h4>
     <c-input-group>
       <c-input-upload

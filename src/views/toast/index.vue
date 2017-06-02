@@ -1,13 +1,13 @@
 <template>
   <div class="v-toast">
-    <c-btn type="primary" @click="btnClick">primary</c-btn>
+    <c-btn type="primary" @click="toastClick">toast</c-btn>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    btnClick () {
+    toastClick () {
       this.$Toast({
         texts: 'toast',
         duration: 3000,

@@ -14,7 +14,7 @@
     <c-btn type="primary" o>primary</c-btn>
     <c-btn type="primary" disabled>primary disabled</c-btn>
     <c-btn type="primary" disabled o>primary disabled</c-btn>
-    <c-btn type="success" suspend>primary disabled</c-btn>
+    <c-btn type="success" suspend>success suspend</c-btn>
     <div style="height: 6rem"></div>
   </div>
 </template>

@@ -13,7 +13,7 @@
 <script>
 import { Flex, FlexItem } from '../../flex'
 export default {
-  name: 'Confirm',
+  name: 'cConfirm',
   props: {
     text: {
       type: String,

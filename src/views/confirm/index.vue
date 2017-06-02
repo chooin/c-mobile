@@ -1,13 +1,22 @@
 <template>
   <div class="v-toast">
-    <c-btn type="primary" @click="btnClick">primary</c-btn>
+    <c-btn type="primary" @click="alertClick">alert</c-btn>
+    <c-btn type="primary" @click="confirmClick">confirm</c-btn>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    btnClick () {
+    alertClick () {
+      this.$Confirm({
+        text: '我是 alert',
+        ok: () => {
+          window.alert('ok')
+        }
+      })
+    },
+    confirmClick () {
       this.$Confirm({
         text: '我是 confirm',
         ok: () => {

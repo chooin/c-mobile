@@ -26,8 +26,8 @@ export default (option = {}) => {
           texts: option.texts,
           cb: () => {
             clearTimeout(this.timer)
-            option.cb()
             component.$el.remove()
+            option.cb()
           }
         }
       })
@@ -35,8 +35,8 @@ export default (option = {}) => {
     mounted () {
       document.querySelectorAll('.c-toast').forEach(el => { el.remove() })
       this.timer = setTimeout(() => {
-        option.cb()
         component.$el.remove()
+        option.cb()
       }, option.duration)
     }
   }).$mount()

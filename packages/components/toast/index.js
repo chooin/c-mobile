@@ -1,19 +1,45 @@
 import Vue from 'vue'
-const main = Vue.extend(require('./src'))
+import Toast from './src';
 
-const Toast = (option = {
-  duration: 2000
-}) => {
+export default (option = {}) => {
   if (typeof option === 'string') {
     option = {
       texts: [option]
     }
+  } else if (typeof option.texts === 'string') {
+    option.texts = [option.texts]
   }
 
-  Object.assign({
+  option = Object.assign({
     texts: [],
-    duration
+    duration: 2000,
+    cb () {}
   }, option)
 
-  document.body.appendChild(main.$mount())
+  const component = new Vue({
+    data: {
+      timer: null
+    },
+    render (h) {
+      return h(Toast, {
+        props: {
+          texts: option.texts,
+          cb: () => {
+            clearTimeout(this.timer)
+            option.cb()
+            component.$el.remove()
+          }
+        }
+      })
+    },
+    mounted () {
+      document.querySelectorAll('.c-toast').forEach(el => { el.remove() })
+      this.timer = setTimeout(() => {
+        option.cb()
+        component.$el.remove()
+      }, option.duration)
+    }
+  }).$mount()
+
+  document.body.appendChild(component.$el)
 }

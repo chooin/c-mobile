@@ -4,7 +4,10 @@
       current
     }"
     @click="handleClick">
-    <slot></slot>
+    <slot>
+      <c-icon v-show="icon" :name="icon" />
+      <span v-show="text">{{ text }}</span>
+    </slot>
   </a>
 </template>
 
@@ -19,6 +22,14 @@ export default {
     current: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: String,
+      default: null
+    },
+    text: {
+      type: String,
+      default: null
     }
   },
   methods: {

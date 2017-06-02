@@ -85,7 +85,7 @@
         <c-input-body>
         </c-input-body>
       </c-input>
-      <c-input addon>
+      <c-input addon use-div>
         <c-input-head>
           自动定位
         </c-input-head>
@@ -131,7 +131,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有上下边框</h4>
+    <h4 class="pl-15">没有上下 border</h4>
     <c-input-group noborder>
       <c-input>
         <c-input-head>
@@ -143,9 +143,9 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有上边框</h4>
+    <h4 class="pl-15">没有上 border</h4>
     <c-input-group noborder-top>
-      <c-input v-for="i in 3">
+      <c-input>
         <c-input-head>
           您的姓名
         </c-input-head>
@@ -155,9 +155,9 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有下边框</h4>
+    <h4 class="pl-15">没有下 border</h4>
     <c-input-group noborder-bottom>
-      <c-input v-for="i in 3">
+      <c-input>
         <c-input-head>
           您的姓名
         </c-input-head>
@@ -169,9 +169,23 @@
 
     <h4 class="pl-15">没有中间的边框</h4>
     <c-input-group>
-      <c-input v-for="i in 3" noborder-top>
+      <c-input noborder-top>
         <c-input-head>
-          {{ i }}. 浦东新区
+          浦东新区
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input noborder-top>
+        <c-input-head>
+          浦东新区
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input noborder-top>
+        <c-input-head>
+          浦东新区
         </c-input-head>
         <c-input-body>
         </c-input-body>

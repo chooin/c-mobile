@@ -13,7 +13,7 @@ import {
 import Switch from './components/switch'
 import { Tab, TabItem } from './components/tab'
 import { Tabbar, TabbarItem } from './components/tabbar'
-// import Toast from './components/toast/main'
+import Toast from './components/toast'
 
 const components = [
   Btn,
@@ -34,7 +34,7 @@ const components = [
   TabbarItem
 ]
 
-const install = function (Vue, opts = {}) {
+const install = (Vue, opts = {}) => {
   if (install.installed) {
     return
   } else {
@@ -44,6 +44,8 @@ const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component)
   })
+
+  Vue.prototype.$Toast = Toast
 }
 
 /* istanbul ignore if */

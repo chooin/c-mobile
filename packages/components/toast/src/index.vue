@@ -1,39 +1,31 @@
 <template>
-  <div class="c-toast" v-show="toast.visible" @click="handleClick">
+  <div class="c-toast" @click="handleClick">
     <div class="content">
-      <p v-for="text in toast.texts">{{ text }}</p>
+      <p v-for="text in texts">{{ text }}</p>
     </div>
   </div>
 </template>
 
 <script>
-import * as types from '@/store/mutation-types'
-import { mapState } from 'vuex'
 export default {
   data () {
     return {
       timer: null
     }
   },
-  methods: {
-    handleClick () {
-      clearTimeout(this.timer)
-      this.hide()
+  props: {
+    texts: {
+      type: Array,
+      default: () => []
     },
-    hide () {
-      this.toast.callback()
-      this.$store.dispatch(types.TOAST_HIDE)
+    cb: {
+      type: Function,
+      default () {}
     }
   },
-  computed: mapState({
-    toast: state => state.toast
-  }),
-  watch: {
-    'toast.visible' () {
-      if (this.toast.visible) {
-        clearTimeout(this.timer)
-        this.timer = setTimeout(() => { this.hide() }, 2000)
-      }
+  methods: {
+    handleClick () {
+      this.cb()
     }
   }
 }

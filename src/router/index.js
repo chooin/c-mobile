@@ -8,6 +8,9 @@ import Header from '@/views/header'
 import Switch from '@/views/switch'
 import InputGroup from '@/views/input-group'
 import Icon from '@/views/icon'
+import Tab from '@/views/tab'
+import Tabbar from '@/views/tabbar'
+import Toast from '@/views/toast'
 
 Vue.use(Router)
 
@@ -40,6 +43,18 @@ export default new Router({
     {
       path: '/icon',
       component: Icon
+    },
+    {
+      path: '/tab',
+      component: Tab
+    },
+    {
+      path: '/tabbar',
+      component: Tabbar
+    },
+    {
+      path: '/toast',
+      component: Toast
     },
     {
       path: '/*',

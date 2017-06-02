@@ -4,7 +4,7 @@
     <div class="c-input-upload-amount" v-show="amount">{{ amount }}</div>
     <div class="c-input-upload-files">
       <slot></slot>
-      <div class="c-input-upload-btn" v-show="allowUpload">
+      <div class="c-input-upload-btn" v-show="allowUpload" @click="handleClick">
         <input type="file" v-show="showUploadInput">
       </div>
     </div>
@@ -30,6 +30,11 @@ export default {
     amount: {
       type: String,
       default: null
+    }
+  },
+  methods: {
+    handleClick () {
+      this.$emit('choose-image')
     }
   }
 }

@@ -7,12 +7,19 @@
         <c-flex-item>1</c-flex-item>
         <c-flex-item>1</c-flex-item>
         <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
+        <c-flex-item>1</c-flex-item>
       </c-flex>
     </section>
     <section>
       <c-flex>
-        <c-flex-item>1</c-flex-item>
-        <c-flex-item :flex="2">2</c-flex-item>
+        <c-flex-item :flex="4">4</c-flex-item>
+        <c-flex-item :flex="8">8</c-flex-item>
       </c-flex>
     </section>
   </div>

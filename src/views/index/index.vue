@@ -6,6 +6,9 @@
     <router-link :to="{ path: '/switch' }">switch</router-link>
     <router-link :to="{ path: '/input-group' }">input-group</router-link>
     <router-link :to="{ path: '/icon' }">icon</router-link>
+    <router-link :to="{ path: '/tab' }">tab</router-link>
+    <router-link :to="{ path: '/tabbar' }">tabbar</router-link>
+    <router-link :to="{ path: '/toast' }">toast</router-link>
   </div>
 </template>
 

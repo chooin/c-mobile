@@ -1,5 +1,20 @@
 <template>
-  <label class="c-input"
+  <div
+    v-if="useDiv"
+    class="c-input"
+    :class="[{
+      'c-input-addon': addon,
+      'c-input-next': next,
+      'c-input-icon': icon,
+      'c-input-checked': checked,
+      'noborder-top': noborderTop
+    }]"
+    @click="handleClick">
+    <slot></slot>
+  </div>
+  <label
+    v-else
+    class="c-input"
     :class="[{
       'c-input-addon': addon,
       'c-input-next': next,
@@ -17,6 +32,10 @@ export default {
   name: 'cInput',
   props: {
     addon: {
+      type: Boolean,
+      default: false
+    },
+    useDiv: { // switch 组件父级是不允许使用 label 标签的
       type: Boolean,
       default: false
     },
@@ -39,13 +58,6 @@ export default {
     noborderTop: {
       type: Boolean,
       default: false
-    }
-  },
-  computed: {
-    _switch: { // 比较尴尬 switch 和 javascript swicth 冲突
-      get () {
-        return this.switch
-      }
     }
   },
   methods: {

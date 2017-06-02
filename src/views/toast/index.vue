@@ -9,12 +9,11 @@ export default {
   methods: {
     btnClick () {
       this.$Toast({
-        texts: '我不是toast',
-        cb: () => {}
-      })
-      this.$Toast({
-        texts: 'dadassd',
-        cb: () => {}
+        texts: 'toast',
+        duration: 3000,
+        cb: () => {
+          window.alert('hello toast')
+        }
       })
     }
   }

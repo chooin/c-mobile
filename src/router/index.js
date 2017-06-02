@@ -11,6 +11,7 @@ import Icon from '@/views/icon'
 import Tab from '@/views/tab'
 import Tabbar from '@/views/tabbar'
 import Toast from '@/views/toast'
+import Confirm from '@/views/confirm'
 
 Vue.use(Router)
 
@@ -55,6 +56,10 @@ export default new Router({
     {
       path: '/toast',
       component: Toast
+    },
+    {
+      path: '/confirm',
+      component: Confirm
     },
     {
       path: '/*',

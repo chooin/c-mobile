@@ -14,6 +14,7 @@ import Switch from './components/switch'
 import { Tab, TabItem } from './components/tab'
 import { Tabbar, TabbarItem } from './components/tabbar'
 import Toast from './components/toast'
+import Confirm from './components/confirm'
 
 const components = [
   Btn,
@@ -46,6 +47,7 @@ const install = (Vue, opts = {}) => {
   })
 
   Vue.prototype.$Toast = Toast
+  Vue.prototype.$Confirm = Confirm
 }
 
 /* istanbul ignore if */

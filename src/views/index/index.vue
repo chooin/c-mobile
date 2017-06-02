@@ -9,6 +9,7 @@
     <router-link :to="{ path: '/tab' }">tab</router-link>
     <router-link :to="{ path: '/tabbar' }">tabbar</router-link>
     <router-link :to="{ path: '/toast' }">toast</router-link>
+    <router-link :to="{ path: '/confirm' }">confirm</router-link>
   </div>
 </template>
 

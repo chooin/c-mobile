@@ -5,7 +5,7 @@ export default (option = {}) => {
   option = Object.assign({
     text: '',
     ok () {},
-    cancel () {}
+    cancel: null
   }, option)
 
   const component = new Vue({
@@ -17,10 +17,10 @@ export default (option = {}) => {
             component.$el.remove()
             option.ok()
           },
-          cancel: () => {
+          cancel: option.cancel ? () => {
             component.$el.remove()
             option.cancel()
-          }
+          } : null
         }
       })
     }

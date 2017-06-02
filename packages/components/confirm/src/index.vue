@@ -21,7 +21,7 @@ export default {
     },
     cancel: {
       type: Function,
-      default () {}
+      default: null
     },
     ok: {
       type: Function,

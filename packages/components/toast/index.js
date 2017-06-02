@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Toast from './src';
+import Toast from './src'
 
 export default (option = {}) => {
   if (typeof option === 'string') {

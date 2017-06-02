@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'cToast',
   data () {
     return {
       timer: null

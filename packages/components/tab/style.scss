@@ -16,7 +16,7 @@
     display: block;
     flex: 1;
     font-size: 1.2rem;
-    &.current {
+    &.c-tab-current {
       &:after {
         content: "";
         width: 2rem;
@@ -29,29 +29,29 @@
       }
     }
   }
-  &.primary {
-    .current {
+  &.c-tab-primary {
+    .c-tab-current {
       &:after {
         border-color: var(--primary);
       }
     }
   }
-  &.success {
-    .current {
+  &.c-tab-success {
+    .c-tab-current {
       &:after {
         border-color: var(--success);
       }
     }
   }
-  &.warning {
-    .current {
+  &.c-tab-warning {
+    .c-tab-current {
       &:after {
         border-color: var(--warning);
       }
     }
   }
-  &.danger {
-    .current {
+  &.c-tab-danger {
+    .c-tab-current {
       &:after {
         border-color: var(--danger);
       }

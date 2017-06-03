@@ -1,5 +1,6 @@
 <template>
-  <div class="c-input-group"
+  <div
+    class="c-input-group"
     :class="{
       'noborder': noborder,
       'noborder-top': noborderTop,

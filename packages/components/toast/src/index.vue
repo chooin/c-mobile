@@ -1,5 +1,7 @@
 <template>
-  <div class="c-toast" @click="handleClick">
+  <div
+    class="c-toast"
+    @click="handleClick">
     <div class="content">
       <p v-for="text in texts">{{ text }}</p>
     </div>

@@ -20,6 +20,21 @@
       <c-tabbar-item icon="search" text="探索" />
       <c-tabbar-item icon="user" text="我" />
     </c-tabbar>
+
+    <c-tabbar>
+      <c-tabbar-item>
+        <c-icon name="wishlist" type="success" />
+        <c-text>收藏</c-text>
+      </c-tabbar-item>
+      <c-tabbar-item>
+        <c-icon name="search" type="success" />
+        <c-text>探索</c-text>
+      </c-tabbar-item>
+      <c-tabbar-item>
+        <c-icon name="user" type="success" />
+        <c-text>我</c-text>
+      </c-tabbar-item>
+    </c-tabbar>
   </div>
 </template>
 

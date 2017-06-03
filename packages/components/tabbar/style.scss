@@ -25,7 +25,7 @@
       display: block;
       color: var(--text);
     }
-    span {
+    .c-text {
       font-size: 1.2rem;
       height: 1.6rem;
       line-height: 1.6rem;
@@ -50,10 +50,10 @@
       }
     }
   }
-  &.primary {
+  &.c-tabbar-primary {
     .current {
       i,
-      span {
+      .c-text {
         color: var(--primary);
       }
     }
@@ -61,10 +61,10 @@
       background: var(--primary);
     }
   }
-  &.success {
+  &.c-tabbar-success {
     .current {
       i,
-      span {
+      .c-text {
         color: var(--success);
       }
     }
@@ -72,10 +72,10 @@
       background: var(--success);
     }
   }
-  &.warning {
+  &.c-tabbar-warning {
     .current {
       i,
-      span {
+      .c-text {
         color: var(--warning);
       }
     }
@@ -83,10 +83,10 @@
       background: var(--warning);
     }
   }
-  &.danger {
+  &.c-tabbar-danger {
     .current {
       i,
-      span {
+      .c-text {
         color: var(--danger);
       }
     }

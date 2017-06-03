@@ -9,7 +9,8 @@
       :right="{
         text: '联系我们',
         color: 'var(--primary)',
-        click: () => {}
+        click: () => {
+        }
       }"
     />
     <div style="height: 1.5rem; width: 100%;"></div>
@@ -69,7 +70,6 @@
 
 <script>
 export default {
-
 }
 </script>
 

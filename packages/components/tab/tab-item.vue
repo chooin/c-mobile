@@ -1,7 +1,9 @@
 <template>
-  <a href="javascript:;" class="c-tab-item"
+  <a
+    href="javascript:;"
+    class="c-tab-item"
     :class="{
-      current
+      'c-tab-current': current
     }"
     @click="handleClick">
     <slot></slot>

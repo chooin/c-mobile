@@ -21,8 +21,8 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .left,
-  .right {
+  .c-header-left,
+  .c-header-right {
     position: absolute;
     top: 0;
     height: 5rem;
@@ -35,7 +35,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .left {
+  .c-header-left {
     left: 0;
     &.back {
       padding-left: 3rem;
@@ -53,20 +53,20 @@
       }
     }
   }
-  .right {
+  .c-header-right {
     right: 0;
   }
-  &.primary,
-  &.success,
-  &.warning,
-  &.danger {
+  &.c-header-primary,
+  &.c-header-success,
+  &.c-header-warning,
+  &.c-header-danger {
     h1,
-    .left,
-    .right {
+    .c-header-left,
+    .c-header-right {
       color: #fff;
     }
-    .left,
-    .right {
+    .c-header-left,
+    .c-header-right {
       &.back {
         &:after {
           border-color: #fff;
@@ -77,16 +77,16 @@
       border: none;
     }
   }
-  &.primary {
+  &.c-header-primary {
     background: var(--primary);
   }
-  &.success {
+  &.c-header-success {
     background: var(--success);
   }
-  &.warning {
+  &.c-header-warning {
     background: var(--warning);
   }
-  &.danger {
+  &.c-header-danger {
     background: var(--danger);
   }
   &:after {

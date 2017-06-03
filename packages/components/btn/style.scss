@@ -16,12 +16,12 @@
   border: none;
 
   &[disabled=disabled],
-  &.disabled {
+  &.c-btn-disabled {
     opacity: .6;
     cursor: not-allowed;
   }
 
-  &.small{
+  &.c-btn-small{
     display: inline-block;
     width: auto;
     padding: .5rem 1rem;
@@ -35,26 +35,26 @@
   border-radius: .3rem;
   background: #ccc;
 
-  &.primary,
-  &.primary:hover {
+  &.c-btn-primary,
+  &.c-btn-primary:hover {
     color: #fff;
     background: var(--primary);
   }
 
-  &.success,
-  &.success:hover {
+  &.c-btn-success,
+  &.c-btn-success:hover {
     color: #fff;
     background: var(--success);
   }
 
-  &.warning,
-  &.warning:hover {
+  &.c-btn-warning,
+  &.c-btn-warning:hover {
     color: #fff;
     background: var(--warning);
   }
 
-  &.danger,
-  &.danger:hover {
+  &.c-btn-danger,
+  &.c-btn-danger:hover {
     color: #fff;
     background: var(--danger);
   }
@@ -67,32 +67,32 @@
   padding: 1.4rem 1rem;
   position: relative;
 
-  &.primary,
-  &.primary:hover {
+  &.c-btn-primary,
+  &.c-btn-primary:hover {
     color: var(--primary);
     &:after {
       border-color: var(--primary);
     }
   }
 
-  &.success,
-  &.success:hover {
+  &.c-btn-success,
+  &.c-btn-success:hover {
     color: var(--success);
     &:after {
       border-color: var(--success);
     }
   }
 
-  &.warning,
-  &.warning:hover {
+  &.c-btn-warning,
+  &.c-btn-warning:hover {
     color: var(--warning);
     &:after {
       border-color: var(--warning);
     }
   }
 
-  &.danger,
-  &.danger:hover {
+  &.c-btn-danger,
+  &.c-btn-danger:hover {
     color: var(--danger);
     &:after {
       border-color: var(--danger);
@@ -107,7 +107,7 @@
 
 .c-btn,
 .c-btn-o {
-  &.suspend {
+  &.c-btn-suspend {
     position: fixed;
     bottom: 0;
     left: 0;

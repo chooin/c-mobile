@@ -1,11 +1,12 @@
 <template>
-  <div class="c-header"
+  <div
+    class="c-header"
     :class="[
-      type
+      type ? `c-header-${type}` : ''
     ]">
     <a
       href="javascript:;"
-      class="left"
+      class="c-header-left"
       :class="{
         back: _left.back
       }"
@@ -16,10 +17,12 @@
       v-if="_left.text || _left.back">
       {{ _left.text }}
     </a>
-    <h1 v-if="title || defaultTitle">{{ title === undefined || title === null ? defaultTitle : title }}</h1>
+    <h1 v-if="title || defaultTitle">
+      {{ title === undefined || title === null ? defaultTitle : title }}
+    </h1>
     <a
       href="javascript:;"
-      class="right"
+      class="c-header-right"
       :style="{
         color: _right.color
       }"

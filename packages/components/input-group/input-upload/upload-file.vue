@@ -1,5 +1,8 @@
 <template>
-  <div class="c-input-upload-file" @click="handleClick" v-if="src">
+  <div
+    class="c-input-upload-file"
+    @click="handleClick"
+    v-if="src">
     <img :src="src">
     <i @click.stop="handleDeleteClick"></i>
   </div>

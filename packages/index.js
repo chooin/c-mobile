@@ -13,6 +13,7 @@ import {
 import Switch from './components/switch'
 import { Tab, TabItem } from './components/tab'
 import { Tabbar, TabbarItem } from './components/tabbar'
+import Text from './components/text'
 import Toast from './components/toast'
 import Confirm from './components/confirm'
 
@@ -32,7 +33,8 @@ const components = [
   Tab,
   TabItem,
   Tabbar,
-  TabbarItem
+  TabbarItem,
+  Text
 ]
 
 const install = (Vue, opts = {}) => {

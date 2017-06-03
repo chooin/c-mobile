@@ -1,12 +1,13 @@
 <template>
-  <a class="c-tabbar-item"
+  <a
+    class="c-tabbar-item"
     :class="{
       current
     }"
     @click="handleClick">
     <slot>
       <c-icon v-show="icon" :name="icon" />
-      <span v-show="text">{{ text }}</span>
+      <c-text v-show="text">{{ text }}</c-text>
     </slot>
   </a>
 </template>

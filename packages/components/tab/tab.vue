@@ -1,7 +1,8 @@
 <template>
-  <div class="c-tab"
+  <div
+    class="c-tab"
     :class="[
-      type ? type : ''
+      type ? `c-tab-${type}` : ''
     ]">
     <slot></slot>
   </div>

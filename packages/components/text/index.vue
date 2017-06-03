@@ -1,21 +1,25 @@
 <template>
   <div
-    class="c-flex-item"
-    :style="{
-      flex
-    }"
+    class="c-text"
+    :class="[
+      type ? `c-text-${type}` : ''
+    ]"
     @click="handleClick">
-    <slot></slot>
+    <slot>{{ text }}</slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'cFlexItem',
+  name: 'cText',
   props: {
-    flex: {
-      type: Number,
-      default: 1
+    text: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
     },
     to: {
       type: Object,
@@ -24,6 +28,7 @@ export default {
   },
   methods: {
     handleClick () {
+      if (this.disabled === true) return
       if (this.to) {
         this.$router.push(this.to)
       } else {

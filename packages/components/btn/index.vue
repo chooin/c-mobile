@@ -1,13 +1,12 @@
 <template>
   <div
     :class="[
-      type,
+      type ? `c-btn-${type}` : '',
+      o ? 'c-btn-o' : 'c-btn',
       {
-        'c-btn': !o,
-        'c-btn-o': o,
-        disabled,
-        suspend,
-        small
+        'c-btn-disabled': disabled,
+        'c-btn-suspend': suspend,
+        'c-btn-small': small
       }
     ]"
     @click="handleClick">

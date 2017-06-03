@@ -1,0 +1,25 @@
+@import '../../assets/scss/mixins';
+
+.c-text {
+  color: var(--text);
+
+  &.c-text-light {
+    opacity: .7;
+  }
+
+  &.c-text-primary {
+    color: var(--primary);
+  }
+
+  &.c-text-success {
+    color: var(--success);
+  }
+
+  &.c-text-warning {
+    color: var(--warning);
+  }
+
+  &.c-text-danger {
+    color: var(--danger);
+  }
+}

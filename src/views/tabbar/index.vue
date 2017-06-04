@@ -27,12 +27,12 @@
         <c-text>收藏</c-text>
       </c-tabbar-item>
       <c-tabbar-item>
-        <c-icon name="search" type="success" />
+        <c-icon name="search" />
         <c-text>探索</c-text>
       </c-tabbar-item>
       <c-tabbar-item>
         <c-icon name="user" type="success" />
-        <c-text>我</c-text>
+        <c-text type="success">我</c-text>
       </c-tabbar-item>
     </c-tabbar>
   </div>

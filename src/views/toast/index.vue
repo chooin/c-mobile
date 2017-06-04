@@ -12,7 +12,17 @@ export default {
         texts: 'toast',
         duration: 3000,
         cb: () => {
-          window.alert('hello toast')
+          console.log('cb')
+        }
+      })
+      this.$Toast({
+        texts: [
+          'toast',
+          'toast1321312313213'
+        ],
+        duration: 3000,
+        cb: () => {
+          console.log('cb')
         }
       })
     }

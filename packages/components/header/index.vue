@@ -102,13 +102,8 @@ export default {
     }
   },
   created () {
-    document.querySelector('title').addEventListener('DOMNodeInserted', () => {
-      this._title = document.title
-    })
-  },
-  beforeDestory () {
-    document.querySelector('title').removeEventListener('DOMNodeInserted', () => {
-      this._title = document.title
+    this.$nextTick(() => {
+      this.defaultTitle = document.title
     })
   }
 }

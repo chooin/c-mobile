@@ -11,6 +11,6 @@ Vue.use(Mobile)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router: router,
+  router,
   render: h => h(App)
 })

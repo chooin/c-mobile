@@ -106,7 +106,7 @@ export default {
     }
   },
   created () {
-    if (autoTitle) {
+    if (this.autoTitle) {
       this.$nextTick(() => {
         this.defaultTitle = document.title
       })

@@ -43,6 +43,10 @@ export default {
     }
   },
   props: {
+    autoTitle: {
+      type: Boolean,
+      default: true
+    },
     type: {
       type: String,
       default: ''
@@ -102,9 +106,11 @@ export default {
     }
   },
   created () {
-    this.$nextTick(() => {
-      this.defaultTitle = document.title
-    })
+    if (autoTitle) {
+      this.$nextTick(() => {
+        this.defaultTitle = document.title
+      })
+    }
   }
 }
 </script>

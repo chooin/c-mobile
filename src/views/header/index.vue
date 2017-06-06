@@ -1,6 +1,7 @@
 <template>
   <div class="v-header">
     <c-header />
+    <div style="height: 1.5rem; width: 100%;"></div>
     <c-header
       :left="{
         back: true,

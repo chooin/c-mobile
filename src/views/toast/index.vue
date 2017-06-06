@@ -20,7 +20,7 @@ export default {
           'toast',
           'toast1321312313213'
         ],
-        duration: 3000,
+        duration: 5000,
         cb: () => {
           console.log('cb')
         }

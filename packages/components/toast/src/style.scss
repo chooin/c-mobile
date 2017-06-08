@@ -11,17 +11,18 @@
   .content {
     z-index: 1;
     position: absolute;
-    max-width: 80%;
+    width: 80%;
     top: 50%;
     left: 50%;
-    background: rgba(40, 40, 40, 0.85);
-    padding: 1rem;
+    background: rgba(40, 40, 40, 0.9);
+    padding: 1.5rem 1.5rem;
     line-height: 2rem;
     text-align: center;
     border-radius: .3rem;
     color: #fff;
     font-size: 1.6rem;
     transform: translate(-50%, -50%);
+    margin-top: -4rem;
     p {
       padding-bottom: .5rem;
       width: 100%;

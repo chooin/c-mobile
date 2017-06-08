@@ -11,15 +11,16 @@
   .content {
     position: fixed;
     z-index: 1;
-    width: 26rem;
+    width: 27rem;
     top: 50%;
     left: 50%;
     line-height: 2rem;
     text-align: center;
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     font-size: 1.4rem;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, .95);
+    margin-top: -4rem;
     padding: 2.5rem 1rem 6.4rem;
     .c-flex {
       position: absolute;
@@ -31,12 +32,11 @@
         position: relative;
         font-size: 1.6rem;
         color: #063ed9;
-        &:after {
+        &:before {
           @include borderLine('left');
-          left: 13rem;
         }
-        &:last-child {
-          &:after {
+        &:first-child {
+          &:before {
             border: none;
           }
         }

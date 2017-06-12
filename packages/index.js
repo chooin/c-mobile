@@ -16,6 +16,7 @@ import { Tabbar, TabbarItem } from './components/tabbar'
 import Text from './components/text'
 import Toast from './components/toast'
 import Confirm from './components/confirm'
+import Actionsheet from './components/actionsheet'
 
 const components = [
   Btn,
@@ -34,7 +35,8 @@ const components = [
   TabItem,
   Tabbar,
   TabbarItem,
-  Text
+  Text,
+  Actionsheet
 ]
 
 const install = (Vue, opts = {}) => {

@@ -3,15 +3,15 @@
     <c-tabbar type="success">
       <c-tabbar-item current>
         <c-icon name="wishlist" />
-        <span>收藏</span>
+        <c-text>收藏</c-text>
       </c-tabbar-item>
       <c-tabbar-item>
         <c-icon name="search" />
-        <span>探索</span>
+        <c-text>探索</c-text>
       </c-tabbar-item>
       <c-tabbar-item>
         <c-icon name="user" />
-        <span>我</span>
+        <c-text>我</c-text>
       </c-tabbar-item>
     </c-tabbar>
 

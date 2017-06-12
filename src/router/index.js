@@ -12,6 +12,7 @@ import Tab from '@/views/tab'
 import Tabbar from '@/views/tabbar'
 import Toast from '@/views/toast'
 import Confirm from '@/views/confirm'
+import Actionsheet from '@/views/actionsheet'
 
 Vue.use(Router)
 
@@ -60,6 +61,10 @@ export default new Router({
     {
       path: '/confirm',
       component: Confirm
+    },
+    {
+      path: '/actionsheet',
+      component: Actionsheet
     },
     {
       path: '/*',

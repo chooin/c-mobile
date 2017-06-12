@@ -10,6 +10,7 @@
     <router-link :to="{ path: '/tabbar' }">tabbar</router-link>
     <router-link :to="{ path: '/toast' }">toast</router-link>
     <router-link :to="{ path: '/confirm' }">confirm</router-link>
+    <router-link :to="{ path: '/actionsheet' }">actionsheet</router-link>
   </div>
 </template>
 

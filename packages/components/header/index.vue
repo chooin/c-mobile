@@ -39,7 +39,7 @@ export default {
   name: 'cHeader',
   data () {
     return {
-      defaultTitle: '..'
+      defaultTitle: ''
     }
   },
   props: {

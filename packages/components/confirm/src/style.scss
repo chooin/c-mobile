@@ -31,7 +31,7 @@
       .c-flex-item {
         position: relative;
         font-size: 1.6rem;
-        color: #063ed9;
+        color: rgb(0, 122, 255);
         &:before {
           @include borderLine('left');
         }

@@ -26,6 +26,7 @@ export default (option = {}) => {
     },
     methods: {
       show () {
+        this.pageYOffset = window.pageYOffset
         let body = document.body
         body.style.height = '100%'
         body.style.width = '100%'
@@ -37,6 +38,7 @@ export default (option = {}) => {
         let body = document.body
         body.style.overflow = 'visible'
         body.style.position = 'static'
+        window.scroll(0, this.pageYOffset)
       }
     },
     mounted () {

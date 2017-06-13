@@ -1,6 +1,7 @@
 <template>
   <div class="v-toast">
     <c-btn type="primary" @click="toastClick">toast</c-btn>
+    <c-btn type="primary" style="margin-top: 1000px;" @click="toastClick">toast</c-btn>
   </div>
 </template>
 

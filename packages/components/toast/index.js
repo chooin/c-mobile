@@ -18,7 +18,8 @@ export default (option = {}) => {
 
   const component = new Vue({
     data: {
-      timer: null
+      timer: null,
+      pageYOffset: null
     },
     render (h) {
       return h(Toast, {
@@ -36,6 +37,7 @@ export default (option = {}) => {
         document.querySelectorAll('.c-toast').forEach(el => {
           el.remove()
         })
+        this.pageYOffset = window.pageYOffset
         let body = document.body
         body.style.height = '100%'
         body.style.width = '100%'
@@ -49,6 +51,8 @@ export default (option = {}) => {
           let body = document.body
           body.style.overflow = 'visible'
           body.style.position = 'static'
+          console.log(this.pageYOffset)
+          window.scroll(0, this.pageYOffset)
         }
       }
     },

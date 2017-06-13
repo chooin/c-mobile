@@ -2,6 +2,7 @@
   <div class="v-toast">
     <c-btn type="primary" @click="alertClick">alert</c-btn>
     <c-btn type="primary" @click="confirmClick">confirm</c-btn>
+    <c-btn type="primary" style="margin-top: 1000px;" @click="confirmClick">confirm</c-btn>
   </div>
 </template>
 

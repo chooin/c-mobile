@@ -26,17 +26,36 @@ export default (option = {}) => {
           texts: option.texts,
           cb: () => {
             clearTimeout(this.timer)
-            component.$el.remove()
-            option.cb()
+            this.hide()
           }
         }
       })
     },
-    mounted () {
-      document.querySelectorAll('.c-toast').forEach(el => { el.remove() })
-      this.timer = setTimeout(() => {
-        component.$el.remove()
+    methods: {
+      show () {
+        document.querySelectorAll('.c-toast').forEach(el => {
+          el.remove()
+        })
+        let body = document.body
+        body.style.height = '100%'
+        body.style.width = '100%'
+        body.style.overflow = 'hidden'
+        body.style.position = 'fixed'
+      },
+      hide () {
+        this.$el.remove()
         option.cb()
+        if (document.querySelectorAll('.c-toast').length === 0) {
+          let body = document.body
+          body.style.overflow = 'visible'
+          body.style.position = 'static'
+        }
+      }
+    },
+    mounted () {
+      this.show()
+      this.timer = setTimeout(() => {
+        this.hide()
       }, option.duration)
     }
   }).$mount()

@@ -14,15 +14,33 @@ export default (option = {}) => {
         props: {
           text: option.text,
           ok: () => {
-            component.$el.remove()
+            this.hide()
             option.ok()
           },
           cancel: option.cancel ? () => {
-            component.$el.remove()
+            this.hide()
             option.cancel()
           } : null
         }
       })
+    },
+    methods: {
+      show () {
+        let body = document.body
+        body.style.height = '100%'
+        body.style.width = '100%'
+        body.style.overflow = 'hidden'
+        body.style.position = 'fixed'
+      },
+      hide () {
+        this.$el.remove()
+        let body = document.body
+        body.style.overflow = 'visible'
+        body.style.position = 'static'
+      }
+    },
+    mounted () {
+      this.show()
     }
   }).$mount()
 

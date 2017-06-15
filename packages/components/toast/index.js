@@ -37,23 +37,10 @@ export default (option = {}) => {
         document.querySelectorAll('.c-toast').forEach(el => {
           el.remove()
         })
-        this.pageYOffset = window.pageYOffset
-        let body = document.body
-        body.style.height = '100%'
-        body.style.width = '100%'
-        body.style.overflow = 'hidden'
-        body.style.position = 'fixed'
       },
       hide () {
         this.$el.remove()
         option.cb()
-        if (document.querySelectorAll('.c-toast').length === 0) {
-          let body = document.body
-          body.style.overflow = 'visible'
-          body.style.position = 'static'
-          console.log(this.pageYOffset)
-          window.scroll(0, this.pageYOffset)
-        }
       }
     },
     mounted () {

@@ -30,7 +30,7 @@
         <c-icon name="search" />
         <c-text>探索</c-text>
       </c-tabbar-item>
-      <c-tabbar-item>
+      <c-tabbar-item :badge="8">
         <c-icon name="user" type="success" />
         <c-text type="success">我</c-text>
       </c-tabbar-item>

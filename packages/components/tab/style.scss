@@ -10,7 +10,7 @@
   &:before {
     @include borderLine('bottom');
   }
-  a {
+  .c-tab-item {
     text-align: center;
     position: relative;
     display: block;

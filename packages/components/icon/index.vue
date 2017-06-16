@@ -13,7 +13,8 @@
       fontSize: size,
       backgroundColor,
       color
-    }">
+    }"
+    @click="handleClick">
   </i>
 </template>
 
@@ -45,6 +46,16 @@ export default {
     round: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    handleClick () {
+      if (this.disabled === true) return
+      if (this.to) {
+        this.$router.push(this.to)
+      } else {
+        this.$emit('click')
+      }
     }
   }
 }

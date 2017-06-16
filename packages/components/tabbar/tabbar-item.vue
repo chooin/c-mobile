@@ -9,6 +9,7 @@
       <c-icon v-show="icon" :name="icon" />
       <c-text v-show="text">{{ text }}</c-text>
     </slot>
+    <b v-show="badge">{{ badge }}</b>
   </a>
 </template>
 
@@ -30,6 +31,10 @@ export default {
     },
     text: {
       type: String,
+      default: null
+    },
+    badge: {
+      type: Number,
       default: null
     }
   },

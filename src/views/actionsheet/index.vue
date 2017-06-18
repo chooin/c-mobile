@@ -22,6 +22,7 @@ export default {
         },
         {
           text: '删除',
+          color: 'var(--danger)',
           click: () => {
             console.log('删除')
           }

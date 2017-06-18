@@ -50,7 +50,6 @@ export default {
   },
   methods: {
     handleClick () {
-      if (this.disabled === true) return
       if (this.to) {
         this.$router.push(this.to)
       } else {

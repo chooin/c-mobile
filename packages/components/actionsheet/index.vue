@@ -4,11 +4,17 @@
       class="c-actionsheet"
       :class="{
         'c-actionsheet-visible': value
-      }">
+      }"
+      @click="cancelClick">
       <div class="content">
         <div class="actions">
           <ul>
-            <li v-for="item in actions" @click.stop="actionClick(item)">
+            <li
+              v-for="item in actions"
+              @click.stop="actionClick(item)"
+              :style="{
+                color: item.color
+              }">
               {{ item.text }}
             </li>
           </ul>

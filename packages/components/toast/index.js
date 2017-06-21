@@ -6,6 +6,10 @@ export default (option = {}) => {
     option = {
       texts: [option]
     }
+  } else if (Array.isArray(option)) {
+    option = {
+      texts: option
+    }
   } else if (typeof option.texts === 'string') {
     option.texts = [option.texts]
   }

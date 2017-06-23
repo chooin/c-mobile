@@ -2,7 +2,8 @@
   <div class="v-toast">
     <c-btn type="primary" @click="alertClick">alert</c-btn>
     <c-btn type="primary" @click="confirmClick">confirm</c-btn>
-    <c-btn type="primary" style="margin-top: 1000px;" @click="confirmClick">confirm</c-btn>
+    <p>底部还有个 confirm</p>
+    <c-btn type="primary" style="margin-top: 1000px;" @click="confirmClick">执行 confirm 不允许用户滑动屏幕</c-btn>
   </div>
 </template>
 

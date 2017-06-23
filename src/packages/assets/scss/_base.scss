@@ -1,19 +1,17 @@
 @charset "utf-8";
 * {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: 0;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*:focus {
-  outline: 0;
+  &:focus {
+    outline: 0;
+  }
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
 }
 :-webkit-autofill {
   box-shadow: 0 0 0 10rem #fff inset;

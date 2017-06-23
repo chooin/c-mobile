@@ -18,9 +18,7 @@
 :-webkit-autofill {
   box-shadow: 0 0 0 10rem #fff inset;
   -webkit-text-fill-color: #574751;
-  -webkit-text-fill-color: var(--maroon);
   color: #574751;
-  color: var(--maroon);
 }
 ::-webkit-input-placeholder {
   color: var(--text-light);

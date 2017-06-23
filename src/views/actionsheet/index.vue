@@ -4,7 +4,7 @@
       :actions="actions"
       cancel-text="取消"
       v-model="value" />
-    <c-btn @click="showActionsheetClick">显示</c-btn>
+    <c-btn type="primary" @click="showActionsheetClick">显示</c-btn>
   </div>
 </template>
 

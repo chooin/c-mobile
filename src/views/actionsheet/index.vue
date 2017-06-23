@@ -3,8 +3,8 @@
     <c-actionsheet
       :actions="actions"
       cancel-text="取消"
-      v-model="value" />
-    <c-btn type="primary" @click="showActionsheetClick">显示</c-btn>
+      v-model="actionVisible" />
+    <c-btn type="primary" @click="showActionsheetClick(1)">显示</c-btn>
   </div>
 </template>
 
@@ -12,27 +12,28 @@
 export default {
   data () {
     return {
-      value: false,
-      actions: [
+      actionVisible: false,
+      actions: null
+    }
+  },
+  methods: {
+    showActionsheetClick (id) {
+      this.actionVisible = true
+      this.actions = [
         {
           text: '修改',
           click: () => {
-            console.log('修改')
+            window.alert(`修改${id}`)
           }
         },
         {
           text: '删除',
           color: 'var(--danger)',
           click: () => {
-            console.log('删除')
+            window.alert(`删除${id}`)
           }
         }
       ]
-    }
-  },
-  methods: {
-    showActionsheetClick () {
-      this.value = true
     }
   }
 }

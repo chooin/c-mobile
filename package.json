@@ -1,8 +1,8 @@
 {
   "name": "c-mobile",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "description": "A Vue.js 2.0 components for mobile",
-  "main": "packages/index.js",
+  "main": "src/packages/index.js",
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "dev": "node build/dev-server.js",

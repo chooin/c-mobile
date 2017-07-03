@@ -1,6 +1,7 @@
 <template>
   <div
     class="c-toast"
+    v-show="visible"
     @click="handleClick">
     <div class="content">
       <p v-for="text in texts">{{ text }}</p>
@@ -11,12 +12,11 @@
 <script>
 export default {
   name: 'cToast',
-  data () {
-    return {
-      timer: null
-    }
-  },
   props: {
+    visible: {
+      type: Boolean,
+      default: false
+    },
     texts: {
       type: Array,
       default: () => []

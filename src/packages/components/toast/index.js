@@ -23,7 +23,8 @@ export default (option = {}) => {
   const component = new Vue({
     data: {
       timer: null,
-      pageYOffset: null
+      pageYOffset: null,
+      visible: false
     },
     render (h) {
       return h(Toast, {
@@ -32,18 +33,17 @@ export default (option = {}) => {
           cb: () => {
             clearTimeout(this.timer)
             this.hide()
-          }
+          },
+          visible: this.visible
         }
       })
     },
     methods: {
       show () {
-        document.querySelectorAll('.c-toast').forEach(el => {
-          el.remove()
-        })
+        this.visible = true
       },
       hide () {
-        this.$el.remove()
+        this.visible = false
         option.cb()
       }
     },

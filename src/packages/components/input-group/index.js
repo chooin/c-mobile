@@ -1,4 +1,3 @@
-<script>
 import InputGroup from './input-group'
 import Input from './input'
 import InputHead from './input-head'
@@ -14,4 +13,3 @@ export {
   InputUploadFile,
   InputUploadBtn
 }
-</script>

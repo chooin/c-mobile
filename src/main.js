@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './app'
 import router from './router'
 import Mobile from '../packages'
-// import '../lib/static/css/style.css'
+// import '../lib/css/style.css'
 import '../packages/index.scss'
 
 Vue.config.productionTip = false

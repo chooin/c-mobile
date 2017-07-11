@@ -39,7 +39,6 @@ export default {
       default: false
     },
     to: {
-      type: Object,
       default: null
     }
   },

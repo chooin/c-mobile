@@ -46,6 +46,9 @@ export default {
     round: {
       type: Boolean,
       default: false
+    },
+    to: {
+      default: null
     }
   },
   methods: {

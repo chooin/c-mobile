@@ -22,7 +22,6 @@ export default {
       default: ''
     },
     to: {
-      type: Object,
       default: null
     }
   },

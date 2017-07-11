@@ -18,7 +18,6 @@ export default {
   name: 'cTabbarItem',
   props: {
     to: {
-      type: Object,
       default: null
     },
     current: {

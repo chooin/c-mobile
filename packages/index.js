@@ -1,4 +1,3 @@
-import './assets/scss/_base.scss'
 import Btn from './components/btn'
 import { Flex, FlexItem } from './components/flex'
 import Header from './components/header'

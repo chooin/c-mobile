@@ -12,8 +12,8 @@ gulp.task('css', function () {
         browsers: ['last 2 versions', 'ie > 8']
       }))
       .pipe(cleanCSS())
-      .pipe(rename('style.css'))
-      .pipe(gulp.dest('../../lib/css'));
+      .pipe(rename('index.css'))
+      .pipe(gulp.dest('../../lib'));
 });
 
 gulp.task('default', ['css']);

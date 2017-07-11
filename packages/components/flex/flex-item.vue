@@ -18,7 +18,6 @@ export default {
       default: 1
     },
     to: {
-      type: Object,
       default: null
     }
   },

@@ -1,7 +1,6 @@
 <template>
   <div class="v-input-group">
-    <h4 class="pl-15">修改用户资料</h4>
-    <c-input-group>
+    <c-input-group title="修改用户资料" type="primary">
       <c-input>
         <c-input-head>
           您的姓名
@@ -112,9 +111,7 @@
         </c-input-body>
       </c-input>
     </c-input-group>
-
-    <h4 class="pl-15">选择城市</h4>
-    <c-input-group>
+    <c-input-group title="选择城市" type="danger">
       <c-input>
         <c-input-head>
           浦东新区
@@ -131,8 +128,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有上下 border</h4>
-    <c-input-group noborder>
+    <c-input-group noborder title="没有上下 border" type="success">
       <c-input>
         <c-input-head>
           您的姓名
@@ -143,8 +139,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有上 border</h4>
-    <c-input-group noborder-top>
+    <c-input-group noborder-top title="没有上 border">
       <c-input>
         <c-input-head>
           您的姓名
@@ -155,8 +150,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有下 border</h4>
-    <c-input-group noborder-bottom>
+    <c-input-group noborder-bottom title="没有下 border">
       <c-input>
         <c-input-head>
           您的姓名
@@ -167,8 +161,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">没有中间的边框</h4>
-    <c-input-group>
+    <c-input-group title="没有中间的边框">
       <c-input noborder-top>
         <c-input-head>
           浦东新区
@@ -192,8 +185,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">日期</h4>
-    <c-input-group>
+    <c-input-group title="日期">
       <c-input addon>
         <c-input-head>
           选择日子
@@ -212,8 +204,7 @@
       </c-input>
     </c-input-group>
 
-    <h4 class="pl-15">图片上传</h4>
-    <c-input-group>
+    <c-input-group title="图片上传">
       <c-input-upload
         title="上传身份证"
         amount="1/2"
@@ -224,16 +215,3 @@
     </c-input-group>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-    }
-  }
-}
-</script>
-
-<style scoped lang="scss">
-  @import './style';
-</style>

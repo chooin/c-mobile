@@ -1,21 +1,26 @@
 .c-input-group {
-  background: #fff;
-  position: relative;
-  overflow: hidden;
-  &:before {
-    @include borderLine('top');
+  .c-input-group__title {
+    padding: 1rem 0 .5rem 1.5rem;
   }
-  &:after {
-    @include borderLine('bottom');
-  }
-  &.noborder-top {
+  .c-input-group__content {
+    background: #fff;
+    position: relative;
+    overflow: hidden;
     &:before {
-      border: none !important;
+      @include borderLine('top');
     }
-  }
-  &.noborder-bottom {
     &:after {
-      border: none !important;
+      @include borderLine('bottom');
+    }
+    &.noborder-top {
+      &:before {
+        border: none !important;
+      }
+    }
+    &.noborder-bottom {
+      &:after {
+        border: none !important;
+      }
     }
   }
 }

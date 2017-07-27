@@ -2,11 +2,11 @@
   <div
     class="c-switch"
     :class="[
-      type
+      type ? `c-switch__${type}` : ''
     ]">
     <label>
       <input type="checkbox" @change="handleChange" v-model="_value">
-      <span class="switch-core"></span>
+      <span class="c-switch__core"></span>
     </label>
   </div>
 </template>
@@ -41,7 +41,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

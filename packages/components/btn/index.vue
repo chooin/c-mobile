@@ -1,12 +1,12 @@
 <template>
   <div
     :class="[
-      type ? `c-btn-${type}` : '',
-      o ? 'c-btn-o' : 'c-btn',
+      type ? `c-btn__${type}` : '',
+      o ? 'c-btn__o' : 'c-btn',
       {
-        'c-btn-disabled': disabled,
-        'c-btn-suspend': suspend,
-        'c-btn-small': small
+        'c-btn__disabled': disabled,
+        'c-btn__suspend': suspend,
+        'c-btn__small': small
       }
     ]"
     @click="handleClick">
@@ -54,7 +54,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

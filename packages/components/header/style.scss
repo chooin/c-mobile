@@ -1,4 +1,4 @@
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .c-header {
   position: relative;
@@ -21,8 +21,8 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .c-header-left,
-  .c-header-right {
+  .c-header__left,
+  .c-header__right {
     position: absolute;
     top: 0;
     height: 5rem;
@@ -35,7 +35,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .c-header-left {
+  .c-header__left {
     left: 0;
     &.back {
       padding-left: 3rem;
@@ -53,20 +53,20 @@
       }
     }
   }
-  .c-header-right {
+  .c-header__right {
     right: 0;
   }
-  &.c-header-primary,
-  &.c-header-success,
-  &.c-header-warning,
-  &.c-header-danger {
+  &.c-header__primary,
+  &.c-header__success,
+  &.c-header__warning,
+  &.c-header__danger {
     h1,
-    .c-header-left,
-    .c-header-right {
+    .c-header__left,
+    .c-header__right {
       color: #fff;
     }
-    .c-header-left,
-    .c-header-right {
+    .c-header__left,
+    .c-header__right {
       &.back {
         &:after {
           border-color: #fff;
@@ -77,16 +77,16 @@
       border: none;
     }
   }
-  &.c-header-primary {
+  &.c-header__primary {
     background: var(--primary);
   }
-  &.c-header-success {
+  &.c-header__success {
     background: var(--success);
   }
-  &.c-header-warning {
+  &.c-header__warning {
     background: var(--warning);
   }
-  &.c-header-danger {
+  &.c-header__danger {
     background: var(--danger);
   }
   &:after {

@@ -2,11 +2,11 @@
   <div
     class="c-header"
     :class="[
-      type ? `c-header-${type}` : ''
+      type ? `c-header__${type}` : ''
     ]">
     <a
       href="javascript:;"
-      class="c-header-left"
+      class="c-header__left"
       :class="{
         back: _left.back
       }"
@@ -22,7 +22,7 @@
     </h1>
     <a
       href="javascript:;"
-      class="c-header-right"
+      class="c-header__right"
       :style="{
         color: _right.color
       }"
@@ -114,7 +114,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

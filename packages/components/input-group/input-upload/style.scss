@@ -1,11 +1,11 @@
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/mixins";
 
 .c-input-upload {
   width: 100%;
   overflow: hidden;
   vertical-align: top;
   padding: 0 .5rem 1rem 1.5rem;
-  .c-input-upload-title {
+  .c-input-upload__title {
     position: relative;
     line-height: 2rem;
     height: 2rem;
@@ -17,7 +17,7 @@
       height: 2rem;
     }
   }
-  .c-input-upload-files {
+  .c-input-upload__files {
     float: left;
     .c-input-upload-file {
       position: relative;
@@ -54,7 +54,7 @@
         }
       }
     }
-    .c-input-upload-btn {
+    .c-input-upload__btn {
       float: left;
       position: relative;
       margin: 1rem 1rem 0 0;
@@ -87,7 +87,7 @@
       }
     }
   }
-  .c-input-upload-amount{
+  .c-input-upload__amount{
     position: absolute;
     right: 1rem;
     top: 1rem;

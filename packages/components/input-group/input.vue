@@ -3,10 +3,10 @@
     v-if="useDiv"
     class="c-input"
     :class="[{
-      'c-input-addon': addon,
-      'c-input-next': next,
-      'c-input-icon': icon,
-      'c-input-checked': checked,
+      'c-input__addon': addon,
+      'c-input__next': next,
+      'c-input__icon': icon,
+      'c-input__checked': checked,
       'noborder-top': noborderTop
     }]"
     @click="handleClick">
@@ -16,10 +16,10 @@
     v-else
     class="c-input"
     :class="[{
-      'c-input-addon': addon,
-      'c-input-next': next,
-      'c-input-icon': icon,
-      'c-input-checked': checked,
+      'c-input__addon': addon,
+      'c-input__next': next,
+      'c-input__icon': icon,
+      'c-input__checked': checked,
       'noborder-top': noborderTop
     }]"
     @click="handleClick">

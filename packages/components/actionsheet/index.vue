@@ -2,11 +2,11 @@
   <div
     class="c-actionsheet"
     :class="{
-      'c-actionsheet-visible': value
+      'c-actionsheet__visible': value
     }"
     @click="cancelClick">
-    <div class="content">
-      <div class="actions">
+    <div class="c-actionsheet__content">
+      <div class="c-actionsheet__actions">
         <ul>
           <li
             v-for="item in actions"
@@ -18,7 +18,7 @@
           </li>
         </ul>
       </div>
-      <div class="cancel" @click.stop="cancelClick">{{ cancelText }}</div>
+      <div class="c-actionsheet__cancel" @click.stop="cancelClick">{{ cancelText }}</div>
     </div>
     <input type="hidden" v-model="value">
   </div>
@@ -66,7 +66,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

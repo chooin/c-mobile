@@ -1,4 +1,4 @@
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .c-switch {
   position: relative;
@@ -13,7 +13,7 @@
     top: 0;
     width: 5.2rem;
     height: 3.2rem;
-    .switch-core {
+    .c-switch__core {
       display: inline-block;
       position: relative;
       width: 5.2rem;
@@ -51,7 +51,7 @@
       top: 0;
       opacity: 0;
       &:checked  {
-        + .switch-core {
+        + .c-switch__core {
           border-color: var(--text);
           background-color: var(--text);
           &:before {
@@ -64,11 +64,11 @@
       }
     }
   }
-  &.primary {
+  &.c-switch__primary {
     label {
       input[type=checkbox] {
         &:checked  {
-          + .switch-core {
+          + .c-switch__core {
             border-color: var(--primary);
             background-color: var(--primary);
           }
@@ -76,11 +76,11 @@
       }
     }
   }
-  &.success {
+  &.c-switch__success {
     label {
       input[type=checkbox] {
         &:checked  {
-          + .switch-core {
+          + .c-switch__core {
             border-color: var(--success);
             background-color: var(--success);
           }
@@ -88,11 +88,11 @@
       }
     }
   }
-  &.warning {
+  &.c-switch__warning {
     label {
       input[type=checkbox] {
         &:checked  {
-          + .switch-core {
+          + .c-switch__core {
             border-color: var(--warning);
             background-color: var(--warning);
           }
@@ -100,11 +100,11 @@
       }
     }
   }
-  &.danger {
+  &.c-switch__danger {
     label {
       input[type=checkbox] {
         &:checked  {
-          + .switch-core {
+          + .c-switch__core {
             border-color: var(--danger);
             background-color: var(--danger);
           }

@@ -1,6 +1,6 @@
 <template>
   <div class="c-confirm">
-    <div class="content">
+    <div class="c-confirm__content">
       {{ text }}
       <c-flex>
         <c-flex-item @click="okClick">OK</c-flex-item>
@@ -42,7 +42,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

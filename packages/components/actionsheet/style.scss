@@ -1,4 +1,4 @@
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .c-actionsheet {
   z-index: 1001;
@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
   visibility: hidden;
-  .content {
+  .c-actionsheet__content {
     position: absolute;
     bottom: 1rem;
     left: 50%;
@@ -16,7 +16,7 @@
     z-index: 1;
     transform: translate(-50%, 100%);
     transition: all .3s ease;
-    .actions {
+    .c-actionsheet__actions {
       ul {
         li {
           background: #fff;
@@ -41,7 +41,7 @@
         }
       }
     }
-    .cancel {
+    .c-actionsheet__cancel {
       background: #fff;
       height: 5.7rem;
       border-radius: 1.2rem;
@@ -63,7 +63,7 @@
     opacity: 0;
     transition: all .3s ease;
   }
-  &.c-actionsheet-visible {
+  &.c-actionsheet__visible {
     visibility: visible;
     .content {
       bottom: 1rem;

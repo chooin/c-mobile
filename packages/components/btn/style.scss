@@ -1,9 +1,9 @@
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .c-btn,
 .c-btn:hover,
-.c-btn-o,
-.c-btn-o:hover {
+.c-btn__o,
+.c-btn__o:hover {
   text-align: center;
   font-size: 1.6rem;
   width: 100%;
@@ -16,12 +16,12 @@
   border: none;
 
   &[disabled=disabled],
-  &.c-btn-disabled {
+  &.c-btn__disabled {
     opacity: .6;
     cursor: not-allowed;
   }
 
-  &.c-btn-small{
+  &.c-btn__small{
     display: inline-block;
     width: auto;
     padding: .5rem 1rem;
@@ -35,64 +35,64 @@
   border-radius: .3rem;
   background: #ccc;
 
-  &.c-btn-primary,
-  &.c-btn-primary:hover {
+  &.c-btn__primary,
+  &.c-btn__primary:hover {
     color: #fff;
     background: var(--primary);
   }
 
-  &.c-btn-success,
-  &.c-btn-success:hover {
+  &.c-btn__success,
+  &.c-btn__success:hover {
     color: #fff;
     background: var(--success);
   }
 
-  &.c-btn-warning,
-  &.c-btn-warning:hover {
+  &.c-btn__warning,
+  &.c-btn__warning:hover {
     color: #fff;
     background: var(--warning);
   }
 
-  &.c-btn-danger,
-  &.c-btn-danger:hover {
+  &.c-btn__danger,
+  &.c-btn__danger:hover {
     color: #fff;
     background: var(--danger);
   }
 }
 
-.c-btn-o,
-.c-btn-o:hover {
+.c-btn__o,
+.c-btn__o:hover {
   color: var(--text);
   border-radius: .3rem;
   padding: 1.4rem 1rem;
   position: relative;
 
-  &.c-btn-primary,
-  &.c-btn-primary:hover {
+  &.c-btn__primary,
+  &.c-btn__primary:hover {
     color: var(--primary);
     &:after {
       border-color: var(--primary);
     }
   }
 
-  &.c-btn-success,
-  &.c-btn-success:hover {
+  &.c-btn__success,
+  &.c-btn__success:hover {
     color: var(--success);
     &:after {
       border-color: var(--success);
     }
   }
 
-  &.c-btn-warning,
-  &.c-btn-warning:hover {
+  &.c-btn__warning,
+  &.c-btn__warning:hover {
     color: var(--warning);
     &:after {
       border-color: var(--warning);
     }
   }
 
-  &.c-btn-danger,
-  &.c-btn-danger:hover {
+  &.c-btn__danger,
+  &.c-btn__danger:hover {
     color: var(--danger);
     &:after {
       border-color: var(--danger);
@@ -106,8 +106,8 @@
 }
 
 .c-btn,
-.c-btn-o {
-  &.c-btn-suspend {
+.c-btn__o {
+  &.c-btn__suspend {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -117,8 +117,8 @@
 }
 
 .c-btn:not(.small) + .c-btn:not(.small),
-.c-btn:not(.small) + .c-btn-o:not(.small),
-.c-btn-o:not(.small) +.c-btn:not(.small),
-.c-btn-o:not(.small) + .c-btn-o:not(.small) {
+.c-btn:not(.small) + .c-btn__o:not(.small),
+.c-btn__o:not(.small) +.c-btn:not(.small),
+.c-btn__o:not(.small) + .c-btn__o:not(.small) {
   margin-top: 1.5rem;
 }

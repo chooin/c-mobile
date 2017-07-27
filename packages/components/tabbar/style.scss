@@ -1,4 +1,4 @@
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .c-tabbar {
   position: fixed;
@@ -51,7 +51,7 @@
       }
     }
   }
-  &.c-tabbar-primary {
+  &.c-tabbar__primary {
     .current {
       i,
       .c-text {
@@ -59,7 +59,7 @@
       }
     }
   }
-  &.c-tabbar-success {
+  &.c-tabbar__success {
     .current {
       i,
       .c-text {
@@ -67,7 +67,7 @@
       }
     }
   }
-  &.c-tabbar-warning {
+  &.c-tabbar__warning {
     .current {
       i,
       .c-text {
@@ -75,7 +75,7 @@
       }
     }
   }
-  &.c-tabbar-danger {
+  &.c-tabbar__danger {
     .current {
       i,
       .c-text {

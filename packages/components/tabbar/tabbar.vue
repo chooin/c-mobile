@@ -2,9 +2,8 @@
   <div
     class="c-tabbar"
     :class="[
-      type ? `c-tabbar-${type}` : ''
-    ]
-  ">
+      type ? `c-tabbar__${type}` : ''
+    ]">
     <slot></slot>
   </div>
 </template>

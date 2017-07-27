@@ -3,7 +3,7 @@
     href="javascript:;"
     class="c-tab-item"
     :class="{
-      'c-tab-current': current
+      'c-tab__current': current
     }"
     @click="handleClick">
     <slot></slot>
@@ -33,7 +33,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

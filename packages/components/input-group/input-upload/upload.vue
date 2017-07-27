@@ -1,10 +1,10 @@
 <template>
   <div class="c-input-upload">
-    <div class="c-input-upload-title" v-show="title">{{ title }}</div>
-    <div class="c-input-upload-amount" v-show="amount">{{ amount }}</div>
-    <div class="c-input-upload-files">
+    <div class="c-input-upload__title" v-show="title">{{ title }}</div>
+    <div class="c-input-upload__amount" v-show="amount">{{ amount }}</div>
+    <div class="c-input-upload__files">
       <slot></slot>
-      <div class="c-input-upload-btn" v-show="allowUpload" @click="handleClick">
+      <div class="c-input-upload__btn" v-show="allowUpload" @click="handleClick">
         <input type="file" v-show="showUploadInput">
       </div>
     </div>

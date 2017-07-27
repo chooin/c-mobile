@@ -9,7 +9,3 @@ export default {
   name: 'cFlex'
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

@@ -3,7 +3,7 @@
     class="c-toast"
     v-show="visible"
     @click="handleClick">
-    <div class="content">
+    <div class="c-toast__content">
       <p v-for="text in texts">{{ text }}</p>
     </div>
   </div>
@@ -33,7 +33,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

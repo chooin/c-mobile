@@ -21,10 +21,12 @@ export default (option = {}) => {
   }, option)
 
   const component = new Vue({
-    data: {
-      timer: null,
-      pageYOffset: null,
-      visible: false
+    data () {
+      return {
+        timer: null,
+        pageYOffset: null,
+        visible: false
+      }
     },
     render (h) {
       return h(Toast, {
@@ -53,7 +55,8 @@ export default (option = {}) => {
         this.hide()
       }, option.duration)
     }
-  }).$mount()
-
+  })
+  component.$mount()
+  document.querySelectorAll('.c-toast').forEach(_ => _.remove())
   document.body.appendChild(component.$el)
 }

@@ -2,7 +2,7 @@
   <div
     class="c-tab"
     :class="[
-      type ? `c-tab-${type}` : ''
+      type ? `c-tab__${type}` : ''
     ]">
     <slot></slot>
   </div>
@@ -19,7 +19,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

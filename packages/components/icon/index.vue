@@ -3,9 +3,11 @@
     class="c-icon"
     :class="[
       `icon-${name}`,
-      round ? 'round' : '',
-      backgroundColor ? 'small' : '',
-      type
+      type ? `c-icon__${type}` : '',
+      {
+        'c-icon__small': backgroundColor,
+        'c-icon__round': round
+      }
     ]"
     :style="{
       width: size,
@@ -62,7 +64,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

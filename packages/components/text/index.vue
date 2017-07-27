@@ -2,7 +2,7 @@
   <div
     class="c-text"
     :class="[
-      type ? `c-text-${type}` : ''
+      type ? `c-text__${type}` : ''
     ]"
     @click="handleClick">
     <slot>{{ text }}</slot>

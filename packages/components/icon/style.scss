@@ -1,4 +1,4 @@
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/mixins";
 
 .c-icon {
   color: var(--text);
@@ -13,33 +13,33 @@
     transform: translate(-50%, -50%);
   }
 
-  &.round {
+  &.c-icon__round {
     border-radius: 100%;
   }
 
-  &.small {
+  &.c-icon__small {
     &:before {
       font-size: 60%;
     }
   }
 
-  &.white {
+  &.c-icon__white {
     color: #fff;
   }
 
-  &.primary {
+  &.c-icon__primary {
     color: var(--primary);
   }
 
-  &.success {
+  &.c-icon__success {
     color: var(--success);
   }
 
-  &.warning {
+  &.c-icon__warning {
     color: var(--warning);
   }
 
-  &.danger {
+  &.c-icon__danger {
     color: var(--danger);
   }
 }

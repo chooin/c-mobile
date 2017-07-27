@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     handleChange () {
-      this.$emit('change', this._value)
+      this.$emit('change', !this._value)
     }
   },
   computed: {

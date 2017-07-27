@@ -29,7 +29,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  @import './input-group';
-</style>

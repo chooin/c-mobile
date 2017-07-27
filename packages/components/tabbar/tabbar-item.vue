@@ -48,7 +48,3 @@ export default {
   }
 }
 </script>
-
-<style scope lang="scss">
-  // @import './style';
-</style>

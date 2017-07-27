@@ -2,8 +2,14 @@
   <div
     class="c-text"
     :class="[
-      type ? `c-text__${type}` : ''
+      type ? `c-text__${type}` : '',
+      {
+        'c-text__light': light
+      }
     ]"
+    :style="{
+      fontFamily
+    }"
     @click="handleClick">
     <slot>{{ text }}</slot>
   </div>
@@ -18,6 +24,14 @@ export default {
       default: ''
     },
     type: {
+      type: String,
+      default: ''
+    },
+    light: {
+      type: Boolean,
+      default: false
+    },
+    fontFamily: {
       type: String,
       default: ''
     },
@@ -37,7 +51,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-  // @import './style';
-</style>

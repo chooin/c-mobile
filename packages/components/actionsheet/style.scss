@@ -1,5 +1,3 @@
-@import "../../assets/scss/mixins";
-
 .c-actionsheet {
   z-index: 1001;
   position: fixed;
@@ -65,7 +63,7 @@
   }
   &.c-actionsheet__visible {
     visibility: visible;
-    .content {
+    .c-actionsheet__content {
       bottom: 1rem;
       transform: translate(-50%, 0);
     }

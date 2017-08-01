@@ -95,6 +95,10 @@
         right: 1.5rem;
         transform: translateY(-50%);
       }
+      .c-btn + input,
+      .c-btn__o + input {
+        text-align: left;
+      }
     }
   }
   &.c-input__next {

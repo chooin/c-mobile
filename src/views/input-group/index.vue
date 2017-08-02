@@ -100,6 +100,15 @@
           <c-btn type="primary" small>订阅</c-btn>
         </c-input-body>
       </c-input>
+      <c-input addon>
+        <c-input-head>
+          订阅
+        </c-input-head>
+        <c-input-body>
+          <c-btn type="primary" small>发送验证码</c-btn>
+          <input type="text" placeholder="请输入验证码">
+        </c-input-body>
+      </c-input>
       <c-input>
         <c-input-body>
           <textarea placeholder="请输入个人信息"></textarea>

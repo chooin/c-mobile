@@ -31,6 +31,7 @@
     input[type=email],
     input[type=date],
     input[type=datetime-local],
+    input[type=password],
     .input {
       border: none;
       width: 100%;
@@ -65,6 +66,7 @@
       input[type=email],
       input[type=date],
       input[type=datetime-local],
+      input[type=password],
       .input {
         text-align: right;
         overflow: hidden;

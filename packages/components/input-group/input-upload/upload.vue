@@ -4,7 +4,7 @@
     :class="[
       {
         'noborder-top': noborderTop,
-        'allow-delete': allowDelete
+        'c-input-upload__allow-delete': allowDelete
       }
     ]">
     <div class="c-input-upload__title" v-show="title">{{ title }}</div>

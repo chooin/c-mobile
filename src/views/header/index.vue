@@ -18,8 +18,7 @@
     <div style="height: 1.5rem; width: 100%;"></div>
     <c-header
       :left="{
-        back: true,
-        text: 'Back'
+        back: true
       }"
       title="没有下划线"
       :right="{
@@ -35,7 +34,7 @@
       type="primary"
       :left="{
         back: true,
-        text: 'Back'
+        text: '返回'
       }"
       title="标题"
       :right="{

@@ -1,6 +1,8 @@
 <template>
   <div class="sidebar mt-15">
-    <c-btn type="primary" @click="showSidebarClick">显示</c-btn>
+    <div class="container pt-15">
+      <c-btn type="primary" @click="showSidebarClick">显示</c-btn>
+    </div>
     <c-sidebar :visible="visible">
       <template slot="header">
         <c-header :left="{

@@ -1,5 +1,11 @@
 <template>
-  <div class="c-input-upload">
+  <div
+    class="c-input-upload"
+    :class="[
+      {
+        'noborder-top': noborderTop
+      }
+    ]">
     <div class="c-input-upload__title" v-show="title">{{ title }}</div>
     <div class="c-input-upload__amount" v-show="amount">{{ amount }}</div>
     <div class="c-input-upload__files">
@@ -30,6 +36,10 @@ export default {
     amount: {
       type: String,
       default: null
+    },
+    noborderTop: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

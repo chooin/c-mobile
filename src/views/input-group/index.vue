@@ -231,11 +231,15 @@
         </c-input-body>
       </c-input>
       <c-input-upload
-        title="上传身份证"
+        title="上传图片（允许删除和不删除）"
         amount="1/2"
         :show-upload-input="true"
         allow-upload>
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <c-input-upload-file allow-delete src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <c-input-upload-file :allow-delete="false" src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <c-input-upload-file :allow-delete="false" src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <c-input-upload-file :allow-delete="false" src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <c-input-upload-file :allow-delete="false" src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
       </c-input-upload>
     </c-input-group>
   </div>

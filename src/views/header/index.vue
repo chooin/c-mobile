@@ -17,6 +17,21 @@
     />
     <div style="height: 1.5rem; width: 100%;"></div>
     <c-header
+      :left="{
+        back: true,
+        text: 'Back'
+      }"
+      title="没有下划线"
+      :right="{
+        text: '联系我们',
+        color: 'var(--primary)',
+        click: () => {
+        }
+      }"
+      noborder-bottom
+    />
+    <div style="height: 1.5rem; width: 100%;"></div>
+    <c-header
       type="primary"
       :left="{
         back: true,

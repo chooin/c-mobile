@@ -48,6 +48,14 @@
           <div class="input">上海</div>
         </c-input-body>
       </c-input>
+      <c-input addon>
+        <c-input-head>
+          所在城市
+        </c-input-head>
+        <c-input-body>
+          <c-text type="success">上海</c-text>
+        </c-input-body>
+      </c-input>
       <c-input addon next>
         <c-input-head>
           您的姓名

@@ -76,6 +76,10 @@
         text-overflow: ellipsis;
         line-height: 1.8rem;
       }
+      input[type=date],
+      input[type=datetime-local] {
+        direction: rtl
+      }
       select {
         border: none;
         background: transparent;

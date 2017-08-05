@@ -18,3 +18,18 @@
   -webkit-text-fill-color: #574751;
   color: #574751;
 }
+.noborder {
+  border: none !important;
+  &:before,
+  &:after {
+    border: none !important;
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}

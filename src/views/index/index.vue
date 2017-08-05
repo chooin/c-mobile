@@ -11,6 +11,7 @@
     <router-link :to="{ path: '/toast' }">toast</router-link>
     <router-link :to="{ path: '/confirm' }">confirm</router-link>
     <router-link :to="{ path: '/actionsheet' }">actionsheet</router-link>
+    <router-link :to="{ path: '/sidebar' }">sidebar</router-link>
   </div>
 </template>
 

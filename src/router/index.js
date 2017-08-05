@@ -13,6 +13,7 @@ import Tabbar from '@/views/tabbar'
 import Toast from '@/views/toast'
 import Confirm from '@/views/confirm'
 import Actionsheet from '@/views/actionsheet'
+import Sidebar from '@/views/sidebar'
 
 Vue.use(Router)
 
@@ -65,6 +66,10 @@ export default new Router({
     {
       path: '/actionsheet',
       component: Actionsheet
+    },
+    {
+      path: '/sidebar',
+      component: Sidebar
     },
     {
       path: '/*',

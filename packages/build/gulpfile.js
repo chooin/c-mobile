@@ -13,7 +13,7 @@ gulp.task('css', function () {
       }))
       .pipe(cleanCSS())
       .pipe(rename('index.css'))
-      .pipe(gulp.dest('../../lib'));
+      .pipe(gulp.dest('../../dist'));
 });
 
 gulp.task('default', ['css']);

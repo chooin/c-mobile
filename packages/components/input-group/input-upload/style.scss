@@ -30,6 +30,7 @@
         height: 6rem;
       }
       i {
+        display: none;
         position: absolute;
         width: 2rem;
         height: 2rem;
@@ -107,6 +108,15 @@
   &.noborder-bottom {
     &:after {
       border: none !important;
+    }
+  }
+  &.allow-delete {
+    .c-input-upload__files {
+      .c-input-upload-file {
+        i {
+          display: block;
+        }
+      }
     }
   }
 }

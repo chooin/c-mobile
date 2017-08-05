@@ -3,7 +3,8 @@
     class="c-input-upload"
     :class="[
       {
-        'noborder-top': noborderTop
+        'noborder-top': noborderTop,
+        'allow-delete': allowDelete
       }
     ]">
     <div class="c-input-upload__title" v-show="title">{{ title }}</div>
@@ -40,6 +41,10 @@ export default {
     noborderTop: {
       type: Boolean,
       default: false
+    },
+    allowDelete: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {

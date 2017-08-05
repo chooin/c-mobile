@@ -14,7 +14,7 @@
           您的姓名
         </c-input-head>
         <c-input-body>
-          <div class="input">Devin</div>
+          <c-text>Devin</c-text>
         </c-input-body>
       </c-input>
       <c-input addon>
@@ -30,7 +30,7 @@
           您的姓名
         </c-input-head>
         <c-input-body>
-          <div class="input">Devin</div>
+          <c-text>Devin</c-text>
         </c-input-body>
       </c-input>
       <c-input next>
@@ -45,7 +45,7 @@
           所在城市
         </c-input-head>
         <c-input-body>
-          <div class="input">上海</div>
+          <c-text>上海</c-text>
         </c-input-body>
       </c-input>
       <c-input addon>
@@ -108,7 +108,7 @@
           <c-btn type="primary" small>订阅</c-btn>
         </c-input-body>
       </c-input>
-      <c-input addon>
+      <c-input use-div addon>
         <c-input-head>
           订阅
         </c-input-head>

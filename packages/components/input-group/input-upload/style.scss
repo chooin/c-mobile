@@ -3,6 +3,7 @@
   overflow: hidden;
   vertical-align: top;
   padding: 0 .5rem 1rem 1.5rem;
+  position: relative;
   .c-input-upload__title {
     position: relative;
     line-height: 2rem;
@@ -89,5 +90,23 @@
     position: absolute;
     right: 1rem;
     top: 1rem;
+  }
+  &:before {
+    @include borderLine('top', 1.5rem);
+  }
+  &:first-child {
+    &:before {
+      border: none;
+    }
+  }
+  &.noborder-top {
+    &:before {
+      border: none !important;
+    }
+  }
+  &.noborder-bottom {
+    &:after {
+      border: none !important;
+    }
   }
 }

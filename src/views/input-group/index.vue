@@ -222,6 +222,14 @@
     </c-input-group>
 
     <c-input-group title="图片上传">
+      <c-input addon>
+        <c-input-head>
+          选择时间
+        </c-input-head>
+        <c-input-body>
+          <input type="datetime-local">
+        </c-input-body>
+      </c-input>
       <c-input-upload
         title="上传身份证"
         amount="1/2"

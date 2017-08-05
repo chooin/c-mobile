@@ -4,7 +4,7 @@
     @click="handleClick"
     v-if="src">
     <img :src="src">
-    <i @click.stop="handleDeleteClick"></i>
+    <i v-if="allowDelete" @click.stop="handleDeleteClick"></i>
   </div>
 </template>
 
@@ -15,6 +15,10 @@ export default {
     src: {
       type: String,
       default: ''
+    },
+    allowDelete: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {

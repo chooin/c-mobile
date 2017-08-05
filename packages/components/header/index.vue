@@ -2,7 +2,10 @@
   <div
     class="c-header"
     :class="[
-      type ? `c-header__${type}` : ''
+      type ? `c-header__${type}` : '',
+      {
+        'noborder-bottom': noborderBottom
+      }
     ]">
     <a
       href="javascript:;"
@@ -62,6 +65,10 @@ export default {
     right: {
       type: Object,
       default: () => {}
+    },
+    noborderBottom: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

@@ -1,15 +1,21 @@
 # c-mobile
 
-### 安装
+### Install
 
-``` bash
+``` sh
 yarn add c-mobile
+
+# or
+
+npm install c-mobile --save
 ```
 
-### 使用
+### Usage
 
 ``` js
-import 'c-mobile/dist/index.css'
+import Vue from 'vue'
 import Mobile from 'c-mobile'
+import 'c-mobile/dist/index.css'
+
 Vue.use(Mobile)
 ```

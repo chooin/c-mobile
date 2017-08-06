@@ -14,6 +14,8 @@
     display: block;
     flex: 1;
     font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
     &.c-tab__current {
       &:after {
         content: "";

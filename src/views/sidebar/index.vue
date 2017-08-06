@@ -1,6 +1,6 @@
 <template>
-  <div class="sidebar mt-15">
-    <div class="container pt-15">
+  <div class="v-sidebar">
+    <div style="padding: 1.5rem 1.5rem 0;">
       <c-btn type="primary" @click="showSidebarClick">显示</c-btn>
     </div>
     <c-sidebar :visible="visible">

@@ -1,4 +1,5 @@
 # c-mobile
+> Mobile UI elements for Vue 2.0
 
 ### Install
 

@@ -4,7 +4,7 @@
       <c-btn type="primary" @click="showSidebarClick">显示</c-btn>
     </div>
     <c-sidebar :visible="visible">
-      <template slot="header">
+      <template slot="head">
         <c-header :left="{
           back: true,
           click: () => {

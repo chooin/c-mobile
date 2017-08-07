@@ -6,7 +6,7 @@
         'c-sidebar__visible': visible
       }
     ]">
-    <slot name="header"></slot>
+    <slot name="head"></slot>
     <div class="c-sidebar__body">
       <slot name="body"></slot>
     </div>

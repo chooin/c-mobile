@@ -32,7 +32,8 @@
             }
           }
           &:last-child {
-            border-radius: 0 0 1.2rem 1.2rem;
+            border-bottom-right-radius: 1.2rem;
+            border-bottom-left-radius: 1.2rem;
           }
           &:before {
             @include borderLine('top');

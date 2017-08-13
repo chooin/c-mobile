@@ -1,13 +1,18 @@
 {
   "name": "c-mobile",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A Vue.js 2.0 components for mobile",
   "main": "dist/index.js",
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
+    "start": "node build/dev-server.js",
     "build": "node build/build.js",
-    "build:lib": "vue build ./packages/index.js --prod --lib && gulp --gulpfile gulpfile.js"
+    "build:lib": "vue build ./packages/index.js --prod --lib && gulp --gulpfile gulpfile.js",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {},
   "devDependencies": {

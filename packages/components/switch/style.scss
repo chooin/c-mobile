@@ -16,9 +16,9 @@
       position: relative;
       width: 5.2rem;
       height: 3.2rem;
-      border: .1rem solid var(--border);
+      border: .1rem solid $border;
       border-radius: 1.6rem;
-      background: var(--border);
+      background: $border;
       &:after,
       &:before {
         content: " ";
@@ -50,8 +50,8 @@
       opacity: 0;
       &:checked  {
         + .c-switch__core {
-          border-color: var(--text);
-          background-color: var(--text);
+          border-color: $text;
+          background-color: $text;
           &:before {
             transform: scale(0);
           }
@@ -67,8 +67,8 @@
       input[type=checkbox] {
         &:checked  {
           + .c-switch__core {
-            border-color: var(--primary);
-            background-color: var(--primary);
+            border-color: $primary;
+            background-color: $primary;
           }
         }
       }
@@ -79,8 +79,8 @@
       input[type=checkbox] {
         &:checked  {
           + .c-switch__core {
-            border-color: var(--success);
-            background-color: var(--success);
+            border-color: $success;
+            background-color: $success;
           }
         }
       }
@@ -91,8 +91,8 @@
       input[type=checkbox] {
         &:checked  {
           + .c-switch__core {
-            border-color: var(--warning);
-            background-color: var(--warning);
+            border-color: $warning;
+            background-color: $warning;
           }
         }
       }
@@ -103,8 +103,8 @@
       input[type=checkbox] {
         &:checked  {
           + .c-switch__core {
-            border-color: var(--danger);
-            background-color: var(--danger);
+            border-color: $danger;
+            background-color: $danger;
           }
         }
       }

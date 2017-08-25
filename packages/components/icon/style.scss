@@ -1,5 +1,5 @@
 .c-icon {
-  color: var(--text);
+  color: $text;
   display: block;
   border-radius: .3rem;
   position: relative;
@@ -26,18 +26,18 @@
   }
 
   &.c-icon__primary {
-    color: var(--primary);
+    color: $primary;
   }
 
   &.c-icon__success {
-    color: var(--success);
+    color: $success;
   }
 
   &.c-icon__warning {
-    color: var(--warning);
+    color: $warning;
   }
 
   &.c-icon__danger {
-    color: var(--danger);
+    color: $danger;
   }
 }

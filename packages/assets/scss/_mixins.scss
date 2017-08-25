@@ -9,7 +9,7 @@
     height: 100%;
     transform-origin: 0 0;
     transform: scaleX(0.5);
-    border-left: .1rem solid var(--border);
+    border-left: .1rem solid $border;
   }
   @if $direction == right {
     top: $offset;
@@ -18,7 +18,7 @@
     height: 100%;
     transform-origin: 100% 0;
     transform: scaleX(0.5);
-    border-right: .1rem solid var(--border);
+    border-right: .1rem solid $border;
   }
   @if $direction == top {
     left: $offset;
@@ -27,7 +27,7 @@
     height: .1rem;
     transform: scaleY(0.5);
     transform-origin: 0 0;
-    border-top: .1rem solid var(--border);
+    border-top: .1rem solid $border;
   }
   @if $direction == bottom {
     left: $offset;
@@ -36,7 +36,7 @@
     height: .1rem;
     transform-origin: 0 100%;
     transform: scaleY(0.5);
-    border-bottom: .1rem solid var(--border);
+    border-bottom: .1rem solid $border;
   }
   @if $direction == round {
     top: 0;
@@ -45,6 +45,6 @@
     height: 200%;
     transform-origin: 0 0;
     transform: scale(0.5);
-    border: .1rem solid var(--border);
+    border: .1rem solid $border;
   }
 }

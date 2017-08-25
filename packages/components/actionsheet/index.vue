@@ -9,7 +9,8 @@
       <div class="c-actionsheet__actions">
         <ul>
           <li
-            v-for="item in actions"
+            v-for="(item, index) in actions"
+            :key="index"
             @click.stop="actionClick(item)"
             :style="{
               color: item.color

@@ -60,7 +60,7 @@
       margin: 1rem 1rem 0 0;
       width: 6rem;
       height: 6rem;
-      border: .1rem solid var(--border);
+      border: .1rem solid $border;
       input[type=file] {
         right: 0 !important;
         top: 0 !important;
@@ -75,7 +75,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: var(--border);
+        background-color: $border;
       }
       &:before {
         width: .2rem;

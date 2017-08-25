@@ -57,6 +57,7 @@ export default (option = {}) => {
     }
   })
   component.$mount()
-  document.querySelectorAll('.c-toast').forEach(_ => _.remove())
+  // document.querySelectorAll('.c-toast').forEach(_ => _.remove())
+  for (let _ of document.querySelectorAll('.c-toast')) _.remove()
   document.body.appendChild(component.$el)
 }

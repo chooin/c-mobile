@@ -28,7 +28,7 @@
     line-height: 5rem;
     z-index: 1;
     padding: 0 1rem;
-    color: var(--text);
+    color: $text;
     max-width: 50%;
     overflow: hidden;
     white-space: nowrap;
@@ -42,7 +42,7 @@
       &:after {
         content: " ";
         transform: rotate(135deg);
-        border: solid var(--text);
+        border: solid $text;
         border-width: 0 .1rem .1rem 0;
         width: 1.2rem;
         height: 1.2rem;
@@ -78,16 +78,16 @@
     }
   }
   &.c-header__primary {
-    background: var(--primary);
+    background: $primary;
   }
   &.c-header__success {
-    background: var(--success);
+    background: $success;
   }
   &.c-header__warning {
-    background: var(--warning);
+    background: $warning;
   }
   &.c-header__danger {
-    background: var(--danger);
+    background: $danger;
   }
   &:after {
     @include borderLine('bottom');

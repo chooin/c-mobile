@@ -28,7 +28,7 @@ export default {
         },
         {
           text: '删除',
-          color: 'var(--danger)',
+          color: '#f30',
           click: () => {
             window.alert(`删除${id}`)
           }

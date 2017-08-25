@@ -66,28 +66,28 @@
       </c-input>
       <c-input addon next icon>
         <c-input-head>
-          <c-icon name="user" background-color="var(--primary)" color="#fff" size="3rem" round />Devin
+          <c-icon name="user" background-color="#39f" color="#fff" size="3rem" round />Devin
         </c-input-head>
         <c-input-body>
         </c-input-body>
       </c-input>
       <c-input addon next icon>
         <c-input-head>
-          <c-icon name="search" color="var(--text)" size="3rem" />搜索
+          <c-icon name="search" color="#737373" size="3rem" />搜索
         </c-input-head>
         <c-input-body>
         </c-input-body>
       </c-input>
       <c-input addon next icon>
         <c-input-head>
-          <c-icon name="wishlist" background-color="var(--warning)" color="#fff" size="3rem" />收藏
+          <c-icon name="wishlist" background-color="#f90" color="#fff" size="3rem" />收藏
         </c-input-head>
         <c-input-body>
         </c-input-body>
       </c-input>
       <c-input addon next icon>
         <c-input-head>
-          <c-icon name="wishlisted" background-color="var(--danger)" color="#fff" size="3rem" round />已收藏
+          <c-icon name="wishlisted" background-color="#f30" color="#fff" size="3rem" round />已收藏
         </c-input-head>
         <c-input-body>
         </c-input-body>

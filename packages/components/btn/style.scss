@@ -29,71 +29,71 @@
 
 .c-btn,
 .c-btn:hover {
-  color: var(--text);
+  color: $text;
   border-radius: .3rem;
   background: #ccc;
 
   &.c-btn__primary,
   &.c-btn__primary:hover {
     color: #fff;
-    background: var(--primary);
+    background: $primary;
   }
 
   &.c-btn__success,
   &.c-btn__success:hover {
     color: #fff;
-    background: var(--success);
+    background: $success;
   }
 
   &.c-btn__warning,
   &.c-btn__warning:hover {
     color: #fff;
-    background: var(--warning);
+    background: $warning;
   }
 
   &.c-btn__danger,
   &.c-btn__danger:hover {
     color: #fff;
-    background: var(--danger);
+    background: $danger;
   }
 }
 
 .c-btn__o,
 .c-btn__o:hover {
-  color: var(--text);
+  color: $text;
   border-radius: .3rem;
   padding: 1.4rem 1rem;
   position: relative;
 
   &.c-btn__primary,
   &.c-btn__primary:hover {
-    color: var(--primary);
+    color: $primary;
     &:after {
-      border-color: var(--primary);
+      border-color: $primary;
     }
   }
 
   &.c-btn__success,
   &.c-btn__success:hover {
-    color: var(--success);
+    color: $success;
     &:after {
-      border-color: var(--success);
+      border-color: $success;
     }
   }
 
   &.c-btn__warning,
   &.c-btn__warning:hover {
-    color: var(--warning);
+    color: $warning;
     &:after {
-      border-color: var(--warning);
+      border-color: $warning;
     }
   }
 
   &.c-btn__danger,
   &.c-btn__danger:hover {
-    color: var(--danger);
+    color: $danger;
     &:after {
-      border-color: var(--danger);
+      border-color: $danger;
     }
   }
 

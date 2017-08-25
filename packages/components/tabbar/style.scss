@@ -27,7 +27,7 @@
       height: 1.6rem;
       line-height: 1.6rem;
       display: block;
-      color: var(--text);
+      color: $text;
     }
     b {
       position: absolute;
@@ -42,7 +42,7 @@
       color: #fff;
       font-size: 1.2rem;
       border-radius: 1.6rem;
-      background: var(--danger);
+      background: $danger;
       &:empty {
         display: none;
       }
@@ -52,7 +52,7 @@
     .current {
       i,
       .c-text {
-        color: var(--primary);
+        color: $primary;
       }
     }
   }
@@ -60,7 +60,7 @@
     .current {
       i,
       .c-text {
-        color: var(--success);
+        color: $success;
       }
     }
   }
@@ -68,7 +68,7 @@
     .current {
       i,
       .c-text {
-        color: var(--warning);
+        color: $warning;
       }
     }
   }
@@ -76,7 +76,7 @@
     .current {
       i,
       .c-text {
-        color: var(--danger);
+        color: $danger;
       }
     }
   }

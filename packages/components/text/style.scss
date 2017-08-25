@@ -1,23 +1,23 @@
 .c-text {
-  color: var(--text);
+  color: $text;
 
   &.c-text__light {
     opacity: .7;
   }
 
   &.c-text__primary {
-    color: var(--primary);
+    color: $primary;
   }
 
   &.c-text__success {
-    color: var(--success);
+    color: $success;
   }
 
   &.c-text__warning {
-    color: var(--warning);
+    color: $warning;
   }
 
   &.c-text__danger {
-    color: var(--danger);
+    color: $danger;
   }
 }

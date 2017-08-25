@@ -3,8 +3,9 @@
 import Vue from 'vue'
 import App from './app'
 import router from './router'
-import '../dist/index.css'
 import Mobile from '../dist/index.js'
+import '../packages/index.scss'
+// import Mobile from '../packages/index.js'
 
 Vue.config.productionTip = false
 Vue.use(Mobile)

@@ -1,5 +1,6 @@
 import Btn from './components/btn'
 import { Flex, FlexItem } from './components/flex'
+import { Ft, FtItem } from './components/ft'
 import Header from './components/header'
 import Icon from './components/icon'
 import {
@@ -23,6 +24,8 @@ const components = [
   Btn,
   Flex,
   FlexItem,
+  Ft,
+  FtItem,
   Header,
   Icon,
   InputGroup,

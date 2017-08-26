@@ -1,0 +1,10 @@
+@import '../../assets/scss/mixins';
+
+.c-ft {
+  display: table;
+  width: 100%;
+  .c-ft-item {
+    display: table-cell;
+    vertical-align: top;
+  }
+}

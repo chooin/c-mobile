@@ -1,12 +1,14 @@
 <template>
-  <div
-    class="c-toast"
-    v-show="visible"
-    @click="handleClick">
-    <div class="c-toast__content">
-      <p v-for="(text, index) in texts" :key="index">{{ text }}</p>
+  <transition name="fade">
+    <div
+      class="c-toast"
+      v-if="visible"
+      @click="handleClick">
+      <div class="c-toast__content">
+        <p v-for="(text, index) in texts" :key="index">{{ text }}</p>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>

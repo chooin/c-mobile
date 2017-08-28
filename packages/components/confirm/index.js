@@ -23,14 +23,14 @@ export default (option = {}) => {
             text: option.ok.text,
             click: () => {
               this.hide()
-              option.ok.click()
+              if (option.ok.click) option.ok.click()
             }
           },
           cancel: {
             text: option.cancel.text,
             click: () => {
               this.hide()
-              option.cancel.click()
+              if (option.cancel.click) option.cancel.click()
             }
           }
         }

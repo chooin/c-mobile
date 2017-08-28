@@ -4,8 +4,14 @@ import Confirm from './src'
 export default (option = {}) => {
   option = Object.assign({
     text: '',
-    ok () {},
-    cancel: null
+    ok: {
+      text: 'OK',
+      click () {}
+    },
+    cancel: {
+      // text: 'Cancel',
+      click () {}
+    }
   }, option)
 
   const component = new Vue({
@@ -13,16 +19,44 @@ export default (option = {}) => {
       return h(Confirm, {
         props: {
           text: option.text,
-          ok: () => {
-            this.hide()
-            option.ok()
+          ok: {
+            text: option.ok.text,
+            click: () => {
+              this.hide()
+              option.ok.click()
+            }
           },
-          cancel: option.cancel ? () => {
-            this.hide()
-            option.cancel()
-          } : null
+          cancel: {
+            text: option.cancel.text,
+            click: () => {
+              this.hide()
+              option.cancel.click()
+            }
+          }
         }
       })
+    },
+    computed: {
+      _cancel: {
+        get () {
+          return Object.assign({
+            text: 'Cancel',
+            click: () => {
+              this.hide()
+            }
+          }, this.cancel)
+        }
+      },
+      _ok: {
+        get () {
+          return Object.assign({
+            text: 'OK',
+            click: () => {
+
+            }
+          }, this.ok)
+        }
+      }
     },
     methods: {
       show () {

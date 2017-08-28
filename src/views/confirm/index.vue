@@ -13,19 +13,28 @@ export default {
     alertClick () {
       this.$Confirm({
         text: '我是 alert',
-        ok: () => {
-          window.alert('ok')
+        ok: {
+          text: '确定',
+          click: () => {
+            window.alert('ok')
+          }
         }
       })
     },
     confirmClick () {
       this.$Confirm({
         text: '我是 confirm',
-        ok: () => {
-          window.alert('ok')
+        ok: {
+          text: '确定',
+          click: () => {
+            window.alert('ok')
+          }
         },
-        cancel: () => {
-          window.alert('cancel')
+        cancel: {
+          text: '取消',
+          click: () => {
+            window.alert('cancel')
+          }
         }
       })
     }

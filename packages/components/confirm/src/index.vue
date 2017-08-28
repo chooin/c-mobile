@@ -3,8 +3,8 @@
     <div class="c-confirm__content">
       {{ text }}
       <c-flex>
-        <c-flex-item @click="okClick">OK</c-flex-item>
-        <c-flex-item @click="cancelClick" v-if="cancel">Cancel</c-flex-item>
+        <c-flex-item @click="ok.click">{{ ok.text }}</c-flex-item>
+        <c-flex-item @click="cancel.click" v-if="cancel.text">{{ cancel.text }}</c-flex-item>
       </c-flex>
     </div>
   </div>
@@ -20,20 +20,12 @@ export default {
       default: null
     },
     cancel: {
-      type: Function,
+      type: Object,
       default: null
     },
     ok: {
-      type: Function,
-      default () {}
-    }
-  },
-  methods: {
-    okClick () {
-      this.ok()
-    },
-    cancelClick () {
-      this.cancel()
+      type: Object,
+      default: null
     }
   },
   components: {

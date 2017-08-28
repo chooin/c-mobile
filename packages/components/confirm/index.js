@@ -17,6 +17,11 @@ export default (option = {}) => {
   const component = new Vue({
     render (h) {
       return h(Confirm, {
+        data () {
+          return {
+            pageYOffset: null
+          }
+        },
         props: {
           text: option.text,
           ok: {
@@ -35,28 +40,6 @@ export default (option = {}) => {
           }
         }
       })
-    },
-    computed: {
-      _cancel: {
-        get () {
-          return Object.assign({
-            text: 'Cancel',
-            click: () => {
-              this.hide()
-            }
-          }, this.cancel)
-        }
-      },
-      _ok: {
-        get () {
-          return Object.assign({
-            text: 'OK',
-            click: () => {
-
-            }
-          }, this.ok)
-        }
-      }
     },
     methods: {
       show () {

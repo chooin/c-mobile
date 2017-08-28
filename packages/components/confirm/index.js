@@ -25,7 +25,7 @@ export default (option = {}) => {
         props: {
           text: option.text,
           ok: {
-            text: option.ok.text,
+            text: option.ok.text || 'OK',
             click: () => {
               this.hide()
               if (option.ok.click) option.ok.click()

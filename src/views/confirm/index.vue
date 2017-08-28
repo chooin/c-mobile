@@ -14,7 +14,6 @@ export default {
       this.$Confirm({
         text: '我是 alert',
         ok: {
-          text: '确定',
           click: () => {
             window.alert('ok')
           }

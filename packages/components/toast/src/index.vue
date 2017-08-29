@@ -2,7 +2,7 @@
   <transition name="fade">
     <div
       class="c-toast"
-      v-if="visible"
+      v-show="visible"
       @click="handleClick">
       <div class="c-toast__content">
         <p v-for="(text, index) in texts" :key="index">{{ text }}</p>

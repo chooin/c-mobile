@@ -18,7 +18,7 @@ export default {
       default: 1
     },
     to: {
-      type: Object,
+      type: [String, Object],
       default: null
     }
   },

@@ -36,12 +36,13 @@ export default {
       default: ''
     },
     to: {
+      type: [String, Object],
       default: null
     }
   },
   methods: {
     handleClick () {
-      if (this.disabled === true) return
+      if (this.disabled) return
       if (this.to) {
         this.$router.push(this.to)
       } else {

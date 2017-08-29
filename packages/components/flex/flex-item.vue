@@ -2,7 +2,8 @@
   <div
     class="c-flex-item"
     :style="{
-      flex
+      flex,
+      margin: `0 ${gutter / 2}px`
     }"
     @click="handleClick">
     <slot></slot>
@@ -18,6 +19,7 @@ export default {
       default: 1
     },
     to: {
+      type: [String, Object],
       default: null
     }
   },
@@ -27,6 +29,13 @@ export default {
         this.$router.push(this.to)
       } else {
         this.$emit('click')
+      }
+    }
+  },
+  computed: {
+    gutter: {
+      get () {
+        return this.$parent.gutter || 0
       }
     }
   }

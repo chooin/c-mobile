@@ -2,8 +2,15 @@
   display: flex;
   -webkit-box-flex: 1;
   width: 100%;
+  flex-wrap: wrap;
   .c-flex-item {
     display: block;
     flex: 1;
+    &:first-child {
+      margin-left: 0 !important;
+    }
+    &:last-child {
+      margin-right: 0 !important;
+    }
   }
 }

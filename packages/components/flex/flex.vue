@@ -1,7 +1,5 @@
 <template>
-  <div class="c-flex" :style="{
-    padding: `0 ${gutter / 2}px`
-  }">
+  <div class="c-flex">
     <slot></slot>
   </div>
 </template>

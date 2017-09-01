@@ -14,6 +14,7 @@ import Toast from '@/views/toast'
 import Confirm from '@/views/confirm'
 import Actionsheet from '@/views/actionsheet'
 import Sidebar from '@/views/sidebar'
+import Text from '@/views/text'
 
 Vue.use(Router)
 
@@ -70,6 +71,10 @@ export default new Router({
     {
       path: '/sidebar',
       component: Sidebar
+    },
+    {
+      path: '/text',
+      component: Text
     },
     {
       path: '/*',

@@ -1,5 +1,5 @@
 <template>
-  <span
+  <a
     class="c-text"
     :class="[
       type ? `c-text__${type}` : '',
@@ -13,7 +13,7 @@
     }"
     @click="handleClick">
     <slot>{{ text }}</slot>
-  </span>
+  </a>
 </template>
 
 <script>

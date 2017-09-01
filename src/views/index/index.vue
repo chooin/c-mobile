@@ -1,17 +1,18 @@
 <template>
   <div class="v-index">
-    <router-link :to="{ path: '/btn' }">btn</router-link>
-    <router-link :to="{ path: '/flex' }">flex</router-link>
-    <router-link :to="{ path: '/header' }">header</router-link>
-    <router-link :to="{ path: '/switch' }">switch</router-link>
-    <router-link :to="{ path: '/input-group' }">input-group</router-link>
-    <router-link :to="{ path: '/icon' }">icon</router-link>
-    <router-link :to="{ path: '/tab' }">tab</router-link>
-    <router-link :to="{ path: '/tabbar' }">tabbar</router-link>
-    <router-link :to="{ path: '/toast' }">toast</router-link>
-    <router-link :to="{ path: '/confirm' }">confirm</router-link>
-    <router-link :to="{ path: '/actionsheet' }">actionsheet</router-link>
-    <router-link :to="{ path: '/sidebar' }">sidebar</router-link>
+    <router-link to="/btn">btn</router-link>
+    <router-link to="/flex">flex</router-link>
+    <router-link to="/header">header</router-link>
+    <router-link to="/switch">switch</router-link>
+    <router-link to="/input-group">input-group</router-link>
+    <router-link to="/icon">icon</router-link>
+    <router-link to="/tab">tab</router-link>
+    <router-link to="/tabbar">tabbar</router-link>
+    <router-link to="/toast">toast</router-link>
+    <router-link to="/confirm">confirm</router-link>
+    <router-link to="/actionsheet">actionsheet</router-link>
+    <router-link to="/sidebar">sidebar</router-link>
+    <router-link to="/text">text</router-link>
   </div>
 </template>
 

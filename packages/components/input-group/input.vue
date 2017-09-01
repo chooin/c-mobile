@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import { to } from '../../units'
 export default {
   name: 'cInput',
   props: {
@@ -62,11 +63,7 @@ export default {
   },
   methods: {
     handleClick () {
-      if (this.to) {
-        this.$router.push(this.to)
-      } else {
-        this.$emit('click')
-      }
+      to(this)
     }
   }
 }

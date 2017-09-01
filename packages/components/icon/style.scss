@@ -1,6 +1,7 @@
 .c-icon {
   color: $text;
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   border-radius: .3rem;
   position: relative;
 

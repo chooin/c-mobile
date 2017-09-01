@@ -4,6 +4,7 @@
     <c-text
       class="c-input-group__title"
       :type="type"
+      block
       v-if="title">
       {{ title }}
     </c-text>

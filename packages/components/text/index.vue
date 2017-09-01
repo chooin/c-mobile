@@ -1,5 +1,5 @@
 <template>
-  <div
+  <span
     class="c-text"
     :class="[
       type ? `c-text__${type}` : '',
@@ -8,11 +8,12 @@
       }
     ]"
     :style="{
-      fontFamily
+      fontFamily,
+      display: block ? 'block' : 'inline-block'
     }"
     @click="handleClick">
     <slot>{{ text }}</slot>
-  </div>
+  </span>
 </template>
 
 <script>
@@ -38,6 +39,10 @@ export default {
     to: {
       type: [String, Object],
       default: null
+    },
+    block: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

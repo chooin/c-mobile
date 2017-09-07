@@ -1,8 +1,13 @@
 .c-text {
   color: $text;
+  display: inline-block;
 
   &.c-text__light {
     opacity: .7;
+  }
+
+  &.c-text__block {
+    display: block;
   }
 
   &.c-text__primary {

@@ -4,12 +4,12 @@
     :class="[
       type ? `c-text__${type}` : '',
       {
-        'c-text__light': light
+        'c-text__light': light,
+        'c-text__block': block
       }
     ]"
     :style="{
-      fontFamily,
-      display: block ? 'block' : 'inline-block'
+      fontFamily
     }"
     @click="handleClick">
     <slot>{{ text }}</slot>

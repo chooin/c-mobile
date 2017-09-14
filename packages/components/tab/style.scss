@@ -18,7 +18,7 @@
     text-decoration: none;
     &.c-tab__current {
       &:after {
-        content: "";
+        content: " ";
         width: 2rem;
         border-bottom: .2rem solid $border;
         position: absolute;

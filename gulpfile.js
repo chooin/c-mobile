@@ -6,8 +6,7 @@ var gulp = require('gulp'),
     copy = require('gulp-copy')
     del = require('del')
 
-// 编译 sass
-gulp.task('css', function () {
+gulp.task('task', function () {
   gulp
     .src('./packages/include-variables.scss')
     .pipe(sass())
@@ -23,4 +22,4 @@ gulp.task('css', function () {
   del(['./dist/packages'])
 })
 
-gulp.task('default', ['css'])
+gulp.task('default', ['task'])

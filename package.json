@@ -1,6 +1,6 @@
 {
   "name": "c-mobile",
-  "version": "0.3.16",
+  "version": "0.3.17",
   "description": "A Vue.js 2.0 components for mobile",
   "main": "dist/index.js",
   "author": "zhuning <chooin@126.com>",
@@ -8,7 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
-    "build:mobile": "vue build ./packages/index.js --prod --lib && gulp --gulpfile gulpfile.js && cp ./packages/index.scss  ./dist/index.scss",
+    "build:mobile": "vue build ./packages/index.js --prod --lib && gulp --gulpfile gulpfile.js && cp ./packages/index.scss  ./dist/index.scss && mv ./dist/packages/index.js ./dist/index.js && rm -rf ./dist/packages",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",

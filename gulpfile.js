@@ -11,14 +11,15 @@ gulp.task('task', function () {
     .src('./packages/include-variables.scss')
     .pipe(sass())
     .pipe(autoprefixer({
-      browsers: ['last 2 versions', 'ie > 8']
+      browsers: ['last 2 versions']
+      // browsers: ['last 2 versions', 'ie > 8']
     }))
     .pipe(cleanCSS())
     .pipe(rename('index.css'))
     .pipe(gulp.dest('./dist'))
   gulp
     .src(['./dist/packages/index.js', './packages/index.scss'])
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('./dist'))
   del(['./dist/packages'])
 })
 

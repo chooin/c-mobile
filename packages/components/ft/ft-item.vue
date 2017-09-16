@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { to } from '../../units'
+import { to } from '../../utils'
 export default {
   name: 'cFtItem',
   props: {

@@ -7,8 +7,7 @@
         'noborder-bottom': noborderBottom
       }
     ]">
-    <a
-      href="javascript:;"
+    <span
       class="c-header__left"
       :class="{
         back: _left.back
@@ -19,12 +18,11 @@
       @click="handleLeftClick"
       v-if="_left.text || _left.back">
       {{ _left.text }}
-    </a>
+    </span>
     <h1 v-if="title || defaultTitle">
       {{ title === undefined || title === null ? defaultTitle : title }}
     </h1>
-    <a
-      href="javascript:;"
+    <span
       class="c-header__right"
       :style="{
         color: _right.color
@@ -32,12 +30,13 @@
       @click="handleRightClick"
       v-if="_right.text">
       {{ _right.text }}
-    </a>
+    </span>
     <slot></slot>
   </div>
 </template>
 
 <script>
+import { to } from '../../utils'
 export default {
   name: 'cHeader',
   data () {
@@ -74,7 +73,7 @@ export default {
   methods: {
     handleLeftClick () {
       if (this._left.to) {
-        this.$router.push(this._left.to)
+        to(this._left)
       } else if (typeof this._left.click === 'function') {
         this._left.click()
       } else if (this._left.back) {
@@ -83,8 +82,8 @@ export default {
     },
     handleRightClick () {
       if (this._right.to) {
-        this.$router.push(this._right.to)
-      } else {
+        to(this._right)
+      } else if (typeof this._right.click === 'function') {
         this._right.click()
       }
     }

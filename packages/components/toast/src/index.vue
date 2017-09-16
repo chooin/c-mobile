@@ -5,7 +5,7 @@
       v-show="visible"
       @click="handleClick">
       <div class="c-toast__content">
-        <p v-for="(text, index) in texts" :key="index">{{ text }}</p>
+        <p v-for="(item, index) in texts" :key="index">{{ item }}</p>
       </div>
     </div>
   </transition>

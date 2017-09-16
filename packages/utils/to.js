@@ -1,12 +1,13 @@
-export default t => {
-  if (t.to) {
-    if (typeof t.to === 'string' && t.to.indexOf('//') === 0) {
-      window.location.href = t.to.substring(1)
+export default (t, to) => {
+  to = to ? to.to : t.to
+  if (to) {
+    if (typeof to === 'string' && to.indexOf('//') === 0) {
+      window.location.href = to.substring(1)
     } else {
-      if ((typeof t.to === 'string' && t.to.indexOf('/') === 0) || typeof t.to === 'object') {
-        t.$router.push(t.to)
+      if ((typeof to === 'string' && to.indexOf('/') === 0) || typeof to === 'object') {
+        t.$router.push(to)
       } else {
-        window.location.href = t.to
+        window.location.href = to
       }
     }
   } else {

@@ -11,8 +11,7 @@
       :right="{
         text: '联系我们',
         color: '#39f',
-        click: () => {
-        }
+        to: 'tel:13888888888'
       }"
     />
     <div style="height: 1.5rem; width: 100%;"></div>
@@ -23,9 +22,7 @@
       title="没有下划线"
       :right="{
         text: '联系我们',
-        color: '#39f',
-        click: () => {
-        }
+        color: '#39f'
       }"
       noborder-bottom
     />

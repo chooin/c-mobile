@@ -73,7 +73,7 @@ export default {
   methods: {
     handleLeftClick () {
       if (this._left.to) {
-        to(this._left)
+        to(this, this._left)
       } else if (typeof this._left.click === 'function') {
         this._left.click()
       } else if (this._left.back) {
@@ -82,7 +82,7 @@ export default {
     },
     handleRightClick () {
       if (this._right.to) {
-        to(this._right)
+        to(this, this._right)
       } else if (typeof this._right.click === 'function') {
         this._right.click()
       }

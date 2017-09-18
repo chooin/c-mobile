@@ -175,3 +175,19 @@
     }
   }
 }
+
+label {
+  &.c-input {
+    &:active {
+      background: #f0f0f0;
+      &:before {
+        border: none;
+      }
+    }
+  }
+}
+label.c-input:active + .c-input {
+  &:before {
+    border: none;
+  }
+}

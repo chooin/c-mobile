@@ -100,7 +100,7 @@
           <c-switch type="primary" />
         </c-input-body>
       </c-input>
-      <c-input addon>
+      <c-input use-div addon>
         <c-input-head>
           订阅
         </c-input-head>

@@ -80,7 +80,7 @@
       }
     }
   }
-  &:before {
+  &::before {
     @include borderLine('top');
   }
 }

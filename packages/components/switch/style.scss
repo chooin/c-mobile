@@ -19,8 +19,8 @@
       border: .1rem solid $border;
       border-radius: 1.6rem;
       background: $border;
-      &:after,
-      &:before {
+      &::after,
+      &::before {
         content: " ";
         top: 0;
         left: 0;
@@ -28,13 +28,13 @@
         transition: transform .3s;
         border-radius: 1.5rem;
       }
-      &:after {
+      &::after {
         width: 3rem;
         height: 3rem;
         background-color: #fff;
         box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .4);
       }
-      &:before {
+      &::before {
         width: 5rem;
         height: 3rem;
         background-color: #fdfdfd;
@@ -52,10 +52,10 @@
         + .c-switch__core {
           border-color: $text;
           background-color: $text;
-          &:before {
+          &::before {
             transform: scale(0);
           }
-          &:after {
+          &::after {
             transform: translateX(2rem);
           }
         }

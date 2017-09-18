@@ -5,7 +5,7 @@
   display: flex;
   -webkit-box-flex: 1;
   position: relative;
-  &:before {
+  &::before {
     @include borderLine('bottom');
   }
   .c-tab-item {
@@ -17,7 +17,7 @@
     color: $text;
     text-decoration: none;
     &.c-tab__current {
-      &:after {
+      &::after {
         content: " ";
         width: 2rem;
         border-bottom: .2rem solid $border;
@@ -31,28 +31,28 @@
   }
   &.c-tab__primary {
     .c-tab__current {
-      &:after {
+      &::after {
         border-color: $primary;
       }
     }
   }
   &.c-tab__success {
     .c-tab__current {
-      &:after {
+      &::after {
         border-color: $success;
       }
     }
   }
   &.c-tab__warning {
     .c-tab__current {
-      &:after {
+      &::after {
         border-color: $warning;
       }
     }
   }
   &.c-tab__danger {
     .c-tab__current {
-      &:after {
+      &::after {
         border-color: $danger;
       }
     }

@@ -5,7 +5,7 @@
   border-radius: .3rem;
   position: relative;
 
-  &:before {
+  &::before {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -17,7 +17,7 @@
   }
 
   &.c-icon__small {
-    &:before {
+    &::before {
       font-size: 60%;
     }
   }

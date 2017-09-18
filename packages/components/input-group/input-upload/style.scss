@@ -38,7 +38,7 @@
         top: 0;
         background: rgba(0, 0, 0, .75);
         border-radius: 0 0 100% 0;
-        &:before {
+        &::before {
           content: "+";
           color: #fff;
           left: -.2rem;
@@ -68,8 +68,8 @@
         height: 100%;
         opacity: 0;
       }
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         content: " ";
         position: absolute;
         top: 50%;
@@ -77,11 +77,11 @@
         transform: translate(-50%, -50%);
         background-color: $border;
       }
-      &:before {
+      &::before {
         width: .2rem;
         height: 3.95rem;
       }
-      &:after {
+      &::after {
         width: 3.95rem;
         height: .2rem;
       }
@@ -92,21 +92,21 @@
     right: 1rem;
     top: 1rem;
   }
-  &:before {
+  &::before {
     @include borderLine('top', 1.5rem);
   }
   &:first-child {
-    &:before {
+    &::before {
       border: none;
     }
   }
   &.noborder-top {
-    &:before {
+    &::before {
       border: none !important;
     }
   }
   &.noborder-bottom {
-    &:after {
+    &::after {
       border: none !important;
     }
   }

@@ -11,7 +11,7 @@
   .c-input-body {
     min-height: 2rem;
     &:empty {
-      &:before {
+      &::before {
         content: " ";
       }
     }
@@ -55,7 +55,7 @@
     }
   }
   &.c-input__fullline {
-    &:before {
+    &::before {
       left: 0;
     }
   }
@@ -112,7 +112,7 @@
   &.c-input__next {
     .c-input-body {
       padding-right: 1rem;
-      &:after {
+      &::after {
         content: " ";
         transform: rotate(-45deg) translateY(-50%);
         border: solid $border;
@@ -130,7 +130,7 @@
   &.c-input__checked {
     .c-input-body {
       padding-right: 2rem;
-      &:after {
+      &::after {
         content: " ";
         transform:rotate(45deg);
         border: solid $primary;
@@ -156,21 +156,21 @@
       }
     }
   }
-  &:before {
+  &::before {
     @include borderLine('top', 1.5rem);
   }
   &:first-child {
-    &:before {
+    &::before {
       border: none;
     }
   }
   &.noborder-top {
-    &:before {
+    &::before {
       border: none !important;
     }
   }
   &.noborder-bottom {
-    &:after {
+    &::after {
       border: none !important;
     }
   }
@@ -181,7 +181,7 @@ label {
     &.c-input__next {
       &:active {
         background: #f0f0f0;
-        &:before {
+        &::before {
           border-top: none;
         }
       }
@@ -189,7 +189,7 @@ label {
   }
 }
 label.c-input.c-input__next:active + .c-input {
-  &:before {
+  &::before {
     border-top: none;
   }
 }

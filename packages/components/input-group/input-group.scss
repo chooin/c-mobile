@@ -6,19 +6,19 @@
     background: #fff;
     position: relative;
     overflow: hidden;
-    &:before {
+    &::before {
       @include borderLine('top');
     }
-    &:after {
+    &::after {
       @include borderLine('bottom');
     }
     &.noborder-top {
-      &:before {
+      &::before {
         border: none !important;
       }
     }
     &.noborder-bottom {
-      &:after {
+      &::after {
         border: none !important;
       }
     }

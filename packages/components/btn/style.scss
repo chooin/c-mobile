@@ -67,7 +67,7 @@
   &.c-btn__primary,
   &.c-btn__primary:hover {
     color: $primary;
-    &:after {
+    &::after {
       border-color: $primary;
     }
   }
@@ -75,7 +75,7 @@
   &.c-btn__success,
   &.c-btn__success:hover {
     color: $success;
-    &:after {
+    &::after {
       border-color: $success;
     }
   }
@@ -83,7 +83,7 @@
   &.c-btn__warning,
   &.c-btn__warning:hover {
     color: $warning;
-    &:after {
+    &::after {
       border-color: $warning;
     }
   }
@@ -91,12 +91,12 @@
   &.c-btn__danger,
   &.c-btn__danger:hover {
     color: $danger;
-    &:after {
+    &::after {
       border-color: $danger;
     }
   }
 
-  &:after {
+  &::after {
     @include borderLine('round');
     border-radius: .3rem;
   }

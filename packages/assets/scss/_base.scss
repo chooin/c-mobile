@@ -8,8 +8,8 @@
   &:focus {
     outline: 0;
   }
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     box-sizing: border-box;
   }
 }
@@ -20,8 +20,8 @@
 }
 .noborder {
   border: none !important;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     border: none !important;
   }
 }

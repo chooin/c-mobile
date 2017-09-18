@@ -27,7 +27,7 @@
           position: relative;
           &:first-child {
             border-radius: 1.2rem 1.2rem 0 0;
-            &:before {
+            &::before {
               border-top: none;
             }
           }
@@ -35,7 +35,7 @@
             border-bottom-right-radius: 1.2rem;
             border-bottom-left-radius: 1.2rem;
           }
-          &:before {
+          &::before {
             @include borderLine('top');
           }
         }
@@ -52,7 +52,7 @@
       margin-top: .7rem;
     }
   }
-  &:before {
+  &::before {
     content: " ";
     position: absolute;
     top: 0;
@@ -69,7 +69,7 @@
       bottom: 1rem;
       transform: translate(-50%, 0);
     }
-    &:before {
+    &::before {
       opacity: .75;
     }
   }

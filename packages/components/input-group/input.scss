@@ -178,16 +178,18 @@
 
 label {
   &.c-input {
-    &:active {
-      background: #f0f0f0;
-      &:before {
-        border: none;
+    &.c-input__next {
+      &:active {
+        background: #f0f0f0;
+        &:before {
+          border-top: none;
+        }
       }
     }
   }
 }
-label.c-input:active + .c-input {
+label.c-input.c-input__next:active + .c-input {
   &:before {
-    border: none;
+    border-top: none;
   }
 }

@@ -1,8 +1,8 @@
 # c-mobile
 
 [![Build Status](https://travis-ci.org/Chooin/c-mobile.svg?branch=master)](https://travis-ci.org/Chooin/c-mobile)
-![JS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile@0.3.23/dist/index.js?compression=gzip&label=gzip%20size:%20JS)
-![CSS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile@0.3.23/dist/index.css?compression=gzip&label=gzip%20size:%20CSS)
+![JS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile/dist/index.js?compression=gzip&label=gzip%20size:%20JS)
+![CSS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile/dist/index.css?compression=gzip&label=gzip%20size:%20CSS)
 
 > Mobile UI elements for Vue 2.0
 

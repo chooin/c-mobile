@@ -1,10 +1,12 @@
 language: node_js
 node_js:
-    - "node"
     - "8"
 
 notifications:
   email: false
+
+before_script:
+  - npm install vue-cli -g
 
 script:
   - npm run build:mobile

@@ -1,8 +1,10 @@
-sudo: false
 language: node_js
-node_js: stable
+node_js:
+    - "node"
+    - "4"
 
-after_success:
-  - npm run build:lib
+before_script:
+  - npm install -g yarn
 
-
+script:
+  - yarn run build:mobile

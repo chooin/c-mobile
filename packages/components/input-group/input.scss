@@ -25,6 +25,7 @@
   }
   .c-input-body {
     flex: 1;
+    min-width: 0; // 解决文字溢出
     input[type=text],
     input[type=number],
     input[type=tel],

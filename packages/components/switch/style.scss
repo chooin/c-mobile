@@ -62,6 +62,17 @@
       }
     }
   }
+  &.c-switch__disabled {
+    label {
+      input[type=checkbox] {
+        &:checked  {
+          + .c-switch__core {
+            opacity: .35;
+          }
+        }
+      }
+    }
+  }
   &.c-switch__primary {
     label {
       input[type=checkbox] {

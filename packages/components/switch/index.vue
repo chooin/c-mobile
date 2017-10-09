@@ -2,10 +2,17 @@
   <div
     class="c-switch"
     :class="[
-      type ? `c-switch__${type}` : ''
+      type ? `c-switch__${type}` : '',
+      {
+        'c-switch__disabled': disabled
+      }
     ]">
     <label>
-      <input type="checkbox" @change="handleChange" v-model="_value">
+      <input
+        type="checkbox"
+        @change="handleChange"
+        :disabled="disabled"
+        v-model="_value">
       <span class="c-switch__core"></span>
     </label>
   </div>
@@ -22,6 +29,10 @@ export default {
     type: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

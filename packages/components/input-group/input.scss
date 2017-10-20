@@ -87,6 +87,7 @@
         width: 100%;
         direction: rtl;
         font-size: 1.4rem;
+        color: $text;
         &.light {
           color: var($text-light);
         }
@@ -115,7 +116,8 @@
       padding-right: 1rem;
       &::after {
         content: " ";
-        transform: rotate(-45deg) translateY(-50%);
+        transform: rotate(-45deg)
+                   translateY(-50%);
         border: solid $border;
         border-width: 0 .1rem .1rem 0;
         width: 1rem;
@@ -133,7 +135,7 @@
       padding-right: 2rem;
       &::after {
         content: " ";
-        transform:rotate(45deg);
+        transform: rotate(45deg);
         border: solid $primary;
         border-width: 0 .2rem .2rem 0;
         width: .8rem;

@@ -6,7 +6,7 @@
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build:web": "node build/build.js && node deploy.js",
+    "build:web": "node build/build.js && cdn-deploy/index.js",
     "build:mobile": "vue build ./packages/index.js --prod --lib --dist dist && gulp --gulpfile gulpfile.js"
   },
   "dependencies": {},

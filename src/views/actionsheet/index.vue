@@ -2,6 +2,8 @@
   <div class="v-actionsheet">
     <c-actionsheet
       :actions="actions"
+      title="标题"
+      description="我是描述"
       cancel-text="取消"
       v-model="actionVisible" />
     <c-btn type="primary" @click="showActionsheetClick(1)">显示</c-btn>

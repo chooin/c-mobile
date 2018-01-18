@@ -3,10 +3,19 @@
     class="c-actionsheet"
     :class="{
       'c-actionsheet__visible': value,
-      'is-iphonex': isIPhoneX
+      'is-iphonex': isIPhoneX,
+      'c-actionsheet__has-title': title || description
     }"
     @click="cancelClick">
     <div class="c-actionsheet__content">
+      <div class="c-actionsheet__header" @click.stop="() => {}">
+        <h5 class="c-actionsheet__title">
+          {{ title }}
+        </h5>
+        <p class="c-actionsheet__description">
+          {{ description }}
+        </p>
+      </div>
       <div class="c-actionsheet__actions">
         <ul>
           <li
@@ -20,9 +29,10 @@
           </li>
         </ul>
       </div>
-      <div class="c-actionsheet__cancel" @click.stop="cancelClick">{{ cancelText }}</div>
+      <div class="c-actionsheet__cancel" @click.stop="cancelClick">
+        {{ cancelText }}
+      </div>
     </div>
-    <input type="hidden" v-model="value">
   </div>
 </template>
 
@@ -34,6 +44,12 @@ export default {
     value: {
       type: Boolean,
       default: false
+    },
+    title: {
+      type: String
+    },
+    description: {
+      type: String
     },
     actions: {
       type: Array,

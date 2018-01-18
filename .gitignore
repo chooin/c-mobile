@@ -7,4 +7,4 @@ test/unit/coverage
 test/e2e/reports
 selenium-debug.log
 
-cdn-deploy/index.js
+deploy-config/aliyun

@@ -6,7 +6,8 @@
       {
         'c-btn__disabled': disabled,
         'c-btn__suspend': suspend,
-        'c-btn__small': small
+        'c-btn__small': small,
+        'is-iphonex': isIPhoneX
       }
     ]"
     @click="handleClick">
@@ -15,7 +16,7 @@
 </template>
 
 <script>
-import { to } from '../../utils'
+import { to, isIPhoneX } from '../../utils'
 export default {
   name: 'cBtn',
   props: {
@@ -42,6 +43,11 @@ export default {
     to: {
       type: [String, Object],
       default: null
+    }
+  },
+  data () {
+    return {
+      isIPhoneX
     }
   },
   methods: {

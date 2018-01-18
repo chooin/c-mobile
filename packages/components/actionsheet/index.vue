@@ -2,7 +2,8 @@
   <div
     class="c-actionsheet"
     :class="{
-      'c-actionsheet__visible': value
+      'c-actionsheet__visible': value,
+      'is-iphonex': isIPhoneX
     }"
     @click="cancelClick">
     <div class="c-actionsheet__content">
@@ -26,6 +27,7 @@
 </template>
 
 <script>
+import { isIPhoneX } from '../../utils'
 export default {
   name: 'cActionsheet',
   props: {
@@ -44,6 +46,11 @@ export default {
     visible: {
       type: Boolean,
       default: false
+    }
+  },
+  data () {
+    return {
+      isIPhoneX
     }
   },
   methods: {

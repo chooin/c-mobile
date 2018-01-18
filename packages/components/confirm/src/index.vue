@@ -3,8 +3,21 @@
     <div class="c-confirm__content">
       {{ text }}
       <c-flex>
-        <c-flex-item @click="ok.click">{{ ok.text }}</c-flex-item>
-        <c-flex-item @click="cancel.click" v-if="cancel.text">{{ cancel.text }}</c-flex-item>
+        <c-flex-item
+          @click="ok.click"
+          :style="{
+            color: ok.color
+          }">
+          {{ ok.text }}
+        </c-flex-item>
+        <c-flex-item
+          @click="cancel.click"
+          :style="{
+            color: cancel.color
+          }"
+          v-if="cancel.text">
+          {{ cancel.text }}
+        </c-flex-item>
       </c-flex>
     </div>
   </div>

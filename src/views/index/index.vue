@@ -13,6 +13,7 @@
     <router-link to="/actionsheet">actionsheet</router-link>
     <router-link to="/sidebar">sidebar</router-link>
     <router-link to="/text">text</router-link>
+    <router-link to="/loading">loading</router-link>
   </div>
 </template>
 

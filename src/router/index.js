@@ -15,6 +15,7 @@ import Confirm from '@/views/confirm'
 import Actionsheet from '@/views/actionsheet'
 import Sidebar from '@/views/sidebar'
 import Text from '@/views/text'
+import Loading from '@/views/loading'
 
 Vue.use(Router)
 
@@ -75,6 +76,10 @@ export default new Router({
     {
       path: '/text',
       component: Text
+    },
+    {
+      path: '/loading',
+      component: Loading
     },
     {
       path: '/*',

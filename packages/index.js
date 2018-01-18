@@ -19,6 +19,7 @@ import Toast from './components/toast'
 import Confirm from './components/confirm'
 import Actionsheet from './components/actionsheet'
 import Sidebar from './components/sidebar'
+import Loading from './components/loading'
 
 const components = [
   Btn,
@@ -41,7 +42,8 @@ const components = [
   TabbarItem,
   Text,
   Actionsheet,
-  Sidebar
+  Sidebar,
+  Loading
 ]
 
 const install = (Vue, opts = {}) => {

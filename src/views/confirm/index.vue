@@ -31,6 +31,7 @@ export default {
         },
         cancel: {
           text: '取消',
+          color: '#f30',
           click: () => {
             window.alert('cancel')
           }

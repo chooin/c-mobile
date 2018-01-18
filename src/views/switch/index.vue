@@ -10,6 +10,8 @@
     <div style="height: 1.5rem"></div>
     <c-switch v-model="value" @change="change" type="danger" /> {{ value }}
     <div style="height: 1.5rem"></div>
+    <c-switch v-model="disabled" @change="change" type="danger" disabled /> {{ disabled }}
+    <div style="height: 1.5rem"></div>
   </div>
 </template>
 
@@ -17,7 +19,8 @@
 export default {
   data () {
     return {
-      value: false
+      value: false,
+      disabled: true
     }
   },
   methods: {

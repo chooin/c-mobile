@@ -26,6 +26,7 @@ export default (option = {}) => {
           text: option.text,
           ok: {
             text: option.ok.text || 'OK',
+            color: option.ok.color,
             click: () => {
               this.hide()
               if (option.ok.click) option.ok.click()
@@ -33,6 +34,7 @@ export default (option = {}) => {
           },
           cancel: {
             text: option.cancel.text,
+            color: option.cancel.color,
             click: () => {
               this.hide()
               if (option.cancel.click) option.cancel.click()

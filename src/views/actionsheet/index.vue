@@ -1,10 +1,12 @@
 <template>
   <div class="v-actionsheet">
+    <c-btn type="primary" @click="showActionsheetClick">显示 actionsheet</c-btn>
     <c-actionsheet
-      :actions="actions"
+      :actions="actionsheet.actions"
+      title="标题"
+      description="我是描述"
       cancel-text="取消"
-      v-model="actionVisible" />
-    <c-btn type="primary" @click="showActionsheetClick(1)">显示</c-btn>
+      v-model="actionsheet.visible" />
   </div>
 </template>
 
@@ -12,28 +14,32 @@
 export default {
   data () {
     return {
-      actionVisible: false,
-      actions: null
+      actionsheet: {
+        visible: false,
+        actions: null
+      }
     }
   },
   methods: {
-    showActionsheetClick (id) {
-      this.actionVisible = true
-      this.actions = [
-        {
-          text: '修改',
-          click: () => {
-            window.alert(`修改${id}`)
+    showActionsheetClick () {
+      this.actionsheet = {
+        visible: true,
+        actions: [
+          {
+            text: '修改',
+            click: () => {
+              window.alert(`修改被点击`)
+            }
+          },
+          {
+            text: '删除',
+            color: '#f30',
+            click: () => {
+              window.alert(`删除被点击`)
+            }
           }
-        },
-        {
-          text: '删除',
-          color: '#f30',
-          click: () => {
-            window.alert(`删除${id}`)
-          }
-        }
-      ]
+        ]
+      }
     }
   }
 }

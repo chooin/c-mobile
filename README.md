@@ -7,6 +7,8 @@
 
 > Mobile UI elements for Vue 2.0
 
+- [中文文档](http://c-mobile-docs.chooin.com)
+
 ### 安装
 
 ``` sh

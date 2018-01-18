@@ -1,12 +1,12 @@
 {
   "name": "c-mobile",
-  "version": "0.3.24",
+  "version": "0.3.25",
   "description": "A Vue.js 2.0 components for mobile",
   "main": "dist/index.js",
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build:web": "node build/build.js && node deploy.js",
+    "build:web": "node build/build.js",
     "build:mobile": "vue build ./packages/index.js --prod --lib --dist dist && gulp --gulpfile gulpfile.js"
   },
   "dependencies": {},

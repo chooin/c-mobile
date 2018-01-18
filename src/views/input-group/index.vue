@@ -64,6 +64,19 @@
           <input type="text" placeholder="请输入姓名">
         </c-input-body>
       </c-input>
+      <c-input addon next>
+        <c-input-head>
+          select
+        </c-input-head>
+        <c-input-body>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </c-input-body>
+      </c-input>
       <c-input addon next icon>
         <c-input-head>
           <c-icon name="user" background-color="#39f" color="#fff" size="3rem" round />Devin

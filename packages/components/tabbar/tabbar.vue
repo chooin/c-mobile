@@ -4,7 +4,7 @@
     :class="[
       type ? `c-tabbar__${type}` : '',
       {
-        'is-iphonex': isIPhoneX
+        'c-tabbar__is-iphonex': isIPhoneX
       }
     ]">
     <slot></slot>

@@ -1,18 +1,18 @@
 <template>
   <div class="v-loading">
-    <c-loading v-model="value" />
+    <c-btn type="primary" @click="showLoading">显示 Loading，3 秒后消失</c-btn>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      value: true
+  methods: {
+    showLoading () {
+      this.$Loading.show()
+      setTimeout(() => {
+        this.$Loading.hide()
+      }, 3000)
     }
-  },
-  created () {
-
   }
 }
 </script>

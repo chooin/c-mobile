@@ -42,8 +42,7 @@ const components = [
   TabbarItem,
   Text,
   Actionsheet,
-  Sidebar,
-  Loading
+  Sidebar
 ]
 
 const install = (Vue, opts = {}) => {
@@ -59,6 +58,7 @@ const install = (Vue, opts = {}) => {
 
   Vue.prototype.$Toast = Toast
   Vue.prototype.$Confirm = Confirm
+  Vue.prototype.$Loading = Loading
 }
 
 /* istanbul ignore if */

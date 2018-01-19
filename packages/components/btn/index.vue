@@ -7,7 +7,7 @@
         'c-btn__disabled': disabled,
         'c-btn__suspend': suspend,
         'c-btn__small': small,
-        'is-iphonex': isIPhoneX
+        'c-btn__is-iphonex': isIPhoneX
       }
     ]"
     @click="handleClick">

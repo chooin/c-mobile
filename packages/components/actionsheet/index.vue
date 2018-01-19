@@ -3,7 +3,7 @@
     class="c-actionsheet"
     :class="{
       'c-actionsheet__visible': value,
-      'is-iphonex': isIPhoneX,
+      'c-actionsheet__is-iphonex': isIPhoneX,
       'c-actionsheet__has-title': title || description
     }"
     @click="cancelClick">

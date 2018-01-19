@@ -8,4 +8,3 @@ test/e2e/reports
 selenium-debug.log
 
 deploy-config/aliyun
-dist/

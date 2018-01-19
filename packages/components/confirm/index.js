@@ -6,10 +6,12 @@ export default (option = {}) => {
     text: '',
     ok: {
       text: 'OK',
+      color: null,
       click () {}
     },
     cancel: {
       // text: 'Cancel',
+      color: null,
       click () {}
     }
   }, option)

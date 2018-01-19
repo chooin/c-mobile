@@ -12,7 +12,7 @@
     <div class="c-input-upload__files">
       <slot></slot>
       <div class="c-input-upload__btn" v-show="allowUpload" @click="handleClick">
-        <input type="file" v-show="showUploadInput">
+        <input type="file" v-show="showUploadInput" :accept="accept">
       </div>
     </div>
   </div>
@@ -45,6 +45,10 @@ export default {
     allowDelete: {
       type: Boolean,
       default: true
+    },
+    accept: {
+      type: String,
+      default: 'image/*'
     }
   },
   methods: {

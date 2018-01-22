@@ -57,8 +57,7 @@ export default {
       default: false
     },
     borderRadius: {
-      type: String,
-      default: '.3rem'
+      type: String
     },
     to: {
       type: [String, Object],

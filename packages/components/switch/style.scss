@@ -21,7 +21,7 @@
       background: $border;
       &::after,
       &::before {
-        content: " ";
+        content: "";
         top: 0;
         left: 0;
         position: absolute;

@@ -12,7 +12,7 @@
     min-height: 2rem;
     &:empty {
       &::before {
-        content: " ";
+        content: "";
       }
     }
   }
@@ -116,7 +116,7 @@
     .c-input-body {
       padding-right: 1rem;
       &::after {
-        content: " ";
+        content: "";
         transform: rotate(-45deg)
                    translateY(-50%);
         border: solid $border;
@@ -135,7 +135,7 @@
     .c-input-body {
       padding-right: 2rem;
       &::after {
-        content: " ";
+        content: "";
         transform: rotate(45deg);
         border: solid $primary;
         border-width: 0 .2rem .2rem 0;

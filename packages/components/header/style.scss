@@ -40,7 +40,7 @@
     &.back {
       padding-left: 3rem;
       &::after {
-        content: " ";
+        content: "";
         transform: rotate(135deg);
         border: solid $text;
         border-width: 0 .1rem .1rem 0;

@@ -6,6 +6,7 @@
   width: 100%;
   height: 100%;
   visibility: hidden;
+  user-select: none;
   .c-actionsheet__content {
     position: absolute;
     bottom: 1rem;

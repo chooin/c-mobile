@@ -5,6 +5,7 @@
   display: flex;
   -webkit-box-flex: 1;
   position: relative;
+  user-select: none;
   &::before {
     @include borderLine('bottom');
   }

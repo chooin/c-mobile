@@ -4,6 +4,7 @@
   vertical-align: middle;
   border-radius: .3rem;
   position: relative;
+  user-select: none;
 
   &::before {
     position: absolute;

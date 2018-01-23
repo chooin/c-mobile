@@ -117,9 +117,9 @@
   }
 }
 
-.c-btn:not(.small) + .c-btn:not(.small),
-.c-btn:not(.small) + .c-btn__o:not(.small),
-.c-btn__o:not(.small) +.c-btn:not(.small),
-.c-btn__o:not(.small) + .c-btn__o:not(.small) {
+.c-btn:not(.c-btn__small) + .c-btn:not(.c-btn__small),
+.c-btn:not(.c-btn__small) + .c-btn__o:not(.c-btn__small),
+.c-btn__o:not(.c-btn__small) +.c-btn:not(.c-btn__small),
+.c-btn__o:not(.c-btn__small) + .c-btn__o:not(.c-btn__small) {
   margin-top: 1.5rem;
 }

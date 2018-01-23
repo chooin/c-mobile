@@ -1,6 +1,7 @@
 .c-switch {
   position: relative;
   display: inline-block;
+  user-select: none;
   label {
     vertical-align: top;
     display: inline-block;
@@ -21,7 +22,7 @@
       background: $border;
       &::after,
       &::before {
-        content: " ";
+        content: "";
         top: 0;
         left: 0;
         position: absolute;

@@ -5,8 +5,7 @@
       `icon-${name}`,
       type ? `c-icon__${type}` : '',
       {
-        'c-icon__small': backgroundColor,
-        'c-icon__round': round
+        'c-icon__has-background': backgroundColor
       }
     ]"
     :style="{
@@ -14,7 +13,14 @@
       height: size,
       fontSize: size,
       backgroundColor,
-      color
+      color,
+      borderRadius: borderRadius
+                    ? borderRadius
+                    : (
+                        round
+                        ? round
+                        : '.3rem'
+                      )
     }"
     @click="handleClick">
   </i>
@@ -49,6 +55,9 @@ export default {
     round: {
       type: Boolean,
       default: false
+    },
+    borderRadius: {
+      type: String
     },
     to: {
       type: [String, Object],

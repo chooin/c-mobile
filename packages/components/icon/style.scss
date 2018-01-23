@@ -4,6 +4,7 @@
   vertical-align: middle;
   border-radius: .3rem;
   position: relative;
+  user-select: none;
 
   &::before {
     position: absolute;
@@ -16,7 +17,7 @@
     border-radius: 100%;
   }
 
-  &.c-icon__small {
+  &.c-icon__has-background {
     &::before {
       font-size: 60%;
     }

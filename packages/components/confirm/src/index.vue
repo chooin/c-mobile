@@ -1,30 +1,31 @@
 <template>
   <div class="c-confirm">
-    <div class="c-confirm__content">
+    <div class="c-confirm__cell">
       {{ text }}
-      <c-flex>
-        <c-flex-item
+      <div class="c-confirm__btn-group">
+        <div
+          class="c-confirm__btn"
           @click="ok.click"
           :style="{
             color: ok.color
           }">
           {{ ok.text }}
-        </c-flex-item>
-        <c-flex-item
+        </div>
+        <div
+          class="c-confirm__btn"
           @click="cancel.click"
           :style="{
             color: cancel.color
           }"
           v-if="cancel.text">
           {{ cancel.text }}
-        </c-flex-item>
-      </c-flex>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Flex, FlexItem } from '../../flex'
 export default {
   name: 'cConfirm',
   props: {
@@ -40,10 +41,6 @@ export default {
       type: Object,
       default: null
     }
-  },
-  components: {
-    cFlex: Flex,
-    cFlexItem: FlexItem
   }
 }
 </script>

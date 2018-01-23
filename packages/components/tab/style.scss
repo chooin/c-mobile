@@ -5,6 +5,7 @@
   display: flex;
   -webkit-box-flex: 1;
   position: relative;
+  user-select: none;
   &::before {
     @include borderLine('bottom');
   }
@@ -18,7 +19,7 @@
     text-decoration: none;
     &.c-tab__current {
       &::after {
-        content: " ";
+        content: "";
         width: 2rem;
         border-bottom: .2rem solid $border;
         position: absolute;

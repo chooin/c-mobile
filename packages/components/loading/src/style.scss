@@ -1,13 +1,4 @@
-@keyframes c-loading__loading {
-  0% {
-    transform: translate(-50%, -50%)
-               rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%)
-               rotate(360deg);
-  }
-}
+
 
 .c-loading {
   position: fixed;
@@ -26,16 +17,6 @@
     height: 7.2rem;
     margin-top: -4rem;
     &::before {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, .65);
-      content: "";
-      border-radius: .5rem;
-    }
-    &::after {
       content: "";
       position: absolute;
       top: 50%;
@@ -46,7 +27,18 @@
       border: .5rem solid #fff;
       border-top-color: transparent;
       border-radius: 50%;
-      animation: c-loading__loading 0.8s linear infinite;
+      animation: c-mobile-loading 0.8s linear infinite;
+      z-index: 1;
+    }
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .65);
+      content: "";
+      border-radius: .5rem;
     }
   }
 }

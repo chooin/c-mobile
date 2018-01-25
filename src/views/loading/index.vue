@@ -9,9 +9,9 @@ export default {
   methods: {
     showLoading () {
       this.$Loading.show()
-      setTimeout(() => {
-        this.$Loading.hide()
-      }, 3000)
+      // setTimeout(() => {
+      //   this.$Loading.hide()
+      // }, 3000)
     }
   }
 }

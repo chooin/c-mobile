@@ -248,7 +248,7 @@
         amount="1/2"
         show-upload-input
         allow-upload>
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <c-input-upload-file src=" " />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />

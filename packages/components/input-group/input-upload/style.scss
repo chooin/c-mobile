@@ -24,10 +24,12 @@
       height: 6rem;
       margin: 1rem 1rem 0 0;
       float: left;
-      background: #eee;
+      background: #ddd;
       img {
         width: 6rem;
         height: 6rem;
+        position: relative;
+        z-index: 1;
       }
       i {
         display: none;
@@ -38,6 +40,7 @@
         top: 0;
         background: rgba(0, 0, 0, .75);
         border-radius: 0 0 100% 0;
+        z-index: 2;
         &::before {
           content: "+";
           color: #fff;
@@ -52,6 +55,20 @@
           position: absolute;
           font-family: Arial;
         }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 3rem;
+        height: 3rem;
+        border: .3rem solid #fff;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: c-mobile-loading 0.8s linear infinite;
+        z-index: 1;
       }
     }
     .c-input-upload__btn {

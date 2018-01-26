@@ -4,11 +4,15 @@
     :class="{
       'c-actionsheet__visible': value,
       'c-actionsheet__is-iphonex': isIPhoneX,
-      'c-actionsheet__has-title': title || description
+      'c-actionsheet__has-title': title || description,
+      'c-actionsheet__actions-empty': Array.isArray(actions) && actions.length === 0
     }"
     @click="cancelClick">
-    <div class="c-actionsheet__content">
-      <div class="c-actionsheet__header" @click.stop="() => {}">
+    <div
+      class="c-actionsheet__content">
+      <div
+        class="c-actionsheet__header"
+        @click.stop="() => {}">
         <h5 class="c-actionsheet__title">
           {{ title }}
         </h5>

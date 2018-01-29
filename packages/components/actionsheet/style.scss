@@ -109,6 +109,22 @@
             &:first-child {
               border-radius: 0;
             }
+            &:last-child {
+              border-bottom-right-radius: 1.2rem;
+              border-bottom-left-radius: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.c-actionsheet__actions-empty {
+    &.c-actionsheet__has-title {
+      .c-actionsheet__content {
+        .c-actionsheet__header {
+          border-radius: 1.2rem;
+          &::before {
+            border: none;
           }
         }
       }

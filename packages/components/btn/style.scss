@@ -123,3 +123,13 @@
 .c-btn__o:not(.c-btn__small) + .c-btn__o:not(.c-btn__small) {
   margin-top: 1.5rem;
 }
+
+.c-mobile__is-loading {
+  .c-btn,
+  .c-btn:hover,
+  .c-btn__o,
+  .c-btn__o:hover {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+}

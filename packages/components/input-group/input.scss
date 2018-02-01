@@ -107,7 +107,9 @@
         z-index: 1;
       }
       .c-btn + input,
-      .c-btn__o + input {
+      .c-btn__o + input,
+      .c-btn + .c-text,
+      .c-btn__o + .c-text {
         text-align: left;
       }
     }

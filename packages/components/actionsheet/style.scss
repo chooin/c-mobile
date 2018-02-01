@@ -45,6 +45,10 @@
           color: rgb(0, 122, 255);
           font-size: 1.8rem;
           position: relative;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          padding: 0 2.5rem;
           &:first-child {
             border-radius: 1.2rem 1.2rem 0 0;
             &::before {

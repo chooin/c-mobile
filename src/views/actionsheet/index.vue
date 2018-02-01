@@ -64,7 +64,7 @@ export default {
         visible: true,
         actions: [
           {
-            text: '修改',
+            text: '上海喔噻互联网科技有限公司 - 我时wwwDevin',
             click: () => {
               window.alert(`修改被点击`)
             }

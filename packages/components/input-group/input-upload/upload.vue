@@ -12,7 +12,7 @@
     <div class="c-input-upload__files">
       <slot></slot>
       <div class="c-input-upload__btn" v-show="allowUpload" @click="handleClick">
-        <input type="file" v-show="showUploadInput" :accept="accept">
+        <input type="file" v-show="showUploadInput" @change="fileChange" :accept="accept">
       </div>
     </div>
   </div>
@@ -54,6 +54,9 @@ export default {
   methods: {
     handleClick () {
       this.$emit('choose-image')
+    },
+    fileChange (file) {
+      this.$emit('change', file)
     }
   }
 }

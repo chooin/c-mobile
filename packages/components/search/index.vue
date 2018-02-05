@@ -7,7 +7,7 @@
       :placeholder="placeholder"
       v-model="_value"
       @change="handleChange">
-    <i class="c-search__clear" v-if="_value" @click="clearClick"></i>
+    <i class="c-search__cancel-button" v-if="_value" @click="clearClick"></i>
   </form>
 </template>
 

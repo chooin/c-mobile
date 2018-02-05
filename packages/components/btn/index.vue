@@ -75,7 +75,7 @@ export default {
     }
   },
   beforeDestroy () {
-    this.suspend && this.div && this.div.remove()
+    this.suspend && this.cover && this.div && this.div.remove()
   }
 }
 </script>

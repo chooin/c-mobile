@@ -26,26 +26,11 @@
     top: 50%;
     transform: translateY(-50%);
     right: 1rem;
-    &::before {
-      content: "";
-      width: 1.8rem;
-      height: 1.8rem;
-      background: #bbb;
+    svg {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      border-radius: 100%;
-    }
-    &::after {
-      content: "+";
-      font-size: 2rem;
-      position: absolute;
-      top: .03rem;
-      left: .88rem;
-      transform: rotate(45deg);
-      font-family: Arial;
-      color: #fff;
     }
   }
 }

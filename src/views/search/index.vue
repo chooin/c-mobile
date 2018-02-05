@@ -1,6 +1,6 @@
 <template>
   <div class="v-search">
-    <c-search v-model="search" @change="change" />
+    <c-search v-model="search" :autofocus="false" @change="change" />
   </div>
 </template>
 

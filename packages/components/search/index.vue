@@ -2,10 +2,10 @@
   <form class="c-search" action="" onsubmit="return false;">
     <input
       type="search"
+      ref="search"
       class="c-search__input"
       :placeholder="placeholder"
       v-model="_value"
-      :autofocus="autofocus"
       @change="handleChange">
     <i class="c-search__clear" v-if="_value" @click="clearClick"></i>
   </form>
@@ -27,6 +27,9 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  mounted () {
+    this.autofocus && this.$refs.search.focus()
   },
   methods: {
     handleChange () {

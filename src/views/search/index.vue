@@ -16,7 +16,6 @@ export default {
       console.log('change：', v)
     },
     keyupEnter (v) {
-      console.log(v)
       console.log('enter：', v)
     }
   }

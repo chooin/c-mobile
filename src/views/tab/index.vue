@@ -10,14 +10,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-
-  }
-}
-</script>
-
 <style scoped lang="scss">
   @import './style';
 </style>

@@ -57,7 +57,7 @@ export default {
   },
   created () {
     if (
-      this.o &&
+      this.suspend &&
       this.cover &&
       document.querySelectorAll('.c-btn__suspend__cover').length === 0
     ) {
@@ -75,7 +75,7 @@ export default {
     }
   },
   beforeDestroy () {
-    this.div && this.div.remove()
+    this.suspend && this.cover && this.div && this.div.remove()
   }
 }
 </script>

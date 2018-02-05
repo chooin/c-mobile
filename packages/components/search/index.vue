@@ -6,8 +6,8 @@
       class="c-search__input"
       :placeholder="placeholder"
       v-model="_value"
-      @change="handleChange">
-    <i class="c-search__cancel-button" v-if="_value" @click="clearClick"></i>
+      @keyup="inputKeyupEnter">
+    <i class="c-search__cancel-button" v-if="_value" @click="deleteClick"></i>
   </form>
 </template>
 
@@ -32,12 +32,12 @@ export default {
     this.autofocus && this.$refs.search.focus()
   },
   methods: {
-    handleChange () {
-      this.$emit('change', this._value)
+    inputKeyupEnter (keyCode) {
+      if (keyCode.key === 'Enter') this.$emit('keyup-enter', this._value)
     },
-    clearClick () {
+    deleteClick () {
       this._value = ''
-      this.$emit('change', '')
+      this.$emit('delete')
     }
   },
   computed: {

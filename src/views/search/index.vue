@@ -1,6 +1,6 @@
 <template>
   <div class="v-search">
-    <c-search v-model="search" :autofocus="false" @change="change" />
+    <c-search v-model="search" @keyup-enter="keyupEnter" autofocus @input="change" />
   </div>
 </template>
 
@@ -13,7 +13,10 @@ export default {
   },
   methods: {
     change (v) {
-      console.log(v, '12')
+      console.log('change：', v)
+    },
+    keyupEnter (v) {
+      console.log('enter：', v)
     }
   }
 }

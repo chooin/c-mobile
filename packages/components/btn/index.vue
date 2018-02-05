@@ -59,12 +59,12 @@ export default {
     if (
       this.o &&
       this.cover &&
-      document.querySelectorAll('.c-btn__o__cover').length === 0
+      document.querySelectorAll('.c-btn__suspend__cover').length === 0
     ) {
       this.div = document.createElement('div')
       this.div.style.width = '100%'
       this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
-      this.div.className = 'c-btn__o__cover'
+      this.div.className = 'c-btn__suspend__cover'
       document.body.appendChild(this.div)
     }
   },

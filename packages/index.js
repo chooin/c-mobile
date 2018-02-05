@@ -15,10 +15,12 @@ import Switch from './components/switch'
 import { Tab, TabItem } from './components/tab'
 import { Tabbar, TabbarItem } from './components/tabbar'
 import Text from './components/text'
-import Toast from './components/toast'
-import Confirm from './components/confirm'
 import Actionsheet from './components/actionsheet'
 import Sidebar from './components/sidebar'
+import Search from './components/search'
+
+import Toast from './components/toast'
+import Confirm from './components/confirm'
 import Loading from './components/loading'
 
 const components = [
@@ -42,7 +44,8 @@ const components = [
   TabbarItem,
   Text,
   Actionsheet,
-  Sidebar
+  Sidebar,
+  Search
 ]
 
 const install = (Vue, opts = {}) => {

@@ -99,6 +99,13 @@
         <c-input-body>
         </c-input-body>
       </c-input>
+      <c-input next addon to="/search">
+        <c-input-head>
+          Search
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
     </c-input-group>
   </div>
 </template>

@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { to } from '../../utils'
 export default {
   name: 'cFlex',
   props: {

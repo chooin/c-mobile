@@ -65,6 +65,9 @@ export default {
     handleClick () {
       to(this)
     }
+  },
+  mounted () {
+    if (this.$el.className.indexOf('next') > -1) this.$el.addEventListener('touchstart', () => {})
   }
 }
 </script>

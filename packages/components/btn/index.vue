@@ -55,7 +55,7 @@ export default {
       div: null
     }
   },
-  created () {
+  mounted () {
     if (
       this.suspend &&
       this.cover &&

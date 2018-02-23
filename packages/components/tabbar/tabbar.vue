@@ -31,7 +31,7 @@ export default {
       div: null
     }
   },
-  created () {
+  mounted () {
     if (
       this.cover &&
       document.querySelectorAll('.c-tabbar__cover').length === 0

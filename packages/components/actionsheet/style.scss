@@ -25,10 +25,15 @@
         color: #111;
         text-align: center;
         font-size: 1.6rem;
+        padding: 0 2.5rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       .c-actionsheet__description {
         color: $text-light;
         text-align: center;
+        padding: 0 2.5rem;
       }
       &::before {
         @include borderLine('bottom');

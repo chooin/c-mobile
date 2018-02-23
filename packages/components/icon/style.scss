@@ -4,6 +4,7 @@
   vertical-align: middle;
   border-radius: .3rem;
   position: relative;
+  -webkit-user-select: none;
   user-select: none;
 
   &::before {

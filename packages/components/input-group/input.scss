@@ -115,6 +115,8 @@
     }
   }
   &.c-input__next {
+    -webkit-user-select: none;
+    user-select: none;
     .c-input-body {
       padding-right: 1rem;
       &::after {

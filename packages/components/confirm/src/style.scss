@@ -6,6 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-user-select: none;
   user-select: none;
   .c-confirm__cell {
     position: fixed;

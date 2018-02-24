@@ -1,5 +1,6 @@
 import to from './to'
 
+const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
 const UA = window.navigator.userAgent.toLowerCase()
 const isIPhoneX = /iphone/.test(UA) &&
                   (
@@ -8,6 +9,7 @@ const isIPhoneX = /iphone/.test(UA) &&
                   )
 
 export {
+  getObjectType,
   to,
   isIPhoneX
 }

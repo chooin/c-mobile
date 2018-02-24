@@ -1,0 +1,71 @@
+.c-keyboard {
+  background: #d2d5da;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  .c-keyboard__key-group {
+    display: table;
+    width: 100%;
+    position: relative;
+    .c-keyboard__key {
+      display: table-cell;
+      width: 33.333333%;
+      height: 5.4rem;
+      line-height: 5.4rem;
+      text-align: center;
+      color: #424857;
+      font-size: 3rem;
+      position: relative;
+      background: #fff;
+      i {
+        &::before {
+          @include borderLine('top');
+        }
+        &::after {
+          @include borderLine('left');
+        }
+      }
+      &.c-keyboard__key-delete {
+        &::after {
+          content: "";
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAgBAMAAAB0qux3AAAAMFBMVEUAAAAGBgYDAwMEBAQFBQUFBQUEBAQEBAT///8DAwMDAwMDAwMEBAQKCgoNDQ0DAwOAzy9VAAAAD3RSTlMAK+qANGbIvAHz8uJ4GBOwQlL9AAAApElEQVQoz2OAAtb9/+HgV2oDAwzY/0cGtTBh5v8o4HsDXDkqCIApRwMJ2JX/n4Bd+f8PUOWY4gjlIvog8pMjRByh3EEIRCqyQMQRpisy6gOVCwiBxeHKwUJgSbA4QjlYDCQHFgcrR2gASkHFeYAkQgNQOVT8PZBEaGDUJyCOaQ4BezHdid9fmOGAP9wwwxlvvOCKR1zxjj+dYKYr/OkQM93iSucAyjAIM5+jk6QAAAAASUVORK5CYII=);
+          background-size: 2.3rem 1.6rem;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: transparent !important;
+          width: 2.3rem;
+          height: 1.6rem;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.c-keyboard__key-gray {
+        background-color: #f0f0f0 !important;
+      }
+      &:active,
+      &.c-keyboard__key-active {
+        background: #e2e2e2 !important;
+      }
+      &.c-keyboard__key-empty {
+        &:active {
+          background-color: #f0f0f0 !important;
+        }
+      }
+      &:nth-child(3n-2) {
+        &::after {
+          border: none !important;
+        }
+      }
+    }
+  }
+  &.c-keyboard__is-iphonex {
+    padding-bottom: 3.4rem;
+  }
+}

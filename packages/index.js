@@ -18,6 +18,7 @@ import Text from './components/text'
 import Actionsheet from './components/actionsheet'
 import Sidebar from './components/sidebar'
 import Search from './components/search'
+import Keyboard from './components/keyboard'
 
 import Toast from './components/toast'
 import Confirm from './components/confirm'
@@ -45,7 +46,8 @@ const components = [
   Text,
   Actionsheet,
   Sidebar,
-  Search
+  Search,
+  Keyboard
 ]
 
 const install = (Vue, opts = {}) => {

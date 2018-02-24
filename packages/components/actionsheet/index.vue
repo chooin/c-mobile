@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     actionClick (item) {
-      item.click()
+      if (item.click) item.click()
       this._value = false
     },
     cancelClick () {

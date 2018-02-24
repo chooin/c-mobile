@@ -106,6 +106,13 @@
         <c-input-body>
         </c-input-body>
       </c-input>
+      <c-input next addon to="/keyboard">
+        <c-input-head>
+          Keyboard
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
     </c-input-group>
   </div>
 </template>

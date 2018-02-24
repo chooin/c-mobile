@@ -4,6 +4,7 @@
     <c-btn type="primary" @click="btn2Click">显示 actionsheet</c-btn>
     <c-btn type="primary" @click="btn3Click">显示 actionsheet</c-btn>
     <c-btn type="primary" @click="btn4Click">显示 actionsheet</c-btn>
+    <div style="height: 1000px"></div>
     <c-btn type="primary" @click="btn5Click">显示 actionsheet</c-btn>
     <c-actionsheet
       :actions="actionsheet.actions"

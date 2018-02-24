@@ -12,7 +12,7 @@
     position: absolute;
     bottom: 1rem;
     left: 50%;
-    width: calc(100% - 3rem);
+    width: calc(100% - 2rem);
     z-index: 1;
     transform: translate(-50%, 100%);
     transition: all .3s ease;
@@ -30,6 +30,7 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        font-weight: bold;
       }
       .c-actionsheet__description {
         color: $text-light;

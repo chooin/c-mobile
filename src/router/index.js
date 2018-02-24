@@ -17,6 +17,7 @@ import Sidebar from '@/views/sidebar'
 import Text from '@/views/text'
 import Loading from '@/views/loading'
 import Search from '@/views/search'
+import keyboard from '@/views/keyboard'
 
 Vue.use(Router)
 
@@ -85,6 +86,10 @@ export default new Router({
     {
       path: '/search',
       component: Search
+    },
+    {
+      path: '/keyboard',
+      component: keyboard
     },
     {
       path: '/*',

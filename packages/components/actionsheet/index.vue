@@ -13,10 +13,10 @@
       <div
         class="c-actionsheet__header"
         @click.stop="() => {}">
-        <h5 class="c-actionsheet__title">
+        <h5 class="c-actionsheet__title" v-if="title">
           {{ title }}
         </h5>
-        <p class="c-actionsheet__description">
+        <p class="c-actionsheet__description" v-if="description">
           {{ description }}
         </p>
       </div>

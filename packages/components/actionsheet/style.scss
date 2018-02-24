@@ -19,13 +19,13 @@
     .c-actionsheet__header {
       background: #fff;
       border-radius: 1.2rem 1.2rem 0 0;
-      padding: 2rem 0;
+      padding: 1.2rem 0;
       position: relative;
       display: none;
       .c-actionsheet__title {
-        color: #111;
+        color: #333;
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         padding: 0 2.5rem;
         overflow: hidden;
         white-space: nowrap;
@@ -35,6 +35,11 @@
         color: $text-light;
         text-align: center;
         padding: 0 2.5rem;
+        font-size: 1.2rem;
+      }
+      .c-actionsheet__title +
+      .c-actionsheet__description {
+        margin-top: .5rem;
       }
       &::before {
         @include borderLine('bottom');
@@ -49,7 +54,7 @@
           text-align: center;
           line-height: 5.7rem;
           color: rgb(0, 122, 255);
-          font-size: 1.8rem;
+          font-size: 2rem;
           position: relative;
           overflow: hidden;
           white-space: nowrap;
@@ -78,8 +83,9 @@
       text-align: center;
       line-height: 5.7rem;
       color: rgb(0, 122, 255);
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-top: .7rem;
+      font-weight: bold;
     }
   }
   &::before {
@@ -100,12 +106,12 @@
       transform: translate(-50%, 0);
     }
     &::before {
-      opacity: .75;
+      opacity: .5;
     }
   }
   &.c-actionsheet__is-iphonex {
     .c-actionsheet__content {
-      bottom: 4.4rem;
+      bottom: 3.4rem;
     }
   }
   &.c-actionsheet__has-title {

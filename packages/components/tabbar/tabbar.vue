@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { isIPhoneX } from '../../utils'
+import { isIPhoneX, getObjectType } from '../../utils'
 export default {
   name: 'cTabbar',
   props: {
@@ -21,7 +21,7 @@ export default {
       default: ''
     },
     cover: {
-      type: Boolean,
+      type: [Boolean, Number, String],
       default: true
     }
   },
@@ -31,14 +31,21 @@ export default {
       div: null
     }
   },
-  created () {
+  mounted () {
     if (
-      this.cover &&
+      this.cover !== false &&
       document.querySelectorAll('.c-tabbar__cover').length === 0
     ) {
       this.div = document.createElement('div')
       this.div.style.width = '100%'
-      this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
+      let coverType = getObjectType(this.cover)
+      if (coverType === 'Number') {
+        this.div.style.height = `${this.cover}rem`
+      } else if (coverType === 'String') {
+        this.div.style.height = this.cover
+      } else {
+        this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
+      }
       this.div.className = 'c-tabbar__cover'
       document.body.appendChild(this.div)
     }

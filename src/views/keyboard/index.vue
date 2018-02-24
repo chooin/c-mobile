@@ -8,7 +8,7 @@
         </c-input-body>
       </c-input>
     </c-input-group>
-    <c-keyboard type="idcard" @click="keyboardClick" @delete="keyboardDelete" />
+    <c-keyboard type="number" @click="keyboardClick" @delete="keyboardDelete" />
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
       this.value = this.value.substring(0, this.value.length - 1)
     },
     keyboardClick (v) {
-      this.value = v + this.value
+      this.value += v
     }
   }
 }

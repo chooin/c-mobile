@@ -46,9 +46,12 @@ export default {
     }
   },
   mounted () {
-    document.addEventListener('touchstart', () => {
+    document.addEventListener('touchstart', e => {
       if (this.allowHide) this._value = false
-    })
+    }, true)
+    document.addEventListener('click', e => {
+      if (this.allowHide) this._value = false
+    }, true)
   },
   props: {
     value: {

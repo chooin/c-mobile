@@ -1,9 +1,16 @@
 <template>
+  <transition name="c-keyboard-transition">
   <div
+    v-if="_value"
     class="c-keyboard"
+    @touchstart.stop="() => {}"
     :class="{
       'c-keyboard__is-iphonex': isIPhoneX
     }">
+    <div class="c-keyboard__done">
+      <div class="c-keyboard__description">{{ description }}</div>
+      <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
+    </div>
     <div class="c-keyboard__key-group">
       <c-keyboard-key text="1" @click="handleClick" />
       <c-keyboard-key text="2" @click="handleClick" />
@@ -22,9 +29,10 @@
     <div class="c-keyboard__key-group">
       <c-keyboard-key :text="_typeText" class="c-keyboard__key-gray" @click="handleClick" />
       <c-keyboard-key text="0" @click="handleClick" />
-      <c-keyboard-key class="c-keyboard__key-gray c-keyboard__key-delete" type="delete" @click="handleDelete" />
+      <c-keyboard-key class="c-keyboard__key-gray c-keyboard__key-delete" @click="handleDelete" />
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -37,10 +45,31 @@ export default {
       isIPhoneX
     }
   },
+  mounted () {
+    document.addEventListener('touchstart', () => {
+      if (this.allowHide) this._value = false
+    })
+  },
   props: {
+    value: {
+      type: Boolean,
+      default: false
+    },
     type: {
       type: String,
       default: 'digit' // number，idcard，digit
+    },
+    description: {
+      type: String,
+      default: null
+    },
+    doneText: {
+      type: String,
+      default: 'Done'
+    },
+    allowHide: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {
@@ -49,6 +78,10 @@ export default {
     },
     handleDelete () {
       this.$emit('delete')
+    },
+    doneClick () {
+      if (this.allowHide) this._value = false
+      this.$emit('done')
     }
   },
   computed: {
@@ -61,6 +94,14 @@ export default {
         } else {
           return '.'
         }
+      }
+    },
+    _value: {
+      get () {
+        return this.allowHide ? this.value : true
+      },
+      set (value) {
+        this.$emit('input', value)
       }
     }
   },

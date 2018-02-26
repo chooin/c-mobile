@@ -16,11 +16,7 @@
       color: !type && backgroundColor ? ('#fff' || color) : null,
       borderRadius: borderRadius
                     ? borderRadius
-                    : (
-                        round
-                        ? round
-                        : '.3rem'
-                      )
+                    : '.3rem'
     }"
     @click="handleClick">
   </i>
@@ -51,10 +47,6 @@ export default {
     size: {
       type: String,
       default: ''
-    },
-    round: {
-      type: Boolean,
-      default: false
     },
     borderRadius: {
       type: String

@@ -20,7 +20,7 @@
     <div style="height: 1.5rem;"></div>
     <c-icon name="search" background-color="#fff" type="danger" size="5rem" />
     <div style="height: 1.5rem;"></div>
-    <c-icon name="search" background-color="#666" color="#fff" type="danger" size="15rem" border-radius="0" />
+    <c-icon name="search" background-color="#666" size="15rem" border-radius="0" />
   </div>
 </template>
 

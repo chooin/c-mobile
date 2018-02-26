@@ -123,7 +123,7 @@
         content: "";
         transform: rotate(-45deg)
                    translateY(-50%);
-        border: solid $border;
+        border: solid #cacaca;
         border-width: 0 .1rem .1rem 0;
         width: 1rem;
         height: 1rem;
@@ -188,7 +188,7 @@ label {
   &.c-input {
     &.c-input__next {
       &:active {
-        background: #f0f0f0;
+        background: #d9d9d9;
         opacity: 1;
         &::before {
           border-top: none;

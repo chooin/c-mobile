@@ -1,3 +1,10 @@
-.number-keyboard {
-  // style
+.keyboard {
+  
+}
+
+.c-keyboard-enter-active, .c-keyboard-leave-active {
+  transition: opacity .5s;
+}
+.c-keyboard-enter, .c-keyboard-leave-to {
+  opacity: 0;
 }

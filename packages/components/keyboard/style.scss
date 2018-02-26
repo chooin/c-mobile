@@ -7,6 +7,35 @@
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  .c-keyboard__done {
+    padding: .6rem 0;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+    .c-keyboard__description {
+      padding: 0 1rem;
+      float: left;
+      color: $text-light;
+      font-size: 1.2rem;
+      height: 2rem;
+      line-height: 2rem;
+      max-width: 20rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .c-keyboard__done-btn {
+      padding: 0 1rem;
+      float: right;
+      font-weight: bold;
+      color: $primary;
+      height: 2rem;
+      line-height: 2rem;
+    }
+    &::before {
+      @include borderLine('top');
+    }
+  }
   .c-keyboard__key-group {
     display: table;
     width: 100%;
@@ -68,4 +97,15 @@
   &.c-keyboard__is-iphonex {
     padding-bottom: 3.4rem;
   }
+}
+
+.c-keyboard-transition-enter-active,
+.c-keyboard-transition-leave-active {
+  transform: translateY(0);
+  transition: all .3s;
+}
+.c-keyboard-transition-enter,
+.c-keyboard-transition-leave-to {
+  transform: translateY(100%);
+  transition: all .3s;
 }

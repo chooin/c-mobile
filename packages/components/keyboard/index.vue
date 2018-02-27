@@ -1,37 +1,37 @@
 <template>
   <transition name="c-keyboard-transition">
-  <div
-    v-if="_value"
-    class="c-keyboard"
-    @touchstart.stop="() => {}"
-    :class="{
-      'c-keyboard__is-iphonex': isIPhoneX
-    }">
-    <div class="c-keyboard__done">
-      <div class="c-keyboard__description">{{ description }}</div>
-      <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
+    <div
+      v-if="_value"
+      class="c-keyboard"
+      @touchstart.stop="() => {}"
+      :class="{
+        'c-keyboard__is-iphonex': isIPhoneX
+      }">
+      <div class="c-keyboard__done">
+        <div class="c-keyboard__description">{{ description }}</div>
+        <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
+      </div>
+      <div class="c-keyboard__key-group">
+        <c-keyboard-key text="1" @click="handleClick" />
+        <c-keyboard-key text="2" @click="handleClick" />
+        <c-keyboard-key text="3" @click="handleClick" />
+      </div>
+      <div class="c-keyboard__key-group">
+        <c-keyboard-key text="4" @click="handleClick" />
+        <c-keyboard-key text="5" @click="handleClick" />
+        <c-keyboard-key text="6" @click="handleClick" />
+      </div>
+      <div class="c-keyboard__key-group">
+        <c-keyboard-key text="7" @click="handleClick" />
+        <c-keyboard-key text="8" @click="handleClick" />
+        <c-keyboard-key text="9" @click="handleClick" />
+      </div>
+      <div class="c-keyboard__key-group">
+        <c-keyboard-key :text="_typeText" class="c-keyboard__key-gray" @click="handleClick" />
+        <c-keyboard-key text="0" @click="handleClick" />
+        <c-keyboard-key class="c-keyboard__key-gray c-keyboard__key-delete" @click="handleDelete" />
+      </div>
     </div>
-    <div class="c-keyboard__key-group">
-      <c-keyboard-key text="1" @click="handleClick" />
-      <c-keyboard-key text="2" @click="handleClick" />
-      <c-keyboard-key text="3" @click="handleClick" />
-    </div>
-    <div class="c-keyboard__key-group">
-      <c-keyboard-key text="4" @click="handleClick" />
-      <c-keyboard-key text="5" @click="handleClick" />
-      <c-keyboard-key text="6" @click="handleClick" />
-    </div>
-    <div class="c-keyboard__key-group">
-      <c-keyboard-key text="7" @click="handleClick" />
-      <c-keyboard-key text="8" @click="handleClick" />
-      <c-keyboard-key text="9" @click="handleClick" />
-    </div>
-    <div class="c-keyboard__key-group">
-      <c-keyboard-key :text="_typeText" class="c-keyboard__key-gray" @click="handleClick" />
-      <c-keyboard-key text="0" @click="handleClick" />
-      <c-keyboard-key class="c-keyboard__key-gray c-keyboard__key-delete" @click="handleDelete" />
-    </div>
-  </div>
   </transition>
 </template>
 
@@ -45,10 +45,13 @@ export default {
       isIPhoneX
     }
   },
-  mounted () {
+  created () {
     document.addEventListener('touchstart', () => {
       if (this.allowHide) this._value = false
-    })
+    }, true)
+    document.addEventListener('click', () => {
+      if (this.allowHide) this._value = false
+    }, true)
   },
   props: {
     value: {

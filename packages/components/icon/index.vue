@@ -13,7 +13,7 @@
       height: size,
       fontSize: size,
       backgroundColor,
-      color: !type && backgroundColor ? ('#fff' || color) : null,
+      color,
       borderRadius: borderRadius
                     ? borderRadius
                     : '.3rem'

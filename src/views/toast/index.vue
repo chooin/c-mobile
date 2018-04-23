@@ -23,9 +23,9 @@ export default {
     toast2Click () {
       this.$Toast({
         texts: '我事实上似乎四十四是是是生死时速我事实上似乎四十四是是是生死时速我事实上似乎四十四是是是生死时速',
-        duration: 40000,
+        duration: 3000,
         cb: () => {
-          // window.alert('cb')
+          window.alert('cb')
         }
       })
     },

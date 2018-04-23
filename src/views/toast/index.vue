@@ -12,20 +12,20 @@
 export default {
   methods: {
     toast0Click () {
-      this.$Toast('toast')
+      this.$Toast('Shanghai')
     },
     toast1Click () {
       this.$Toast([
         'toast',
-        'toast1321312313213'
+        'toast1321312313213toast1321312313213toast1321312313213toast1321312313213'
       ])
     },
     toast2Click () {
       this.$Toast({
-        texts: 'toast',
-        duration: 3000,
+        texts: '我事实上似乎四十四是是是生死时速我事实上似乎四十四是是是生死时速我事实上似乎四十四是是是生死时速',
+        duration: 40000,
         cb: () => {
-          window.alert('cb')
+          // window.alert('cb')
         }
       })
     },

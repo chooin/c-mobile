@@ -3,7 +3,6 @@
     <div
       v-if="_value"
       class="c-keyboard"
-      @touchstart.stop="() => {}"
       :class="{
         'c-keyboard__is-iphonex': isIPhoneX
       }">
@@ -45,13 +44,9 @@ export default {
       isIPhoneX
     }
   },
-  created () {
-    document.addEventListener('touchstart', () => {
-      if (this.allowHide) this._value = false
-    }, true)
-    document.addEventListener('click', () => {
-      if (this.allowHide) this._value = false
-    }, true)
+  mounted () {
+    document.addEventListener('touchstart', this.hideKeyboard, true)
+    document.addEventListener('click', this.hideKeyboard, true)
   },
   props: {
     value: {
@@ -85,6 +80,12 @@ export default {
     doneClick () {
       if (this.allowHide) this._value = false
       this.$emit('done')
+    },
+    hideKeyboard (e) {
+      if (
+        this.allowHide &&
+        e.target.className.indexOf('c-keyboard') === -1
+      ) this._value = false
     }
   },
   computed: {
@@ -110,6 +111,10 @@ export default {
   },
   components: {
     cKeyboardKey
+  },
+  beforeDestroy () {
+    document.removeEventListener('touchstart', this.hideKeyboard, true)
+    document.removeEventListener('click', this.hideKeyboard, true)
   }
 }
 </script>

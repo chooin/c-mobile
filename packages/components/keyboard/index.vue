@@ -45,12 +45,8 @@ export default {
     }
   },
   mounted () {
-    document.addEventListener('touchstart', e => {
-      if (this.allowHide) this._value = false
-    }, true)
-    document.addEventListener('click', e => {
-      if (this.allowHide) this._value = false
-    }, true)
+    document.addEventListener('touchstart', this.hideKeyboard, true)
+    document.addEventListener('click', this.hideKeyboard, true)
   },
   props: {
     value: {
@@ -84,6 +80,12 @@ export default {
     doneClick () {
       if (this.allowHide) this._value = false
       this.$emit('done')
+    },
+    hideKeyboard (e) {
+      if (
+        this.allowHide &&
+        e.target.className.indexOf('c-keyboard') === -1
+      ) this._value = false
     }
   },
   computed: {
@@ -109,6 +111,10 @@ export default {
   },
   components: {
     cKeyboardKey
+  },
+  beforeDestroy () {
+    document.removeEventListener('touchstart', this.hideKeyboard, true)
+    document.removeEventListener('click', this.hideKeyboard, true)
   }
 }
 </script>

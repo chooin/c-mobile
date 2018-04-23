@@ -9,7 +9,7 @@
       </c-input>
     </c-input-group>
     <c-keyboard
-      :allow-hide="true"
+      allow-hide
       type="idcard"
       v-model="show"
       done-text="完成"

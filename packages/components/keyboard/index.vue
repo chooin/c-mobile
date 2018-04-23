@@ -3,7 +3,6 @@
     <div
       v-if="_value"
       class="c-keyboard"
-      @touchstart.stop="() => {}"
       :class="{
         'c-keyboard__is-iphonex': isIPhoneX
       }">
@@ -45,11 +44,11 @@ export default {
       isIPhoneX
     }
   },
-  created () {
-    document.addEventListener('touchstart', () => {
+  mounted () {
+    document.addEventListener('touchstart', e => {
       if (this.allowHide) this._value = false
     }, true)
-    document.addEventListener('click', () => {
+    document.addEventListener('click', e => {
       if (this.allowHide) this._value = false
     }, true)
   },

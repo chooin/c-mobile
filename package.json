@@ -1,6 +1,6 @@
 {
   "name": "c-mobile",
-  "version": "0.4.16",
+  "version": "0.4.17",
   "description": "A Vue.js 2.0 components for mobile",
   "main": "dist/index.js",
   "author": "zhuning <chooin@126.com>",

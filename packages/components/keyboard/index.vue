@@ -6,7 +6,7 @@
       :class="{
         'c-keyboard__is-iphonex': isIPhoneX
       }">
-      <div class="c-keyboard__done">
+      <div class="c-keyboard__done" v-if="description || doneText">
         <div class="c-keyboard__description">{{ description }}</div>
         <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
       </div>
@@ -63,7 +63,7 @@ export default {
     },
     doneText: {
       type: String,
-      default: 'Done'
+      default: null
     },
     allowHide: {
       type: Boolean,

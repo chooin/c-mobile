@@ -12,7 +12,7 @@
       'c-keyboard__key-empty': text === ''
     }">
     {{ text }}
-    <i></i>
+    <i class="c-keyboard__border"></i>
   </div>
 </template>
 

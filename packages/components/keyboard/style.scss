@@ -50,7 +50,7 @@
       font-size: 3rem;
       position: relative;
       background: #fff;
-      i {
+      i.c-keyboard__border {
         &::before {
           @include borderLine('top');
         }

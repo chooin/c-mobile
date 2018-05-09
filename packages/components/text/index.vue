@@ -4,7 +4,17 @@
     :class="[
       type ? `c-text__${type}` : '',
       {
-        'c-text__light': light,
+        'c-text__light':
+        light ||
+        (
+          placeholder !== undefined &&
+          placeholder !== null &&
+          (
+            text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+            text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+            text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
+          )
+        ),
         'c-text__block': block
       }
     ]"
@@ -12,7 +22,19 @@
       fontFamily
     }"
     @click="handleClick">
-    <slot>{{ text }}</slot>
+    <template
+      v-if="
+        placeholder !== undefined &&
+        placeholder !== null &&
+        (
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
+        )
+      ">
+      {{ placeholder }}
+    </template>
+    <slot v-else>{{ text }}</slot>
   </a>
 </template>
 
@@ -44,6 +66,10 @@ export default {
     block: {
       type: Boolean,
       default: false
+    },
+    placeholder: {
+      type: String,
+      default: null
     }
   },
   methods: {

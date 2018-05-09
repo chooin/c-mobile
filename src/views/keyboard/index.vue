@@ -4,7 +4,7 @@
       <c-input addon @click="showKeyboard">
         <c-input-head>身份证号码</c-input-head>
         <c-input-body>
-          <c-text :light="value === ''">{{ value || '请输入身份证号码' }}</c-text>
+          <c-text placeholder="请输入身份证号码">{{ value }}</c-text>
         </c-input-body>
       </c-input>
     </c-input-group>

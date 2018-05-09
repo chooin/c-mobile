@@ -14,7 +14,7 @@
           您的姓名
         </c-input-head>
         <c-input-body>
-          <c-text>Devin</c-text>
+          <c-text placeholder="Devin"></c-text>
         </c-input-body>
       </c-input>
       <c-input addon>

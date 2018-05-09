@@ -13,6 +13,7 @@
     <c-text block to="//example">跳转到当前域名下的某个地址</c-text>
     <c-text block @click="alert">事件</c-text>
     <c-text block light>浅灰色</c-text>
+    <c-text placeholder="placeholder"></c-text>
   </div>
 </template>
 

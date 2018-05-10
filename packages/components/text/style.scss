@@ -52,13 +52,14 @@
     &::after {
       content: " ";
       animation: c-text-cursor 1.2s infinite linear;
-      width: .1rem;
-      height: 3rem;
+      width: .2rem;
+      height: 2rem;
       background: $primary;
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+      border-radius: .4rem;
     }
   }
 }

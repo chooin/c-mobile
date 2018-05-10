@@ -77,6 +77,14 @@
         text-overflow: ellipsis;
         line-height: 1.8rem;
       }
+      .c-text {
+        &.c-text__cursor {
+          &::before {
+            left: unset;
+            right: 0;
+          }
+        }
+      }
       input[type=date],
       input[type=datetime-local] {
         direction: rtl

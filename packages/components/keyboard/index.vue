@@ -78,14 +78,21 @@ export default {
       this.$emit('delete')
     },
     doneClick () {
-      if (this.allowHide) this._value = false
+      if (this.allowHide) {
+        this._value = false
+        this.$emit('hide')
+      }
       this.$emit('done')
     },
     hideKeyboard (e) {
       if (
         this.allowHide &&
+        this._value !== false &&
         e.target.className.indexOf('c-keyboard') === -1
-      ) this._value = false
+      ) {
+        this._value = false
+        this.$emit('hide')
+      }
     }
   },
   computed: {

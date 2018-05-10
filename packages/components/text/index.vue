@@ -15,7 +15,8 @@
             text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
           )
         ),
-        'c-text__block': block
+        'c-text__block': block,
+        'c-text__cursor': cursor
       }
     ]"
     :style="{
@@ -70,6 +71,10 @@ export default {
     placeholder: {
       type: String,
       default: null
+    },
+    cursor: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

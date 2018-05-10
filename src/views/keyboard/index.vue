@@ -1,7 +1,7 @@
 <template>
   <div class="keyboard">
     <c-input-group title="用户信息">
-      <c-input addon @click="showKeyboard">
+      <c-input @click="showKeyboard">
         <c-input-head>身份证号码</c-input-head>
         <c-input-body>
           <c-text placeholder="请输入身份证号码" :cursor="show">{{ value }}</c-text>

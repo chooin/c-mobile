@@ -33,7 +33,7 @@
       ">
       {{ placeholder }}
     </template>
-    <span v-else>
+    <span class="c-text__content" v-else>
       <slot>{{ text }}</slot>
     </span>
   </a>

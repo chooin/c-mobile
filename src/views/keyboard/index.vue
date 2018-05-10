@@ -4,7 +4,7 @@
       <c-input addon @click="showKeyboard">
         <c-input-head>身份证号码</c-input-head>
         <c-input-body>
-          <c-text placeholder="请输入身份证号码">{{ value }}</c-text>
+          <c-text placeholder="请输入身份证号码" :cursor="show">{{ value }}</c-text>
         </c-input-body>
       </c-input>
     </c-input-group>
@@ -16,7 +16,8 @@
       description="请输入身份证号码"
       @done="keyboardDone"
       @click="keyboardClick"
-      @delete="keyboardDelete" />
+      @delete="keyboardDelete"
+      @hide="keyboardHide" />
   </div>
 </template>
 
@@ -41,6 +42,9 @@ export default {
     },
     keyboardDone () {
       this.$Toast('操作完成')
+    },
+    keyboardHide () {
+      console.log('键盘被隐藏')
     }
   }
 }

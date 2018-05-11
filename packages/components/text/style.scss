@@ -80,8 +80,11 @@
     }
   }
 
-  &.c-text__cursor {
+  &.c-text__placeholder {
     opacity: .7;
+  }
+
+  &.c-text__cursor {
     &::before {
       display: block;
       right: unset;

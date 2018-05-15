@@ -14,7 +14,11 @@
             text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
           ),
         'c-text__block': block,
-        'c-text__cursor': cursor
+        'c-text__cursor': cursor,
+        'c-text__empty':
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
       }
     ]"
     :style="{

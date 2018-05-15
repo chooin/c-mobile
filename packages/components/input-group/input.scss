@@ -43,6 +43,10 @@
       background: transparent;
       -webkit-appearance: none;
       vertical-align: top;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 1.8rem;
     }
     textarea,
     .textarea {
@@ -53,6 +57,7 @@
       background: transparent;
       vertical-align: top;
       min-height: 6rem;
+      text-align: justify;
     }
   }
   &.c-input__fullline {
@@ -72,10 +77,6 @@
       .input,
       .c-text {
         text-align: right;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        line-height: 1.8rem;
       }
       .c-text {
         &.c-text__cursor {

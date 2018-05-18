@@ -45,8 +45,11 @@ export default {
     }
   },
   mounted () {
-    document.addEventListener('touchstart', this.hideKeyboard, true)
-    document.addEventListener('click', this.hideKeyboard, true)
+    if (typeof window.ontouchstart === 'undefined') {
+      document.addEventListener('click', this.hideKeyboard, true)
+    } else {
+      document.addEventListener('touchstart', this.hideKeyboard, true)
+    }
   },
   props: {
     value: {
@@ -120,8 +123,11 @@ export default {
     cKeyboardKey
   },
   beforeDestroy () {
-    document.removeEventListener('touchstart', this.hideKeyboard, true)
-    document.removeEventListener('click', this.hideKeyboard, true)
+    if (typeof window.ontouchstart === 'undefined') {
+      document.removeEventListener('click', this.hideKeyboard, true)
+    } else {
+      document.removeEventListener('touchstart', this.hideKeyboard, true)
+    }
   }
 }
 </script>

@@ -58,6 +58,8 @@
       vertical-align: top;
       min-height: 6rem;
       text-align: justify;
+      word-wrap: break-word;
+      word-break: normal;
     }
   }
   &.c-input__fullline {

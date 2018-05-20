@@ -2,7 +2,10 @@ import Vue from 'vue'
 import Toast from './src'
 
 export default (option = {}) => {
-  if (typeof option === 'string') {
+  if (
+    typeof option === 'string' ||
+    typeof option === 'number'
+  ) {
     option = {
       texts: [option]
     }
@@ -10,7 +13,10 @@ export default (option = {}) => {
     option = {
       texts: option
     }
-  } else if (typeof option.texts === 'string') {
+  } else if (
+    typeof option.texts === 'string' ||
+    typeof option.texts === 'number'
+  ) {
     option.texts = [option.texts]
   }
 

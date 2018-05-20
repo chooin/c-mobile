@@ -17,12 +17,12 @@ export default {
     toast1Click () {
       this.$Toast([
         'toast',
-        'toast1321312313213toast1321312313213toast1321312313213toast1321312313213'
+        '列表提示列表提示列表提示列表提示列表提示列表提示列表提 示列表提示列表提示列表提示 列表提示'
       ])
     },
     toast2Click () {
       this.$Toast({
-        texts: '我事实上似乎四十四是是是生死时速我事实上似乎四十四是是是生死时速我事实上似乎四十四是是是生死时速',
+        texts: 1,
         duration: 3000,
         cb: () => {
           window.alert('cb')

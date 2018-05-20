@@ -26,7 +26,8 @@
     p {
       padding-bottom: .5rem;
       width: 100%;
-      word-break: break-all;
+      word-wrap: break-word;
+      word-break: normal;
       line-height: 2.2rem;
       &:last-child {
         padding: 0;

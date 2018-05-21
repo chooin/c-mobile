@@ -37,6 +37,7 @@
 <script>
 import cKeyboardKey from './keyboard-key'
 import { isIPhoneX } from '../../utils'
+
 export default {
   name: 'cKeyboard',
   data () {

@@ -42,6 +42,7 @@
 
 <script>
 import { isIPhoneX } from '../../utils'
+
 export default {
   name: 'cActionsheet',
   props: {

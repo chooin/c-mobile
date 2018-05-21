@@ -17,6 +17,7 @@
 
 <script>
 import { to, isIPhoneX, getObjectType } from '../../utils'
+
 export default {
   name: 'cBtn',
   props: {
@@ -78,7 +79,10 @@ export default {
   methods: {
     handleClick () {
       if (this.disabled) return
-      to(this)
+      to({
+        vm: this,
+        to: this.to
+      })
     }
   },
   beforeDestroy () {

@@ -45,6 +45,7 @@
 
 <script>
 import { to } from '../../utils'
+
 export default {
   name: 'cText',
   props: {
@@ -84,7 +85,10 @@ export default {
   methods: {
     handleClick () {
       if (this.disabled) return
-      to(this)
+      to({
+        vm: this,
+        to: this.to
+      })
     }
   }
 }

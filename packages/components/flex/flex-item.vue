@@ -12,6 +12,7 @@
 
 <script>
 import { to } from '../../utils'
+
 export default {
   name: 'cFlexItem',
   props: {
@@ -26,7 +27,10 @@ export default {
   },
   methods: {
     handleClick () {
-      to(this)
+      to({
+        vm: this,
+        to: this.to
+      })
     }
   },
   computed: {

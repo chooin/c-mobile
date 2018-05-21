@@ -37,6 +37,7 @@
 
 <script>
 import { to } from '../../utils'
+
 export default {
   name: 'cHeader',
   data () {
@@ -73,7 +74,10 @@ export default {
   methods: {
     handleLeftClick () {
       if (this._left.to) {
-        to(this, this._left)
+        to({
+          vm: this,
+          to: this._left.to
+        })
       } else if (typeof this._left.click === 'function') {
         this._left.click()
       } else if (this._left.back) {
@@ -82,7 +86,10 @@ export default {
     },
     handleRightClick () {
       if (this._right.to) {
-        to(this, this._right)
+        to({
+          vm: this,
+          to: this._right.to
+        })
       } else if (typeof this._right.click === 'function') {
         this._right.click()
       }

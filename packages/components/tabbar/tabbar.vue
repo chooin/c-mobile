@@ -13,6 +13,7 @@
 
 <script>
 import { isIPhoneX, getObjectType } from '../../utils'
+
 export default {
   name: 'cTabbar',
   props: {

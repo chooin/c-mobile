@@ -2,10 +2,7 @@
   <transition name="c-keyboard-transition">
     <div
       v-if="_value"
-      class="c-keyboard"
-      :class="{
-        'c-keyboard__is-iphonex': isIPhoneX
-      }">
+      class="c-keyboard">
       <div class="c-keyboard__done" v-if="description || doneText">
         <div class="c-keyboard__description">{{ description }}</div>
         <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
@@ -36,15 +33,9 @@
 
 <script>
 import cKeyboardKey from './keyboard-key'
-import { isIPhoneX } from '../../utils'
 
 export default {
   name: 'cKeyboard',
-  data () {
-    return {
-      isIPhoneX
-    }
-  },
   mounted () {
     if (typeof window.ontouchstart === 'undefined') {
       document.addEventListener('click', this.hideKeyboard, true)

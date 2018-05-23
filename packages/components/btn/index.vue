@@ -6,8 +6,7 @@
       {
         'c-btn__disabled': disabled,
         'c-btn__suspend': suspend,
-        'c-btn__small': small,
-        'c-btn__is-iphonex': isIPhoneX
+        'c-btn__small': small
       }
     ]"
     @click="handleClick">
@@ -16,7 +15,7 @@
 </template>
 
 <script>
-import { to, isIPhoneX, getObjectType } from '../../utils'
+import { to, getObjectType } from '../../utils'
 
 export default {
   name: 'cBtn',
@@ -52,7 +51,6 @@ export default {
   },
   data () {
     return {
-      isIPhoneX,
       div: null
     }
   },
@@ -70,7 +68,7 @@ export default {
       } else if (coverType === 'String') {
         this.div.style.height = this.cover
       } else {
-        this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
+        this.div.style.height = '5rem'
       }
       this.div.className = 'c-btn__suspend__cover'
       document.body.appendChild(this.div)

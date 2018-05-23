@@ -7,6 +7,8 @@
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
   .c-keyboard__done {
     padding: .6rem 0;
     overflow: hidden;
@@ -93,9 +95,6 @@
         }
       }
     }
-  }
-  &.c-keyboard__is-iphonex {
-    padding-bottom: 3.4rem;
   }
 }
 

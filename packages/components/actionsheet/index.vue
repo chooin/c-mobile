@@ -3,7 +3,6 @@
     class="c-actionsheet"
     :class="{
       'c-actionsheet__visible': value,
-      'c-actionsheet__is-iphonex': isIPhoneX,
       'c-actionsheet__has-title': title || description,
       'c-actionsheet__actions-empty': Array.isArray(actions) && actions.length === 0
     }"
@@ -41,8 +40,6 @@
 </template>
 
 <script>
-import { isIPhoneX } from '../../utils'
-
 export default {
   name: 'cActionsheet',
   props: {
@@ -67,11 +64,6 @@ export default {
     visible: {
       type: Boolean,
       default: false
-    }
-  },
-  data () {
-    return {
-      isIPhoneX
     }
   },
   methods: {

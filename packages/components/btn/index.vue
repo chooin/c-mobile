@@ -1,17 +1,23 @@
 <template>
-  <div
+  <button
+    class="c-btn"
     :class="[
       type ? `c-btn__${type}` : '',
-      o ? 'c-btn__o' : 'c-btn',
       {
+        'c-btn__o': o,
         'c-btn__disabled': disabled,
         'c-btn__suspend': suspend,
-        'c-btn__small': small
+        'c-btn__small': small,
+        'c-btn__icon': icon
       }
     ]"
     @click="handleClick">
-    <slot></slot>
-  </div>
+    <div class="c-btn__content">
+      <div class="c-btn__text">
+        <slot></slot>
+      </div>
+    </div>
+  </button>
 </template>
 
 <script>
@@ -47,6 +53,10 @@ export default {
     cover: {
       type: [Boolean, Number, String],
       default: true
+    },
+    icon: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

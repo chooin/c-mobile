@@ -1,7 +1,7 @@
 .c-btn,
-.c-btn:hover,
-.c-btn__o,
-.c-btn__o:hover {
+.c-btn:hover {
+  color: $text;
+  border-radius: .3rem;
   text-align: center;
   font-size: 1.6rem;
   width: 100%;
@@ -14,6 +14,7 @@
   border: none;
   -webkit-user-select: none;
   user-select: none;
+  background-color: unset;
 
   &[disabled=disabled],
   &.c-btn__disabled {
@@ -21,19 +22,10 @@
     cursor: not-allowed;
   }
 
-  &.c-btn__small{
-    display: inline-block;
-    width: auto;
-    padding: .5rem 1rem;
-    font-size: 1.4rem;
+  &.c-btn__default,
+  &.c-btn__default:hover {
+    background: #ccc;
   }
-}
-
-.c-btn,
-.c-btn:hover {
-  color: $text;
-  border-radius: .3rem;
-  background: #ccc;
 
   &.c-btn__primary,
   &.c-btn__primary:hover {
@@ -58,54 +50,52 @@
     color: #fff;
     background: $danger;
   }
-}
 
-.c-btn__o,
-.c-btn__o:hover {
-  color: $text;
-  border-radius: .3rem;
-  position: relative;
-
-  &.c-btn__primary,
-  &.c-btn__primary:hover {
-    color: $primary;
-    &::after {
-      border-color: $primary;
-    }
-  }
-
-  &.c-btn__success,
-  &.c-btn__success:hover {
-    color: $success;
-    &::after {
-      border-color: $success;
-    }
-  }
-
-  &.c-btn__warning,
-  &.c-btn__warning:hover {
-    color: $warning;
-    &::after {
-      border-color: $warning;
-    }
-  }
-
-  &.c-btn__danger,
-  &.c-btn__danger:hover {
-    color: $danger;
-    &::after {
-      border-color: $danger;
-    }
-  }
-
-  &::after {
-    @include borderLine('round');
+  &.c-btn__o,
+  &.c-btn__o:hover {
+    background-color: unset;
+    color: $text;
     border-radius: .3rem;
-  }
-}
+    position: relative;
 
-.c-btn,
-.c-btn__o {
+    &.c-btn__primary,
+    &.c-btn__primary:hover {
+      color: $primary;
+      &::after {
+        border-color: $primary;
+      }
+    }
+
+    &.c-btn__success,
+    &.c-btn__success:hover {
+      color: $success;
+      &::after {
+        border-color: $success;
+      }
+    }
+
+    &.c-btn__warning,
+    &.c-btn__warning:hover {
+      color: $warning;
+      &::after {
+        border-color: $warning;
+      }
+    }
+
+    &.c-btn__danger,
+    &.c-btn__danger:hover {
+      color: $danger;
+      &::after {
+        border-color: $danger;
+      }
+    }
+
+    &::after {
+      @include borderLine('round');
+      border-radius: .3rem;
+    }
+  }
+
   &.c-btn__suspend {
     position: fixed;
     bottom: 0;
@@ -116,20 +106,37 @@
       border-bottom: 3.4rem solid #fff;
     }
   }
+
+  &.c-btn__small {
+    display: inline-block;
+    width: auto;
+    padding: .5rem 1rem;
+    font-size: 1.4rem;
+  }
+
+  &.c-btn__icon {
+    .c-btn__text {
+      display: inline-block;
+      padding-left: 2.5rem;
+      position: relative;
+      .c-icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
 
 .c-btn:not(.c-btn__small) + .c-btn:not(.c-btn__small),
-.c-btn:not(.c-btn__small) + .c-btn__o:not(.c-btn__small),
-.c-btn__o:not(.c-btn__small) +.c-btn:not(.c-btn__small),
-.c-btn__o:not(.c-btn__small) + .c-btn__o:not(.c-btn__small) {
+.c-btn:not(.c-btn__small) + .c-btn__o:not(.c-btn__small){
   margin-top: 1.5rem;
 }
 
 .c-mobile__is-loading {
   .c-btn,
-  .c-btn:hover,
-  .c-btn__o,
-  .c-btn__o:hover {
+  .c-btn:hover {
     opacity: .6;
     cursor: not-allowed;
   }

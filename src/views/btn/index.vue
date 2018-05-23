@@ -10,6 +10,9 @@
     <c-btn type="success">success</c-btn>
     <c-btn type="warning">warning</c-btn>
     <c-btn type="danger">danger</c-btn>
+    <c-btn icon>
+      <c-icon name="search" size="2rem" /> 来来来搜索一🦐
+    </c-btn>
     <c-btn o>primary</c-btn>
     <c-btn type="primary" o>primary</c-btn>
     <c-btn type="primary" disabled>primary disabled</c-btn>

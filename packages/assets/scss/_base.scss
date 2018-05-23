@@ -33,3 +33,11 @@
 .fade-leave-active {
   opacity: 0
 }
+
+.c-btn__suspend__cover,
+.c-tabbar__cover {
+  width: 100%;
+  height: 5rem;
+  height: calc(5rem + constant(safe-area-inset-bottom));
+  height: calc(5rem + env(safe-area-inset-bottom));
+}

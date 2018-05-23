@@ -1,117 +1,152 @@
 .c-btn,
 .c-btn:hover {
-  color: $text;
-  border-radius: .3rem;
-  text-align: center;
-  font-size: 1.6rem;
-  width: 100%;
-  padding: 1.5rem 1rem;
-  display: block;
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 1;
-  line-height: 2rem;
   border: none;
-  -webkit-user-select: none;
-  user-select: none;
-  background-color: unset;
+  width: 100%;
+  padding: 0;
+  background: unset;
+  .c-btn__content {
+    background: #ccc;
+    color: $text;
+    border-radius: .3rem;
+    text-align: center;
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 1;
+    line-height: 2rem;
+    border: none;
+    -webkit-user-select: none;
+    user-select: none;
+    .c-btn__text {
+      display: inline-block;
+    }
+  }
 
   &[disabled=disabled],
   &.c-btn__disabled {
-    opacity: .6;
-    cursor: not-allowed;
+    .c-btn__content {
+      opacity: .6;
+      cursor: not-allowed;
+    }
   }
 
   &.c-btn__default,
   &.c-btn__default:hover {
-    background: #ccc;
+    .c-btn__content {
+      background: #ccc;
+    }
   }
 
   &.c-btn__primary,
   &.c-btn__primary:hover {
-    color: #fff;
-    background: $primary;
+    .c-btn__content {
+      color: #fff;
+      background: $primary;
+    }
   }
 
   &.c-btn__success,
   &.c-btn__success:hover {
-    color: #fff;
-    background: $success;
+    .c-btn__content {
+      color: #fff;
+      background: $success;
+    }
   }
 
   &.c-btn__warning,
   &.c-btn__warning:hover {
-    color: #fff;
-    background: $warning;
+    .c-btn__content {
+      color: #fff;
+      background: $warning;
+    }
   }
 
   &.c-btn__danger,
   &.c-btn__danger:hover {
-    color: #fff;
-    background: $danger;
+    .c-btn__content {
+      color: #fff;
+      background: $danger;
+    }
   }
 
   &.c-btn__o,
   &.c-btn__o:hover {
-    background-color: unset;
-    color: $text;
-    border-radius: .3rem;
-    position: relative;
+    .c-btn__content {
+      background-color: unset;
+      color: $text;
+      border-radius: .3rem;
+      position: relative;
+      &::after {
+        @include borderLine('round');
+        border-radius: .3rem;
+      }
+    }
 
     &.c-btn__primary,
     &.c-btn__primary:hover {
-      color: $primary;
-      &::after {
-        border-color: $primary;
+      .c-btn__content {
+        color: $primary;
+        &::after {
+          border-color: $primary;
+        }
       }
     }
 
     &.c-btn__success,
     &.c-btn__success:hover {
-      color: $success;
-      &::after {
-        border-color: $success;
+      .c-btn__content {
+        color: $success;
+        &::after {
+          border-color: $success;
+        }
       }
     }
 
     &.c-btn__warning,
     &.c-btn__warning:hover {
-      color: $warning;
-      &::after {
-        border-color: $warning;
+      .c-btn__content {
+        color: $warning;
+        &::after {
+          border-color: $warning;
+        }
       }
     }
 
     &.c-btn__danger,
     &.c-btn__danger:hover {
-      color: $danger;
-      &::after {
-        border-color: $danger;
+      .c-btn__content {
+        color: $danger;
+        &::after {
+          border-color: $danger;
+        }
       }
-    }
-
-    &::after {
-      @include borderLine('round');
-      border-radius: .3rem;
     }
   }
 
   &.c-btn__suspend {
     position: fixed;
-    bottom: 0;
     left: 0;
     z-index: 1;
     border-radius: 0;
-    &.c-btn__is-iphonex {
-      border-bottom: 3.4rem solid #fff;
+    background: #fff;
+    bottom: 0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    .c-btn__content {
+      border-radius: 0;
     }
   }
 
   &.c-btn__small {
     display: inline-block;
     width: auto;
-    padding: .5rem 1rem;
-    font-size: 1.4rem;
+    .c-btn__content {
+      padding: .5rem 1rem;
+      font-size: 1.4rem;
+    }
   }
 
   &.c-btn__icon {
@@ -129,15 +164,22 @@
   }
 }
 
-.c-btn:not(.c-btn__small) + .c-btn:not(.c-btn__small),
-.c-btn:not(.c-btn__small) + .c-btn__o:not(.c-btn__small){
+.c-btn:not(.c-btn__small) +
+.c-btn:not(.c-btn__small) {
   margin-top: 1.5rem;
+}
+
+.c-btn:not(.c-btn__small) +
+.c-btn__suspend:not(.c-btn__small) {
+  margin-top: 0;
 }
 
 .c-mobile__is-loading {
   .c-btn,
   .c-btn:hover {
-    opacity: .6;
-    cursor: not-allowed;
+    .c-btn__content {
+      opacity: .6;
+      cursor: not-allowed;
+    }
   }
 }

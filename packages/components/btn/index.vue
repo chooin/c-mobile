@@ -8,13 +8,14 @@
         'c-btn__disabled': disabled,
         'c-btn__suspend': suspend,
         'c-btn__small': small,
-        'c-btn__is-iphonex': isIPhoneX,
         'c-btn__icon': icon
       }
     ]"
     @click="handleClick">
-    <div class="c-btn__text">
-      <slot></slot>
+    <div class="c-btn__content">
+      <div class="c-btn__text">
+        <slot></slot>
+      </div>
     </div>
   </button>
 </template>
@@ -60,7 +61,6 @@ export default {
   },
   data () {
     return {
-      isIPhoneX,
       div: null
     }
   },
@@ -78,7 +78,7 @@ export default {
       } else if (coverType === 'String') {
         this.div.style.height = this.cover
       } else {
-        this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
+        this.div.style.height = isIPhoneX ? '8.4rem' : '5rem'
       }
       this.div.className = 'c-btn__suspend__cover'
       document.body.appendChild(this.div)

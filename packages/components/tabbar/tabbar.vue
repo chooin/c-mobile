@@ -2,10 +2,7 @@
   <div
     class="c-tabbar"
     :class="[
-      type ? `c-tabbar__${type}` : '',
-      {
-        'c-tabbar__is-iphonex': isIPhoneX
-      }
+      type ? `c-tabbar__${type}` : ''
     ]">
     <slot></slot>
   </div>
@@ -28,7 +25,6 @@ export default {
   },
   data () {
     return {
-      isIPhoneX,
       div: null
     }
   },
@@ -45,7 +41,7 @@ export default {
       } else if (coverType === 'String') {
         this.div.style.height = this.cover
       } else {
-        this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
+        this.div.style.height = isIPhoneX ? '8.4rem' : '5rem'
       }
       this.div.className = 'c-tabbar__cover'
       document.body.appendChild(this.div)

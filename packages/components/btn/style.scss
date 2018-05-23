@@ -133,8 +133,6 @@
     border-radius: 0;
     background: #fff;
     bottom: 0;
-    height: calc(5rem + constant(safe-area-inset-bottom));
-    height: calc(5rem + env(safe-area-inset-bottom));
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
     .c-btn__content {

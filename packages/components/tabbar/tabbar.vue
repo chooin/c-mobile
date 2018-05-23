@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { getObjectType } from '../../utils'
+import { isIPhoneX, getObjectType } from '../../utils'
 
 export default {
   name: 'cTabbar',
@@ -41,7 +41,7 @@ export default {
       } else if (coverType === 'String') {
         this.div.style.height = this.cover
       } else {
-        this.div.style.height = '5rem'
+        this.div.style.height = isIPhoneX ? '8.4rem' : '5rem'
       }
       this.div.className = 'c-tabbar__cover'
       document.body.appendChild(this.div)

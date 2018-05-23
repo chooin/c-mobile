@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { to, getObjectType } from '../../utils'
+import { to, isIPhoneX, getObjectType } from '../../utils'
 
 export default {
   name: 'cBtn',
@@ -68,7 +68,7 @@ export default {
       } else if (coverType === 'String') {
         this.div.style.height = this.cover
       } else {
-        this.div.style.height = '5rem'
+        this.div.style.height = isIPhoneX ? '8.4rem' : '5rem'
       }
       this.div.className = 'c-btn__suspend__cover'
       document.body.appendChild(this.div)

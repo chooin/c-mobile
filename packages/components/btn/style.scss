@@ -108,14 +108,13 @@
 .c-btn__o {
   &.c-btn__suspend {
     position: fixed;
-    bottom: 0;
     left: 0;
     z-index: 1;
     border-radius: 0;
+    background: #fff;
+    bottom: 0;
     bottom: constant(safe-area-inset-bottom);
     bottom: env(safe-area-inset-bottom);
-    border-bottom: constant(safe-area-inset-bottom) solid #fff;
-    border-bottom: env(safe-area-inset-bottom) solid #fff;
   }
 }
 

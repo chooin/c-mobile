@@ -2,17 +2,14 @@
   <div
     class="c-tabbar"
     :class="[
-      type ? `c-tabbar__${type}` : '',
-      {
-        'c-tabbar__is-iphonex': isIPhoneX
-      }
+      type ? `c-tabbar__${type}` : ''
     ]">
     <slot></slot>
   </div>
 </template>
 
 <script>
-import { isIPhoneX, getObjectType } from '../../utils'
+import { getObjectType } from '../../utils'
 
 export default {
   name: 'cTabbar',
@@ -28,7 +25,6 @@ export default {
   },
   data () {
     return {
-      isIPhoneX,
       div: null
     }
   },
@@ -45,7 +41,7 @@ export default {
       } else if (coverType === 'String') {
         this.div.style.height = this.cover
       } else {
-        this.div.style.height = this.isIPhoneX ? '8.4rem' : '5rem'
+        this.div.style.height = '5rem'
       }
       this.div.className = 'c-tabbar__cover'
       document.body.appendChild(this.div)

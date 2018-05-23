@@ -112,9 +112,8 @@
     left: 0;
     z-index: 1;
     border-radius: 0;
-    &.c-btn__is-iphonex {
-      border-bottom: 3.4rem solid #fff;
-    }
+    border-bottom: constant(safe-area-inset-bottom) solid #fff;
+    border-bottom: env(safe-area-inset-bottom) solid #fff;
   }
 }
 

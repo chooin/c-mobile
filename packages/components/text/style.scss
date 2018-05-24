@@ -24,7 +24,7 @@
   display: inline-block;
 
   &.c-text__light {
-    opacity: .7;
+    color: $text-light;
   }
 
   &.c-text__block {
@@ -45,6 +45,21 @@
 
   &.c-text__danger {
     color: $danger;
+  }
+
+  &.c-text__left {
+    display: block !important;
+    text-align: left !important;
+  }
+
+  &.c-text__center {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  &.c-text__right {
+    display: block !important;
+    text-align: right !important;
   }
 
   &.c-text__cursor {
@@ -93,6 +108,6 @@
     }
   }
   &.c-text__placeholder {
-    opacity: .7;
+    color: $text-light;
   }
 }

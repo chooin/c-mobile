@@ -3,8 +3,15 @@
     class="c-text"
     :class="[
       type ? `c-text__${type}` : '',
+      align ? `c-text__${align}`: '',
       {
         'c-text__light': light,
+        'c-text__block': block,
+        'c-text__cursor': cursor,
+        'c-text__empty':
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === '',
         'c-text__placeholder':
           placeholder !== undefined &&
           placeholder !== null &&
@@ -12,17 +19,12 @@
             text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
             text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
             text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
-          ),
-        'c-text__block': block,
-        'c-text__cursor': cursor,
-        'c-text__empty':
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
+          )
       }
     ]"
     :style="{
-      fontFamily
+      fontFamily,
+      fontSize: _fontSize
     }"
     @click="handleClick">
     <template
@@ -44,7 +46,7 @@
 </template>
 
 <script>
-import { to } from '../../utils'
+import { to, getObjectType } from '../../utils'
 
 export default {
   name: 'cText',
@@ -80,6 +82,14 @@ export default {
     cursor: {
       type: Boolean,
       default: false
+    },
+    fontSize: {
+      type: [Number, String],
+      default: null
+    },
+    align: {
+      type: String,
+      default: null
     }
   },
   methods: {
@@ -89,6 +99,13 @@ export default {
         vm: this,
         to: this.to
       })
+    }
+  },
+  computed: {
+    _fontSize () {
+      return isNaN(this.fontSize)
+        ? this.fontSize
+        : `${this.fontSize}px`
     }
   }
 }

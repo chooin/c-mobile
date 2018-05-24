@@ -4,14 +4,26 @@ export default ({
   replace
 }) => {
   if (to) {
-    if (typeof to === 'string' && to.indexOf('//') === 0) {
+    if (
+      typeof to === 'string' &&
+      to.indexOf('//') === 0
+    ) {
+      to = to.indexOf('.') > -1
+        ? to
+        : to.substring(1)
       if (replace) {
-        window.location.replace(to.substring(1))
+        window.location.replace(to)
       } else {
-        window.location.href = to.substring(1)
+        window.location.href = to
       }
     } else {
-      if ((typeof to === 'string' && to.indexOf('/') === 0) || typeof to === 'object') {
+      if (
+        (
+          typeof to === 'string' &&
+          to.indexOf('/') === 0
+        ) ||
+        typeof to === 'object'
+      ) {
         if (replace) {
           vm.$router.replace(to)
         } else {

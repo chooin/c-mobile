@@ -30,7 +30,11 @@ export default ({
           vm.$router.push(to)
         }
       } else {
-        window.location.href = to
+        if (replace) {
+          window.location.replace(to)
+        } else {
+          window.location.href = to
+        }
       }
     }
   } else {

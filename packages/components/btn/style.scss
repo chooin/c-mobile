@@ -3,125 +3,99 @@
   border: none;
   width: 100%;
   padding: 0;
-  background: unset;
-  .c-btn__content {
-    background: #ccc;
-    color: $text;
-    border-radius: .3rem;
-    text-align: center;
-    font-size: 1.6rem;
-    width: 100%;
-    padding: 1.5rem 1rem;
-    display: block;
-    cursor: pointer;
-    text-decoration: none;
-    opacity: 1;
-    line-height: 2rem;
-    border: none;
-    -webkit-user-select: none;
-    user-select: none;
-    .c-btn__text {
-      display: inline-block;
-    }
+  color: $text;
+  background: #ccc;
+  border-radius: .3rem;
+  text-align: center;
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 1;
+  line-height: 2rem;
+  border: none;
+  -webkit-user-select: none;
+  user-select: none;
+  .c-btn__text {
+    display: inline-block;
   }
 
   &[disabled=disabled],
   &.c-btn__disabled {
-    .c-btn__content {
-      opacity: .6;
-      cursor: not-allowed;
-    }
+    opacity: .6;
+    cursor: not-allowed;
   }
 
   &.c-btn__default,
   &.c-btn__default:hover {
-    .c-btn__content {
-      background: #ccc;
-    }
+    background: #ccc;
   }
 
   &.c-btn__primary,
   &.c-btn__primary:hover {
-    .c-btn__content {
-      color: #fff;
-      background: $primary;
-    }
+    color: #fff;
+    background: $primary;
   }
 
   &.c-btn__success,
   &.c-btn__success:hover {
-    .c-btn__content {
-      color: #fff;
-      background: $success;
-    }
+    color: #fff;
+    background: $success;
   }
 
   &.c-btn__warning,
   &.c-btn__warning:hover {
-    .c-btn__content {
-      color: #fff;
-      background: $warning;
-    }
+    color: #fff;
+    background: $warning;
   }
 
   &.c-btn__danger,
   &.c-btn__danger:hover {
-    .c-btn__content {
-      color: #fff;
-      background: $danger;
-    }
+    color: #fff;
+    background: $danger;
   }
 
   &.c-btn__o,
   &.c-btn__o:hover {
-    .c-btn__content {
-      background-color: unset;
-      color: $text;
+    color: $text;
+    border-radius: .3rem;
+    position: relative;
+    &::after {
+      @include borderLine('round');
       border-radius: .3rem;
-      position: relative;
-      &::after {
-        @include borderLine('round');
-        border-radius: .3rem;
-      }
     }
 
     &.c-btn__primary,
     &.c-btn__primary:hover {
-      .c-btn__content {
-        color: $primary;
-        &::after {
-          border-color: $primary;
-        }
+      color: #fff;
+      &::after {
+        border-color: $primary;
       }
     }
 
     &.c-btn__success,
     &.c-btn__success:hover {
-      .c-btn__content {
-        color: $success;
-        &::after {
-          border-color: $success;
-        }
+      color: #fff;
+      &::after {
+        border-color: $success;
       }
     }
 
     &.c-btn__warning,
     &.c-btn__warning:hover {
-      .c-btn__content {
-        color: $warning;
-        &::after {
-          border-color: $warning;
-        }
+      color: #fff;
+      &::after {
+        border-color: $warning;
       }
     }
 
     &.c-btn__danger,
     &.c-btn__danger:hover {
-      .c-btn__content {
-        color: $danger;
-        &::after {
-          border-color: $danger;
-        }
+      color: #fff;
+      &::after {
+        border-color: $danger;
       }
     }
   }
@@ -131,22 +105,28 @@
     left: 0;
     z-index: 1;
     border-radius: 0;
-    background: #fff;
     bottom: 0;
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
-    .c-btn__content {
-      border-radius: 0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    &::before {
+      content: " ";
+      width: 100%;
+      background: #fff;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      height: 0;
+      height: constant(safe-area-inset-bottom);
+      height: env(safe-area-inset-bottom);
     }
   }
 
   &.c-btn__small {
     display: inline-block;
     width: auto;
-    .c-btn__content {
-      padding: .5rem 1rem;
-      font-size: 1.4rem;
-    }
+    padding: .5rem 1rem;
+    font-size: 1.4rem;
   }
 
   &.c-btn__icon {
@@ -177,9 +157,7 @@
 .c-mobile__is-loading {
   .c-btn,
   .c-btn:hover {
-    .c-btn__content {
-      opacity: .6;
-      cursor: not-allowed;
-    }
+    opacity: .6;
+    cursor: not-allowed;
   }
 }

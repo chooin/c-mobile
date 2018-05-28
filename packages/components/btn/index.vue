@@ -1,6 +1,7 @@
 <template>
   <button
     class="c-btn"
+    type="button"
     :class="[
       type ? `c-btn__${type}` : '',
       {
@@ -12,11 +13,9 @@
       }
     ]"
     @click="handleClick">
-    <div class="c-btn__content">
-      <div class="c-btn__text">
-        <slot></slot>
-      </div>
-    </div>
+    <span class="c-btn__text">
+      <slot></slot>
+    </span>
   </button>
 </template>
 

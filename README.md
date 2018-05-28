@@ -56,3 +56,9 @@ import './index.scss'
 
 Vue.use(Mobile)
 ```
+
+viewport 添加 viewport-fit=cover 支持 iPhoneX 等异形屏
+
+``` html
+<meta name="viewport" content="viewport-fit=cover">
+```

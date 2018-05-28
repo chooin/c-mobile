@@ -5,6 +5,11 @@
     <c-btn type="warning" small>warning</c-btn>
     <c-btn type="danger" small>danger</c-btn>
     <div style="height: 1.5rem"></div>
+    <c-btn type="primary" o small>primary</c-btn>
+    <c-btn type="success" o small>success</c-btn>
+    <c-btn type="warning" o small>warning</c-btn>
+    <c-btn type="danger" o small>danger</c-btn>
+    <div style="height: 1.5rem"></div>
     <c-btn>default</c-btn>
     <c-btn type="primary">primary</c-btn>
     <c-btn type="success">success</c-btn>

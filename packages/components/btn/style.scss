@@ -62,6 +62,7 @@
     color: $text;
     border-radius: .3rem;
     position: relative;
+    background: unset;
     &::after {
       @include borderLine('round');
       border-radius: .3rem;
@@ -69,7 +70,7 @@
 
     &.c-btn__primary,
     &.c-btn__primary:hover {
-      color: #fff;
+      color: $primary;
       &::after {
         border-color: $primary;
       }
@@ -77,7 +78,7 @@
 
     &.c-btn__success,
     &.c-btn__success:hover {
-      color: #fff;
+      color: $success;
       &::after {
         border-color: $success;
       }
@@ -85,7 +86,7 @@
 
     &.c-btn__warning,
     &.c-btn__warning:hover {
-      color: #fff;
+      color: $warning;
       &::after {
         border-color: $warning;
       }
@@ -93,7 +94,7 @@
 
     &.c-btn__danger,
     &.c-btn__danger:hover {
-      color: #fff;
+      color: $danger;
       &::after {
         border-color: $danger;
       }

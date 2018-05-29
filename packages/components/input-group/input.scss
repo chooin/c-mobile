@@ -1,15 +1,15 @@
 .c-input {
   width: 100%;
-  padding: 1.5rem;
+  padding: 15px;
   display: block;
   position: relative;
   display: flex;
   -webkit-box-flex: 1;
   overflow: hidden;
-  font-size: 1.4rem;
+  font-size: 14px;
   .c-input-head,
   .c-input-body {
-    min-height: 2rem;
+    min-height: 20px;
     &:empty {
       &::before {
         content: "";
@@ -20,7 +20,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    min-width: 11rem;
+    min-width: 110px;
     color: $text;
   }
   .c-input-body {
@@ -38,25 +38,25 @@
       border: none;
       width: 100%;
       height: 100%;
-      line-height: 2rem;
-      font-size: 1.4rem;
+      line-height: 20px;
+      font-size: 14px;
       background: transparent;
       -webkit-appearance: none;
       vertical-align: top;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      line-height: 1.8rem;
+      line-height: 18px;
     }
     textarea,
     .textarea {
       border: none;
       width: 100%;
-      line-height: 2rem;
-      font-size: 1.4rem;
+      line-height: 20px;
+      font-size: 14px;
       background: transparent;
       vertical-align: top;
-      min-height: 6rem;
+      min-height: 60px;
       text-align: justify;
       word-wrap: break-word;
       word-break: normal;
@@ -97,7 +97,7 @@
         background: transparent;
         width: 100%;
         direction: rtl;
-        font-size: 1.4rem;
+        font-size: 14px;
         color: $text;
         &.light {
           color: var($text-light);
@@ -106,14 +106,14 @@
       .c-switch {
         position: absolute;
         top: 50%;
-        right: 1.5rem;
+        right: 15px;
         transform: translateY(-50%);
       }
       .c-btn,
       .c-btn__o {
         position: absolute;
         top: 50%;
-        right: 1.5rem;
+        right: 15px;
         transform: translateY(-50%);
         z-index: 1;
       }
@@ -129,54 +129,54 @@
     -webkit-user-select: none;
     user-select: none;
     .c-input-body {
-      padding-right: 1rem;
+      padding-right: 10px;
       &::after {
         content: "";
         transform: rotate(-45deg)
                    translateY(-50%);
         border: solid #cacaca;
-        border-width: 0 .1rem .1rem 0;
-        width: 1rem;
-        height: 1rem;
+        border-width: 0 1px 1px 0;
+        width: 10px;
+        height: 10px;
         display: block;
         position: absolute;
         top: 50%;
-        right: 1.3rem;
-        margin-top: -.2rem;
+        right: 13px;
+        margin-top: -2px;
       }
     }
   }
   &.c-input__checked {
     .c-input-body {
-      padding-right: 2rem;
+      padding-right: 20px;
       &::after {
         content: "";
         transform: rotate(45deg);
         border: solid $primary;
-        border-width: 0 .2rem .2rem 0;
-        width: .8rem;
-        height: 1.6rem;
+        border-width: 0 2px 2px 0;
+        width: 8px;
+        height: 16px;
         display: block;
         position: absolute;
-        top: 1.6rem;
-        right: 2rem;
+        top: 16px;
+        right: 20px;
       }
     }
   }
   &.c-input__icon {
-    padding-left: 5.5rem;
+    padding-left: 55px;
     .c-input-head {
-      min-width: 14rem;
+      min-width: 140px;
       i {
         position: absolute;
-        left: 1.5rem;
+        left: 15px;
         top: 50%;
         transform: translateY(-50%);
       }
     }
   }
   &::before {
-    @include borderLine('top', 1.5rem);
+    @include borderLine('top', 15px);
   }
   &:first-child {
     &::before {

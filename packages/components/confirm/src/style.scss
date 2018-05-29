@@ -11,30 +11,30 @@
   .c-confirm__cell {
     position: fixed;
     z-index: 1;
-    width: 27rem;
+    width: 270px;
     top: 50%;
     left: 50%;
-    line-height: 2rem;
+    line-height: 20px;
     text-align: center;
-    border-radius: 1.2rem;
-    font-size: 1.4rem;
+    border-radius: 12px;
+    font-size: 14px;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, .95);
-    margin-top: -4rem;
-    padding: 2.5rem 1rem 6.4rem;
+    margin-top: -40px;
+    padding: 25px 10px 64px;
     .c-confirm__btn-group {
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 4.4rem;
+      height: 44px;
       display: flex;
       -webkit-box-flex: 1;
       width: 100%;
       flex-wrap: wrap;
-      line-height: 4.4rem;
+      line-height: 44px;
       .c-confirm__btn {
         position: relative;
-        font-size: 1.6rem;
+        font-size: 16px;
         color: #007aff;
         display: block;
         flex: 1;

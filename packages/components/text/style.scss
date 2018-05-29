@@ -68,14 +68,14 @@
       display: none;
       content: " ";
       animation: c-text-cursor 1.2s infinite linear;
-      width: .2rem;
+      width: 2px;
       height: 100%;
       background: $primary;
       position: absolute;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      border-radius: .4rem;
+      border-radius: 4px;
     }
     .c-text__content {
       position: relative;
@@ -83,7 +83,7 @@
         display: block;
         content: " ";
         animation: c-text-cursor 1.2s infinite linear;
-        width: .2rem;
+        width: 2px;
         height: 100%;
         background: $primary;
         position: absolute;
@@ -91,7 +91,7 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        border-radius: .4rem;
+        border-radius: 4px;
       }
     }
   }

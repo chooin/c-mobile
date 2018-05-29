@@ -1,7 +1,7 @@
 .c-tab {
   background: #f5f5f5;
-  height: 4.4rem;
-  line-height: 4.4rem;
+  height: 44px;
+  line-height: 44px;
   display: flex;
   -webkit-box-flex: 1;
   position: relative;
@@ -12,14 +12,14 @@
     position: relative;
     display: block;
     flex: 1;
-    font-size: 1.2rem;
+    font-size: 12px;
     color: $text;
     text-decoration: none;
     &.c-tab__current {
       &::after {
         content: "";
-        width: 2rem;
-        border-bottom: .2rem solid $border;
+        width: 20px;
+        border-bottom: 2px solid $border;
         position: absolute;
         bottom: 0;
         left: 50%;

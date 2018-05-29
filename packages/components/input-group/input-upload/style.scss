@@ -2,40 +2,40 @@
   width: 100%;
   overflow: hidden;
   vertical-align: top;
-  padding: 0 .5rem 1rem 1.5rem;
+  padding: 0 5px 10px 15px;
   position: relative;
   .c-input-upload__title {
     position: relative;
-    line-height: 2rem;
-    height: 2rem;
-    margin-top: 1rem;
+    line-height: 20px;
+    height: 20px;
+    margin-top: 10px;
     b {
       position: absolute;
       right: 0;
-      line-height: 2rem;
-      height: 2rem;
+      line-height: 20px;
+      height: 20px;
     }
   }
   .c-input-upload__files {
     float: left;
     .c-input-upload-file {
       position: relative;
-      width: 6rem;
-      height: 6rem;
-      margin: 1rem 1rem 0 0;
+      width: 60px;
+      height: 60px;
+      margin: 10px 10px 0 0;
       float: left;
       background: #ddd;
       img {
-        width: 6rem;
-        height: 6rem;
+        width: 60px;
+        height: 60px;
         position: relative;
         z-index: 1;
       }
       i {
         display: none;
         position: absolute;
-        width: 2rem;
-        height: 2rem;
+        width: 20px;
+        height: 20px;
         left: 0;
         top: 0;
         background: rgba(0, 0, 0, .75);
@@ -44,13 +44,13 @@
         &::before {
           content: "+";
           color: #fff;
-          left: -.2rem;
-          top: -.2rem;
-          height: 2rem;
-          width: 2rem;
+          left: -2px;
+          top: -2px;
+          height: 20px;
+          width: 20px;
           text-align: center;
           vertical-align: top;
-          line-height: 2rem;
+          line-height: 20px;
           transform: rotate(45deg);
           position: absolute;
           font-family: Arial;
@@ -62,9 +62,9 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 3rem;
-        height: 3rem;
-        border: .3rem solid #fff;
+        width: 30px;
+        height: 30px;
+        border: 3px solid #fff;
         border-top-color: transparent;
         border-radius: 50%;
         animation: c-mobile-loading 0.8s linear infinite;
@@ -74,10 +74,10 @@
     .c-input-upload__btn {
       float: left;
       position: relative;
-      margin: 1rem 1rem 0 0;
-      width: 6rem;
-      height: 6rem;
-      border: .1rem solid $border;
+      margin: 10px 10px 0 0;
+      width: 60px;
+      height: 60px;
+      border: 1px solid $border;
       input[type=file] {
         right: 0 !important;
         top: 0 !important;
@@ -95,22 +95,22 @@
         background-color: $border;
       }
       &::before {
-        width: .2rem;
-        height: 3.95rem;
+        width: 2px;
+        height: 3.950px;
       }
       &::after {
-        width: 3.95rem;
-        height: .2rem;
+        width: 3.950px;
+        height: 2px;
       }
     }
   }
   .c-input-upload__amount{
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 10px;
+    top: 10px;
   }
   &::before {
-    @include borderLine('top', 1.5rem);
+    @include borderLine('top', 15px);
   }
   &:first-child {
     &::before {

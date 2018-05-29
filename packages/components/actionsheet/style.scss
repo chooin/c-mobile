@@ -11,24 +11,24 @@
   .c-actionsheet__content {
     position: absolute;
     left: 50%;
-    width: calc(100% - 2rem);
+    width: calc(100% - 20px);
     z-index: 1;
     transform: translate(-50%, 100%);
     transition: all .3s ease;
-    bottom: 1rem;
-    bottom: calc(1rem + constant(safe-area-inset-bottom));
-    bottom: calc(1rem + env(safe-area-inset-bottom));
+    bottom: 10px;
+    bottom: calc(10px + constant(safe-area-inset-bottom));
+    bottom: calc(10px + env(safe-area-inset-bottom));
     .c-actionsheet__header {
       background: #fff;
-      border-radius: 1.2rem 1.2rem 0 0;
-      padding: 1.2rem 0;
+      border-radius: 12px 12px 0 0;
+      padding: 12px 0;
       position: relative;
       display: none;
       .c-actionsheet__title {
         color: #333;
         text-align: center;
-        font-size: 1.4rem;
-        padding: 0 2.5rem;
+        font-size: 14px;
+        padding: 0 25px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -37,12 +37,12 @@
       .c-actionsheet__description {
         color: $text-light;
         text-align: center;
-        padding: 0 2.5rem;
-        font-size: 1.2rem;
+        padding: 0 25px;
+        font-size: 12px;
       }
       .c-actionsheet__title +
       .c-actionsheet__description {
-        margin-top: .5rem;
+        margin-top: 5px;
       }
       &::before {
         @include borderLine('bottom');
@@ -53,25 +53,25 @@
         li {
           list-style: none;
           background: #fff;
-          height: 5.7rem;
+          height: 57px;
           text-align: center;
-          line-height: 5.7rem;
+          line-height: 57px;
           color: rgb(0, 122, 255);
-          font-size: 2rem;
+          font-size: 20px;
           position: relative;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
-          padding: 0 2.5rem;
+          padding: 0 25px;
           &:first-child {
-            border-radius: 1.2rem 1.2rem 0 0;
+            border-radius: 12px 12px 0 0;
             &::before {
               border-top: none;
             }
           }
           &:last-child {
-            border-bottom-right-radius: 1.2rem;
-            border-bottom-left-radius: 1.2rem;
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
           }
           &::before {
             @include borderLine('top');
@@ -81,13 +81,13 @@
     }
     .c-actionsheet__cancel {
       background: #fff;
-      height: 5.7rem;
-      border-radius: 1.2rem;
+      height: 57px;
+      border-radius: 12px;
       text-align: center;
-      line-height: 5.7rem;
+      line-height: 57px;
       color: rgb(0, 122, 255);
-      font-size: 2rem;
-      margin-top: .7rem;
+      font-size: 20px;
+      margin-top: 7px;
       font-weight: bold;
     }
   }
@@ -105,9 +105,9 @@
   &.c-actionsheet__visible {
     visibility: visible;
     .c-actionsheet__content {
-      bottom: 1rem;
-      bottom: calc(1rem + constant(safe-area-inset-bottom));
-      bottom: calc(1rem + env(safe-area-inset-bottom));
+      bottom: 10px;
+      bottom: calc(10px + constant(safe-area-inset-bottom));
+      bottom: calc(10px + env(safe-area-inset-bottom));
       transform: translate(-50%, 0);
     }
     &::before {
@@ -126,8 +126,8 @@
               border-radius: 0;
             }
             &:last-child {
-              border-bottom-right-radius: 1.2rem;
-              border-bottom-left-radius: 1.2rem;
+              border-bottom-right-radius: 12px;
+              border-bottom-left-radius: 12px;
             }
           }
         }
@@ -138,7 +138,7 @@
     &.c-actionsheet__has-title {
       .c-actionsheet__content {
         .c-actionsheet__header {
-          border-radius: 1.2rem;
+          border-radius: 12px;
           &::before {
             border: none;
           }

@@ -9,46 +9,46 @@
   -webkit-box-flex: 1;
   -webkit-user-select: none;
   user-select: none;
-  height: 5rem;
-  height: calc(5rem + constant(safe-area-inset-bottom));
-  height: calc(5rem + env(safe-area-inset-bottom));
+  height: 50px;
+  height: calc(50px + constant(safe-area-inset-bottom));
+  height: calc(50px + env(safe-area-inset-bottom));
   padding-bottom: 0;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
   .c-tabbar-item {
     position: relative;
-    padding: .5rem 0;
-    height: 5rem;
+    padding: 5px 0;
+    height: 50px;
     display: block;
     text-align: center;
     cursor: pointer;
     flex: 1;
     i {
-      height: 2.4rem;
-      line-height: 2.4rem;
-      font-size: 2rem;
+      height: 24px;
+      line-height: 24px;
+      font-size: 20px;
       display: block;
     }
     .c-text {
-      font-size: 1.2rem;
-      height: 1.6rem;
-      line-height: 1.6rem;
+      font-size: 12px;
+      height: 16px;
+      line-height: 16px;
       display: block;
       color: $text;
     }
     b {
       position: absolute;
       left: 50%;
-      top: .5rem;
+      top: 5px;
       transform: translateX(-50%);
-      margin-left: 1.8rem;
-      height: 1.6rem;
-      min-width: 1.6rem;
-      line-height: 1.6rem;
-      padding: 0 .5rem;
+      margin-left: 18px;
+      height: 16px;
+      min-width: 16px;
+      line-height: 16px;
+      padding: 0 5px;
       color: #fff;
-      font-size: 1.2rem;
-      border-radius: 1.6rem;
+      font-size: 12px;
+      border-radius: 16px;
       background: $danger;
       &:empty {
         display: none;

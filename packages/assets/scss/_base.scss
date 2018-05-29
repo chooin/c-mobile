@@ -13,25 +13,19 @@
     box-sizing: border-box;
   }
 }
+
 :-webkit-autofill {
   box-shadow: 0 0 0 10rem #fff inset;
   -webkit-text-fill-color: #574751;
   color: #574751;
 }
+
 .noborder {
   border: none !important;
   &::before,
   &::after {
     border: none !important;
   }
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .3s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0
 }
 
 .c-btn__suspend__cover,

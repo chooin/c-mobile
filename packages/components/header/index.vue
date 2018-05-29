@@ -10,7 +10,7 @@
     <span
       class="c-header__left"
       :class="{
-        back: _left.back
+        'c-header__back': _left.back
       }"
       :style="{
         color: _left.color

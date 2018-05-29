@@ -7,9 +7,6 @@
   position: relative;
   -webkit-user-select: none;
   user-select: none;
-  &::before {
-    @include borderLine('bottom');
-  }
   .c-tab-item {
     text-align: center;
     position: relative;
@@ -58,5 +55,8 @@
         border-color: $danger;
       }
     }
+  }
+  &::before {
+    @include borderLine('bottom');
   }
 }

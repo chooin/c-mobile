@@ -56,7 +56,7 @@
     }
   }
   &.c-tabbar__primary {
-    .current {
+    .c-tabbar__current {
       i,
       .c-text {
         color: $primary;
@@ -64,7 +64,7 @@
     }
   }
   &.c-tabbar__success {
-    .current {
+    .c-tabbar__current {
       i,
       .c-text {
         color: $success;
@@ -72,7 +72,7 @@
     }
   }
   &.c-tabbar__warning {
-    .current {
+    .c-tabbar__current {
       i,
       .c-text {
         color: $warning;
@@ -80,7 +80,7 @@
     }
   }
   &.c-tabbar__danger {
-    .current {
+    .c-tabbar__current {
       i,
       .c-text {
         color: $danger;

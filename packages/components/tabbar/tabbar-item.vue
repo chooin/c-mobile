@@ -2,7 +2,7 @@
   <a
     class="c-tabbar-item"
     :class="{
-      current
+      'c-tabbar__current': current
     }"
     @click="handleClick">
     <slot>

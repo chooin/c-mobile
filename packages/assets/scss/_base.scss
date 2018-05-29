@@ -13,11 +13,13 @@
     box-sizing: border-box;
   }
 }
+
 :-webkit-autofill {
-  box-shadow: 0 0 0 10rem #fff inset;
+  box-shadow: 0 0 0 100px #fff inset;
   -webkit-text-fill-color: #574751;
   color: #574751;
 }
+
 .noborder {
   border: none !important;
   &::before,
@@ -25,19 +27,11 @@
     border: none !important;
   }
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .3s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0
-}
 
 .c-btn__suspend__cover,
 .c-tabbar__cover {
   width: 100%;
-  height: 5rem;
-  height: calc(5rem + constant(safe-area-inset-bottom));
-  height: calc(5rem + env(safe-area-inset-bottom));
+  height: 50px;
+  height: calc(50px + constant(safe-area-inset-bottom));
+  height: calc(50px + env(safe-area-inset-bottom));
 }

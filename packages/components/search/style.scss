@@ -1,16 +1,16 @@
 .c-search {
   background: #ddd;
-  padding: 1rem;
+  padding: 10px;
   position: relative;
   .c-search__input {
     background: #fff;
     border: none;
-    height: 3rem;
-    line-height: 1.6rem;
-    font-size: 1.4rem;
+    height: 30px;
+    line-height: 16px;
+    font-size: 14px;
     width: 100%;
-    border-radius: .3rem;
-    padding: .7rem 1rem;
+    border-radius: 3px;
+    padding: 7px 10px;
     -webkit-appearance: none;
     &::-webkit-input-placeholder {
       color: $text-light;
@@ -20,12 +20,12 @@
     }
   }
   .c-search__cancel-button {
-    width: 3rem;
-    height: 3rem;
+    width: 30px;
+    height: 30px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 1rem;
+    right: 10px;
     svg {
       position: absolute;
       top: 50%;

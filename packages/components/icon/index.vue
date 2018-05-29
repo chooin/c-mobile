@@ -16,7 +16,7 @@
       color,
       borderRadius: borderRadius
                     ? borderRadius
-                    : '.3rem'
+                    : '3px'
     }"
     @click="handleClick">
   </i>

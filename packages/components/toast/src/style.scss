@@ -13,22 +13,22 @@
   display: flex;
   .c-toast__content {
     z-index: 1;
-    min-width: 13rem;
+    min-width: 130px;
     max-width: 80%;
     background: rgba(40, 40, 40, 0.9);
-    padding: 1.5rem 1.5rem;
-    line-height: 2rem;
+    padding: 15px 15px;
+    line-height: 20px;
     text-align: center;
-    border-radius: .3rem;
+    border-radius: 3px;
     color: #fff;
-    font-size: 1.6rem;
-    margin-top: -4rem;
+    font-size: 16px;
+    margin-top: -40px;
     p {
-      padding-bottom: .5rem;
+      padding-bottom: 5px;
       width: 100%;
       word-wrap: break-word;
       word-break: normal;
-      line-height: 2.2rem;
+      line-height: 22px;
       &:last-child {
         padding: 0;
       }

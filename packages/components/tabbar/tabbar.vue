@@ -36,7 +36,7 @@ export default {
       this.div = document.createElement('div')
       this.div.className = 'c-tabbar__cover'
       if (getObjectType(this.cover) === 'Number') {
-        this.div.style.height = `${this.cover}rem`
+        this.div.style.height = `${this.cover}px`
       } else if (getObjectType(this.cover) === 'String') {
         this.div.style.height = this.cover
       }

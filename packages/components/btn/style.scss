@@ -5,19 +5,20 @@
   padding: 0;
   color: $text;
   background: #ccc;
-  border-radius: .3rem;
+  border-radius: 3px;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 16px;
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 15px 10px;
   display: block;
   cursor: pointer;
   text-decoration: none;
   opacity: 1;
-  line-height: 2rem;
+  line-height: 20px;
   border: none;
   -webkit-user-select: none;
   user-select: none;
+  overflow: visible;
   .c-btn__text {
     display: inline-block;
   }
@@ -60,12 +61,12 @@
   &.c-btn__o,
   &.c-btn__o:hover {
     color: $text;
-    border-radius: .3rem;
+    border-radius: 3px;
     position: relative;
     background: unset;
     &::after {
       @include borderLine('round');
-      border-radius: .3rem;
+      border-radius: 3px;
     }
 
     &.c-btn__primary,
@@ -126,14 +127,14 @@
   &.c-btn__small {
     display: inline-block;
     width: auto;
-    padding: .5rem 1rem;
-    font-size: 1.4rem;
+    padding: 5px 10px;
+    font-size: 14px;
   }
 
   &.c-btn__icon {
     .c-btn__text {
       display: inline-block;
-      padding-left: 2.2rem;
+      padding-left: 22px;
       position: relative;
       .c-icon {
         position: absolute;
@@ -147,7 +148,7 @@
 
 .c-btn:not(.c-btn__small) +
 .c-btn:not(.c-btn__small) {
-  margin-top: 1.5rem;
+  margin-top: 15px;
 }
 
 .c-btn:not(.c-btn__small) +

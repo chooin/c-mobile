@@ -118,6 +118,6 @@
   </div>
 </template>
 
-<style scoped lang="scss">
-  @import './style';
+<style scoped lang="postcss">
+  @import './style.css';
 </style>

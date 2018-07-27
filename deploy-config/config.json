@@ -1,15 +1,30 @@
 {
   "type": "aliyun",
   "deploy": {
-    "dirs": ["./dist->."],
+    "directories": [
+      {
+        "from": "./mobile/dist",
+        "to": "."
+      }
+    ],
     "files": []
   },
   "noCache": {
-    "fileSuffix": ["html"],
-    "fileName": ["service-worker.js"]
+    "fileSuffix": [
+      "html"
+    ],
+    "fileName": [
+      "service-worker.js"
+    ]
   },
   "lastUpload": {
-    "fileSuffix": ["html"],
+    "fileSuffix": [
+      "html"
+    ],
+    "fileName": []
+  },
+  "ignore": {
+    "fileSuffix": [],
     "fileName": []
   }
 }

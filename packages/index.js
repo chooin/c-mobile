@@ -1,8 +1,8 @@
-import Btn from './components/btn'
-import { Flex, FlexItem } from './components/flex'
-import { Ft, FtItem } from './components/ft'
-import Header from './components/header'
-import Icon from './components/icon'
+import Btn from '../packages/components/btn'
+import { Flex, FlexItem } from '../packages/components/flex'
+import { Ft, FtItem } from '../packages/components/ft'
+import Header from '../packages/components/header'
+import Icon from '../packages/components/icon'
 import {
   InputGroup,
   Input,
@@ -10,19 +10,19 @@ import {
   InputBody,
   InputUpload,
   InputUploadFile
-} from './components/input-group'
-import Switch from './components/switch'
-import { Tab, TabItem } from './components/tab'
-import { Tabbar, TabbarItem } from './components/tabbar'
-import Text from './components/text'
-import Actionsheet from './components/actionsheet'
-import Sidebar from './components/sidebar'
-import Search from './components/search'
-import Keyboard from './components/keyboard'
+} from '../packages/components/input-group'
+import Switch from '../packages/components/switch'
+import { Tab, TabItem } from '../packages/components/tab'
+import { Tabbar, TabbarItem } from '../packages/components/tabbar'
+import Text from '../packages/components/text'
+import Actionsheet from '../packages/components/actionsheet'
+import Sidebar from '../packages/components/sidebar'
+import Search from '../packages/components/search'
+import Keyboard from '../packages/components/keyboard'
 
-import Toast from './components/toast'
-import Confirm from './components/confirm'
-import Loading from './components/loading'
+import Toast from '../packages/components/toast'
+import Confirm from '../packages/components/confirm'
+import Loading from '../packages/components/loading'
 
 const components = [
   Btn,
@@ -50,7 +50,7 @@ const components = [
   Keyboard
 ]
 
-const install = (Vue, opts = {}) => {
+const install = (Vue) => {
   if (install.installed) {
     return
   } else {

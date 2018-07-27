@@ -60,7 +60,7 @@ export default {
       this.$Toast('操作完成')
     },
     keyboardHide () {
-      console.log('键盘被隐藏')
+      this.$Toast('键盘被隐藏')
     }
   }
 }

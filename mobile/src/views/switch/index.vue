@@ -24,8 +24,8 @@ export default {
     }
   },
   methods: {
-    change () {
-      console.log(`值改变，当前值: ${this.value}`)
+    change (v) {
+      this.$Toast(v)
     }
   }
 }

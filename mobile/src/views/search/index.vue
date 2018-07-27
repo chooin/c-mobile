@@ -13,10 +13,10 @@ export default {
   },
   methods: {
     change (v) {
-      console.log('change：', v)
+      this.$Toast(v)
     },
     keyupEnter (v) {
-      console.log('enter：', v)
+      this.$Toast(v)
     }
   }
 }

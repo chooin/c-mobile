@@ -16,8 +16,8 @@
     transform: translate(-50%, 100%);
     transition: all .3s ease;
     bottom: 10px;
-    bottom: calc(10px + constant(safe-area-inset-bottom));
-    bottom: calc(10px + env(safe-area-inset-bottom));
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
     .c-actionsheet__header {
       background: #fff;
       border-radius: 12px 12px 0 0;
@@ -106,8 +106,8 @@
     visibility: visible;
     .c-actionsheet__content {
       bottom: 10px;
-      bottom: calc(10px + constant(safe-area-inset-bottom));
-      bottom: calc(10px + env(safe-area-inset-bottom));
+      bottom: constant(safe-area-inset-bottom);
+      bottom: env(safe-area-inset-bottom);
       transform: translate(-50%, 0);
     }
     &::before {

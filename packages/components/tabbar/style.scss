@@ -9,9 +9,8 @@
   -webkit-box-flex: 1;
   -webkit-user-select: none;
   user-select: none;
+  box-sizing: unset;
   height: 50px;
-  height: calc(50px + constant(safe-area-inset-bottom));
-  height: calc(50px + env(safe-area-inset-bottom));
   padding-bottom: 0;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);

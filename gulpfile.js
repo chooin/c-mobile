@@ -3,7 +3,6 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    copy = require('gulp-copy')
     del = require('del')
 
 gulp.task('task', function () {
@@ -12,7 +11,6 @@ gulp.task('task', function () {
     .pipe(sass())
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
-      // browsers: ['last 2 versions', 'ie > 8']
     }))
     .pipe(cleanCSS())
     .pipe(rename('index.css'))

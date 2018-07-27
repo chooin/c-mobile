@@ -20,8 +20,8 @@ case "$BUILD_ENV" in
   *)
     cd mobile
     yarn
-    yarn run build:web
-    cdn deploy production
+    yarn run build
     cd -
+    cdn deploy production
     ;;
 esac

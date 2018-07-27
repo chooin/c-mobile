@@ -69,7 +69,7 @@
     }
     .c-header__left,
     .c-header__right {
-      &.back {
+      &.c-header__back {
         &::after {
           border-color: #fff;
         }

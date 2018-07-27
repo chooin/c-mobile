@@ -15,7 +15,7 @@ export default {
         text: '我是 alert',
         ok: {
           click: () => {
-            window.alert('ok')
+            this.$Toast('ok')
           }
         }
       })
@@ -26,14 +26,14 @@ export default {
         ok: {
           text: '确定',
           click: () => {
-            window.alert('ok')
+            this.$Toast('ok')
           }
         },
         cancel: {
           text: '取消',
           color: '#f30',
           click: () => {
-            window.alert('cancel')
+            this.$Toast('cancel')
           }
         }
       })

@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     change (v) {
-      this.$Toast(v)
+      this.$Toast(`${v}`)
     }
   }
 }

@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { to, getObjectType } from '../../utils'
+import { to } from '../../utils'
 
 export default {
   name: 'cText',

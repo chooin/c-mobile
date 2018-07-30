@@ -1,8 +1,9 @@
 import to from './to'
-
-const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
+import device from './device'
+import getObjectType from './get-object-type'
 
 export {
-  getObjectType,
-  to
+  to,
+  device,
+  getObjectType
 }

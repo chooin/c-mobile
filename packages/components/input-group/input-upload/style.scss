@@ -1,5 +1,4 @@
 .c-input-upload {
-  width: 100%;
   overflow: hidden;
   vertical-align: top;
   padding: 0 5px 10px 15px;
@@ -9,6 +8,7 @@
     line-height: 20px;
     height: 20px;
     margin-top: 10px;
+    box-sizing: border-box;
     b {
       position: absolute;
       right: 0;

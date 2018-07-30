@@ -21,6 +21,7 @@
       border: 1px solid $border;
       border-radius: 16px;
       background: $border;
+      box-sizing: border-box;
       &::after,
       &::before {
         content: "";

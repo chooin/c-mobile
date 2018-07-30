@@ -1,0 +1,27 @@
+@import "./style";
+
+.c-btn {
+  &.c-btn__is-miniprogram {
+    overflow: visible;
+    &.c-btn__small {
+      margin-right: 5px;
+    }
+    &.c-btn__suspend {
+      bottom: 0;
+      &::before {
+        height: 0;
+      }
+    }
+    &::after {
+      border: none;
+    }
+    &.c-btn__is-miniprogram-is-iphonex {
+      &.c-btn__suspend {
+        bottom: 34px;
+        &::before {
+          height: 34px;
+        }
+      }
+    }
+  }
+}

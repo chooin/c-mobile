@@ -1,0 +1,8 @@
+@import "./style";
+
+.c-tabbar {
+  &.c-tabbar__is-miniprogram-is-iphonex {
+    height: 84px;
+    padding-bottom: 34px;
+  }
+}

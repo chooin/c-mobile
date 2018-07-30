@@ -1,15 +1,17 @@
 <template>
   <button
     class="c-btn"
-    type="button"
+    type="type"
     :class="[
-      type ? `c-btn__${type}` : '',
+      type ? 'c-btn__' + type : '',
       {
         'c-btn__o': o,
         'c-btn__disabled': disabled,
         'c-btn__suspend': suspend,
         'c-btn__small': small,
-        'c-btn__icon': icon
+        'c-btn__icon': icon,
+        'c-btn__is-miniprogram': device.isMiniProgram,
+        'c-btn__is-miniprogram-is-iphonex': device.isMiniProgramIsIPhoneX
       }
     ]"
     @click="handleClick">
@@ -20,10 +22,10 @@
 </template>
 
 <script>
-import { to, getObjectType } from '../../utils'
+import { to, getObjectType, device } from '../../utils'
 
 export default {
-  name: 'cBtn',
+  name: 'c-btn',
   props: {
     type: {
       type: String,
@@ -60,23 +62,37 @@ export default {
   },
   data () {
     return {
-      div: null
+      div: null,
+      device
     }
   },
   mounted () {
     if (
       this.cover !== false &&
-      this.suspend &&
-      document.querySelectorAll('.c-btn__suspend__cover').length === 0
+      this.suspend
     ) {
-      this.div = document.createElement('div')
-      this.div.className = 'c-btn__suspend__cover'
-      if (getObjectType(this.cover) === 'Number') {
-        this.div.style.height = `${this.cover}px`
-      } else if (getObjectType(this.cover) === 'String') {
-        this.div.style.height = this.cover
+      if (device.isBrowser) {
+        if (document.querySelectorAll('.c-btn__suspend__cover').length === 0) {
+          this.div = document.createElement('div')
+          this.div.className = 'c-btn__suspend__cover'
+          if (getObjectType(this.cover) === 'Number') {
+            this.div.style.height = `${this.cover}px`
+          } else if (getObjectType(this.cover) === 'String') {
+            this.div.style.height = this.cover
+          }
+          document.body.appendChild(this.div)
+        }
       }
-      document.body.appendChild(this.div)
+    }
+  },
+  onReady () {
+    if (
+      this.cover !== false &&
+      this.suspend
+    ) {
+      if (this.device.isMiniProgram) {
+        // 小程序不支持插入节点
+      }
     }
   },
   methods: {

@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './app'
 import router from './router'
-// import Mobile from '../dist'
 import '../../packages/include-variables.scss'
 import Mobile from '../../packages'
 

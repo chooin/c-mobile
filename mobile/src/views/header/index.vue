@@ -13,7 +13,8 @@
         color: '#39f',
         to: 'tel:13888888888'
       }"
-    />
+    >
+    </c-header>
     <div style="height: 1.5rem; width: 100%;"></div>
     <c-header
       :left="{
@@ -78,6 +79,18 @@
         click: () => {}
       }"
     />
+    <div style="height: 1.5rem; width: 100%;"></div>
+    <c-header>
+      <template slot="left">
+        左边
+      </template>
+      <template slot="title">
+        标题
+      </template>
+      <template slot="right">
+        右边
+      </template>
+    </c-header>
   </div>
 </template>
 

@@ -2,13 +2,17 @@
   <div
     class="c-header"
     :class="[
-      type ? `c-header__${type}` : '',
+      type ? 'c-header__' + type : '',
       {
         'noborder-bottom': noborderBottom
       }
     ]">
     <span
-      class="c-header__left"
+      v-if="$slots.left"
+      class="c-header__left">
+      <slot name="left"></slot>
+    </span>
+    <span
       :class="{
         'c-header__back': _left.back
       }"
@@ -16,22 +20,30 @@
         color: _left.color
       }"
       @click="handleLeftClick"
-      v-if="_left.text || _left.back">
+      v-else-if="_left.text || _left.back"
+      class="c-header__left">
       {{ _left.text }}
     </span>
-    <h1 v-if="title || defaultTitle">
+    <h1 v-if="$slots.title">
+      <slot name="title"></slot>
+    </h1>
+    <h1 v-else-if="title || defaultTitle">
       {{ title === undefined || title === null ? defaultTitle : title }}
     </h1>
+    <span
+      v-if="$slots.right"
+      class="c-header__right">
+      <slot name="right"></slot>
+    </span>
     <span
       class="c-header__right"
       :style="{
         color: _right.color
       }"
       @click="handleRightClick"
-      v-if="_right.text">
+      v-else-if="_right.text">
       {{ _right.text }}
     </span>
-    <slot></slot>
   </div>
 </template>
 

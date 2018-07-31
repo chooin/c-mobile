@@ -2,23 +2,25 @@
   <a
     class="c-text"
     :class="[
-      type ? `c-text__${type}` : '',
-      align ? `c-text__${align}`: '',
+      type ? 'c-text__' + type : '',
+      align ? 'c-text__' + align: '',
       {
         'c-text__light': light,
         'c-text__block': block,
         'c-text__cursor': cursor,
         'c-text__empty':
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === '',
+          text ||
+          ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+          ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+          ($slots.default && $slots.default[0] && $slots.default[0].text) === '',
         'c-text__placeholder':
           placeholder !== undefined &&
           placeholder !== null &&
           (
-            text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-            text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-            text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
+            text ||
+            ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+            ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+            ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
           )
       }
     ]"
@@ -32,9 +34,10 @@
         placeholder !== undefined &&
         placeholder !== null &&
         (
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-          text || ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
+          text ||
+          ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
+          ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
+          ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
         )
       ">
       {{ placeholder }}
@@ -107,9 +110,15 @@ export default {
   },
   computed: {
     _fontSize () {
-      return isNaN(this.fontSize)
-        ? this.fontSize
-        : `${this.fontSize}px`
+      if (this.fontSize) {
+        if (isNaN(this.fontSize)) {
+          return this.fontSize
+        } else {
+          return `${this.fontSize}px`
+        }
+      } else {
+        return null
+      }
     }
   }
 }

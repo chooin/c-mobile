@@ -18,7 +18,9 @@ const miniProgramTo = to => {
     Object.keys(to.query).length > 0
   ) {
     let querys = []
-    for (let i in to.query) querys.push(`${to.query}=${to.query[i]}`)
+    for (let i in to.query) {
+      querys.push(`${i}=${to.query[i]}`)
+    }
     search = `?${querys.join('&')}`
   }
   return `${uri}${search}`

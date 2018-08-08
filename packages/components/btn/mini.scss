@@ -1,4 +1,4 @@
-@import "./style";
+@import "./style.scss";
 
 .c-btn {
   &.c-btn__is-miniprogram {
@@ -23,5 +23,14 @@
         }
       }
     }
+  }
+}
+
+.c-btn__suspend__cover {
+  &.c-btn__is-miniprogram {
+    height: 50px;
+  }
+  &.c-btn__is-miniprogram-is-iphonex {
+    height: 84px;
   }
 }

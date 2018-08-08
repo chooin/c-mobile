@@ -16,7 +16,7 @@
     ]"
     @click="handleClick">
     <span class="c-btn__text">
-      <slot></slot>
+      <slot>{{ text }}</slot>
     </span>
   </button>
 </template>
@@ -58,6 +58,10 @@ export default {
     icon: {
       type: Boolean,
       default: false
+    },
+    text: { // mpvue 对 slot 支持不好！
+      type: String,
+      default: ''
     }
   },
   data () {

@@ -107,7 +107,7 @@
   &.c-btn__suspend {
     position: fixed;
     left: 0;
-    z-index: 1;
+    z-index: 1000;
     border-radius: 0;
     bottom: 0;
     bottom: constant(safe-area-inset-bottom);
@@ -163,6 +163,9 @@
   .c-btn:hover {
     opacity: .6;
     cursor: not-allowed;
+    &.c-btn__suspend {
+      opacity: 1;
+    }
   }
 }
 

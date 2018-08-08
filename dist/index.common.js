@@ -96,7 +96,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: /Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("PimI");
 
-// CONCATENATED MODULE: /Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/zhuning/Chooin/github/c-mobile/node_modules/.cache/vue-loader","cacheIdentifier":"78e6c7ec-vue-loader-template"}!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./packages/components/btn/index.vue?vue&type=template&id=3d02e442
+// CONCATENATED MODULE: /Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/zhuning/Chooin/github/c-mobile/node_modules/.cache/vue-loader","cacheIdentifier":"78e6c7ec-vue-loader-template"}!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./packages/components/btn/index.vue?vue&type=template&id=333c8b0d
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"c-btn",class:[
     _vm.type ? 'c-btn__' + _vm.type : '',
     {
@@ -108,11 +108,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       'c-btn__is-miniprogram': _vm.device.isMiniProgram,
       'c-btn__is-miniprogram-is-iphonex': _vm.device.isMiniProgramIsIPhoneX
     }
-  ],attrs:{"type":"type"},on:{"click":_vm.handleClick}},[_c('span',{staticClass:"c-btn__text"},[_vm._t("default")],2)])}
+  ],attrs:{"type":"type"},on:{"click":_vm.handleClick}},[_c('span',{staticClass:"c-btn__text"},[_vm._t("default",[_vm._v(_vm._s(_vm.text))])],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/components/btn/index.vue?vue&type=template&id=3d02e442
+// CONCATENATED MODULE: ./packages/components/btn/index.vue?vue&type=template&id=333c8b0d
 
 // CONCATENATED MODULE: ./packages/utils/device.js
 /* eslint-disable */
@@ -154,7 +154,9 @@ const miniProgramTo = to => {
     Object.keys(to.query).length > 0
   ) {
     let querys = []
-    for (let i in to.query) querys.push(`${to.query}=${to.query[i]}`)
+    for (let i in to.query) {
+      querys.push(`${i}=${to.query[i]}`)
+    }
     search = `?${querys.join('&')}`
   }
   return `${uri}${search}`
@@ -307,6 +309,10 @@ const miniProgramTo = to => {
     icon: {
       type: Boolean,
       default: false
+    },
+    text: { // mpvue 对 slot 支持不好！
+      type: String,
+      default: ''
     }
   },
   data () {

@@ -1,7 +1,7 @@
 # c-mobile
 
 [![Build Status](https://travis-ci.org/Hema-FE/c-mobile.svg?branch=master)](https://travis-ci.org/Hema-FE/c-mobile)
-![JS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile/dist/index.js?compression=gzip&label=gzip%20size:%20JS)
+![JS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile/dist/index.umd.js?compression=gzip&label=gzip%20size:%20JS)
 ![CSS gzip size](http://img.badgesize.io/https://unpkg.com/c-mobile/dist/index.css?compression=gzip&label=gzip%20size:%20CSS)
 [![npm package](https://img.shields.io/npm/v/c-mobile.svg)](https://www.npmjs.org/package/c-mobile)
 

@@ -20,8 +20,21 @@
     font-size: 14px;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, .95);
-    margin-top: -40px;
-    padding: 25px 10px 64px;
+    margin-top: -50px;
+    padding: 20px 10px 59px;
+    .c-confirm__title {
+      font-weight: bold;
+      color: #000;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      height: 20px;
+      width: 100%;
+      font-size: 16px;
+    }
+    .c-confirm__content {
+      font-size: 14px;
+    }
     .c-confirm__btn-group {
       position: absolute;
       bottom: 0;
@@ -38,6 +51,7 @@
         color: #007aff;
         display: block;
         flex: 1;
+        font-weight: 500;
         &::before {
           @include borderLine('left');
         }
@@ -50,6 +64,11 @@
       &::before {
         @include borderLine('top');
       }
+    }
+  }
+  &.c-confirm__has-title {
+    .c-confirm__cell {
+      padding: 40px 10px 59px;
     }
   }
   &::after {

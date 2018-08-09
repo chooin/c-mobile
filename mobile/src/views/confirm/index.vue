@@ -12,8 +12,10 @@ export default {
   methods: {
     alertClick () {
       this.$Confirm({
-        text: '我是 alert',
+        title: '提示',
+        text: '操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功',
         ok: {
+          text: '确定',
           click: () => {
             this.$Toast('ok')
           }

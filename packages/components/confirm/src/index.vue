@@ -1,7 +1,16 @@
 <template>
-  <div class="c-confirm">
+  <div
+    class="c-confirm"
+    :class="{
+      'c-confirm__has-title': title
+    }">
     <div class="c-confirm__cell">
-      {{ text }}
+      <div class="c-confirm__title" v-if="title">
+        {{ title }}
+      </div>
+      <div class="c-confirm__content">
+        {{ text }}
+      </div>
       <div class="c-confirm__btn-group">
         <div
           class="c-confirm__btn"
@@ -29,6 +38,10 @@
 export default {
   name: 'cConfirm',
   props: {
+    title: {
+      type: String,
+      default: null
+    },
     text: {
       type: String,
       default: null

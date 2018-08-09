@@ -2722,18 +2722,29 @@ var src_component = normalizeComponent(
   document.body.appendChild(component.$el)
 });
 
-// CONCATENATED MODULE: /Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/zhuning/Chooin/github/c-mobile/node_modules/.cache/vue-loader","cacheIdentifier":"78e6c7ec-vue-loader-template"}!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./packages/components/confirm/src/index.vue?vue&type=template&id=3503b88a
-var srcvue_type_template_id_3503b88a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"c-confirm"},[_c('div',{staticClass:"c-confirm__cell"},[_vm._v("\n    "+_vm._s(_vm.text)+"\n    "),_c('div',{staticClass:"c-confirm__btn-group"},[_c('div',{staticClass:"c-confirm__btn",style:({
+// CONCATENATED MODULE: /Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/zhuning/Chooin/github/c-mobile/node_modules/.cache/vue-loader","cacheIdentifier":"78e6c7ec-vue-loader-template"}!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./packages/components/confirm/src/index.vue?vue&type=template&id=1103c734
+var srcvue_type_template_id_1103c734_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"c-confirm",class:{
+    'c-confirm__has-title': _vm.title
+  }},[_c('div',{staticClass:"c-confirm__cell"},[(_vm.title)?_c('div',{staticClass:"c-confirm__title"},[_vm._v("\n      "+_vm._s(_vm.title)+"\n    ")]):_vm._e(),_c('div',{staticClass:"c-confirm__content"},[_vm._v("\n      "+_vm._s(_vm.text)+"\n    ")]),_c('div',{staticClass:"c-confirm__btn-group"},[_c('div',{staticClass:"c-confirm__btn",style:({
           color: _vm.ok.color
         }),on:{"click":_vm.ok.click}},[_vm._v("\n        "+_vm._s(_vm.ok.text)+"\n      ")]),(_vm.cancel.text)?_c('div',{staticClass:"c-confirm__btn",style:({
           color: _vm.cancel.color
         }),on:{"click":_vm.cancel.click}},[_vm._v("\n        "+_vm._s(_vm.cancel.text)+"\n      ")]):_vm._e()])])])}
-var srcvue_type_template_id_3503b88a_staticRenderFns = []
+var srcvue_type_template_id_1103c734_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/components/confirm/src/index.vue?vue&type=template&id=3503b88a
+// CONCATENATED MODULE: ./packages/components/confirm/src/index.vue?vue&type=template&id=1103c734
 
 // CONCATENATED MODULE: /Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/Users/zhuning/.nvm/versions/node/v9.4.0/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./packages/components/confirm/src/index.vue?vue&type=script&lang=js
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2765,6 +2776,10 @@ var srcvue_type_template_id_3503b88a_staticRenderFns = []
 /* harmony default export */ var confirm_srcvue_type_script_lang_js = ({
   name: 'cConfirm',
   props: {
+    title: {
+      type: String,
+      default: null
+    },
     text: {
       type: String,
       default: null
@@ -2792,8 +2807,8 @@ var srcvue_type_template_id_3503b88a_staticRenderFns = []
 
 var confirm_src_component = normalizeComponent(
   components_confirm_srcvue_type_script_lang_js,
-  srcvue_type_template_id_3503b88a_render,
-  srcvue_type_template_id_3503b88a_staticRenderFns,
+  srcvue_type_template_id_1103c734_render,
+  srcvue_type_template_id_1103c734_staticRenderFns,
   false,
   null,
   null,
@@ -2808,6 +2823,7 @@ var confirm_src_component = normalizeComponent(
 
 /* harmony default export */ var components_confirm = ((option = {}) => {
   option = Object.assign({
+    title: '',
     text: '',
     ok: {
       text: 'OK',
@@ -2830,6 +2846,7 @@ var confirm_src_component = normalizeComponent(
           }
         },
         props: {
+          title: option.title,
           text: option.text,
           ok: {
             text: option.ok.text || 'OK',

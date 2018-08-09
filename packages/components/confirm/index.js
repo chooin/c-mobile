@@ -3,6 +3,7 @@ import Confirm from './src'
 
 export default (option = {}) => {
   option = Object.assign({
+    title: '',
     text: '',
     ok: {
       text: 'OK',
@@ -25,6 +26,7 @@ export default (option = {}) => {
           }
         },
         props: {
+          title: option.title,
           text: option.text,
           ok: {
             text: option.ok.text || 'OK',

@@ -19,11 +19,12 @@
       :style="{
         color: _left.color
       }"
-      @click="handleLeftClick"
+      @click="leftClick"
       v-else-if="_left.text || _left.back"
       class="c-header__left">
-      {{ _left.text }}
+      {{ _left.close ? '' : _left.text }}
     </span>
+    <span class="c-header__close" v-if="_left.close" @click="closeClick"><i></i></span>
     <h1 v-if="$slots.title">
       <slot name="title"></slot>
     </h1>
@@ -40,7 +41,7 @@
       :style="{
         color: _right.color
       }"
-      @click="handleRightClick"
+      @click="rightClick"
       v-else-if="_right.text">
       {{ _right.text }}
     </span>
@@ -84,7 +85,7 @@ export default {
     }
   },
   methods: {
-    handleLeftClick () {
+    leftClick () {
       if (this._left.to) {
         to({
           vm: this,
@@ -96,7 +97,7 @@ export default {
         this.$router.go(-1)
       }
     },
-    handleRightClick () {
+    rightClick () {
       if (this._right.to) {
         to({
           vm: this,
@@ -104,6 +105,11 @@ export default {
         })
       } else if (typeof this._right.click === 'function') {
         this._right.click()
+      }
+    },
+    closeClick () {
+      if (typeof this._left.close === 'function') {
+        this._left.close()
       }
     }
   },
@@ -115,6 +121,7 @@ export default {
           to: null,
           color: null,
           back: false,
+          close: null,
           click: null
         }, this.left)
       }

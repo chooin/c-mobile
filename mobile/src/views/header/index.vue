@@ -5,6 +5,7 @@
     <c-header
       :left="{
         back: true,
+        close: closeClick,
         text: 'Back'
       }"
       title="标题"
@@ -96,6 +97,11 @@
 
 <script>
 export default {
+  methods: {
+    closeClick () {
+      this.$Toast('close')
+    }
+  }
 }
 </script>
 

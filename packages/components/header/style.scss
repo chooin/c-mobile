@@ -102,6 +102,14 @@
     .c-header__right {
       color: #fff;
     }
+    .c-header__close {
+      i {
+        &::before,
+        &::after {
+          border-color: #fff;
+        }
+      }
+    }
     .c-header__left,
     .c-header__right {
       &.c-header__back {

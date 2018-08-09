@@ -21,12 +21,12 @@
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, .95);
     margin-top: -50px;
-    padding: 20px 10px 59px;
+    padding: 25px 10px 64px;
     .c-confirm__title {
       font-weight: bold;
       color: #000;
       position: absolute;
-      top: 15px;
+      top: 20px;
       left: 0;
       height: 20px;
       width: 100%;
@@ -68,7 +68,7 @@
   }
   &.c-confirm__has-title {
     .c-confirm__cell {
-      padding: 40px 10px 59px;
+      padding: 45px 10px 64px;
     }
   }
   &::after {

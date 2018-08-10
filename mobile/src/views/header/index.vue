@@ -20,7 +20,8 @@
     <div style="height: 1.5rem; width: 100%;"></div>
     <c-header
       :left="{
-        back: true
+        back: true,
+        text: '微信'
       }"
       title="没有下划线"
       :right="{
@@ -33,8 +34,7 @@
     <c-header
       type="primary"
       :left="{
-        back: true,
-        text: '返回'
+        back: true
       }"
       title="标题"
       :right="{

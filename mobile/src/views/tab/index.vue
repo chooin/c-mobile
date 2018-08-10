@@ -1,6 +1,6 @@
 <template>
   <div class="v-tab">
-    <c-tab type="danger">
+    <c-tab type="danger" suspend>
       <c-tab-item current>待付款</c-tab-item>
       <c-tab-item>代发货</c-tab-item>
       <c-tab-item>待收货</c-tab-item>

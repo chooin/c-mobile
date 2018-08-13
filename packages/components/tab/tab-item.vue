@@ -1,6 +1,5 @@
 <template>
   <a
-    href="javascript:;"
     class="c-tab-item"
     :class="{
       'c-tab__current': current

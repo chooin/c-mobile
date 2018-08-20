@@ -169,6 +169,16 @@
   }
 }
 
+.c-btn,
+.c-btn:hover {
+  &.c-btn__suspend {
+    &[disabled=disabled],
+    &.c-btn__disabled {
+      opacity: 1;
+    }
+  }
+}
+
 .c-btn__suspend__cover {
   box-sizing: unset;
   width: 100%;

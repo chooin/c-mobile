@@ -1,16 +1,16 @@
 {
   "name": "c-mobile",
-  "version": "0.5.24",
+  "version": "0.5.25",
   "description": "Vue 手机端组件，支持 mpvue",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
-  "unpkg": "dist/index.min.js",
+  "unpkg": "dist/index.js",
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg && npm run build:css",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/index.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/index.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
+    "build:umd": "rollup --config build/rollup.umd.config.js --format umd --file dist/index.umd.js",
+    "build:es": "rollup --config build/rollup.es.config.js --format es --file dist/index.esm.js",
+    "build:unpkg": "rollup --config build/rollup.unpkg.config.js --format iife --file dist/index.js",
     "build:css": "gulp --gulpfile build/gulpfile.js"
   },
   "repository": {
@@ -39,6 +39,7 @@
     "rollup-plugin-buble": "^0.19.2",
     "rollup-plugin-commonjs": "^9.1.5",
     "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^4.0.0",
     "rollup-plugin-vue": "^4.3.2",
     "vue-template-compiler": "^2.5.17"
   },

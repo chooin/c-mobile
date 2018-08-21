@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import cKeyboardKey from './keyboard-key'
+import cKeyboardKey from './keyboard-key.vue'
 
 export default {
   name: 'cKeyboard',

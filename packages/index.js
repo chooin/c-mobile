@@ -50,7 +50,7 @@ const components = [
   Keyboard
 ]
 
-const install = (Vue) => {
+const install = Vue => {
   if (install.installed) {
     return
   } else {

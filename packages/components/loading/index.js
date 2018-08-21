@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Loading from './src'
+import Loading from './loading.vue'
 
 let component
 
@@ -11,11 +11,17 @@ export default {
       }
     }).$mount()
     document.body.classList.add('c-mobile__is-loading')
-    for (let _ of document.querySelectorAll('.c-loading')) _.remove()
+    const nodeList = document.querySelectorAll('.c-loading')
+    for (var i = 0; i < nodeList.length; ++i) {
+      nodeList[i].remove()
+    }
     document.body.appendChild(component.$el)
   },
   hide () {
     document.body.classList.remove('c-mobile__is-loading')
-    for (let _ of document.querySelectorAll('.c-loading')) _.remove()
+    const nodeList = document.querySelectorAll('.c-loading')
+    for (var i = 0; i < nodeList.length; ++i) {
+      nodeList[i].remove()
+    }
   }
 }

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Toast from './src'
+import Toast from './toast.vue'
 
 export default (option = {}) => {
   if (
@@ -62,6 +62,9 @@ export default (option = {}) => {
       }, option.duration)
     }
   }).$mount()
-  for (let _ of document.querySelectorAll('.c-toast')) _.remove()
+  const nodeList = document.querySelectorAll('.c-toast')
+  for (var i = 0; i < nodeList.length; ++i) {
+    nodeList[i].remove()
+  }
   document.body.appendChild(component.$el)
 }

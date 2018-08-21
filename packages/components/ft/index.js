@@ -1,5 +1,5 @@
-import Ft from './ft'
-import FtItem from './ft-item'
+import Ft from './ft.vue'
+import FtItem from './ft-item.vue'
 
 export {
   Ft,

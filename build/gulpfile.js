@@ -3,22 +3,25 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    del = require('del')
+    del = require('del');
 
 gulp.task('task', function () {
   gulp
-    .src('./packages/include-variables.scss')
+    .src('../packages/include-variables.scss')
     .pipe(sass())
     .pipe(autoprefixer({
       browsers: ['last 2 versions']
     }))
     .pipe(cleanCSS())
     .pipe(rename('index.css'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('../dist'));
   gulp
-    .src(['./dist/packages/index.js', './packages/index.scss'])
-    .pipe(gulp.dest('./dist'))
-  del(['./dist/packages'])
-})
+    .src([
+      '../dist/packages/index.js',
+      '../packages/index.scss'
+    ])
+    .pipe(gulp.dest('../dist'));
+  del(['../dist/packages']);
+});
 
-gulp.task('default', ['task'])
+gulp.task('default', ['task']);

@@ -15,8 +15,7 @@ case "$BUILD_ENV" in
   1)
     rm -rf ./dist/*
     yarn
-    yarn run build:js
-    yarn run build:css
+    yarn run build
     ;;
   *)
     cd mobile

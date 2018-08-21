@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Confirm from './src'
+import Confirm from './confirm.vue'
 
 export default (option = {}) => {
   option = Object.assign({

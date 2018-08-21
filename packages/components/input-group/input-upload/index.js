@@ -1,5 +1,5 @@
-import InputUpload from './upload'
-import InputUploadFile from './upload-file'
+import InputUpload from './upload.vue'
+import InputUploadFile from './upload-file.vue'
 
 export {
   InputUpload,

@@ -1,5 +1,5 @@
-import Tabbar from './tabbar'
-import TabbarItem from './tabbar-item'
+import Tabbar from './tabbar.vue'
+import TabbarItem from './tabbar-item.vue'
 
 export {
   Tabbar,

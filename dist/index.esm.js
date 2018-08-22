@@ -2562,12 +2562,15 @@ var script$d = {
       var this$1 = this;
 
       if (this.disabled) { return }
+      var value = !this.value;
       if (this.beforeChange) {
         this.beforeChange(function () {
-          this$1.$emit('input', !this$1.value);
+          this$1.$emit('input', value);
+          this$1.$emit('change', value);
         });
       } else {
-        this.$emit('input', !this.value);
+        this.$emit('input', value);
+        this.$emit('change', value);
       }
     }
   },

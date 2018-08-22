@@ -36,6 +36,12 @@ export default {
           click: () => {
             next()
           }
+        },
+        cancel: {
+          text: '取消',
+          click: () => {
+            this.$Toast('已取消操作')
+          }
         }
       })
     }

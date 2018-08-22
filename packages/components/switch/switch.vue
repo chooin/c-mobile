@@ -34,12 +34,15 @@ export default {
   methods: {
     onClick () {
       if (this.disabled) return
+      let value = !this.value
       if (this.beforeChange) {
         this.beforeChange(() => {
-          this.$emit('input', !this.value)
+          this.$emit('input', value)
+          this.$emit('change', value)
         })
       } else {
-        this.$emit('input', !this.value)
+        this.$emit('input', value)
+        this.$emit('change', value)
       }
     }
   },

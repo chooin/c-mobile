@@ -2539,11 +2539,6 @@ __vue_render__$c._withStripped = true;
 //
 //
 //
-//
-//
-//
-//
-//
 
 var script$d = {
   name: 'cSwitch',
@@ -2562,17 +2557,27 @@ var script$d = {
     }
   },
   methods: {
-    handleChange: function handleChange () {
-      this.$emit('change', !this._value);
+    onClick: function onClick () {
+      var this$1 = this;
+
+      if (this.disabled) { return }
+      if (
+        this._events &&
+        this._events['before-change'] &&
+        this._events['before-change'][0]
+      ) {
+        this._events['before-change'][0](function () {
+          this$1.$emit('input', !this$1.value);
+        });
+      } else {
+        this.$emit('input', !this.value);
+      }
     }
   },
   computed: {
     _value: {
       get: function get () {
         return this.value
-      },
-      set: function set (value) {
-        this.$emit('input', value);
       }
     }
   }
@@ -2593,56 +2598,13 @@ var __vue_render__$d = function() {
       class: [
         _vm.type ? "c-switch__" + _vm.type : "",
         {
-          "c-switch__disabled": _vm.disabled
+          "c-switch__disabled": _vm.disabled,
+          "c-switch__checked": _vm._value
         }
-      ]
+      ],
+      on: { click: _vm.onClick }
     },
-    [
-      _c("label", [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm._value,
-              expression: "_value"
-            }
-          ],
-          attrs: { type: "checkbox", disabled: _vm.disabled },
-          domProps: {
-            checked: Array.isArray(_vm._value)
-              ? _vm._i(_vm._value, null) > -1
-              : _vm._value
-          },
-          on: {
-            change: [
-              function($event) {
-                var $$a = _vm._value,
-                  $$el = $event.target,
-                  $$c = $$el.checked ? true : false;
-                if (Array.isArray($$a)) {
-                  var $$v = null,
-                    $$i = _vm._i($$a, $$v);
-                  if ($$el.checked) {
-                    $$i < 0 && (_vm._value = $$a.concat([$$v]));
-                  } else {
-                    $$i > -1 &&
-                      (_vm._value = $$a
-                        .slice(0, $$i)
-                        .concat($$a.slice($$i + 1)));
-                  }
-                } else {
-                  _vm._value = $$c;
-                }
-              },
-              _vm.handleChange
-            ]
-          }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "c-switch__core" })
-      ])
-    ]
+    [_c("span", { staticClass: "c-switch__core" })]
   )
 };
 var __vue_staticRenderFns__$d = [];

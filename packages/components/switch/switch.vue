@@ -2,19 +2,14 @@
   <div
     class="c-switch"
     :class="[
-      type ? `c-switch__${type}` : '',
+      type ? 'c-switch__' + type : '',
       {
-        'c-switch__disabled': disabled
+        'c-switch__disabled': disabled,
+        'c-switch__checked': _value
       }
-    ]">
-    <label>
-      <input
-        type="checkbox"
-        @change="handleChange"
-        :disabled="disabled"
-        v-model="_value">
-      <span class="c-switch__core"></span>
-    </label>
+    ]"
+    @click="onClick">
+    <span class="c-switch__core"></span>
   </div>
 </template>
 
@@ -36,17 +31,25 @@ export default {
     }
   },
   methods: {
-    handleChange () {
-      this.$emit('change', !this._value)
+    onClick () {
+      if (this.disabled) return
+      if (
+        this._events &&
+        this._events['before-change'] &&
+        this._events['before-change'][0]
+      ) {
+        this._events['before-change'][0](() => {
+          this.$emit('input', !this.value)
+        })
+      } else {
+        this.$emit('input', !this.value)
+      }
     }
   },
   computed: {
     _value: {
       get () {
         return this.value
-      },
-      set (value) {
-        this.$emit('input', value)
       }
     }
   }

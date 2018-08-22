@@ -28,17 +28,14 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    }
+    },
+    beforeChange: Function
   },
   methods: {
     onClick () {
       if (this.disabled) return
-      if (
-        this._events &&
-        this._events['before-change'] &&
-        this._events['before-change'][0]
-      ) {
-        this._events['before-change'][0](() => {
+      if (this.beforeChange) {
+        this.beforeChange(() => {
           this.$emit('input', !this.value)
         })
       } else {

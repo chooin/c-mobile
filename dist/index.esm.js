@@ -2554,19 +2554,16 @@ var script$d = {
     disabled: {
       type: Boolean,
       default: false
-    }
+    },
+    beforeChange: Function
   },
   methods: {
     onClick: function onClick () {
       var this$1 = this;
 
       if (this.disabled) { return }
-      if (
-        this._events &&
-        this._events['before-change'] &&
-        this._events['before-change'][0]
-      ) {
-        this._events['before-change'][0](function () {
+      if (this.beforeChange) {
+        this.beforeChange(function () {
           this$1.$emit('input', !this$1.value);
         });
       } else {

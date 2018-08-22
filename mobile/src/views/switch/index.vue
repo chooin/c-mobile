@@ -8,7 +8,7 @@
     <div style="height: 1.5rem"></div>
     <c-switch v-model="value" @change="change" type="warning" /> {{ value }}
     <div style="height: 1.5rem"></div>
-    beforeChange <c-switch v-model="value" @change="change" type="danger" @before-change="beforeChange" /> {{ value }}
+    beforeChange <c-switch v-model="value" @change="change" type="danger" :before-change="beforeChange" /> {{ value }}
     <div style="height: 1.5rem"></div>
     <c-switch v-model="disabled" @change="change" type="danger" disabled /> {{ disabled }}
     <div style="height: 1.5rem"></div>

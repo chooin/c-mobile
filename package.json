@@ -1,6 +1,6 @@
 {
   "name": "c-mobile",
-  "version": "0.5.29",
+  "version": "0.5.30",
   "description": "Vue 手机端组件，支持 mpvue",
   "main": "lib/index.umd.js",
   "module": "lib/index.esm.js",

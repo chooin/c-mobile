@@ -25,7 +25,7 @@
 import { to, getObjectType, device } from '../../utils'
 
 export default {
-  name: 'c-btn',
+  name: 'cBtn',
   props: {
     type: {
       type: String,

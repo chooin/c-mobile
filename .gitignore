@@ -1,4 +1,4 @@
 node_modules
 
 deploy-config/aliyun
-lib
+dist

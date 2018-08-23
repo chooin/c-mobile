@@ -14,14 +14,14 @@ gulp.task('task', function () {
     }))
     .pipe(cleanCSS())
     .pipe(rename('index.css'))
-    .pipe(gulp.dest('../lib'));
+    .pipe(gulp.dest('../dist'));
   gulp
     .src([
-      '../lib/packages/index.js',
+      '../dist/packages/index.js',
       '../packages/index.scss'
     ])
-    .pipe(gulp.dest('../lib'));
-  del(['../lib/packages']);
+    .pipe(gulp.dest('../dist'));
+  del(['../dist/packages']);
 });
 
 gulp.task('default', ['task']);

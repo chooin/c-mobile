@@ -1,16 +1,16 @@
 {
   "name": "c-mobile",
-  "version": "0.5.30",
+  "version": "0.5.31",
   "description": "Vue 手机端组件，支持 mpvue",
-  "main": "lib/index.umd.js",
-  "module": "lib/index.esm.js",
-  "unpkg": "lib/index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.js",
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg && npm run build:css",
-    "build:umd": "rollup --config build/rollup.umd.config.js --format umd --file lib/index.umd.js",
-    "build:es": "rollup --config build/rollup.es.config.js --format es --file lib/index.esm.js",
-    "build:unpkg": "rollup --config build/rollup.unpkg.config.js --format iife --file lib/index.js",
+    "build:umd": "rollup --config build/rollup.umd.config.js --format umd --file dist/index.umd.js",
+    "build:es": "rollup --config build/rollup.es.config.js --format es --file dist/index.esm.js",
+    "build:unpkg": "rollup --config build/rollup.unpkg.config.js --format iife --file dist/index.js",
     "build:css": "gulp --gulpfile build/gulpfile.js"
   },
   "repository": {
@@ -48,7 +48,7 @@
   },
   "typings": "types/index.d.ts",
   "files": [
-    "lib",
+    "dist",
     "packages",
     "types"
   ]

@@ -13,6 +13,21 @@
     @click="handleClick">
     <slot></slot>
   </div>
+  <button
+    v-else-if="openType"
+    class="c-input"
+    :open-type="openType"
+    :class="[{
+      'c-input__addon': addon,
+      'c-input__next': next,
+      'c-input__icon': icon,
+      'c-input__checked': checked,
+      'c-input__noborder-top': noborderTop
+    }]"
+    @touchstart="() => {}"
+    @click="handleClick">
+    <slot></slot>
+  </button>
   <label
     v-else
     class="c-input"
@@ -42,6 +57,10 @@ export default {
     useDiv: { // switch 组件父级是不允许使用 label 标签的
       type: Boolean,
       default: false
+    },
+    openType: { // 仅小程序支持
+      type: String,
+      default: null
     },
     next: {
       type: Boolean,

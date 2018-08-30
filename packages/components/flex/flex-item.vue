@@ -5,7 +5,7 @@
       flex,
       margin: `0 ${gutter / 2}px`
     }"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to

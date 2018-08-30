@@ -2,6 +2,7 @@
   <button
     class="c-btn"
     type="type"
+    :open-type="openType"
     :class="[
       type ? 'c-btn__' + type : '',
       {
@@ -62,6 +63,10 @@ export default {
     text: { // mpvue 对 slot 支持不好！
       type: String,
       default: ''
+    },
+    openType: { // 仅小程序支持
+      type: String,
+      default: null
     }
   },
   data () {

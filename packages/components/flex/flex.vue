@@ -1,7 +1,7 @@
 <template>
   <div
     class="c-flex"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to

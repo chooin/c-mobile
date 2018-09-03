@@ -1,10 +1,10 @@
 <template>
   <div
     class="c-input-upload-file"
-    @click="handleClick"
+    @click="onClick"
     v-if="src">
     <img :src="src">
-    <i @click.stop="handleDeleteClick"></i>
+    <i @click.stop="onDeleteClick"></i>
   </div>
 </template>
 
@@ -18,10 +18,10 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       this.$emit('click')
     },
-    handleDeleteClick () {
+    onDeleteClick () {
       this.$emit('delete')
     }
   }

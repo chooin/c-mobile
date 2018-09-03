@@ -1,11 +1,11 @@
 <template>
   <div
-    @touchstart.stop.prevent="handleClick"
-    @touchmove="handleBlur"
-    @touchend="handleBlur"
-    @touchcancel="handleBlur"
-    @mousedown="handleClick"
-    @mouseup="handleBlur"
+    @touchstart.stop.prevent="onClick"
+    @touchmove="onBlur"
+    @touchend="onBlur"
+    @touchcancel="onBlur"
+    @mousedown="onClick"
+    @mouseup="onBlur"
     class="c-keyboard__key"
     :class="{
       'c-keyboard__key-active': active,
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'c-keyboard-key',
+  name: 'cKeyboardKey',
   props: {
     text: [String, Number]
   },
@@ -28,12 +28,12 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       if (this.text === '') return
       this.active = true
       this.$emit('click', this.text)
     },
-    handleBlur () {
+    onBlur () {
       this.active = false
     }
   }

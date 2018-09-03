@@ -8,24 +8,24 @@
         <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
       </div>
       <div class="c-keyboard__key-group">
-        <c-keyboard-key text="1" @click="handleClick" />
-        <c-keyboard-key text="2" @click="handleClick" />
-        <c-keyboard-key text="3" @click="handleClick" />
+        <c-keyboard-key text="1" @click="onClick" />
+        <c-keyboard-key text="2" @click="onClick" />
+        <c-keyboard-key text="3" @click="onClick" />
       </div>
       <div class="c-keyboard__key-group">
-        <c-keyboard-key text="4" @click="handleClick" />
-        <c-keyboard-key text="5" @click="handleClick" />
-        <c-keyboard-key text="6" @click="handleClick" />
+        <c-keyboard-key text="4" @click="onClick" />
+        <c-keyboard-key text="5" @click="onClick" />
+        <c-keyboard-key text="6" @click="onClick" />
       </div>
       <div class="c-keyboard__key-group">
-        <c-keyboard-key text="7" @click="handleClick" />
-        <c-keyboard-key text="8" @click="handleClick" />
-        <c-keyboard-key text="9" @click="handleClick" />
+        <c-keyboard-key text="7" @click="onClick" />
+        <c-keyboard-key text="8" @click="onClick" />
+        <c-keyboard-key text="9" @click="onClick" />
       </div>
       <div class="c-keyboard__key-group">
-        <c-keyboard-key :text="_typeText" class="c-keyboard__key-gray" @click="handleClick" />
-        <c-keyboard-key text="0" @click="handleClick" />
-        <c-keyboard-key class="c-keyboard__key-gray c-keyboard__key-delete" @click="handleDelete" />
+        <c-keyboard-key :text="_typeText" class="c-keyboard__key-gray" @click="onClick" />
+        <c-keyboard-key text="0" @click="onClick" />
+        <c-keyboard-key class="c-keyboard__key-gray c-keyboard__key-delete" @click="onDelete" />
       </div>
     </div>
   </transition>
@@ -66,10 +66,10 @@ export default {
     }
   },
   methods: {
-    handleClick (value) {
+    onClick (value) {
       this.$emit('click', value)
     },
-    handleDelete () {
+    onDelete () {
       this.$emit('delete')
     },
     doneClick () {

@@ -10,7 +10,7 @@
       'noborder-top': noborderTop
     }]"
     @touchstart="() => {}"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
   </div>
   <button
@@ -25,7 +25,7 @@
       'c-input__noborder-top': noborderTop
     }]"
     @touchstart="() => {}"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
   </button>
   <label
@@ -39,7 +39,7 @@
       'noborder-top': noborderTop
     }]"
     @touchstart="() => {}"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
   </label>
 </template>
@@ -84,7 +84,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to

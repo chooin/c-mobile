@@ -2,7 +2,7 @@
   <div
     class="c-tabbar"
     :class="[
-      type ? `c-tabbar__${type}` : ''
+      type ? 'c-tabbar__' + type : ''
     ]">
     <slot></slot>
   </div>

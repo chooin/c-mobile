@@ -28,7 +28,7 @@
       fontFamily,
       fontSize: _fontSize
     }"
-    @click="handleClick">
+    @click="onClick">
     <template
       v-if="
         placeholder !== undefined &&
@@ -100,7 +100,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       if (this.disabled) return
       to({
         vm: this,

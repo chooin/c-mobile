@@ -15,7 +15,7 @@
         'c-btn__is-miniprogram-is-iphonex': device.isMiniProgramIsIPhoneX
       }
     ]"
-    @click="handleClick">
+    @click="onClick">
     <span class="c-btn__text">
       <slot>{{ text }}</slot>
     </span>
@@ -105,7 +105,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       if (this.disabled) return
       to({
         vm: this,

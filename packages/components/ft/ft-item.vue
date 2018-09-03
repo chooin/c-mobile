@@ -4,7 +4,7 @@
     :style="{
       width: `${width * 100}%`
     }"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to

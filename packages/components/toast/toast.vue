@@ -2,7 +2,7 @@
   <div
     class="c-toast"
     v-show="visible"
-    @click="handleClick">
+    @click="onClick">
     <div class="c-toast__content">
       <p v-for="(item, index) in texts" :key="index">{{ item }}</p>
     </div>
@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       this.cb()
     }
   }

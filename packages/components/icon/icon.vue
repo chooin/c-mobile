@@ -18,7 +18,7 @@
                     ? borderRadius
                     : '3px'
     }"
-    @click="handleClick">
+    @click="onClick">
   </i>
 </template>
 
@@ -58,7 +58,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to

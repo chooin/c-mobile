@@ -1,5 +1,5 @@
 <template>
-  <div class="c-input-head" @click="handleClick">
+  <div class="c-input-head" @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -7,9 +7,18 @@
 <script>
 export default {
   name: 'cInputHead',
+  props: {
+    to: {
+      type: [String, Object],
+      default: null
+    }
+  },
   methods: {
-    handleClick () {
-      this.$emit('click')
+    onClick () {
+      to({
+        vm: this,
+        to: this.to
+      })
     }
   }
 }

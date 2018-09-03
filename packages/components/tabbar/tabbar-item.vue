@@ -1,16 +1,16 @@
 <template>
-  <a
+  <div
     class="c-tabbar-item"
     :class="{
       'c-tabbar__current': current
     }"
-    @click="handleClick">
+    @click="onClick">
     <slot>
       <c-icon v-show="icon" :name="icon" />
       <c-text v-show="text">{{ text }}</c-text>
     </slot>
     <b v-show="badge">{{ badge }}</b>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to

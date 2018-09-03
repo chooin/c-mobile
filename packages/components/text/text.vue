@@ -1,5 +1,5 @@
 <template>
-  <a
+  <div
     class="c-text"
     :class="[
       type ? 'c-text__' + type : '',
@@ -45,7 +45,7 @@
     <span class="c-text__content" v-else>
       <slot>{{ text }}</slot>
     </span>
-  </a>
+  </div>
 </template>
 
 <script>

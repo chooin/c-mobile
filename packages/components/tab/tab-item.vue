@@ -1,12 +1,12 @@
 <template>
-  <a
+  <div
     class="c-tab-item"
     :class="{
       'c-tab__current': current
     }"
-    @click="handleClick">
+    @click="onClick">
     <slot></slot>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -25,7 +25,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       to({
         vm: this,
         to: this.to,

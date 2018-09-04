@@ -15,8 +15,8 @@
       backgroundColor,
       color,
       borderRadius: borderRadius
-                    ? borderRadius
-                    : '3px'
+        ? borderRadius
+        : '3px'
     }"
     @click="onClick">
   </i>

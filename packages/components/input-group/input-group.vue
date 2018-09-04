@@ -2,10 +2,10 @@
   <div
     class="c-input-group">
     <c-text
+      v-if="title"
       class="c-input-group__title"
       :type="type"
-      block
-      v-if="title">
+      block>
       {{ title }}
     </c-text>
     <div

@@ -24,7 +24,6 @@
       'c-input__checked': checked,
       'c-input__noborder-top': noborderTop
     }]"
-    @touchstart="() => {}"
     @click="onClick">
     <slot></slot>
   </button>

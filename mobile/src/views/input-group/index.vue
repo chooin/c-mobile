@@ -110,7 +110,7 @@
           自动定位
         </c-input-head>
         <c-input-body>
-          <c-switch type="primary" />
+          <c-switch type="primary" v-model="switchStatus" />
         </c-input-body>
       </c-input>
       <c-input use-div addon>
@@ -269,3 +269,14 @@
     </c-input-group>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      switchStatus: false
+    }
+  }
+}
+</script>
+

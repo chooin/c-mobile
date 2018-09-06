@@ -113,6 +113,13 @@
         <c-input-body>
         </c-input-body>
       </c-input>
+      <c-input next addon to="/radio">
+        <c-input-head>
+          radio
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
     </c-input-group>
     <div style="height: 3.4rem"></div>
   </div>

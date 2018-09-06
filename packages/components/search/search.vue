@@ -50,6 +50,7 @@ export default {
         return this.value
       },
       set (value) {
+        this.$emit('change', value)
         this.$emit('input', value)
       }
     }

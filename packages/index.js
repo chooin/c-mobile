@@ -19,6 +19,10 @@ import Actionsheet from '../packages/components/actionsheet'
 import Sidebar from '../packages/components/sidebar'
 import Search from '../packages/components/search'
 import Keyboard from '../packages/components/keyboard'
+import {
+ Radio,
+ RadioGroup
+} from '../packages/components/radio'
 
 import Toast from '../packages/components/toast'
 import Confirm from '../packages/components/confirm'
@@ -47,7 +51,9 @@ const components = [
   Actionsheet,
   Sidebar,
   Search,
-  Keyboard
+  Keyboard,
+  Radio,
+  RadioGroup
 ]
 
 const install = Vue => {

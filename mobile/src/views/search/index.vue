@@ -1,6 +1,6 @@
 <template>
   <div class="v-search">
-    <c-search v-model="search" @keyup-enter="keyupEnter" autofocus @input="change" />
+    <c-search v-model="search" @keyup-enter="keyupEnter" autofocus @change="onChange" />
   </div>
 </template>
 
@@ -12,11 +12,14 @@ export default {
     }
   },
   methods: {
-    change (v) {
+    onChange (v) {
       this.$Toast(v)
     },
     keyupEnter (v) {
-      this.$Toast(v)
+      this.$Toast([
+        'enter',
+        v
+      ])
     }
   }
 }

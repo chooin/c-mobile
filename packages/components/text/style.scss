@@ -23,6 +23,8 @@
   color: $text;
   display: inline-block;
   font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &.c-text__light {
     color: $text-light;

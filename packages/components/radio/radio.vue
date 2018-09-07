@@ -2,7 +2,7 @@
   <div
     class="c-radio"
     :class="{
-      'c-radio__checked': parentValue === value
+      'c-radio__checked': currentValue === value
     }"
     @click="onClick">
     <i class="c-radio__core"></i>
@@ -13,19 +13,34 @@
 <script>
 export default {
   name: 'cRadio',
+  data () {
+    return {
+      parent: this.$parent
+    }
+  },
   props: {
     value: {}
   },
+  created () {
+    while (
+      this.parent &&
+      this.parent.$options &&
+      this.parent.$options.name &&
+      this.parent.$options.name !== 'cRadioGroup'
+    ) {
+      this.parent = this.parent.$parent
+    }
+  },
   methods: {
     onClick () {
-      if (this.$parent.disabled) return
-      this.$parent.onChange(this.value)
+      if (this.parent.disabled) return
+      this.parent.onChange(this.value)
     }
   },
   computed: {
-    parentValue: {
+    currentValue: {
       get () {
-        return this.$parent.value
+        return this.parent.value
       }
     }
   }

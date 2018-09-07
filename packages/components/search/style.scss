@@ -2,6 +2,20 @@
   background: #ddd;
   padding: 10px;
   position: relative;
+  .c-search__icon-search {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
   .c-search__input {
     background: #fff;
     border: none;
@@ -10,7 +24,7 @@
     font-size: 14px;
     width: 100%;
     border-radius: 3px;
-    padding: 7px 10px;
+    padding: 7px 10px 7px 32px;
     -webkit-appearance: none;
     &::-webkit-input-placeholder {
       color: $text-light;

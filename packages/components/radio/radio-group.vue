@@ -28,6 +28,7 @@ export default {
   methods: {
     onChange (v) {
       this.$emit('input', v)
+      this.$emit('change', v)
     }
   }
 }

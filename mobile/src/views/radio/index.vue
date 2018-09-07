@@ -35,7 +35,7 @@
 
     <div class="p-15">
       <h3>交通工具：{{ raidoValue2 }}</h3>
-      <c-radio-group v-model="raidoValue2">
+      <c-radio-group v-model="raidoValue2" @change="onChange">
         <c-radio value="汽车">汽车</c-radio>
         <c-radio value="火车">火车</c-radio>
         <c-radio value="飞机">飞机</c-radio>
@@ -50,6 +50,11 @@ export default {
     return {
       raidoValue1: 'Huawei',
       raidoValue2: '火车'
+    }
+  },
+  methods: {
+    onChange (v) {
+      this.$Toast(v)
     }
   }
 }

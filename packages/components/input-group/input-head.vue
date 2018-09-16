@@ -1,11 +1,16 @@
 <template>
-  <div class="c-input-head" @click="onClick">
+  <div
+    class="c-input-head"
+    :style="{
+      minWidth: labelWidth
+    }"
+    @click="onClick">
     <slot></slot>
   </div>
 </template>
 
 <script>
-import { to } from '../../utils'
+import { to, device } from '../../utils'
 
 export default {
   name: 'cInputHead',
@@ -21,6 +26,15 @@ export default {
         vm: this,
         to: this.to
       })
+    }
+  },
+  computed: {
+    labelWidth () {
+      if (device.isBrowser) {
+        return this.$parent.labelWidth
+      } else {
+        return '110px'
+      }
     }
   }
 }

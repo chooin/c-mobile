@@ -43,6 +43,10 @@ export default {
     noborderBottom: {
       type: Boolean,
       default: false
+    },
+    labelWidth: {
+      type: String,
+      default: '110px'
     }
   }
 }

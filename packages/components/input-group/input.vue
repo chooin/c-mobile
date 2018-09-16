@@ -89,6 +89,11 @@ export default {
         to: this.to
       })
     }
+  },
+  computed: {
+    labelWidth () {
+      return this.$parent.labelWidth
+    }
   }
 }
 </script>

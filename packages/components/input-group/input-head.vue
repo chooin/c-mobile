@@ -2,7 +2,7 @@
   <div
     class="c-input-head"
     :style="{
-      minWidth: labelWidth
+      'min-width': labelWidth
     }"
     @click="onClick">
     <slot></slot>

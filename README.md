@@ -11,7 +11,7 @@
 
 ### 安装
 
-``` sh
+```sh
 yarn add c-mobile
 # or
 npm install c-mobile --save
@@ -19,7 +19,7 @@ npm install c-mobile --save
 
 ### 使用
 
-``` js
+```js
 import Vue from 'vue'
 import Mobile from 'c-mobile'
 import 'c-mobile/dist/index.css'
@@ -31,7 +31,7 @@ Vue.use(Mobile)
 
 在项目下建立一个 scss 文件 index.scss，并写入下面内容：
 
-``` scss
+```scss
 // 常用颜色
 $primary: #39f;
 $success: #0c6;
@@ -49,7 +49,7 @@ $border: #d9d9d9;
 
 然后在入口文件 main.js 内导入这个 scss 文件即可：
 
-``` js
+```js
 import Vue from 'vue'
 import Mobile from 'c-mobile'
 import './index.scss'
@@ -59,6 +59,6 @@ Vue.use(Mobile)
 
 viewport 添加 viewport-fit=cover 支持 iPhoneX 等异形屏
 
-``` html
+```html
 <meta name="viewport" content="viewport-fit=cover">
 ```

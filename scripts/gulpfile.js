@@ -2,8 +2,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer'),
-    del = require('del');
+    autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('task', function () {
   gulp
@@ -17,11 +16,9 @@ gulp.task('task', function () {
     .pipe(gulp.dest('../dist'));
   gulp
     .src([
-      '../dist/packages/index.js',
       '../packages/index.scss'
     ])
     .pipe(gulp.dest('../dist'));
-  del(['../dist/packages']);
 });
 
 gulp.task('default', ['task']);

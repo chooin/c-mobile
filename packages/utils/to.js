@@ -1,19 +1,23 @@
 import { isBrowser, isMiniProgram } from './device'
-import getObjectType from './get-object-type'
+
+const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
+
+const isTelPhone = v => getObjectType(v) === 'String' && v.indexOf('/') === 0
 
 const miniProgramTo = to => {
   let search = ''
-  let uri
-  if (getObjectType(to) === 'String') {
-    uri = to
+  let url
+  let toType = getObjectType(to)
+  if (toType === 'String') {
+    url = to
   } else if (
-    getObjectType(to) === 'Object' &&
+    toType === 'Object' &&
     to.path
   ) {
-    uri = to.path
+    url = to.path
   }
   if (
-    getObjectType(to) === 'Object' &&
+    toType === 'Object' &&
     getObjectType(to.query) === 'Object' &&
     Object.keys(to.query).length > 0
   ) {
@@ -23,7 +27,7 @@ const miniProgramTo = to => {
     }
     search = `?${querys.join('&')}`
   }
-  return `${uri}${search}`
+  return `${url}${search}`
 }
 
 /* eslint-disable */
@@ -36,9 +40,11 @@ export default ({
   complete
 }) => {
   if (to) {
+    let toType = getObjectType(to)
+    if (toType === 'String') to = trim(to)
     if (isBrowser) { // 浏览器
       if (
-        typeof to === 'string' &&
+        toType === 'String' &&
         to.indexOf('//') === 0
       ) { // 字符串
         to = to.indexOf('.') > -1
@@ -52,15 +58,19 @@ export default ({
       } else {
         if (
           (
-            typeof to === 'string' &&
+            toType === 'String' &&
             to.indexOf('/') === 0
           ) ||
-          typeof to === 'object'
+          toType === 'Object'
         ) { // Vue router 操作
-          if (replace) {
-            vm.$router.replace(to)
+          if (vm) {
+            if (replace) {
+              vm.$router.replace(to)
+            } else {
+              vm.$router.push(to)
+            }
           } else {
-            vm.$router.push(to)
+            console.error('Require vm')
           }
         } else { // 其他，如：拨打电话、发送邮件
           if (replace) {
@@ -71,32 +81,21 @@ export default ({
         }
       }
     } else if (isMiniProgram) { // 小程序
-      if (
-        typeof to === 'string' &&
-        to.indexOf('tel:') === 0
-      ) { // 拨打电话
+      if (isTelPhone(to)) { // 拨打电话
         wx.makePhoneCall({
           phoneNumber: to.replace('tel:')
         })
       } else {
-        let url = miniProgramTo(to)
-        success = success ? success : () => {}
-        fail = fail ? fail : () => {}
-        complete = complete ? complete : () => {}
+        to = {
+          url: miniProgramTo(to),
+          success: success ? success : () => {},
+          fail: fail ? fail : () => {},
+          complete: fail ? fail : () => {}
+        }
         if (replace) {
-          wx.redirectTo({
-            url,
-            success,
-            fail,
-            complete,
-          })
+          wx.redirectTo(to)
         } else {
-          wx.navigateTo({
-            url,
-            success,
-            fail,
-            complete,
-          })
+          wx.navigateTo(to)
         }
       }
     }

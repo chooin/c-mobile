@@ -8,10 +8,10 @@
   "author": "zhuning <chooin@126.com>",
   "scripts": {
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg && npm run build:css",
-    "build:umd": "rollup --config build/rollup.umd.config.js --format umd --file dist/index.umd.js",
-    "build:es": "rollup --config build/rollup.es.config.js --format es --file dist/index.esm.js",
-    "build:unpkg": "rollup --config build/rollup.unpkg.config.js --format iife --file dist/index.js",
-    "build:css": "gulp --gulpfile build/gulpfile.js"
+    "build:umd": "rollup --config scripts/rollup.umd.config.js --format umd --file dist/index.umd.js",
+    "build:es": "rollup --config scripts/rollup.es.config.js --format es --file dist/index.esm.js",
+    "build:unpkg": "rollup --config scripts/rollup.unpkg.config.js --format iife --file dist/index.js",
+    "build:css": "gulp --gulpfile scripts/gulpfile.js"
   },
   "repository": {
     "type": "git",

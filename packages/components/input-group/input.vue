@@ -7,7 +7,7 @@
       'c-input__next': next,
       'c-input__icon': icon,
       'c-input__checked': checked,
-      'noborder-top': noborderTop
+      'c-input__noborder-top': noborderTop
     }]"
     @touchstart="() => {}"
     @click="onClick">
@@ -35,7 +35,7 @@
       'c-input__next': next,
       'c-input__icon': icon,
       'c-input__checked': checked,
-      'noborder-top': noborderTop
+      'c-input__noborder-top': noborderTop
     }]"
     @touchstart="() => {}"
     @click="onClick">

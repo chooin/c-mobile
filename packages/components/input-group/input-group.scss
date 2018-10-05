@@ -13,12 +13,12 @@
     &::after {
       @include borderLine('bottom');
     }
-    &.noborder-top {
+    &.c-input-group__noborder-top {
       &::before {
         border: none !important;
       }
     }
-    &.noborder-bottom {
+    &.c-input-group__noborder-bottom {
       &::after {
         border: none !important;
       }

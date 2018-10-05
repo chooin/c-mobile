@@ -41,7 +41,7 @@ export default ({
 }) => {
   if (to) {
     let toType = getObjectType(to)
-    if (toType === 'String') to = trim(to)
+    if (toType === 'String') to = to.trim()
     if (isBrowser) { // 浏览器
       if (
         toType === 'String' &&

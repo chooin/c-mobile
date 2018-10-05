@@ -186,13 +186,8 @@
       border: none;
     }
   }
-  &.noborder-top {
+  &.c-input__noborder-top {
     &::before {
-      border: none !important;
-    }
-  }
-  &.noborder-bottom {
-    &::after {
       border: none !important;
     }
   }

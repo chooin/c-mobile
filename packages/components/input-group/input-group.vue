@@ -11,8 +11,8 @@
     <div
       class="c-input-group__content"
       :class="{
-        'noborder-top': noborderTop || noborder,
-        'noborder-bottom': noborderBottom || noborder
+        'c-input-group__noborder-top': noborderTop || noborder,
+        'c-input-group__noborder-bottom': noborderBottom || noborder
       }">
       <slot></slot>
     </div>

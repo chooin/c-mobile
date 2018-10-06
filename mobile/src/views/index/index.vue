@@ -115,7 +115,7 @@
       </c-input>
       <c-input next addon to="/radio">
         <c-input-head>
-          radio
+          RadioGroup
         </c-input-head>
         <c-input-body>
         </c-input-body>

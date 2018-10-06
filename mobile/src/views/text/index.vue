@@ -14,7 +14,7 @@
     <c-text block to="//example">跳转到当前域名下的某个地址</c-text>
     <c-text block @click="alert">事件</c-text>
     <c-text block light>浅灰色</c-text>
-    <c-text placeholder="placeholder"></c-text>
+    <c-text placeholder="placeholder">{{ placeholder }}</c-text>
     <c-text align="left">left</c-text>
     <c-text align="center">center</c-text>
     <c-text align="right">right</c-text>
@@ -25,10 +25,20 @@
 
 <script>
 export default {
+  data () {
+    return {
+      placeholder: null
+    }
+  },
   methods: {
     alert () {
       window.alert()
     }
+  },
+  created () {
+    setTimeout (() => {
+      this.placeholder = 'placeholder change'
+    }, 3000)
   }
 }
 </script>

@@ -8,20 +8,8 @@
         'c-text__light': light,
         'c-text__block': block,
         'c-text__cursor': cursor,
-        'c-text__empty':
-          text ||
-          ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-          ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-          ($slots.default && $slots.default[0] && $slots.default[0].text) === '',
-        'c-text__placeholder':
-          placeholder !== undefined &&
-          placeholder !== null &&
-          (
-            text ||
-            ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-            ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-            ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
-          )
+        'c-text__empty': isEmpty,
+        'c-text__placeholder': isPlaceholder
       }
     ]"
     :style="{
@@ -31,18 +19,16 @@
     @click="onClick">
     <template
       v-if="
-        placeholder !== undefined &&
-        placeholder !== null &&
-        (
-          text ||
-          ($slots.default && $slots.default[0] && $slots.default[0].text) === null ||
-          ($slots.default && $slots.default[0] && $slots.default[0].text) === undefined ||
-          ($slots.default && $slots.default[0] && $slots.default[0].text) === ''
-        )
+        text !== null &&
+        text !== undefined &&
+        text !== ''
       ">
+      {{ text }}
+    </template>
+    <template v-else-if="isPlaceholder">
       {{ placeholder }}
     </template>
-    <span class="c-text__content" v-else>
+    <span v-else class="c-text__content">
       <slot>{{ text }}</slot>
     </span>
   </div>
@@ -53,6 +39,12 @@ import { to } from '../../utils'
 
 export default {
   name: 'cText',
+  data () {
+    return {
+      isEmpty: false,
+      isPlaceholder: false
+    }
+  },
   props: {
     text: {
       type: String,
@@ -106,6 +98,27 @@ export default {
         vm: this,
         to: this.to
       })
+    },
+    setIsEmptyOrIsPlaceholder () {
+      let text =
+        this.$slots.default &&
+        this.$slots.default[0] &&
+        this.$slots.default[0].text
+      this.isEmpty =
+        (
+          text === null ||
+          text === undefined ||
+          text === ''
+        ) &&
+        (
+          this.text === null ||
+          this.text === undefined ||
+          this.text === ''
+        )
+      this.isPlaceholder =
+        this.placeholder !== undefined &&
+        this.placeholder !== null &&
+        this.isEmpty
     }
   },
   computed: {
@@ -120,6 +133,12 @@ export default {
         return null
       }
     }
+  },
+  created () {
+    this.setIsEmptyOrIsPlaceholder()
+  },
+  beforeUpdate () {
+    this.setIsEmptyOrIsPlaceholder()
   }
 }
 </script>

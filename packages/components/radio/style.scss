@@ -1,11 +1,11 @@
 .c-radio-group {
   .c-radio {
-    padding-left: 18px;
+    padding-left: 20px;
     font-size: 14px;
     position: relative;
     .c-radio__core {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       position: absolute;
       top: 50%;
       left: 0;
@@ -16,8 +16,8 @@
       box-sizing: border-box;
       &::after {
         position: absolute;
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
         left: 2px;
         top: 2px;
         border-radius: 100%;

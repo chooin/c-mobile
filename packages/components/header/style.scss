@@ -142,18 +142,4 @@
       border-bottom: none;
     }
   }
-  &.c-header__suspend {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-  }
-}
-
-.c-header__suspend__cover {
-  box-sizing: unset;
-  width: 100%;
-  height: 44px;
-  -webkit-user-select: none;
-  user-select: none;
 }

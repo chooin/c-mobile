@@ -4,7 +4,6 @@
     :class="[
       type ? 'c-header__' + type : '',
       {
-        'c-header__suspend': suspend,
         'c-header__noborder-bottom': noborderBottom
       }
     ]">
@@ -50,7 +49,7 @@
 </template>
 
 <script>
-import { to, getObjectType, device } from '../../utils'
+import { to } from '../../utils'
 
 export default {
   name: 'cHeader',
@@ -84,14 +83,6 @@ export default {
     noborderBottom: {
       type: Boolean,
       default: false
-    },
-    suspend: {
-      type: Boolean,
-      default: false
-    },
-    cover: {
-      type: [Boolean, Number, String],
-      default: true
     }
   },
   methods: {
@@ -153,28 +144,6 @@ export default {
         this.defaultTitle = document.title
       })
     }
-  },
-  mounted () {
-    if (
-      this.cover !== false &&
-      this.suspend
-    ) {
-      if (device.isBrowser) {
-        if (document.querySelectorAll('.c-header__suspend__cover').length === 0) {
-          this.div = document.createElement('div')
-          this.div.className = 'c-header__suspend__cover'
-          if (getObjectType(this.cover) === 'Number') {
-            this.div.style.height = `${this.cover}px`
-          } else if (getObjectType(this.cover) === 'String') {
-            this.div.style.height = this.cover
-          }
-          document.body.insertBefore(this.div, document.body.firstChild)
-        }
-      }
-    }
-  },
-  beforeDestroy () {
-    this.suspend && this.cover && this.div && this.div.remove()
   }
 }
 </script>

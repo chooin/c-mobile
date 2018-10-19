@@ -8,13 +8,15 @@
       {
         'c-btn__o': o,
         'c-btn__disabled': disabled,
-        'c-btn__suspend': suspend,
         'c-btn__small': small,
         'c-btn__icon': icon,
-        'c-btn__is-miniprogram': device.isMiniProgram,
-        'c-btn__is-miniprogram-is-iphonex': device.isMiniProgramIsIPhoneX
+        'c-btn__is-miniprogram': isMiniProgram,
+        'c-btn__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
       }
     ]"
+    :style="{
+      borderRadius
+    }"
     @click="onClick">
     <span class="c-btn__text">
       <slot>{{ text }}</slot>
@@ -23,7 +25,11 @@
 </template>
 
 <script>
-import { to, getObjectType, device } from '../../utils'
+import {
+  to,
+  isMiniProgram,
+  isMiniProgramIsIPhoneX
+} from '../../utils'
 
 export default {
   name: 'CBtn',
@@ -40,21 +46,17 @@ export default {
       type: Boolean,
       default: false
     },
-    suspend: {
-      type: Boolean,
-      default: false
-    },
     small: {
       type: Boolean,
       default: false
     },
+    borderRadius: {
+      type: String,
+      default: null
+    },
     to: {
       type: [String, Object],
       default: null
-    },
-    cover: {
-      type: [Boolean, Number, String],
-      default: true
     },
     icon: {
       type: Boolean,
@@ -72,36 +74,8 @@ export default {
   data () {
     return {
       div: null,
-      device
-    }
-  },
-  mounted () {
-    if (
-      this.cover !== false &&
-      this.suspend
-    ) {
-      if (device.isBrowser) {
-        if (document.querySelectorAll('.c-btn__suspend__cover').length === 0) {
-          this.div = document.createElement('div')
-          this.div.className = 'c-btn__suspend__cover'
-          if (getObjectType(this.cover) === 'Number') {
-            this.div.style.height = `${this.cover}px`
-          } else if (getObjectType(this.cover) === 'String') {
-            this.div.style.height = this.cover
-          }
-          document.body.appendChild(this.div)
-        }
-      }
-    }
-  },
-  onReady () {
-    if (
-      this.cover !== false &&
-      this.suspend
-    ) {
-      if (this.device.isMiniProgram) {
-        // 小程序不支持插入节点
-      }
+      isMiniProgram,
+      isMiniProgramIsIPhoneX
     }
   },
   methods: {
@@ -112,9 +86,6 @@ export default {
         to: this.to
       })
     }
-  },
-  beforeDestroy () {
-    this.suspend && this.cover && this.div && this.div.remove()
   }
 }
 </script>

@@ -1,6 +1,5 @@
 import Btn from '../packages/components/btn'
 import { Flex, FlexItem } from '../packages/components/flex'
-import { Ft, FtItem } from '../packages/components/ft'
 import Header from '../packages/components/header'
 import Icon from '../packages/components/icon'
 import {
@@ -23,6 +22,7 @@ import {
  Radio,
  RadioGroup
 } from '../packages/components/radio'
+import Container from '../packages/components/container'
 
 import Toast from '../packages/components/toast'
 import Confirm from '../packages/components/confirm'
@@ -32,8 +32,6 @@ const components = [
   Btn,
   Flex,
   FlexItem,
-  Ft,
-  FtItem,
   Header,
   Icon,
   InputGroup,
@@ -53,7 +51,8 @@ const components = [
   Search,
   Keyboard,
   Radio,
-  RadioGroup
+  RadioGroup,
+  Container
 ]
 
 const install = Vue => {

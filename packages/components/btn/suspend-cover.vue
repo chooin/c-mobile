@@ -2,19 +2,23 @@
   <div
     class="c-btn__suspend__cover"
     :class="{
-      'c-btn__is-miniprogram': device.isMiniProgram,
-      'c-btn__is-miniprogram-is-iphonex': device.isMiniProgramIsIPhoneX
+      'c-btn__is-miniprogram': isMiniProgram,
+      'c-btn__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
     }">
   </div>
 </template>
 
 <script>
-import { device } from '../../utils'
+import {
+  isMiniProgram,
+  isMiniProgramIsIPhoneX
+} from '../../utils'
 
 export default {
   data () {
     return {
-      device
+      isMiniProgram,
+      isMiniProgramIsIPhoneX
     }
   }
 }

@@ -24,7 +24,19 @@
     <c-btn type="warning" disabled o>warning disabled</c-btn>
     <c-btn type="danger" disabled o>danger disabled</c-btn>
     <c-btn type="success" disabled o>success disabled</c-btn>
-    <c-btn type="success" suspend>success suspend</c-btn>
+    <!-- <c-btn type="success" suspend>success suspend</c-btn> -->
+    <c-container safe-area style="margin-top: 15px;">
+      <c-btn type="primary">suspend</c-btn>
+    </c-container>
+    <c-container suspend="top" style="padding: 15px">
+      <c-btn type="primary">suspend</c-btn>
+    </c-container>
+    <c-container
+      suspend="bottom"
+      background-color="#39f"
+      safe-area>
+      <c-btn type="primary" border-radius="0">悬浮按钮</c-btn>
+    </c-container>
   </div>
 </template>
 

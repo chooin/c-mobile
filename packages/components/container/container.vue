@@ -52,7 +52,7 @@ export default {
         this.$refs.cContainer.firstChild.classList &&
         this.$refs.cContainer.firstChild.classList[0]
       ) {
-        className = `c-container-${this.fixed}-cover__${this.$refs.cContainer.firstChild.classList[0]}`
+        className = `c-container__fixed-${this.fixed}-cover__${this.$refs.cContainer.firstChild.classList[0]}`
       }
       if (document.querySelectorAll(`.${className}`).length === 0) {
         const clientHeight = this.$refs.cContainer.clientHeight

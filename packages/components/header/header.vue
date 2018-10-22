@@ -4,7 +4,7 @@
     :class="[
       type ? 'c-header__' + type : '',
       {
-        'c-header__noborder-bottom': noborderBottom
+        'c-header__noborder-bottom': noborderBottom || noborder
       }
     ]">
     <span
@@ -19,12 +19,12 @@
       :style="{
         color: _left.color
       }"
-      @click="leftClick"
+      @click="onLeft"
       v-else-if="_left.text || _left.back"
       class="c-header__left">
       {{ _left.close ? '' : _left.text }}
     </span>
-    <span class="c-header__close" v-if="_left.close" @click="closeClick"><i></i></span>
+    <span class="c-header__close" v-if="_left.close" @click="onClose"><i></i></span>
     <h1 v-if="$slots.title">
       <slot name="title"></slot>
     </h1>
@@ -41,7 +41,7 @@
       :style="{
         color: _right.color
       }"
-      @click="rightClick"
+      @click="onRight"
       v-else-if="_right.text">
       {{ _right.text }}
     </span>
@@ -83,10 +83,14 @@ export default {
     noborderBottom: {
       type: Boolean,
       default: false
+    },
+    noborder: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
-    leftClick () {
+    onLeft () {
       if (this._left.to) {
         to({
           vm: this,
@@ -98,7 +102,7 @@ export default {
         this.$router.go(-1)
       }
     },
-    rightClick () {
+    onRight () {
       if (this._right.to) {
         to({
           vm: this,
@@ -108,7 +112,7 @@ export default {
         this._right.click()
       }
     },
-    closeClick () {
+    onClose () {
       if (typeof this._left.close === 'function') {
         this._left.close()
       }

@@ -2,7 +2,7 @@
   <div class="v-header">
     <c-header />
     <div style="height: 1.5rem; width: 100%;"></div>
-    <c-safe-area suspend="top">
+    <c-container fixed="top">
       <c-header
         :left="{
           back: true,
@@ -17,8 +17,7 @@
         }"
       >
       </c-header>
-    </c-safe-area>
-    <div style="height: 1.5rem; width: 100%;"></div>
+    </c-container>
     <c-header
       :left="{
         back: true,
@@ -101,7 +100,7 @@
 export default {
   methods: {
     closeClick () {
-      this.$Toast('close')
+      this.$Toast('关闭按钮被点击')
     }
   }
 }

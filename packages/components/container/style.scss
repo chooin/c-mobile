@@ -1,5 +1,5 @@
 .c-container {
-  &.c-container__suspend-top {
+  &.c-container__fixed-top {
     position: fixed;
     left: 0;
     top: 0;
@@ -10,7 +10,7 @@
       display: none;
     }
   }
-  &.c-container__suspend-bottom {
+  &.c-container__fixed-bottom {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -19,7 +19,7 @@
     z-index: 1000;
   }
   &.c-container__safe-area {
-    &.c-container__suspend-bottom {
+    &.c-container__fixed-bottom {
       bottom: constant(safe-area-inset-bottom);
       bottom: env(safe-area-inset-bottom);
       &::after {

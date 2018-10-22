@@ -58,11 +58,12 @@
   }
   .c-header__close {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 44px;
     height: 44px;
     line-height: 44px;
     padding: 0 10px 0 25px;
+    overflow: hidden;
     i {
       position: absolute;
       top: 9px;

@@ -3,7 +3,7 @@
     ref="cContainer"
     class="c-container"
     :class="[
-      suspend ? 'c-container__suspend-' + suspend : '',
+      fixed ? 'c-container__fixed-' + fixed : '',
       {
         'c-container__safe-area': safeArea
       }
@@ -27,7 +27,7 @@ export default {
     }
   },
   props: {
-    suspend: {
+    fixed: {
       type: String,
       default: null // null, top, bottom
     },
@@ -42,7 +42,7 @@ export default {
   },
   mounted () {
     if (
-      this.suspend &&
+      this.fixed &&
       isBrowser
     ) {
       let className = null
@@ -52,16 +52,16 @@ export default {
         this.$refs.cContainer.firstChild.classList &&
         this.$refs.cContainer.firstChild.classList[0]
       ) {
-        className = `c-container-${this.suspend}-cover__${this.$refs.cContainer.firstChild.classList[0]}`
+        className = `c-container-${this.fixed}-cover__${this.$refs.cContainer.firstChild.classList[0]}`
       }
       if (document.querySelectorAll(`.${className}`).length === 0) {
         const clientHeight = this.$refs.cContainer.clientHeight
         this.element = document.createElement('div')
         this.element.className = className
-        if (this.suspend === 'top') { // 悬浮在顶部
+        if (this.fixed === 'top') { // 悬浮在顶部
           this.element.style.height = `${clientHeight}px`
           document.body.insertBefore(this.element, document.body.firstChild)
-        } else if (this.suspend === 'bottom') { // 悬浮在底部
+        } else if (this.fixed === 'bottom') { // 悬浮在底部
           const afterHeight = window.getComputedStyle(this.$refs.cContainer, ':after').height.replace('px', '')
           this.element.style.height = `${parseInt(afterHeight) + parseInt(clientHeight)}px`
           document.body.appendChild(this.element)

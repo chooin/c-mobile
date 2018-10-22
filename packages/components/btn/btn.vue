@@ -73,7 +73,6 @@ export default {
   },
   data () {
     return {
-      div: null,
       isMiniProgram,
       isMiniProgramIsIPhoneX
     }

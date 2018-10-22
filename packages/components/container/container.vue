@@ -9,7 +9,8 @@
       }
     ]"
     :style="{
-      backgroundColor
+      backgroundColor,
+      zIndex
     }"
   >
     <slot></slot>
@@ -38,6 +39,10 @@ export default {
     backgroundColor: {
       type: String,
       default: null
+    },
+    zIndex: {
+      type: Number,
+      default: 1000
     }
   },
   mounted () {
@@ -64,6 +69,9 @@ export default {
         } else if (this.fixed === 'bottom') { // 悬浮在底部
           const afterHeight = window.getComputedStyle(this.$refs.cContainer, ':after').height.replace('px', '')
           this.element.style.height = `${parseInt(afterHeight) + parseInt(clientHeight)}px`
+          if (!this.backgroundColor) { // 设置默认颜色
+            this.$refs.cContainer.style.backgroundColor = window.getComputedStyle(this.$refs.cContainer.firstChild).backgroundColor
+          }
           document.body.appendChild(this.element)
         }
       }

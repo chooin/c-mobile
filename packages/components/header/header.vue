@@ -55,7 +55,6 @@ export default {
   name: 'cHeader',
   data () {
     return {
-      div: null,
       defaultTitle: ''
     }
   },

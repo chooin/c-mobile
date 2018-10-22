@@ -12,7 +12,7 @@
 export default {
   methods: {
     showLoading () {
-      this.$Loading.show()
+      this.$Loading.show('加载中')
       setTimeout(() => {
         this.$Loading.hide()
       }, 3000)

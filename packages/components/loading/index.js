@@ -4,10 +4,14 @@ import Loading from './loading.vue'
 let component
 
 export default {
-  show () {
+  show (text) {
     component = new Vue({
       render (h) {
-        return h(Loading)
+        return h(Loading, {
+          props: {
+            text
+          }
+        })
       }
     }).$mount()
     document.body.classList.add('c-mobile__is-loading')

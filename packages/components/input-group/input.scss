@@ -45,7 +45,7 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      line-height: 18px;
+      line-height: 20px;
       min-height: 20px;
       border-width: 0;
       padding: 0;
@@ -131,20 +131,20 @@
     -webkit-user-select: none;
     user-select: none;
     .c-input-body {
-      padding-right: 10px;
+      padding-right: 15px;
       &::after {
         content: "";
         transform: rotate(-45deg)
                    translateY(-50%);
         border: solid #cacaca;
-        border-width: 0 1px 1px 0;
-        width: 10px;
-        height: 10px;
+        border-width: 0 2px 2px 0;
+        width: 8px;
+        height: 8px;
         display: block;
         position: absolute;
         top: 50%;
-        right: 13px;
-        margin-top: -2px;
+        right: 14px;
+        margin-top: -1px;
       }
     }
   }

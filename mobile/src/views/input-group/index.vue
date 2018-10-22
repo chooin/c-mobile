@@ -141,6 +141,7 @@
         </c-input-body>
       </c-input>
     </c-input-group>
+
     <c-input-group title="选择城市" type="danger">
       <c-input>
         <c-input-head>
@@ -157,6 +158,26 @@
         </c-input-body>
       </c-input>
     </c-input-group>
+
+    <c-radio-group v-model="raidoValue" @change="onChange">
+      <c-input-group :title="`品牌：${raidoValue}`">
+        <c-input>
+          <c-input-body>
+            <c-radio value="Apple">Apple</c-radio>
+          </c-input-body>
+        </c-input>
+        <c-input>
+          <c-input-body>
+            <c-radio value="Huawei">Huawei</c-radio>
+          </c-input-body>
+        </c-input>
+        <c-input>
+          <c-input-body>
+            <c-radio value="Vivo">Vivo</c-radio>
+          </c-input-body>
+        </c-input>
+      </c-input-group>
+    </c-radio-group>
 
     <c-input-group noborder title="没有上下 border" type="success">
       <c-input>
@@ -274,7 +295,13 @@
 export default {
   data () {
     return {
-      switchStatus: false
+      switchStatus: false,
+      raidoValue: null
+    }
+  },
+  methods: {
+    onChange (v) {
+      this.$Toast(v)
     }
   }
 }

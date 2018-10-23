@@ -4,7 +4,7 @@
     v-show="visible"
     @click="onClick">
     <div class="c-toast__content">
-      <p v-for="(item, index) in texts" :key="index">{{ item }}</p>
+      <p v-for="(item, index) in text" :key="index">{{ item }}</p>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {
       type: Boolean,
       default: false
     },
-    texts: {
+    text: {
       type: Array,
       default: () => []
     },

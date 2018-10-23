@@ -22,7 +22,7 @@ export default {
     },
     toast2Click () {
       this.$Toast({
-        texts: 1,
+        text: 1,
         duration: 3000,
         cb: () => {
           window.alert('cb')
@@ -31,7 +31,7 @@ export default {
     },
     toast3Click () {
       this.$Toast({
-        texts: [
+        text: [
           'toast',
           'toast1321312313213'
         ],

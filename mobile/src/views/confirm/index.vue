@@ -14,7 +14,7 @@ export default {
       this.$Confirm({
         title: '提示',
         text: '操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功',
-        ok: {
+        button: {
           text: '确定',
           click: () => {
             this.$Toast('ok')
@@ -24,20 +24,26 @@ export default {
     },
     confirmClick () {
       this.$Confirm({
-        text: '我是 confirm',
-        ok: {
-          text: '确定',
-          click: () => {
-            this.$Toast('ok')
+        title: '提示',
+        text: [
+          '2017年12月13日，谷歌正式宣布谷歌AI中国中心（Google AI China Center）在北京成立',
+          '2017年12月13日，谷歌正式宣布谷歌AI中国中心（Google AI China Center）在北京成立'
+        ],
+        button: [
+          {
+            text: '确定',
+            color: '#f30',
+            click: () => {
+              this.$Toast('ok')
+            }
+          },
+          {
+            text: '取消',
+            click: () => {
+              this.$Toast('cancel')
+            }
           }
-        },
-        cancel: {
-          text: '取消',
-          color: '#f30',
-          click: () => {
-            this.$Toast('cancel')
-          }
-        }
+        ]
       })
     }
   }

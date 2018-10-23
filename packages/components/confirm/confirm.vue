@@ -9,25 +9,28 @@
         {{ title }}
       </div>
       <div class="c-confirm__content">
-        {{ text }}
+        <template v-if="Array.isArray(text)">
+          <template v-if="text.length === 1">
+            {{ text[0] }}
+          </template>
+          <template v-else>
+            <p v-for="(item, index) in text" :key="index">{{ item }}</p>
+          </template>
+        </template>
+        <template v-else>
+          {{ text }}
+        </template>
       </div>
       <div class="c-confirm__btn-group">
         <div
           class="c-confirm__btn"
-          @click="ok.click"
+          @click="item.click"
+          v-for="(item, index) in button"
+          :key="index"
           :style="{
-            color: ok.color
+            color: item.color
           }">
-          {{ ok.text }}
-        </div>
-        <div
-          class="c-confirm__btn"
-          @click="cancel.click"
-          :style="{
-            color: cancel.color
-          }"
-          v-if="cancel.text">
-          {{ cancel.text }}
+          {{ item.text }}
         </div>
       </div>
     </div>
@@ -43,15 +46,11 @@ export default {
       default: null
     },
     text: {
-      type: String,
+      type: [String, Array],
       default: null
     },
-    cancel: {
-      type: Object,
-      default: null
-    },
-    ok: {
-      type: Object,
+    button: {
+      type: Array,
       default: null
     }
   }

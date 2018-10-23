@@ -1,9 +1,9 @@
 <template>
   <div
-    class="c-btn__suspend__cover"
+    class="c-button__suspend__cover"
     :class="{
-      'c-btn__is-miniprogram': isMiniProgram,
-      'c-btn__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
+      'c-button__is-miniprogram': isMiniProgram,
+      'c-button__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
     }">
   </div>
 </template>

@@ -1,24 +1,24 @@
 <template>
   <button
-    class="c-btn"
+    class="c-button"
     type="type"
     :open-type="openType"
     :class="[
-      type ? 'c-btn__' + type : '',
+      type ? 'c-button__' + type : '',
       {
-        'c-btn__o': o,
-        'c-btn__disabled': disabled,
-        'c-btn__small': small,
-        'c-btn__icon': icon,
-        'c-btn__is-miniprogram': isMiniProgram,
-        'c-btn__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
+        'c-button__o': o,
+        'c-button__disabled': disabled,
+        'c-button__small': small,
+        'c-button__icon': icon,
+        'c-button__is-miniprogram': isMiniProgram,
+        'c-button__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
       }
     ]"
     :style="{
       borderRadius
     }"
     @click="onClick">
-    <span class="c-btn__text">
+    <span class="c-button__text">
       <slot>{{ text }}</slot>
     </span>
   </button>
@@ -32,7 +32,7 @@ import {
 } from '../../utils'
 
 export default {
-  name: 'CBtn',
+  name: 'CButton',
   props: {
     type: {
       type: String,

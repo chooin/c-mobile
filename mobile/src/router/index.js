@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Index from '@/views/index'
-import Btn from '@/views/btn'
+import Button from '@/views/button'
 import Flex from '@/views/flex'
 import Header from '@/views/header'
 import Switch from '@/views/switch'
@@ -29,8 +29,8 @@ export default new Router({
       component: Index
     },
     {
-      path: '/btn',
-      component: Btn
+      path: '/button',
+      component: Button
     },
     {
       path: '/flex',

@@ -1,9 +1,9 @@
 <template>
   <div class="v-loading">
-    <c-btn type="primary" @click="showLoading">显示 Loading</c-btn>
-    <c-btn type="danger" @click="showLoading">显示 Loading</c-btn>
-    <c-btn type="success" @click="showLoading">显示 Loading</c-btn>
-    <c-btn type="warning" @click="showLoading">显示 Loading</c-btn>
+    <c-button type="primary" @click="showLoading">显示 Loading</c-button>
+    <c-button type="danger" @click="showLoading">显示 Loading</c-button>
+    <c-button type="success" @click="showLoading">显示 Loading</c-button>
+    <c-button type="warning" @click="showLoading">显示 Loading</c-button>
   </div>
 </template>
 

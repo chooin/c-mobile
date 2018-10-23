@@ -1,9 +1,9 @@
 <template>
   <div class="v-index">
     <c-input-group>
-      <c-input next addon to="/btn">
+      <c-input next addon to="/button">
         <c-input-head>
-          Btn
+          Button
         </c-input-head>
         <c-input-body>
         </c-input-body>

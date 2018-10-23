@@ -111,18 +111,18 @@
         right: 15px;
         transform: translateY(-50%);
       }
-      .c-btn,
-      .c-btn__o {
+      .c-button,
+      .c-button__o {
         position: absolute;
         top: 50%;
         right: 15px;
         transform: translateY(-50%);
         z-index: 1;
       }
-      .c-btn + input,
-      .c-btn__o + input,
-      .c-btn + .c-text,
-      .c-btn__o + .c-text {
+      .c-button + input,
+      .c-button__o + input,
+      .c-button + .c-text,
+      .c-button__o + .c-text {
         text-align: left;
       }
     }

@@ -1,20 +1,20 @@
 <template>
   <div class="p-index">
-    <c-btn :to="{
+    <c-button :to="{
       path: '/312312',
       query: {
         aa: 1
       }
-    }">Hello</c-btn>
+    }">Hello</c-button>
   </div>
 </template>
 
 <script>
-import cBtn from '@/packages/components/btn/index'
+import cButton from '@/packages/components/button/index'
 
 export default {
   components: {
-    cBtn
+    cButton
   },
   methods: {
   }

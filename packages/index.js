@@ -1,4 +1,4 @@
-import Btn from '../packages/components/btn'
+import Button from '../packages/components/button'
 import { Flex, FlexItem } from '../packages/components/flex'
 import Header from '../packages/components/header'
 import Icon from '../packages/components/icon'
@@ -29,7 +29,7 @@ import Confirm from '../packages/components/confirm'
 import Loading from '../packages/components/loading'
 
 const components = [
-  Btn,
+  Button,
   Flex,
   FlexItem,
   Header,

@@ -1,7 +1,7 @@
 <template>
   <div class="v-sidebar">
     <div style="padding: 1.5rem 1.5rem 0;">
-      <c-btn type="primary" @click="showSidebarClick">显示</c-btn>
+      <c-button type="primary" @click="showSidebarClick">显示</c-button>
     </div>
     <c-sidebar :visible="visible">
       <template slot="head">

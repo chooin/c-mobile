@@ -118,7 +118,7 @@
           订阅
         </c-input-head>
         <c-input-body>
-          <c-btn type="primary" small>订阅</c-btn>
+          <c-button type="primary" small>订阅</c-button>
         </c-input-body>
       </c-input>
       <c-input use-div addon>
@@ -126,7 +126,7 @@
           订阅
         </c-input-head>
         <c-input-body>
-          <c-btn type="primary" small>发送验证码</c-btn>
+          <c-button type="primary" small>发送验证码</c-button>
           <input type="text" placeholder="请输入验证码">
         </c-input-body>
       </c-input>

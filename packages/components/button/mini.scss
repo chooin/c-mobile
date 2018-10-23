@@ -1,11 +1,11 @@
 @import "./style.scss";
 
-.c-btn {
+.c-button {
   overflow: visible;
-  &.c-btn__small {
+  &.c-button__small {
     margin-right: 5px;
   }
-  &.c-btn__suspend {
+  &.c-button__suspend {
     bottom: 0;
     &::before {
       height: 0;
@@ -14,11 +14,11 @@
   &::after {
     border-width: 0;
   }
-  &.c-btn__o {
+  &.c-button__o {
     border-width: 0.5px;
   }
-  &.c-btn__is-miniprogram-is-iphonex {
-    &.c-btn__suspend {
+  &.c-button__is-miniprogram-is-iphonex {
+    &.c-button__suspend {
       bottom: 34px;
       &::before {
         height: 34px;
@@ -27,9 +27,9 @@
   }
 }
 
-.c-btn__suspend__cover {
+.c-button__suspend__cover {
   height: 50px;
-  &.c-btn__is-miniprogram-is-iphonex {
+  &.c-button__is-miniprogram-is-iphonex {
     height: 84px;
   }
 }

@@ -22,7 +22,7 @@ export default (option = {}) => {
     text: '',
     button: [
       {
-        text: 'OK',
+        text: '确定',
         color: null,
         click () {}
       }

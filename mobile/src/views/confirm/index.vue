@@ -11,6 +11,7 @@
 export default {
   methods: {
     alertClick () {
+      this.$Confirm(31221)
       this.$Confirm({
         title: '提示',
         text: '操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功操作成功',

@@ -3,6 +3,14 @@ import Confirm from './confirm.vue'
 
 export default (option = {}) => {
   if (
+    typeof option === 'string' ||
+    typeof option === 'number'
+  ) {
+    option = {
+      text: `${option}`
+    }
+  }
+  if (
     option &&
     option.button &&
     !Array.isArray(option.button)

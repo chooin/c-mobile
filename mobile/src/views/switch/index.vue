@@ -31,18 +31,20 @@ export default {
       this.$Confirm({
         title: '提示',
         text: 'beforeChange',
-        ok: {
-          text: '确定',
-          click: () => {
-            next()
+        button: [
+          {
+            text: '确定',
+            click: () => {
+              next()
+            }
+          },
+          {
+            text: '取消',
+            click: () => {
+              this.$Toast('已取消操作')
+            }
           }
-        },
-        cancel: {
-          text: '取消',
-          click: () => {
-            this.$Toast('已取消操作')
-          }
-        }
+        ]
       })
     }
   }

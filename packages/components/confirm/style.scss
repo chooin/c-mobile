@@ -55,6 +55,7 @@
         display: block;
         flex: 1;
         font-weight: 500;
+        color: #007aff;
         &::before {
           @include borderLine('left');
         }
@@ -62,9 +63,6 @@
           &::before {
             border: none;
           }
-        }
-        &:last-child {
-          color: #007aff;
         }
       }
       &::before {

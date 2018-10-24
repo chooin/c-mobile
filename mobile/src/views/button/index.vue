@@ -29,7 +29,7 @@
       <c-button type="primary">suspend</c-button>
     </c-container> -->
     <c-container fixed="top" style="padding: 15px">
-      <c-button type="primary">suspend</c-button>
+      <c-button type="primary" @click="onClick">悬浮按钮</c-button>
     </c-container>
     <c-container
       fixed="bottom"
@@ -39,6 +39,17 @@
     </c-container>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    onClick () {
+      this.$Toast('123')
+    }
+  }
+}
+</script>
+
 
 <style scoped lang="scss">
   @import './style';

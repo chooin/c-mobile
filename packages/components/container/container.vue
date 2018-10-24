@@ -11,7 +11,7 @@
     :style="{
       backgroundColor,
       padding,
-      zIndex
+      zIndex: _zIndex
     }"
   >
     <slot></slot>
@@ -47,7 +47,7 @@ export default {
     },
     zIndex: {
       type: Number,
-      default: 1000
+      default: null
     }
   },
   mounted () {
@@ -105,6 +105,19 @@ export default {
       isBrowser
     ) {
       this.element && this.element.remove()
+    }
+  },
+  computed: {
+    _zIndex () {
+      if (this.fixed) {
+        if (this.zIndex) {
+          return this.zIndex
+        } else {
+          return 1000
+        }
+      } else {
+        return this.zIndex
+      }
     }
   }
 }

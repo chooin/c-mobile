@@ -1,6 +1,6 @@
 <template>
   <c-container
-    :safe-area="10">
+    safe-area>
     <c-input-group>
       <c-input next addon to="/button">
         <c-input-head>
@@ -117,6 +117,13 @@
       <c-input next addon to="/radio">
         <c-input-head>
           RadioGroup
+        </c-input-head>
+        <c-input-body>
+        </c-input-body>
+      </c-input>
+      <c-input next addon to="/container">
+        <c-input-head>
+          container
         </c-input-head>
         <c-input-body>
         </c-input-body>

@@ -19,6 +19,7 @@ import Loading from '@/views/loading'
 import Search from '@/views/search'
 import keyboard from '@/views/keyboard'
 import radio from '@/views/radio'
+import container from '@/views/container'
 
 Vue.use(Router)
 
@@ -95,6 +96,10 @@ export default new Router({
     {
       path: '/radio',
       component: radio
+    },
+    {
+      path: '/container',
+      component: container
     },
     {
       path: '/*',

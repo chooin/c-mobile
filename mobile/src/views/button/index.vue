@@ -32,10 +32,10 @@
       <c-button type="primary" @click="onClick">悬浮按钮</c-button>
     </c-container>
     <c-container
+      safe-area
       fixed="bottom"
-      background-color="#f0f0f0"
-      safe-area>
-      <c-button type="primary" :border-radius="0">悬浮按钮</c-button>
+      background-color="#fff">
+      <c-button type="primary" :border-radius="0">随意控制</c-button>
     </c-container>
   </div>
 </template>

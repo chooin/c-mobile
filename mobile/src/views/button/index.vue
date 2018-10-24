@@ -34,7 +34,8 @@
     <c-container
       safe-area
       fixed="bottom"
-      background-color="#fff">
+      padding="15px"
+      background-color="#f0f0f0">
       <c-button type="primary" :border-radius="0">随意控制</c-button>
     </c-container>
   </div>

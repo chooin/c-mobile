@@ -93,7 +93,7 @@ export default {
                 this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
               }
               document.body.appendChild(this.element)
-            }, 50)
+            }, 100)
           }
         }
       }

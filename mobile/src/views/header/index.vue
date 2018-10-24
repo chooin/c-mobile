@@ -2,22 +2,22 @@
   <div class="v-header">
     <c-header />
     <div style="height: 1.5rem; width: 100%;"></div>
-    <c-header
-      suspend
-      :left="{
-        back: true,
-        close: closeClick,
-        text: 'Back'
-      }"
-      title="标题"
-      :right="{
-        text: '联系我们',
-        color: '#39f',
-        to: 'tel:13888888888'
-      }"
-    >
-    </c-header>
-    <div style="height: 1.5rem; width: 100%;"></div>
+    <c-container fixed="top">
+      <c-header
+        :left="{
+          back: true,
+          close: closeClick,
+          text: 'Back'
+        }"
+        title="标题"
+        :right="{
+          text: '联系我们',
+          color: '#39f',
+          to: 'tel:13888888888'
+        }"
+      >
+      </c-header>
+    </c-container>
     <c-header
       :left="{
         back: true,
@@ -100,7 +100,7 @@
 export default {
   methods: {
     closeClick () {
-      this.$Toast('close')
+      this.$Toast('关闭按钮被点击')
     }
   }
 }

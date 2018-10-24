@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     alert () {
-      window.alert()
+      this.$Toast('toast')
     }
   },
   created () {

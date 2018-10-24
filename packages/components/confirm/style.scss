@@ -21,7 +21,7 @@
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, .95);
     margin-top: -50px;
-    padding: 25px 10px 64px;
+    padding: 25px 15px 64px;
     .c-confirm__title {
       font-weight: bold;
       color: #000;
@@ -34,6 +34,10 @@
     }
     .c-confirm__content {
       font-size: 14px;
+      p {
+        text-align: left;
+        margin: 5px 0;
+      }
     }
     .c-confirm__btn-group {
       position: absolute;
@@ -48,10 +52,10 @@
       .c-confirm__btn {
         position: relative;
         font-size: 16px;
-        color: #007aff;
         display: block;
         flex: 1;
         font-weight: 500;
+        color: #007aff;
         &::before {
           @include borderLine('left');
         }
@@ -68,7 +72,7 @@
   }
   &.c-confirm__has-title {
     .c-confirm__cell {
-      padding: 45px 10px 64px;
+      padding: 55px 15px 64px;
     }
   }
   &::after {

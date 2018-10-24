@@ -7,21 +7,21 @@ export default (option = {}) => {
     typeof option === 'number'
   ) {
     option = {
-      texts: [option]
+      text: [option]
     }
   } else if (Array.isArray(option)) {
     option = {
-      texts: option
+      text: option
     }
   } else if (
-    typeof option.texts === 'string' ||
-    typeof option.texts === 'number'
+    typeof option.text === 'string' ||
+    typeof option.text === 'number'
   ) {
-    option.texts = [option.texts]
+    option.text = [option.text]
   }
 
   option = Object.assign({
-    texts: [],
+    text: [],
     duration: 2000,
     cb () {}
   }, option)
@@ -37,7 +37,7 @@ export default (option = {}) => {
     render (h) {
       return h(Toast, {
         props: {
-          texts: option.texts,
+          text: option.text,
           cb: () => {
             clearTimeout(this.timer)
             this.hide()

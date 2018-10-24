@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { to, device } from '../../utils'
+import { to, isBrowser } from '../../utils'
 
 export default {
   name: 'cInputHead',
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     labelWidth () {
-      if (device.isBrowser) {
+      if (isBrowser) {
         return this.$parent.labelWidth
       } else {
         return '110px'

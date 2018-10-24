@@ -1,0 +1,143 @@
+.c-button,
+.c-button:hover {
+  border: none;
+  width: 100%;
+  padding: 0;
+  color: $text;
+  background: #ccc;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  padding: 15px 10px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 1;
+  line-height: 20px;
+  border: none;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+
+  .c-button__text {
+    display: inline-block;
+  }
+
+  &[disabled=disabled],
+  &.c-button__disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  &.c-button__default,
+  &.c-button__default:hover {
+    background: #ccc;
+  }
+
+  &.c-button__primary,
+  &.c-button__primary:hover {
+    color: #fff;
+    background: $primary;
+  }
+
+  &.c-button__success,
+  &.c-button__success:hover {
+    color: #fff;
+    background: $success;
+  }
+
+  &.c-button__warning,
+  &.c-button__warning:hover {
+    color: #fff;
+    background: $warning;
+  }
+
+  &.c-button__danger,
+  &.c-button__danger:hover {
+    color: #fff;
+    background: $danger;
+  }
+
+  &.c-button__o,
+  &.c-button__o:hover {
+    color: $text;
+    position: relative;
+    background: unset;
+    &::after {
+      @include borderLine('round');
+      border-radius: inherit;
+    }
+
+    &.c-button__primary,
+    &.c-button__primary:hover {
+      color: $primary;
+      &::after {
+        border-color: $primary;
+      }
+    }
+
+    &.c-button__success,
+    &.c-button__success:hover {
+      color: $success;
+      &::after {
+        border-color: $success;
+      }
+    }
+
+    &.c-button__warning,
+    &.c-button__warning:hover {
+      color: $warning;
+      &::after {
+        border-color: $warning;
+      }
+    }
+
+    &.c-button__danger,
+    &.c-button__danger:hover {
+      color: $danger;
+      &::after {
+        border-color: $danger;
+      }
+    }
+  }
+
+  &.c-button__small {
+    display: inline-block;
+    width: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  &.c-button__icon {
+    .c-button__text {
+      display: inline-block;
+      padding-left: 22px;
+      position: relative;
+      .c-icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.c-button__small +
+.c-button__small {
+  margin-left: 5px;
+}
+
+.c-button:not(.c-button__small) +
+.c-button:not(.c-button__small) {
+  margin-top: 15px;
+}
+
+.c-mobile__is-loading {
+  .c-button,
+  .c-button:hover {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+}

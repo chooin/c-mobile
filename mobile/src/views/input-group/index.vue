@@ -118,7 +118,7 @@
           订阅
         </c-input-head>
         <c-input-body>
-          <c-btn type="primary" small>订阅</c-btn>
+          <c-button type="primary" small>订阅</c-button>
         </c-input-body>
       </c-input>
       <c-input use-div addon>
@@ -126,7 +126,7 @@
           订阅
         </c-input-head>
         <c-input-body>
-          <c-btn type="primary" small>发送验证码</c-btn>
+          <c-button type="primary" small>发送验证码</c-button>
           <input type="text" placeholder="请输入验证码">
         </c-input-body>
       </c-input>
@@ -141,6 +141,7 @@
         </c-input-body>
       </c-input>
     </c-input-group>
+
     <c-input-group title="选择城市" type="danger">
       <c-input>
         <c-input-head>
@@ -157,6 +158,26 @@
         </c-input-body>
       </c-input>
     </c-input-group>
+
+    <c-radio-group v-model="raidoValue" @change="onChange">
+      <c-input-group :title="`品牌：${raidoValue}`">
+        <c-input>
+          <c-input-body>
+            <c-radio value="Apple">Apple</c-radio>
+          </c-input-body>
+        </c-input>
+        <c-input>
+          <c-input-body>
+            <c-radio value="Huawei">Huawei</c-radio>
+          </c-input-body>
+        </c-input>
+        <c-input>
+          <c-input-body>
+            <c-radio value="Vivo">Vivo</c-radio>
+          </c-input-body>
+        </c-input>
+      </c-input-group>
+    </c-radio-group>
 
     <c-input-group noborder title="没有上下 border" type="success">
       <c-input>
@@ -233,7 +254,6 @@
         </c-input-body>
       </c-input>
     </c-input-group>
-
     <c-input-group title="图片上传" class="pb-15">
       <c-input addon>
         <c-input-head>
@@ -274,7 +294,13 @@
 export default {
   data () {
     return {
-      switchStatus: false
+      switchStatus: false,
+      raidoValue: null
+    }
+  },
+  methods: {
+    onChange (v) {
+      this.$Toast(v)
     }
   }
 }

@@ -1,11 +1,11 @@
 <template>
   <div class="v-actionsheet">
-    <c-btn type="primary" @click="btn1Click">显示 actionsheet</c-btn>
-    <c-btn type="primary" @click="btn2Click">显示 actionsheet</c-btn>
-    <c-btn type="primary" @click="btn3Click">显示 actionsheet</c-btn>
-    <c-btn type="primary" @click="btn4Click">显示 actionsheet</c-btn>
+    <c-button type="primary" @click="btn1Click">显示 actionsheet</c-button>
+    <c-button type="primary" @click="btn2Click">显示 actionsheet</c-button>
+    <c-button type="primary" @click="btn3Click">显示 actionsheet</c-button>
+    <c-button type="primary" @click="btn4Click">显示 actionsheet</c-button>
     <div style="height: 1000px"></div>
-    <c-btn type="primary" @click="btn5Click">显示 actionsheet</c-btn>
+    <c-button type="primary" @click="btn5Click">显示 actionsheet</c-button>
     <c-actionsheet
       :actions="actionsheet.actions"
       title="2017年12月13日，谷歌正式宣布谷歌AI中国中心（Google AI China Center）在北京成立"

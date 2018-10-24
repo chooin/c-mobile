@@ -1,0 +1,42 @@
+.c-container {
+  &.c-container__fixed-top {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    &::after {
+      display: none;
+    }
+  }
+  &.c-container__fixed-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  &.c-container__safe-area {
+    &.c-container__fixed-bottom {
+      bottom: constant(safe-area-inset-bottom);
+      bottom: env(safe-area-inset-bottom);
+      &::after {
+        position: absolute;
+        left: 0;
+        top: 100%;
+      }
+    }
+    &::after {
+      content: " ";
+      display: block;
+      z-index: 1;
+      width: 100%;
+      background: inherit;
+      height: 0;
+      height: constant(safe-area-inset-bottom);
+      height: env(safe-area-inset-bottom);
+    }
+  }
+}

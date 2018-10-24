@@ -1,10 +1,9 @@
 <template>
   <div class="v-loading">
-    <c-btn type="primary" small @click="showLoading">显示 Loading，3 秒后消失</c-btn>
-    <c-btn type="danger" small @click="showLoading">显示 Loading，3 秒后消失</c-btn>
-    <c-btn type="success" small @click="showLoading">显示 Loading，3 秒后消失</c-btn>
-    <c-btn type="warning" small @click="showLoading">显示 Loading，3 秒后消失</c-btn>
-    <c-btn type="primary" suspend @click="showLoading">显示 Loading，3 秒后消失，loading 中按钮变灰色</c-btn>
+    <c-button type="primary" @click="showLoading">显示 Loading</c-button>
+    <c-button type="danger" @click="showLoading">显示 Loading</c-button>
+    <c-button type="success" @click="showLoading">显示 Loading</c-button>
+    <c-button type="warning" @click="showLoading">显示 Loading</c-button>
   </div>
 </template>
 

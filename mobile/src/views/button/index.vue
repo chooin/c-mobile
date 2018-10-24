@@ -25,17 +25,17 @@
     <c-button type="danger" disabled o>danger disabled</c-button>
     <c-button type="success" disabled o>success disabled</c-button>
     <!-- <c-button type="success" suspend>success suspend</c-button> -->
-    <c-container safe-area style="margin-top: 15px;">
+    <!-- <c-container :safe-area="15">
       <c-button type="primary">suspend</c-button>
-    </c-container>
-    <c-container suspend="top" style="padding: 15px">
+    </c-container> -->
+    <c-container fixed="top" style="padding: 15px">
       <c-button type="primary">suspend</c-button>
     </c-container>
     <c-container
-      suspend="bottom"
-      background-color="#39f"
+      fixed="bottom"
+      background-color="#f0f0f0"
       safe-area>
-      <c-button type="primary" border-radius="0">悬浮按钮</c-button>
+      <c-button type="primary" :border-radius="0">悬浮按钮</c-button>
     </c-container>
   </div>
 </template>

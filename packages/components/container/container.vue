@@ -1,11 +1,13 @@
 <template>
   <div
-    ref="cContainer"
+    ref="container"
     class="c-container"
     :class="[
       fixed ? 'c-container__fixed-' + fixed : '',
       {
-        'c-container__safe-area': safeArea
+        'c-container__safe-area':
+          safeArea !== false ||
+          typeof safeArea === 'number'
       }
     ]"
     :style="{
@@ -33,7 +35,7 @@ export default {
       default: null // null, top, bottom
     },
     safeArea: {
-      type: Boolean,
+      type: [Boolean, Number],
       default: false
     },
     backgroundColor: {
@@ -52,33 +54,61 @@ export default {
     ) {
       let className = null
       if (
-        this.$refs.cContainer &&
-        this.$refs.cContainer.firstChild &&
-        this.$refs.cContainer.firstChild.classList &&
-        this.$refs.cContainer.firstChild.classList[0]
+        this.$refs.container &&
+        this.$refs.container.firstChild &&
+        this.$refs.container.firstChild.classList &&
+        this.$refs.container.firstChild.classList[0]
       ) {
-        className = `c-container__fixed-${this.fixed}-cover__${this.$refs.cContainer.firstChild.classList[0]}`
+        className = `c-container__fixed-${this.fixed}-cover__${this.$refs.container.firstChild.classList[0]}`
       }
       if (document.querySelectorAll(`.${className}`).length === 0) {
-        const clientHeight = this.$refs.cContainer.clientHeight
+        const clientHeight = this.$refs.container.clientHeight || 0
         this.element = document.createElement('div')
         this.element.className = className
         if (this.fixed === 'top') { // 悬浮在顶部
           this.element.style.height = `${clientHeight}px`
           document.body.insertBefore(this.element, document.body.firstChild)
         } else if (this.fixed === 'bottom') { // 悬浮在底部
-          const afterHeight = window.getComputedStyle(this.$refs.cContainer, ':after').height.replace('px', '')
-          this.element.style.height = `${parseInt(afterHeight) + parseInt(clientHeight)}px`
-          if (!this.backgroundColor) { // 设置默认颜色
-            this.$refs.cContainer.style.backgroundColor = window.getComputedStyle(this.$refs.cContainer.firstChild).backgroundColor
-          }
-          document.body.appendChild(this.element)
+          setTimeout(() => { // 解决 window.getComputedStyle() 在 safe area 下获取伪元素高度可能为 0
+            if (window.getComputedStyle) {
+              let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
+              afterHeight = isNaN(afterHeight) ? 0 : afterHeight
+              this.element.style.height = `${parseInt(afterHeight) + parseInt(clientHeight)}px`
+              if (!this.backgroundColor) { // 设置默认颜色
+                this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
+              }
+              document.body.appendChild(this.element)
+            } else {
+              console.warn('[Tip]: Browsers don\'t support window.getComputedStyle methods')
+            }
+          }, 100)
         }
+      }
+    }
+    if (
+      this.safeArea !== false &&
+      typeof this.safeArea === 'number'
+    ) { // 安全区最低高度，不是异性屏也会受其影响
+      if (window.getComputedStyle) {
+        setTimeout(() => { // 解决 window.getComputedStyle() 在 safe area 下获取伪元素高度可能为 0
+          let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
+          afterHeight = isNaN(afterHeight) ? 0 : afterHeight
+          if (afterHeight < this.safeArea) {
+            this.$refs.container.style.marginBottom = `${this.safeArea - afterHeight}px`
+          }
+        }, 100)
+      } else {
+        console.warn('[Tip]: Browsers don\'t support window.getComputedStyle methods')
       }
     }
   },
   beforeDestroy () {
-    this.element && this.element.remove()
+    if (
+      this.fixed &&
+      isBrowser
+    ) {
+      this.element && this.element.remove()
+    }
   }
 }
 </script>

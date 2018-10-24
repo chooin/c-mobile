@@ -1,5 +1,6 @@
 <template>
-  <div class="v-index">
+  <c-container
+    :safe-area="10">
     <c-input-group>
       <c-input next addon to="/button">
         <c-input-head>
@@ -121,10 +122,9 @@
         </c-input-body>
       </c-input>
     </c-input-group>
-    <div style="height: 3.4rem"></div>
-  </div>
+  </c-container>
 </template>
 
-<style scoped lang="postcss">
-  @import './style.css';
+<style scoped lang="scss">
+  @import './style.scss';
 </style>

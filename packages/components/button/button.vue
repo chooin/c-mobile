@@ -15,7 +15,7 @@
       }
     ]"
     :style="{
-      borderRadius
+      borderRadius: _borderRadius
     }"
     @click="onClick">
     <span class="c-button__text">
@@ -51,7 +51,7 @@ export default {
       default: false
     },
     borderRadius: {
-      type: String,
+      type: Number,
       default: null
     },
     to: {
@@ -84,6 +84,11 @@ export default {
         vm: this,
         to: this.to
       })
+    }
+  },
+  computed: {
+    _borderRadius () {
+      return this.borderRadius === null ? this.borderRadius : `${this.borderRadius}px`
     }
   }
 }

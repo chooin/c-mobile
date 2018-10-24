@@ -63,7 +63,7 @@
   &.c-button__o:hover {
     color: $text;
     position: relative;
-    background: unset;
+    background: inherit;
     &::after {
       @include borderLine('round');
       border-radius: inherit;

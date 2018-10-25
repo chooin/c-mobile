@@ -84,21 +84,24 @@ export default {
           this.element = document.createElement('div')
           this.element.className = className
           if (this.fixed === 'top') { // 悬浮在顶部
-            let clientHeight = this.$refs.container.clientHeight || 0
+            let clientHeight = this.$refs.container.clientHeight
+            clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
             this.element.style.height = `${clientHeight}px`
             document.body.insertBefore(this.element, document.body.firstChild)
           } else if (this.fixed === 'bottom') { // 悬浮在底部
             setTimeout(() => { // 解决 window.getComputedStyle() 在 safe area 下获取伪元素高度可能为 0
               let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
-              afterHeight = isNaN(afterHeight) ? 0 : afterHeight
+              afterHeight = Number.isNaN(afterHeight) ? 0 : parseInt(afterHeight)
               if (this._safeArea) { // 有安全区域的时候
                 let paddingBottom = this.$refs.container.style.paddingBottom.replace('px', '')
+                paddingBottom =  Number.isNaN(paddingBottom) ? 0 : parseInt(paddingBottom)
                 this.$refs.container.style.paddingBottom = paddingBottom > afterHeight
                   ? `${paddingBottom - afterHeight}px`
                   : 0
               }
-              let clientHeight = this.$refs.container.clientHeight || 0
-              this.element.style.height = `${parseInt(afterHeight) + parseInt(clientHeight)}px`
+              let clientHeight = this.$refs.container.clientHeight
+              clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
+              this.element.style.height = `${afterHeight + clientHeight}px`
               if (!this.backgroundColor) { // 设置默认颜色
                 this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
               }

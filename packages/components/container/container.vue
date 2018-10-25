@@ -50,17 +50,17 @@ export default {
       default: null
     }
   },
-  mounted () {
-    this.componentInit()
-  },
-  updated () {
-    this.componentInit()
-  },
   beforeMount () {
     this.componentRemove()
   },
+  mounted () {
+    this.componentInit()
+  },
   beforeUpdate () {
     this.componentRemove()
+  },
+  updated () {
+    this.componentInit()
   },
   beforeDestroy () {
     this.componentRemove()

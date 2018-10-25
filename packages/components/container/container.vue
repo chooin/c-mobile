@@ -5,7 +5,7 @@
     :class="[
       fixed ? 'c-container__fixed-' + fixed : '',
       {
-        'c-container__safe-area': safeArea
+        'c-container__safe-area': _safeArea
       }
     ]"
     :style="{
@@ -35,7 +35,7 @@ export default {
     },
     safeArea: {
       type: Boolean,
-      default: false
+      default: null
     },
     backgroundColor: {
       type: String,
@@ -82,7 +82,7 @@ export default {
             setTimeout(() => { // 解决 window.getComputedStyle() 在 safe area 下获取伪元素高度可能为 0
               let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
               afterHeight = isNaN(afterHeight) ? 0 : afterHeight
-              if (this.safeArea) { // 有安全区域的时候
+              if (this._safeArea) { // 有安全区域的时候
                 this.$refs.container.style.paddingBottom = afterHeight < this.$refs.container.style.paddingBottom
                   ? `${this.$refs.container.style.paddingBottom}px`
                   : 0
@@ -117,6 +117,16 @@ export default {
         }
       } else {
         return this.zIndex
+      }
+    },
+    _safeArea () {
+      if (
+        this.fixed === 'bottom' &&
+        this.safeArea === null
+      ) {
+        return true
+      } else {
+        return this.safeArea
       }
     }
   }

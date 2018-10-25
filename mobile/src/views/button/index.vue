@@ -24,15 +24,17 @@
     <c-button type="warning" disabled o>warning disabled</c-button>
     <c-button type="danger" disabled o>danger disabled</c-button>
     <c-button type="success" disabled o>success disabled</c-button>
-    <c-container fixed="top" style="padding: 15px">
-      <c-button type="primary" @click="onClick">悬浮按钮</c-button>
+    <c-container
+      fixed="top"
+      padding="15px">
+      <c-button type="primary" @click="onClick">头部悬浮按钮</c-button>
     </c-container>
 
     <!-- safe-area 默认为 true -->
     <c-container
       fixed="bottom"
-      background-color="transparent">
-      <c-button type="primary" :border-radius="0">随意控制</c-button>
+      background-color="#fff">
+      <c-button type="primary" :border-radius="0">底部悬浮按钮</c-button>
     </c-container>
   </div>
 </template>

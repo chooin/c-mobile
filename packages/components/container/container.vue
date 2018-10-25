@@ -51,13 +51,22 @@ export default {
     }
   },
   mounted () {
-    this.init()
+    this.componentInit()
+  },
+  updated () {
+    this.componentInit()
+  },
+  beforeMount () {
+    this.componentRemove()
   },
   beforeUpdate () {
-    this.init()
+    this.componentRemove()
+  },
+  beforeDestroy () {
+    this.componentRemove()
   },
   methods: {
-    init () {
+    componentInit () {
       if (
         this.fixed &&
         isBrowser
@@ -83,8 +92,9 @@ export default {
               let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
               afterHeight = isNaN(afterHeight) ? 0 : afterHeight
               if (this._safeArea) { // 有安全区域的时候
-                this.$refs.container.style.paddingBottom = afterHeight < this.$refs.container.style.paddingBottom
-                  ? `${this.$refs.container.style.paddingBottom}px`
+                let paddingBottom = this.$refs.container.style.paddingBottom.replace('px', '')
+                this.$refs.container.style.paddingBottom = paddingBottom > afterHeight
+                  ? `${paddingBottom - afterHeight}px`
                   : 0
               }
               let clientHeight = this.$refs.container.clientHeight || 0
@@ -97,14 +107,14 @@ export default {
           }
         }
       }
-    }
-  },
-  beforeDestroy () {
-    if (
-      this.fixed &&
-      isBrowser
-    ) {
-      this.element && this.element.remove()
+    },
+    componentRemove () {
+      if (
+        this.fixed &&
+        isBrowser
+      ) {
+        this.element && this.element.remove()
+      }
     }
   },
   computed: {

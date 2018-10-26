@@ -38,3 +38,16 @@
     }
   }
 }
+
+.c-container-cover__fixed-bottom-safe-area {
+  background: #ccc;
+  &::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    background: #000;
+    height: 0;
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+  }
+}

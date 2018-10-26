@@ -25,7 +25,7 @@ const miniProgramTo = to => {
     for (let i in to.query) {
       querys.push(`${i}=${to.query[i]}`)
     }
-    search = `?${querys.join('&')}`
+    search = `${url.indexOf('?') === -1 ? '?' : '&'}${querys.join('&')}`
   }
   return `${url}${search}`
 }
@@ -45,11 +45,13 @@ export default ({
     if (isBrowser) { // 浏览器
       if (
         toType === 'String' &&
-        to.indexOf('//') === 0
+        (
+          to.indexOf('//') === 0 ||
+          to.indexOf('http://') === 0 ||
+          to.indexOf('https://') === 0
+        )
       ) { // 字符串
-        to = to.indexOf('.') > -1
-          ? to
-          : to.substring(1)
+        to = to.indexOf('.') > -1 ? to : to.substring(1)
         if (replace) {
           window.location.replace(to)
         } else {
@@ -60,8 +62,7 @@ export default ({
           (
             toType === 'String' &&
             to.indexOf('/') === 0
-          ) ||
-          toType === 'Object'
+          )
         ) { // Vue router 操作
           if (vm) {
             if (replace) {
@@ -72,7 +73,37 @@ export default ({
           } else {
             console.error('Require vm')
           }
-        } else { // 其他，如：拨打电话、发送邮件
+        } else if (toType === 'Object') { // 其他，如：拨打电话、发送邮件
+          if (
+            to.path.indexOf('//') === 0 ||
+            to.path.indexOf('http://') === 0 ||
+            to.path.indexOf('https://') === 0
+          ) {
+            let search = ''
+            let url = to.path
+            if (
+              getObjectType(to.query) === 'Object' &&
+              Object.keys(to.query).length > 0
+            ) {
+              let querys = []
+              for (let i in to.query) {
+                querys.push(`${i}=${to.query[i]}`)
+              }
+              search = `${url.indexOf('?') === -1 ? '?' : '&'}${querys.join('&')}`
+            }
+            if (replace) {
+              window.location.replace(`${url}${search}`)
+            } else {
+              window.location.href = `${url}${search}`
+            }
+          } else {
+            if (replace) {
+              vm.$router.replace(to)
+            } else {
+              vm.$router.push(to)
+            }
+          }
+        } else {
           if (replace) {
             window.location.replace(to)
           } else {

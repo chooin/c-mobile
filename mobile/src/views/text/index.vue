@@ -8,8 +8,19 @@
     <c-text>inline-block</c-text>
     <c-text>inline-block</c-text>
     <c-text block to="/">跳转到首页</c-text>
-    <c-text block to="//www.163.com">跳转到网易</c-text>
-    <c-text block to="https://www.163.com">跳转到网易</c-text>
+    <c-text block to="//www.163.com">跳转到网易 //www.163.com</c-text>
+    <c-text block to="https://www.163.com">跳转到网易 https://www.163.com</c-text>
+    <c-text block :to="{
+      path: 'https://www.163.com?b=2',
+      query: {
+        a: 1
+      }
+    }">跳转到网易 {
+      path: 'https://www.163.com?b=2',
+      query: {
+        a: 1
+      }
+    }</c-text>
     <c-text block to="tel:13888888888">打电话</c-text>
     <c-text block to="//example">跳转到当前域名下的某个地址</c-text>
     <c-text block @click="alert">事件</c-text>

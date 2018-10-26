@@ -62,6 +62,7 @@
   &.c-button__o,
   &.c-button__o:hover {
     color: $text;
+    border-radius: 6px;
     position: relative;
     background: inherit;
     &::after {

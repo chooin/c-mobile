@@ -89,7 +89,7 @@ export default {
             this.element.style.paddingTop = `${clientHeight}px`
             document.body.insertBefore(this.element, document.body.firstChild)
           } else if (this.fixed === 'bottom') { // 悬浮在底部
-            setTimeout(() => { // 解决 window.getComputedStyle() 在 safe area 下获取伪元素高度可能为 0
+            this.$nextTick(() => {
               let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
               afterHeight = Number.isNaN(afterHeight) ? 0 : parseInt(afterHeight)
               if (this._safeArea) { // 有安全区域的时候
@@ -107,7 +107,7 @@ export default {
                 this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
               }
               document.body.appendChild(this.element)
-            }, 100)
+            })
           }
         }
       }

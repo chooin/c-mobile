@@ -141,7 +141,7 @@ export default {
       }
     }
   },
-  created () {
+  mounted () {
     if (this.autoTitle) {
       this.$nextTick(() => {
         this.defaultTitle = document.title

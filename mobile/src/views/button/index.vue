@@ -33,7 +33,8 @@
     <!-- safe-area 默认为 true -->
     <c-container
       fixed="bottom"
-      background-color="#fff">
+      background-color="#fff"
+      padding="15px">
       <c-button type="primary" :border-radius="0">底部悬浮按钮</c-button>
     </c-container>
   </div>

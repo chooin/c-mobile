@@ -90,15 +90,13 @@ export default {
             document.body.insertBefore(this.element, document.body.firstChild)
           } else if (this.fixed === 'bottom') { // 悬浮在底部
             this.$nextTick(() => {
-              let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
-              afterHeight = Number.isNaN(afterHeight) ? 0 : parseInt(afterHeight)
+              // let afterHeight = window.getComputedStyle(this.$refs.container, ':after').getPropertyValue('height').replace('px', '')
+              // afterHeight = Number.isNaN(afterHeight) ? 0 : parseInt(afterHeight)
               if (this._safeArea) { // 有安全区域的时候
                 this.element.classList.add('c-container-cover__fixed-bottom-safe-area')
                 let paddingBottom = this.$refs.container.style.paddingBottom.replace('px', '')
                 paddingBottom =  Number.isNaN(paddingBottom) ? 0 : parseInt(paddingBottom)
-                this.$refs.container.style.paddingBottom = paddingBottom > afterHeight
-                  ? `${paddingBottom - afterHeight}px`
-                  : 0
+                this.$refs.container.style.paddingBottom = `${paddingBottom}px`
               }
               let clientHeight = this.$refs.container.clientHeight
               clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)

@@ -1,6 +1,6 @@
 <template>
-  <div class="v-container">
-    <c-container fixed="top">
+  <div class="v-container" style="height: 2000px">
+    <c-container fixed="top" padding="15px">
       <c-button type="danger">Button</c-button>
     </c-container>
     <c-container safe-area fixed="bottom" padding="10px" :z-index="1500" background-color="#aaa">

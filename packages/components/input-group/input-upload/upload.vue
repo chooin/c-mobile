@@ -7,7 +7,9 @@
         'c-input-upload__allow-delete': allowDelete
       }
     ]">
-    <div class="c-input-upload__title" v-show="title">{{ title }}</div>
+    <div class="c-input-upload__title" v-show="$slots.title || title">
+      {{ title }}<slot name="title"></slot>
+    </div>
     <div class="c-input-upload__amount" v-show="amount">{{ amount }}</div>
     <div class="c-input-upload__files">
       <slot></slot>

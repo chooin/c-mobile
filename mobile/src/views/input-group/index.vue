@@ -3,7 +3,7 @@
     <c-input-group title="修改用户资料" type="primary">
       <c-input>
         <c-input-head>
-          您的姓名
+          <c-text type="danger">*</c-text>您的姓名
         </c-input-head>
         <c-input-body>
           <input type="text" placeholder="请输入姓名">
@@ -275,11 +275,14 @@
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
       </c-input-upload>
       <c-input-upload
-        title="上传图片（不允许删除，事件上传）"
         amount="1/2"
         :show-upload-input="false"
         allow-upload
         :allow-delete="false">
+        <template slot="title">
+          <c-text type="danger">*</c-text>
+          上传图片（不允许删除，事件上传）
+        </template>
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />

@@ -3,12 +3,13 @@
     class="c-sidebar"
     :class="[
       {
-        'c-sidebar__visible': visible
+        'c-sidebar__visible': visible,
+        'c-sidebar__has-head': $slots.head
       }
     ]">
     <slot name="head"></slot>
     <div class="c-sidebar__body">
-      <slot name="body"></slot>
+      <slot></slot>
     </div>
   </div>
 </template>

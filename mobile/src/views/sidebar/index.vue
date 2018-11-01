@@ -12,15 +12,13 @@
           }
         }" />
       </template>
-      <template slot="body">
-        <c-input-group noborder-top>
-          <c-input>
-            <c-input-body>
-              sidebar
-            </c-input-body>
-          </c-input>
-        </c-input-group>
-      </template>
+      <c-input-group noborder-top>
+        <c-input>
+          <c-input-body>
+            sidebar
+          </c-input-body>
+        </c-input>
+      </c-input-group>
     </c-sidebar>
   </div>
 </template>

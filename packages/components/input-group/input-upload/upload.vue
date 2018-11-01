@@ -7,14 +7,33 @@
         'c-input-upload__allow-delete': allowDelete
       }
     ]">
-    <div class="c-input-upload__title" v-show="$slots.title || title">
+    <div
+      v-show="$slots.title || title"
+      class="c-input-upload__title">
       {{ title }}<slot name="title"></slot>
     </div>
-    <div class="c-input-upload__amount" v-show="amount">{{ amount }}</div>
+    <div
+      v-show="amount"
+      class="c-input-upload__amount">
+      {{ amount }}
+    </div>
     <div class="c-input-upload__files">
       <slot></slot>
-      <div class="c-input-upload__btn" v-show="allowUpload" @click="handleClick">
-        <input type="file" v-show="showUploadInput" @change="fileChange" :accept="accept">
+      <template v-if="$slots['upload-btn']">
+        <div class="c-input-upload__btn">
+          <slot name="upload-btn"></slot>
+        </div>
+      </template>
+      <div
+        v-else
+        v-show="allowUpload"
+        class="c-input-upload__btn"
+        @click="onClick">
+        <input
+          v-show="showUploadInput"
+          type="file"
+          @change="fileChange"
+          :accept="accept">
       </div>
     </div>
   </div>
@@ -34,7 +53,7 @@ export default {
     },
     showUploadInput: {
       type: Boolean,
-      default: true
+      default: false
     },
     amount: {
       type: String,
@@ -54,7 +73,7 @@ export default {
     }
   },
   methods: {
-    handleClick () {
+    onClick () {
       this.$emit('choose-image')
     },
     fileChange (file) {

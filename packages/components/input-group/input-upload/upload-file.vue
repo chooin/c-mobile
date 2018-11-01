@@ -1,10 +1,10 @@
 <template>
   <div
-    class="c-input-upload-file"
+    v-if="src"
     @click="onClick"
-    v-if="src">
+    class="c-input-upload-file">
     <img :src="src">
-    <i @click.stop="onDeleteClick"></i>
+    <i @click.stop="onDelete"></i>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
     onClick () {
       this.$emit('click')
     },
-    onDeleteClick () {
+    onDelete () {
       this.$emit('delete')
     }
   }

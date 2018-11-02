@@ -91,22 +91,23 @@ export default {
           } else if (this.fixed === 'bottom') { // 悬浮在底部
             this.$nextTick(() => {
               if (
-                this._safeArea &&
                 this.$refs.container && // 修复马上杀死会出 bug，勿删除
                 this.element // 修复马上杀死会出 bug，勿删除
-              ) { // 有安全区域的时候
-                this.element.classList.add('c-container-cover__fixed-bottom-safe-area')
-                let paddingBottom = this.$refs.container.style.paddingBottom.replace('px', '')
-                paddingBottom =  Number.isNaN(paddingBottom) ? 0 : parseInt(paddingBottom)
-                this.$refs.container.style.paddingBottom = `${paddingBottom}px`
+              ) {
+                if (this._safeArea) { // 有安全区域的时候
+                  this.element.classList.add('c-container-cover__fixed-bottom-safe-area')
+                  let paddingBottom = this.$refs.container.style.paddingBottom.replace('px', '')
+                  paddingBottom =  Number.isNaN(paddingBottom) ? 0 : parseInt(paddingBottom)
+                  this.$refs.container.style.paddingBottom = `${paddingBottom}px`
+                }
+                let clientHeight = this.$refs.container.clientHeight
+                clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
+                this.element.style.paddingTop = `${clientHeight}px`
+                if (!this.backgroundColor) { // 设置默认颜色
+                  this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
+                }
+                document.body.appendChild(this.element)
               }
-              let clientHeight = this.$refs.container.clientHeight
-              clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
-              this.element.style.paddingTop = `${clientHeight}px`
-              if (!this.backgroundColor) { // 设置默认颜色
-                this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
-              }
-              document.body.appendChild(this.element)
             })
           }
         }

@@ -63,7 +63,7 @@ export default {
     },
     next: {
       type: Boolean,
-      default: false
+      default: null
     },
     icon: {
       type: Boolean,
@@ -84,6 +84,7 @@ export default {
   },
   methods: {
     onClick () {
+      if (this.next === false) return
       to({
         vm: this,
         to: this.to

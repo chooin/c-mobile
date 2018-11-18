@@ -2,7 +2,7 @@ import { isBrowser, isMiniProgram } from './device'
 
 const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
 
-const isTelPhone = v => getObjectType(v) === 'String' && v.indexOf('/') === 0
+const isTelPhone = v => getObjectType(v) === 'String' && v.indexOf('tel:') === 0
 
 const miniProgramTo = to => {
   let search = ''

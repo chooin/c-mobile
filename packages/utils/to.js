@@ -114,7 +114,7 @@ export default ({
     } else if (isMiniProgram) { // 小程序
       if (isTelPhone(to)) { // 拨打电话
         wx.makePhoneCall({
-          phoneNumber: to.replace('tel:')
+          phoneNumber: to.replace('tel:', '')
         })
       } else {
         to = {

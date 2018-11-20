@@ -5,11 +5,11 @@
     :open-type="openType"
     :class="[
       type ? 'c-button__' + type : '',
+      icon ? 'c-button__icon-' + icon : '',
       {
         'c-button__o': o,
         'c-button__disabled': disabled,
         'c-button__small': small,
-        'c-button__icon': icon,
         'c-button__is-miniprogram': isMiniProgram,
         'c-button__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
       }
@@ -59,7 +59,7 @@ export default {
       default: null
     },
     icon: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false
     },
     text: { // mpvue 对 slot 支持不好！
@@ -89,6 +89,20 @@ export default {
   computed: {
     _borderRadius () {
       return this.borderRadius === null ? this.borderRadius : `${this.borderRadius}px`
+    },
+    _icon () {
+      if (
+        typeof this.icon === 'boolean' &&
+        this.icon === true
+      ) {
+        return 'left'
+      } else {
+        if (this.icon) {
+          return this.icon
+        } else {
+          return false
+        }
+      }
     }
   }
 }

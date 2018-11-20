@@ -110,16 +110,32 @@
     font-size: 14px;
   }
 
-  &.c-button__icon {
+  &.c-button__icon-left,
+  &.c-button__icon-right {
     .c-button__text {
       display: inline-block;
-      padding-left: 22px;
       position: relative;
       .c-icon {
         position: absolute;
-        left: 0;
+        right: 0;
         top: 50%;
         transform: translateY(-50%);
+      }
+    }
+  }
+  &.c-button__icon-left {
+    .c-button__text {
+      padding-left: 22px;
+      .c-icon {
+        left: 0;
+      }
+    }
+  }
+  &.c-button__icon-right {
+    .c-button__text {
+      padding-right: 22px;
+      .c-icon {
+        right: 0;
       }
     }
   }

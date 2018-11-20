@@ -18,6 +18,9 @@
     <c-button icon>
       <c-icon name="search" size="2rem" /> 来来来搜索一🦐
     </c-button>
+    <c-button icon="right">
+      <c-icon name="search" size="2rem" /> 来来来搜索一🦐
+    </c-button>
     <c-button o>primary</c-button>
     <c-button type="primary" o>primary</c-button>
     <c-button type="primary" disabled>primary disabled</c-button>

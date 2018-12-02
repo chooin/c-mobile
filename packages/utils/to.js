@@ -43,7 +43,9 @@ export default ({
     let toType = getObjectType(to)
     if (toType === 'String') to = to.trim()
     if (isBrowser) { // 浏览器
-      if (
+      if (toType === 'Number') {
+        vm.$router.go(to)
+      } else if (
         toType === 'String' &&
         (
           to.indexOf('//') === 0 ||
@@ -112,7 +114,11 @@ export default ({
         }
       }
     } else if (isMiniProgram) { // 小程序
-      if (isTelPhone(to)) { // 拨打电话
+      if (toType === 'Number') {
+        wx.navigateBack({
+          delta: to > 0 ? to : -1 * to
+        })
+      } else if (isTelPhone(to)) { // 拨打电话
         wx.makePhoneCall({
           phoneNumber: to.replace('tel:', '')
         })

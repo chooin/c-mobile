@@ -38,6 +38,7 @@ export default {
         'keyboard',
         'radio',
         'container',
+        'load-more',
       ]
     }
   }

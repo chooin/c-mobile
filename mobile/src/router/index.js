@@ -20,6 +20,7 @@ import Search from '@/views/search'
 import keyboard from '@/views/keyboard'
 import radio from '@/views/radio'
 import container from '@/views/container'
+import LoadMore from '@/views/load-more'
 
 Vue.use(Router)
 
@@ -100,6 +101,10 @@ export default new Router({
     {
       path: '/container',
       component: container
+    },
+    {
+      path: '/load-more',
+      component: LoadMore
     },
     {
       path: '/*',

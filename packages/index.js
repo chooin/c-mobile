@@ -23,6 +23,7 @@ import {
  RadioGroup
 } from '../packages/components/radio'
 import Container from '../packages/components/container'
+import LoadMore from '../packages/components/load-more'
 
 import Toast from '../packages/components/toast'
 import Confirm from '../packages/components/confirm'
@@ -52,7 +53,8 @@ const components = [
   Keyboard,
   Radio,
   RadioGroup,
-  Container
+  Container,
+  LoadMore
 ]
 
 const install = Vue => {

@@ -1,0 +1,53 @@
+@keyframes c-load-more {
+  0% {
+    transform: translate(-50%, -50%)
+               rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%)
+               rotate(360deg);
+  }
+}
+
+.c-load-more {
+  position: relative;
+  height: 60px;
+  &.c-load-more__end {
+    background: inherit;
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 10px;
+      z-index: 2;
+      background: inherit;
+      text-align: center;
+    }
+    &::before {
+      @include borderLine('top');
+      top: 50%;
+      border-color: #ddd;
+    }
+  }
+  &.c-load-more__loading {
+    * {
+      position: relative;
+      z-index: 1;
+    }
+    &::before {
+      animation: c-load-more 500ms infinite linear;
+      border: 2px solid $primary;
+      border-radius: 100%;
+      border-top-color: transparent;
+      content: " ";
+      display: block;
+      height: 16px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+    }
+  }
+}

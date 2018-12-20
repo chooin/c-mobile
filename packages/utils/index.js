@@ -2,7 +2,8 @@ import to from './to'
 import device, {
   isBrowser,
   isMiniProgram,
-  isMiniProgramIsIPhoneX
+  isMiniProgramIsIPhoneX,
+  isIPhoneX
 } from './device'
 import getObjectType from './get-object-type'
 
@@ -12,5 +13,6 @@ export {
   isBrowser,
   isMiniProgram,
   isMiniProgramIsIPhoneX,
+  isIPhoneX,
   getObjectType
 }

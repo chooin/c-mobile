@@ -4,30 +4,34 @@ const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
 
 const isTelPhone = v => getObjectType(v) === 'String' && v.indexOf('tel:') === 0
 
-const miniProgramTo = to => {
-  let search = ''
-  let url
+const createQueryUrl = (to) => {
   let toType = getObjectType(to)
   if (toType === 'String') {
-    url = to
-  } else if (
-    toType === 'Object' &&
-    to.path
-  ) {
-    url = to.path
+    return to
   }
   if (
     toType === 'Object' &&
-    getObjectType(to.query) === 'Object' &&
-    Object.keys(to.query).length > 0
+    to.path
   ) {
-    let querys = []
-    for (let i in to.query) {
-      querys.push(`${i}=${to.query[i]}`)
+    let url = to.path
+    let search = ''
+    if (
+      getObjectType(to.query) === 'Object' &&
+      Object.keys(to.query).length > 0
+    ) {
+      let querys = []
+      for (let i in to.query) {
+        querys.push(`${i}=${to.query[i]}`)
+      }
+      search = `${url.indexOf('?') === -1 ? '?' : '&'}${querys.join('&')}`
     }
-    search = `${url.indexOf('?') === -1 ? '?' : '&'}${querys.join('&')}`
+    return `${url}${search}`
   }
-  return `${url}${search}`
+  return ''
+}
+
+export {
+  createQueryUrl
 }
 
 /* eslint-disable */
@@ -81,22 +85,10 @@ export default ({
             to.path.indexOf('http://') === 0 ||
             to.path.indexOf('https://') === 0
           ) {
-            let search = ''
-            let url = to.path
-            if (
-              getObjectType(to.query) === 'Object' &&
-              Object.keys(to.query).length > 0
-            ) {
-              let querys = []
-              for (let i in to.query) {
-                querys.push(`${i}=${to.query[i]}`)
-              }
-              search = `${url.indexOf('?') === -1 ? '?' : '&'}${querys.join('&')}`
-            }
             if (replace) {
-              window.location.replace(`${url}${search}`)
+              window.location.replace(createQueryUrl(to))
             } else {
-              window.location.href = `${url}${search}`
+              window.location.href = createQueryUrl(to)
             }
           } else {
             if (replace) {
@@ -124,7 +116,7 @@ export default ({
         })
       } else {
         to = {
-          url: miniProgramTo(to),
+          url: createQueryUrl(to),
           success: success ? success : () => {},
           fail: fail ? fail : () => {},
           complete: fail ? fail : () => {}

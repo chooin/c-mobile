@@ -2,6 +2,7 @@
 @import "./input.scss";
 @import "./input-upload/style.scss";
 
+// c-input 按钮
 button.c-input {
   background: transparent;
   box-sizing: border-box;
@@ -9,5 +10,18 @@ button.c-input {
   line-height: 20px;
   &::after {
     border: none;
+  }
+}
+
+.c-input {
+  padding: 10px 15px;
+  .c-input-head,
+  .c-input-body {
+    input,
+    .input,
+    .c-text {
+      height: 30px;
+      line-height: 30px;
+    }
   }
 }

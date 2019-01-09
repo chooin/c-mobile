@@ -50,6 +50,7 @@
           top: -2px;
           height: 20px;
           width: 20px;
+          font-size: 14px;
           text-align: center;
           vertical-align: top;
           line-height: 20px;
@@ -116,6 +117,7 @@
     position: absolute;
     right: 10px;
     top: 10px;
+    font-size: 14px;
   }
   &::before {
     @include borderLine('top', 15px);

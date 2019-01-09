@@ -15,12 +15,13 @@
     line-height: 44px;
     text-align: center;
     width: 60%;
-    font-size: 18px;
+    font-size: 17px;
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-weight: 400;
+    font-weight: bold;
+    color: #000;
   }
   .c-header__left,
   .c-header__right {
@@ -30,7 +31,7 @@
     line-height: 44px;
     z-index: 1;
     padding: 0 15px;
-    color: $text;
+    color: #000;
     max-width: 50%;
     overflow: hidden;
     white-space: nowrap;
@@ -45,7 +46,7 @@
       &::after {
         content: "";
         transform: rotate(135deg);
-        border: solid $text;
+        border: solid #000;
         border-width: 0 2px 2px 0;
         width: 13px;
         height: 13px;
@@ -71,23 +72,21 @@
       height: 24px;
       width: 24px;
       transform: rotate(-45deg);
-      &::before {
+      &::before,
+      &::after {
         content: "";
-        border-top: 2px solid $text;
-        width: 20px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
+      &::before {
+        border-top: 2px solid #000;
+        width: 20px;
+      }
       &::after {
-        content: "";
-        border-left: 2px solid $text;
+        border-left: 2px solid #000;
         height: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
       }
     }
   }

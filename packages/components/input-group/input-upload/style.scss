@@ -20,47 +20,48 @@
   }
   .c-input-upload__files {
     float: left;
+    margin-top: 5px;
     .c-input-upload-file {
       position: relative;
-      width: 60px;
-      height: 60px;
-      margin: 10px 10px 0 0;
+      width: 72px;
+      height: 72px;
+      margin: 5px 5px 0 0;
       float: left;
       background: #ddd;
       img {
-        width: 60px;
-        height: 60px;
+        width: 72px;
+        height: 72px;
         position: relative;
         z-index: 1;
       }
       i {
         display: none;
         position: absolute;
-        width: 20px;
-        height: 20px;
-        left: 0;
-        top: 0;
+        width: 24px;
+        height: 24px;
+        right: 1px;
+        top: 1px;
         background: rgba(0, 0, 0, .75);
-        border-radius: 0 0 100% 0;
+        border-radius: 100%;
         z-index: 2;
+        transform: rotate(45deg);
         &::before {
           content: "+";
           color: #fff;
-          left: -2px;
-          top: -2px;
-          height: 20px;
-          width: 20px;
-          font-size: 14px;
+          left: 50%;
+          top: 50%;
+          height: 24px;
+          width: 24px;
+          font-size: 20px;
           text-align: center;
-          vertical-align: top;
-          line-height: 20px;
-          transform: rotate(45deg);
+          line-height: 24px;
+          transform: translate(-50%, -50%);
           position: absolute;
           font-family: Arial;
         }
       }
       &::before {
-        content: "";
+        content: " ";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -77,10 +78,10 @@
     .c-input-upload__btn {
       float: left;
       position: relative;
-      margin: 10px 10px 0 0;
-      width: 60px;
-      height: 60px;
-      border: 1px solid $border;
+      margin: 5px 5px 0 0;
+      width: 72px;
+      height: 72px;
+      background: #f2f2f2;
       box-sizing: border-box;
       & > div {
         width: 100%;
@@ -96,19 +97,19 @@
       }
       &::before,
       &::after {
-        content: "";
+        content: " ";
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: $border;
+        background-color: #a9a9a9;
       }
       &::before {
         width: 2px;
-        height: 39.5px;
+        height: 30px;
       }
       &::after {
-        width: 39.5px;
+        width: 30px;
         height: 2px;
       }
     }

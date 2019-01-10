@@ -11,9 +11,10 @@
   .c-input-head,
   .c-input-body {
     min-height: 20px;
+    font-size: 14px;
     &:empty {
       &::before {
-        content: "";
+        content: " ";
       }
     }
   }
@@ -27,6 +28,7 @@
   .c-input-body {
     flex: 1;
     min-width: 0; // 解决文字溢出
+    color: $text-light;
     input[type=text],
     input[type=number],
     input[type=tel],
@@ -34,6 +36,8 @@
     input[type=date],
     input[type=datetime-local],
     input[type=password],
+    input[type=idcard],
+    input[type=digit],
     .input,
     .c-text {
       border: none;
@@ -49,6 +53,7 @@
       min-height: 20px;
       border-width: 0;
       padding: 0;
+      color: $text-light;
     }
     textarea,
     .textarea {
@@ -62,6 +67,7 @@
       text-align: justify;
       word-wrap: break-word;
       word-break: normal;
+      color: $text-light;
     }
   }
   &.c-input__fullline {
@@ -78,6 +84,8 @@
       input[type=date],
       input[type=datetime-local],
       input[type=password],
+      input[type=idcard],
+      input[type=digit],
       .input,
       .c-text {
         text-align: right;
@@ -133,7 +141,7 @@
     .c-input-body {
       padding-right: 15px;
       &::after {
-        content: "";
+        content: " ";
         transform: rotate(-45deg)
                    translateY(-50%);
         border: solid #cacaca;
@@ -152,7 +160,7 @@
     .c-input-body {
       padding-right: 20px;
       &::after {
-        content: "";
+        content: " ";
         transform: rotate(45deg);
         border: solid $primary;
         border-width: 0 2px 2px 0;
@@ -196,7 +204,7 @@ label {
   &.c-input {
     &.c-input__next {
       &:active {
-        background: #d9d9d9;
+        background: $border;
         opacity: 1;
         &::before {
           border-top: none;

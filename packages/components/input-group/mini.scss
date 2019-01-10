@@ -26,16 +26,18 @@ button.c-input {
       line-height: 30px;
     }
   }
-  &.c-input__next {
-    &:active {
-      background: #d9d9d9;
+  &.c-input__addon {
+    &.c-input__next {
+      &:active {
+        background: #d9d9d9;
+      }
     }
-  }
-  &.c-input__icon {
-    .c-input-head {
-      i {
-        img {
-          vertical-align: top;
+    &.c-input__icon {
+      .c-input-head {
+        i {
+          img {
+            vertical-align: top;
+          }
         }
       }
     }

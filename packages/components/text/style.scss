@@ -23,6 +23,7 @@
   color: $text;
   display: inline-block;
   font-size: 14px;
+  box-sizing: border-box;
 
   &.c-text__light {
     color: $text-light;
@@ -80,6 +81,7 @@
     }
     .c-text__content {
       position: relative;
+      vertical-align: middle;
       &::before {
         display: block;
         content: " ";

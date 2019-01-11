@@ -32,7 +32,7 @@
         <input
           v-show="showUploadInput"
           type="file"
-          @change="fileChange"
+          @change="onFileChange"
           :accept="accept">
       </div>
     </div>
@@ -76,7 +76,7 @@ export default {
     onClick () {
       this.$emit('choose-image')
     },
-    fileChange (file) {
+    onFileChange (file) {
       this.$emit('change', file)
     }
   }

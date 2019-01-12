@@ -45,19 +45,22 @@
         border-radius: 100%;
         z-index: 2;
         transform: rotate(45deg);
-        &::before {
-          content: "+";
-          color: #fff;
+        &::before,
+        &::after {
+          content: " ";
+          background: #fff;
           left: 50%;
           top: 50%;
-          height: 24px;
-          width: 24px;
-          font-size: 20px;
-          text-align: center;
-          line-height: 24px;
-          transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%) scale(.5);
           position: absolute;
-          font-family: Arial;
+        }
+        &::before {
+          width: 20px;
+          height: 3px;
+        }
+        &::after {
+          width: 3px;
+          height: 20px;
         }
       }
       &::before {

@@ -16,7 +16,7 @@
     left: 50%;
     line-height: 20px;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 14px;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, .95);
@@ -24,19 +24,28 @@
     padding: 25px 15px 64px;
     .c-confirm__title {
       font-weight: bold;
-      color: #000;
+      color: #0D0D0D;
       position: absolute;
       top: 20px;
       left: 0;
       height: 20px;
       width: 100%;
-      font-size: 16px;
+      font-size: 18px;
+      white-space: nowrap;
     }
     .c-confirm__content {
       font-size: 14px;
+      color: $text-light;
+      padding: 5px 0;
       p {
         text-align: left;
         margin: 5px 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
     .c-confirm__btn-group {
@@ -72,7 +81,7 @@
   }
   &.c-confirm__has-title {
     .c-confirm__cell {
-      padding: 55px 15px 64px;
+      padding-top: 55px;
     }
   }
   &::after {

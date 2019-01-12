@@ -14,9 +14,7 @@
       fontSize: size,
       backgroundColor,
       color,
-      borderRadius: borderRadius
-        ? borderRadius
-        : '3px'
+      borderRadius
     }"
     @click="onClick">
   </i>

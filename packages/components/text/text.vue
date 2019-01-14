@@ -14,7 +14,8 @@
     ]"
     :style="{
       fontFamily,
-      fontSize: _fontSize
+      fontSize: _fontSize,
+      color
     }"
     @click="onClick">
     <template
@@ -80,6 +81,10 @@ export default {
     },
     fontSize: {
       type: [Number, String],
+      default: null
+    },
+    color: {
+      type: String,
       default: null
     },
     align: {

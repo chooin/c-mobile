@@ -49,18 +49,21 @@
     color: $danger;
   }
 
-  &.c-text__left {
+  &.c-text__left,
+  &.c-text__center,
+  &.c-text__right {
     display: block !important;
+  }
+
+  &.c-text__left {
     text-align: left !important;
   }
 
   &.c-text__center {
-    display: block !important;
     text-align: center !important;
   }
 
   &.c-text__right {
-    display: block !important;
     text-align: right !important;
   }
 
@@ -111,6 +114,6 @@
     }
   }
   &.c-text__placeholder {
-    color: $text-placeholder;
+    color: $text-placeholder !important;
   }
 }

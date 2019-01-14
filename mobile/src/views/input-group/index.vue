@@ -14,7 +14,20 @@
           您的姓名
         </c-input-head>
         <c-input-body>
-          <c-text placeholder="Devin"></c-text>
+          <c-text placeholder="placeholder" cursor></c-text>
+        </c-input-body>
+      </c-input>
+      <c-input addon>
+        <c-input-head>
+          长度
+        </c-input-head>
+        <c-input-body>
+          <c-flex>
+            <c-flex-item>
+              <c-text placeholder="placeholder" cursor></c-text>
+            </c-flex-item>
+            <span style="padding-left: 5px;">米</span>
+          </c-flex>
         </c-input-body>
       </c-input>
       <c-input addon>
@@ -30,7 +43,7 @@
           您的姓名
         </c-input-head>
         <c-input-body>
-          <c-text>Devin</c-text>
+          <c-text color="#f00">Devin</c-text>
         </c-input-body>
       </c-input>
       <c-input next>
@@ -276,12 +289,10 @@
       </c-input-upload>
       <c-input-upload
         amount="1/2"
-        :show-upload-input="false"
         allow-upload
         :allow-delete="false">
         <template slot="title">
-          <c-text type="danger">*</c-text>
-          上传图片（不允许删除，事件上传）
+          <c-text type="danger">*</c-text>上传图片（不允许删除，事件上传）
         </template>
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />

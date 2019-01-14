@@ -28,7 +28,7 @@
   .c-input-body {
     flex: 1;
     min-width: 0; // 解决文字溢出
-    color: $text-light;
+    color: $text;
     input[type=text],
     input[type=number],
     input[type=tel],
@@ -53,7 +53,7 @@
       min-height: 20px;
       border-width: 0;
       padding: 0;
-      color: $text-light;
+      color: $text;
     }
     textarea,
     .textarea {
@@ -67,7 +67,7 @@
       text-align: justify;
       word-wrap: break-word;
       word-break: normal;
-      color: $text-light;
+      color: $text;
     }
   }
   &.c-input__fullline {

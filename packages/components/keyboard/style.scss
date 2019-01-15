@@ -36,6 +36,7 @@
     }
     &::before {
       @include borderLine('top');
+      border-color: $border-dark;
     }
   }
   .c-keyboard__key-group {
@@ -55,9 +56,11 @@
       i.c-keyboard__border {
         &::before {
           @include borderLine('top');
+          border-color: $border-dark;
         }
         &::after {
           @include borderLine('left');
+          border-color: $border-dark;
         }
       }
       &.c-keyboard__key-delete {

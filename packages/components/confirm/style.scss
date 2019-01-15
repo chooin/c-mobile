@@ -67,6 +67,7 @@
         color: #007aff;
         &::before {
           @include borderLine('left');
+          border-color: $border-dark;
         }
         &:first-child {
           &::before {
@@ -76,6 +77,7 @@
       }
       &::before {
         @include borderLine('top');
+        border-color: $border-dark;
       }
     }
   }

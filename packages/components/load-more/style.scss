@@ -12,8 +12,8 @@
 .c-load-more {
   position: relative;
   height: 60px;
+  background: inherit;
   &.c-load-more__end {
-    background: inherit;
     span {
       position: absolute;
       left: 50%;

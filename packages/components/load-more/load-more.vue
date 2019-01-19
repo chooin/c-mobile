@@ -8,7 +8,8 @@
     <span
       v-if="!loading"
       :style="{
-        backgroundColor: backgroundColor
+        backgroundColor,
+        color
       }"
     >{{ text }}</span>
   </div>
@@ -28,7 +29,11 @@ export default {
     },
     backgroundColor: {
       type: String,
-      default: '#f0f0f0'
+      default: '#f2f2f2'
+    },
+    color: {
+      type: String,
+      default: null
     }
   }
 }

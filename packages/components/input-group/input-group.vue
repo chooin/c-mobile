@@ -4,13 +4,14 @@
     :class="[
       className
     ]">
-    <c-text
+    <h5
       v-if="title"
       class="c-input-group__title"
-      :type="type"
-      block>
+      :class="[
+        type ? 'c-input-group__title-' + type : ''
+      ]">
       {{ title }}
-    </c-text>
+    </h5>
     <div
       class="c-input-group__content"
       :class="{

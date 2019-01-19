@@ -4,6 +4,18 @@
     box-sizing: border-box;
     color: $text-light;
     font-size: 13px;
+    &.c-input-group__title-primary {
+      color: $primary;
+    }
+    &.c-input-group__title-success {
+      color: $success;
+    }
+    &.c-input-group__title-warning {
+      color: $warning;
+    }
+    &.c-input-group__title-danger {
+      color: $danger;
+    }
   }
   .c-input-group__content {
     background: #fff;

@@ -16,29 +16,28 @@ button.c-input {
 
 .c-input {
   padding: 10px 15px;
+  .c-input-head {
+    line-height: 30px;
+  }
   .c-input-head,
   .c-input-body {
-    line-height: 30px;
-    input,
+    min-height: 30px;
+  }
+  .c-input-body {
     .input,
     .c-text {
-      height: 30px;
+      padding: 5px 0;
+      line-height: 20px;
+    }
+    input {
       line-height: 30px;
+      height: 30px;
     }
   }
   &.c-input__addon {
     &.c-input__next {
       &:active {
         background: #d9d9d9;
-      }
-    }
-    &.c-input__icon {
-      .c-input-head {
-        i {
-          img {
-            vertical-align: top;
-          }
-        }
       }
     }
   }

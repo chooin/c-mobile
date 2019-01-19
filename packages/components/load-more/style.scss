@@ -23,21 +23,19 @@
       z-index: 2;
       background: inherit;
       text-align: center;
+      font-size: 14px;
+      color: $text-light;
     }
     &::before {
-      @include borderLine('top');
+      @include borderLine('top', 16px);
       top: 50%;
-      border-color: #ddd;
+      width: calc(100% - 32px);
     }
   }
   &.c-load-more__loading {
-    * {
-      position: relative;
-      z-index: 1;
-    }
     &::before {
       animation: c-load-more 500ms infinite linear;
-      border: 2px solid $primary;
+      border: 2px solid #a6a6a6;
       border-radius: 100%;
       border-top-color: transparent;
       content: " ";

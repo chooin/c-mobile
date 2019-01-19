@@ -2,13 +2,16 @@
   <div
     v-if="useDiv"
     class="c-input"
-    :class="[{
-      'c-input__addon': addon,
-      'c-input__next': next,
-      'c-input__icon': icon,
-      'c-input__checked': checked,
-      'c-input__noborder-top': noborderTop
-    }]"
+    :class="[
+      className,
+      {
+        'c-input__addon': addon,
+        'c-input__next': next,
+        'c-input__icon': icon,
+        'c-input__checked': checked,
+        'c-input__noborder-top': noborderTop
+      }
+    ]"
     @touchstart="() => {}"
     @click="onClick">
     <slot></slot>
@@ -17,26 +20,32 @@
     v-else-if="openType"
     class="c-input"
     :open-type="openType"
-    :class="[{
-      'c-input__addon': addon,
-      'c-input__next': next,
-      'c-input__icon': icon,
-      'c-input__checked': checked,
-      'c-input__noborder-top': noborderTop
-    }]"
+    :class="[
+      className,
+      {
+        'c-input__addon': addon,
+        'c-input__next': next,
+        'c-input__icon': icon,
+        'c-input__checked': checked,
+        'c-input__noborder-top': noborderTop
+      }
+    ]"
     @click="onClick">
     <slot></slot>
   </button>
   <label
     v-else
     class="c-input"
-    :class="[{
-      'c-input__addon': addon,
-      'c-input__next': next,
-      'c-input__icon': icon,
-      'c-input__checked': checked,
-      'c-input__noborder-top': noborderTop
-    }]"
+    :class="[
+      className,
+      {
+        'c-input__addon': addon,
+        'c-input__next': next,
+        'c-input__icon': icon,
+        'c-input__checked': checked,
+        'c-input__noborder-top': noborderTop
+      }
+    ]"
     @touchstart="() => {}"
     @click="onClick">
     <slot></slot>
@@ -80,6 +89,10 @@ export default {
     noborderTop: {
       type: Boolean,
       default: false
+    },
+    className: {
+      type: String,
+      default: null
     }
   },
   methods: {

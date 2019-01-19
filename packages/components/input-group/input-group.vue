@@ -1,6 +1,9 @@
 <template>
   <div
-    class="c-input-group">
+    class="c-input-group"
+    :class="[
+      className
+    ]">
     <c-text
       v-if="title"
       class="c-input-group__title"
@@ -46,6 +49,10 @@ export default {
     labelWidth: {
       type: String,
       default: '110px'
+    },
+    className: {
+      type: String,
+      default: null
     }
   }
 }

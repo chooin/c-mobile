@@ -1,21 +1,29 @@
 # mini-program
 
-> A Mpvue project
+## 描述
 
-## Build Setup
+a megalo project
 
-``` bash
-# install dependencies
-npm install
+## 作者
 
-# serve with hot reload at localhost:8080
-npm run dev
+zhuning <chooin@126.com>
 
-# build for production with minification
-npm run build
+## 运行
 
-# build for production and view the bundle analyzer report
-npm run build --report
+微信小程序：
+
+```bash
+npm run dev:wechat
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+支付宝小程序：
+
+```bash
+npm run dev:alipay
+```
+
+百度智能小程序：
+
+```bash
+npm run dev:swan
+```

@@ -1,7 +1,9 @@
 <template>
   <div class="v-picker-region">
     <c-picker-region
-      v-model="value"
+      :province-id="provinceId"
+      :city-id="cityId"
+      :district-id="districtId"
       @change="pickerRegionChange">
     </c-picker-region>
   </div>
@@ -13,7 +15,9 @@ import cPickerRegion from '../../../packages/components/picker/picker-region.vue
 export default {
   data () {
     return {
-      value: [130000, 130500, 130506]
+      provinceId: 130000,
+      cityId: 130500,
+      districtId: 130503
     }
   },
   components: {
@@ -21,7 +25,12 @@ export default {
   },
   methods: {
     pickerRegionChange (e) {
-      console.log('1')
+      // [
+      //   this.provinceId,
+      //   this.cityId,
+      //   this.provinceId
+      // ] = e
+      console.log(e)
     }
   }
 }

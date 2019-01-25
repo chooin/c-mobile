@@ -1,11 +1,16 @@
 <template>
   <div class="v-picker-region">
+    <div>
+      {{ province.name }}
+      {{ city.name }}
+      {{ district.name }}
+    </div>
     <c-button type="primary" @click="onClick">show picker</c-button>
     <c-picker-region
       v-model="visible"
-      :province-id="provinceId"
-      :city-id="cityId"
-      :district-id="districtId"
+      :province-id="province.id"
+      :city-id="city.id"
+      :district-id="district.id"
       @change="pickerRegionChange">
     </c-picker-region>
   </div>
@@ -18,9 +23,18 @@ import cPickerRegion from '../../../packages/components/picker/picker-region.vue
 export default {
   data () {
     return {
-      provinceId: 130000,
-      cityId: 130500,
-      districtId: 130503,
+      province: {
+        id: 130000,
+        name: '河北省'
+      },
+      city: {
+        id: 130500,
+        name: '邢台市'
+      },
+      district: {
+        id: 130503,
+        name: '桥西区'
+      },
       visible: false
     }
   },
@@ -30,12 +44,11 @@ export default {
   },
   methods: {
     pickerRegionChange (e) {
-      // [
-      //   this.provinceId,
-      //   this.cityId,
-      //   this.provinceId
-      // ] = e
-      console.log(e)
+      [
+        this.province,
+        this.city,
+        this.district
+      ] = e
     },
     onClick () {
       this.visible = true

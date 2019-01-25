@@ -1,9 +1,9 @@
 <template>
   <div
-    v-if="_value"
     class="c-picker-region"
     :class="{
-      'is-iphonex': isMiniProgramIsIPhoneX
+      'c-picker-region__is-iphonex': isMiniProgramIsIPhoneX,
+      'c-picker-region__visible': _value
     }">
     <div class="c-picker-region__action">
       <div
@@ -18,13 +18,34 @@
       :value="indexs"
       @change="onChange">
       <picker-view-column>
-        <div v-for="(item, index) in provinces" :key="index">{{ item.name }}</div>
+        <div
+          v-for="(item, index) in provinces"
+          :key="index"
+          :class="{
+            placeholder: item.id === 0
+          }">
+          {{ item.name }}
+        </div>
       </picker-view-column>
       <picker-view-column>
-        <div v-for="(item, index) in cities" :key="index">{{ item.name }}</div>
+        <div
+          v-for="(item, index) in cities"
+          :key="index"
+          :class="{
+            placeholder: item.id === 0
+          }">
+          {{ item.name }}
+        </div>
       </picker-view-column>
       <picker-view-column>
-        <div v-for="(item, index) in districts" :key="index">{{ item.name }}</div>
+        <div
+          v-for="(item, index) in districts"
+          :key="index"
+          :class="{
+            placeholder: item.id === 0
+          }">
+          {{ item.name }}
+        </div>
       </picker-view-column>
     </picker-view>
   </div>

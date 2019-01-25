@@ -5,27 +5,27 @@
   border-bottom: #f0f0f0 34px solid;
   width: 100%;
   .c-picker-region__action {
-    height: 36px;
+    height: 40px;
     position: relative;
     background: #fff;
     .c-picker-region__cancel {
       position: absolute;
       left: 0;
       top: 0;
-      height: 36px;
-      line-height: 36px;
+      height: 40px;
+      line-height: 40px;
       padding: 0 15px;
-      font-size: 14px;
+      font-size: 15px;
       color: $text-light;
     }
     .c-picker-region__done {
       position: absolute;
       right: 0;
       top: 0;
-      height: 36px;
-      line-height: 36px;
+      height: 40px;
+      line-height: 40px;
       padding: 0 15px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       color: $primary;
     }
@@ -45,7 +45,7 @@
       height: 200px;
       width: 33.3333333vw;
       div {
-        line-height: 36px;
+        line-height: 38px;
         width: 100%;
         text-align: center;
         font-size: 14px;
@@ -56,6 +56,6 @@
     }
   }
   .indicator-style {
-    height: 36px;
+    height: 38px;
   }
 }

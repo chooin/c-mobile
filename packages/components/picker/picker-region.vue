@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="visible"
+    v-if="_value"
     class="c-picker-region"
     :class="{
       'is-iphonex': isMiniProgramIsIPhoneX
@@ -59,7 +59,7 @@ export default {
     }
   },
   props: {
-    visible: {
+    value: {
       type: Number,
       default: true
     },
@@ -95,10 +95,13 @@ export default {
         this.indexs = indexs
       }, 100)
     },
-    onCancel () {},
+    onCancel () {
+      this._value = false
+    },
     onDone () {
       let ids = this.getIds(this.indexs)
 
+      this._value = false
       this.$emit('change', ids)
     },
     onChange (e) {
@@ -242,6 +245,16 @@ export default {
         cityId,
         districtId
       ]
+    }
+  },
+  computed: {
+    _value: {
+      get () {
+        return this.value
+      },
+      set (v) {
+        this.$emit('input', v)
+      }
     }
   }
 }

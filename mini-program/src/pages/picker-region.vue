@@ -1,6 +1,8 @@
 <template>
   <div class="v-picker-region">
+    <c-button type="primary" @click="onClick">show picker</c-button>
     <c-picker-region
+      v-model="visible"
       :province-id="provinceId"
       :city-id="cityId"
       :district-id="districtId"
@@ -10,6 +12,7 @@
 </template>
 
 <script>
+import cButton from '../../../packages/components/button/button'
 import cPickerRegion from '../../../packages/components/picker/picker-region.vue'
 
 export default {
@@ -17,10 +20,12 @@ export default {
     return {
       provinceId: 130000,
       cityId: 130500,
-      districtId: 130503
+      districtId: 130503,
+      visible: false
     }
   },
   components: {
+    cButton,
     cPickerRegion
   },
   methods: {
@@ -31,6 +36,9 @@ export default {
       //   this.provinceId
       // ] = e
       console.log(e)
+    },
+    onClick () {
+      this.visible = true
     }
   }
 }

@@ -13,8 +13,7 @@
         @click="onDone">完成</div>
     </div>
     <picker-view
-      indicator-style="height: 36px;"
-      mask-style="backgroud: #000;"
+      indicator-class="indicator-style"
       :value="_value"
       @change="onChange">
       <picker-view-column>
@@ -155,77 +154,90 @@ export default {
         this.district = district
       }
     },
-    getIndex (id, type) {
-      if (type === 'province') {
+    getIndexs (ids) {
+      let indexs = []
+      if (ids[0]) {
         let provinces = originProvince
-        let index = provinces.findIndex(item => item.id === id)
-        return index < 0 ? 0 : index
+        let index = provinces.findIndex(item => item.id === ids[0])
+        indexs.push(index < 0 ? 0 : index)
+      } else {
+        indexs.push(0)
       }
-      if (type === 'city') {
+      if (ids[1]) {
         let cities = []
-        let pre = parseInt(id / 10000)
+        let pre = parseInt(ids[1] / 10000)
         for (let item of originCity) {
           if (String(item.id).indexOf(pre) === 0) {
             cities.push(item)
           }
         }
-        let index = cities.findIndex(item => item.id === id)
-        return index < 0 ? 0 : index
+        let index = cities.findIndex(item => item.id === ids[1])
+        indexs.push(index < 0 ? 0 : index)
+      } else {
+        indexs.push(0)
       }
-      if (type === 'district') {
+      if (ids[2]) {
         let districts = []
-        let pre = parseInt(id / 100)
+        let pre = parseInt(ids[2] / 100)
         for (let item of originDistrict) {
           if (String(item.id).indexOf(pre) === 0) {
             districts.push(item)
           }
         }
-        let index = districts.findIndex(item => item.id === id)
-        return index < 0 ? 0 : index
+        let index = districts.findIndex(item => item.id === ids[2])
+        indexs.push(index < 0 ? 0 : index)
+      } else {
+        indexs.push(0)
       }
+      return indexs
     },
     getIds (indexs) {
-      let provinceId = 0
-      let cityId = 0
-      let districtId = 0
-      if (
-        indexs[0] &&
-        indexs[0] !== 0
-      ) {
-        provinceId = originProvince[indexs[0]].id
+      console.log(indexs, 'indexs')
+      let ids = []
+      if (indexs[0]) {
+        let provinces = originProvince
+        ids.push(provinces[indexs[0]].id)
+      } else {
+        ids.push(null)
       }
-      if (
-        indexs[0] &&
-        indexs[0] !== 0 &&
-        indexs[1] &&
-        indexs[1] !== 0
-      ) {
-        provinceId = originProvince[indexs[0]].id
+      if (indexs[1]) {
+        let cities = []
+        let pre = parseInt(ids[0] / 10000)
+        for (let item of originCity) {
+          if (String(item.id).indexOf(pre) === 0) {
+            cities.push(item)
+          }
+        }
+        ids.push(cities[indexs[1]].id)
+      } else {
+        ids.push(null)
       }
-      return [
-        provinceId,
-        cityId,
-        districtId
-      ]
+      if (indexs[2]) {
+        let districts = []
+        let pre = parseInt(ids[1] / 100)
+        for (let item of originDistrict) {
+          if (String(item.id).indexOf(pre) === 0) {
+            districts.push(item)
+          }
+        }
+        ids.push(districts[indexs[2]].id)
+      } else {
+        ids.push(null)
+      }
+      return ids
     }
   },
   computed: {
     _value: {
       get () {
-        let provinceIndex = this.getIndex(this.value[0], 'province')
-        let cityIndex = this.getIndex(this.value[1], 'city')
-        let districtIndex = this.getIndex(this.value[2], 'district')
-        return [
-          provinceIndex,
-          cityIndex,
-          districtIndex
-        ]
+        let indexs = this.getIndexs(this.value)
+        return indexs
       },
-      set (v) {
-        let ids = this.getIds(v)
-        console.log(ids)
-        this.$emit('input', v)
-        this.$emit('change', v)
+      set (indexs) {
+        let ids = this.getIds(indexs)
+        console.log(ids, 'ids')
+        this.$emit('input', ids)
+        this.$emit('change', ids)
       }
     }
   }

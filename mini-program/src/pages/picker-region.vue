@@ -1,6 +1,9 @@
 <template>
   <div class="v-picker-region">
-    <c-picker-region v-model="value" @change="pickerRegionChange"></c-picker-region>
+    <c-picker-region
+      v-model="value"
+      @change="pickerRegionChange">
+    </c-picker-region>
   </div>
 </template>
 
@@ -18,8 +21,7 @@ export default {
   },
   methods: {
     pickerRegionChange (e) {
-      console.log(e)
-      console.log(this.value)
+      console.log('1')
     }
   }
 }

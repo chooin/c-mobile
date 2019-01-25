@@ -5,49 +5,48 @@
       'c-picker-region__is-iphonex': isMiniProgramIsIPhoneX,
       'c-picker-region__visible': _value
     }">
-    <div class="c-picker-region__action">
-      <div
-        class="c-picker-region__cancel"
-        @click="onCancel">取消</div>
-      <div
-        class="c-picker-region__done"
-        @click="onDone">完成</div>
+    <div class="c-picker-region__content">
+      <div class="c-picker-region__action">
+        <div class="c-picker-region__cancel" @click="onCancel">取消</div>
+        <div class="c-picker-region__done" @click="onDone">完成</div>
+      </div>
+      <picker-view
+        indicator-class="indicator-style"
+        :value="indexs"
+        @change="onChange">
+        <picker-view-column>
+          <div
+            v-for="(item, index) in provinces"
+            :key="index"
+            :class="{
+              placeholder: item.id === 0
+            }">
+            {{ item.name }}
+          </div>
+        </picker-view-column>
+        <picker-view-column>
+          <div
+            v-for="(item, index) in cities"
+            :key="index"
+            :class="{
+              placeholder: item.id === 0
+            }">
+            {{ item.name }}
+          </div>
+        </picker-view-column>
+        <picker-view-column>
+          <div
+            v-for="(item, index) in districts"
+            :key="index"
+            :class="{
+              placeholder: item.id === 0
+            }">
+            {{ item.name }}
+          </div>
+        </picker-view-column>
+      </picker-view>
     </div>
-    <picker-view
-      indicator-class="indicator-style"
-      :value="indexs"
-      @change="onChange">
-      <picker-view-column>
-        <div
-          v-for="(item, index) in provinces"
-          :key="index"
-          :class="{
-            placeholder: item.id === 0
-          }">
-          {{ item.name }}
-        </div>
-      </picker-view-column>
-      <picker-view-column>
-        <div
-          v-for="(item, index) in cities"
-          :key="index"
-          :class="{
-            placeholder: item.id === 0
-          }">
-          {{ item.name }}
-        </div>
-      </picker-view-column>
-      <picker-view-column>
-        <div
-          v-for="(item, index) in districts"
-          :key="index"
-          :class="{
-            placeholder: item.id === 0
-          }">
-          {{ item.name }}
-        </div>
-      </picker-view-column>
-    </picker-view>
+    <i class="c-picker-region__cover" @touchstart="onCancel"></i>
   </div>
 </template>
 

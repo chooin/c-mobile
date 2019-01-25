@@ -96,13 +96,37 @@ export default {
       }, 100)
     },
     onCancel () {
+      this.initData()
+
       this._value = false
     },
     onDone () {
-      let ids = this.getIds(this.indexs)
+      if (
+        this.indexs[0] &&
+        this.indexs[1] &&
+        this.indexs[2]
+      ) {
+        let ids = this.getIds(this.indexs)
 
-      this._value = false
-      this.$emit('change', ids)
+        this._value = false
+        this.$emit('change', ids)
+      } else {
+        let Megalo = Megalo || false
+        let title
+        if (!this.indexs[2]) title = '请选择区'
+        if (!this.indexs[1]) title = '请选择市'
+        if (!this.indexs[0]) title = '请选择省'
+        let toast = {
+          title,
+          icon: 'none',
+          duration: 2000
+        }
+        if (Megalo) {
+          Megalo.showToast(toast)
+        } else {
+          wx.showToast(toast)
+        }
+      }
     },
     onChange (e) {
       if (e.detail.value[2] !== this.indexs[2]) {
@@ -231,19 +255,19 @@ export default {
       return indexs
     },
     getIds (indexs) {
-      let provinceId = indexs[0]
-        ? this.provinces[indexs[0]].id
+      let province = indexs[0]
+        ? this.provinces[indexs[0]]
         : null
-      let cityId = indexs[1]
-        ? this.cities[indexs[1]].id
+      let city = indexs[1]
+        ? this.cities[indexs[1]]
         : null
-      let districtId = indexs[2]
-        ? this.districts[indexs[2]].id
+      let district = indexs[2]
+        ? this.districts[indexs[2]]
         : null
       return [
-        provinceId,
-        cityId,
-        districtId
+        province,
+        city,
+        district
       ]
     }
   },

@@ -97,15 +97,9 @@ export default {
     },
     onCancel () {},
     onDone () {
-      if (
-        this.indexs[0] &&
-        this.indexs[1] &&
-        this.indexs[2]
-      ) {
-        let ids = this.getIds(this.indexs)
+      let ids = this.getIds(this.indexs)
 
-        this.$emit('change', ids)
-      }
+      this.$emit('change', ids)
     },
     onChange (e) {
       if (e.detail.value[2] !== this.indexs[2]) {
@@ -113,7 +107,7 @@ export default {
         return
       }
       if (e.detail.value[1] !== this.indexs[1]) {
-        this.isCityChange(e)
+        this.setDistricts(e.detail.value)
         this.indexs = [
           e.detail.value[0],
           e.detail.value[1],
@@ -122,7 +116,7 @@ export default {
         return
       }
       if (e.detail.value[0] !== this.indexs[0]) {
-        this.isProvinceChange(e)
+        this.setCities(e.detail.value)
         this.indexs = [
           e.detail.value[0],
           0,
@@ -130,15 +124,6 @@ export default {
         ]
         return
       }
-    },
-    isProvinceChange (e) {
-      this.setCities(e.detail.value)
-    },
-    isCityChange (e) {
-      this.setDistricts(e.detail.value)
-    },
-    isDistrictChange () {
-
     },
     setProvices () {
       this.provinces = [
@@ -243,10 +228,19 @@ export default {
       return indexs
     },
     getIds (indexs) {
+      let provinceId = indexs[0]
+        ? this.provinces[indexs[0]].id
+        : null
+      let cityId = indexs[1]
+        ? this.cities[indexs[1]].id
+        : null
+      let districtId = indexs[2]
+        ? this.districts[indexs[2]].id
+        : null
       return [
-        this.provinces[indexs[0]].id,
-        this.cities[indexs[1]].id,
-        this.districts[indexs[2]].id
+        provinceId,
+        cityId,
+        districtId
       ]
     }
   }

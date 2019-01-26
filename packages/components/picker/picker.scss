@@ -1,4 +1,4 @@
-.c-picker-region {
+.c-picker {
   position: fixed;
   left: 0;
   top: 0;
@@ -8,17 +8,17 @@
   transition: all 500ms;
   transition-timing-function: ease;
   z-index: 1050;
-  .c-picker-region__content {
+  .c-picker__content {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     z-index: 2;
-    .c-picker-region__action {
+    .c-picker__action {
       height: 40px;
       position: relative;
       background: #fff;
-      .c-picker-region__cancel {
+      .c-picker__cancel {
         position: absolute;
         left: 0;
         top: 0;
@@ -28,7 +28,7 @@
         font-size: 15px;
         color: $text-light;
       }
-      .c-picker-region__done {
+      .c-picker__done {
         position: absolute;
         right: 0;
         top: 0;
@@ -53,7 +53,7 @@
       picker-view-column {
         flex: 1;
         height: 200px;
-        width: 33.3333333vw;
+        width: 100vw;
         div {
           line-height: 38px;
           width: 100%;
@@ -69,15 +69,15 @@
   .indicator-style {
     height: 38px;
   }
-  &.c-picker-region__is-iphonex {
-    .c-picker-region__content {
+  &.c-picker__is-iphonex {
+    .c-picker__content {
       border-bottom: #f0f0f0 34px solid;
     }
   }
-  &.c-picker-region__visible {
+  &.c-picker__visible {
     transform: translateY(0);
   }
-  .c-picker-region__cover {
+  .c-picker__cover {
     position: absolute;
     left: 0;
     top: 0;

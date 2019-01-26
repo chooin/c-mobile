@@ -4,9 +4,9 @@
     :class="{
       'c-actionsheet__visible': value,
       'c-actionsheet__has-title': title || description,
-      'c-actionsheet__actions-empty': Array.isArray(actions) && actions.length === 0
+      'c-actionsheet__actions-empty': Array.isArray(_options) && _options.length === 0
     }"
-    @click="cancelClick">
+    @click="onCancel">
     <div
       class="c-actionsheet__content">
       <div
@@ -22,9 +22,9 @@
       <div class="c-actionsheet__actions">
         <ul>
           <li
-            v-for="(item, index) in actions"
+            v-for="(item, index) in _options"
             :key="index"
-            @click.stop="actionClick(item)"
+            @click.stop="onAction(item)"
             :style="{
               color: item.color
             }">
@@ -32,7 +32,7 @@
           </li>
         </ul>
       </div>
-      <div class="c-actionsheet__cancel" @click.stop="cancelClick">
+      <div class="c-actionsheet__cancel" @click.stop="onCancel">
         {{ cancelText }}
       </div>
     </div>
@@ -57,6 +57,10 @@ export default {
       type: Array,
       default: () => []
     },
+    options: {
+      type: Array,
+      default: () => []
+    },
     cancelText: {
       type: String,
       default: 'Cancel'
@@ -67,11 +71,11 @@ export default {
     }
   },
   methods: {
-    actionClick (item) {
+    onAction (item) {
       if (item.click) item.click()
       this._value = false
     },
-    cancelClick () {
+    onCancel () {
       this._value = false
     }
   },
@@ -82,6 +86,15 @@ export default {
       },
       set (value) {
         this.$emit('input', value)
+      }
+    },
+    _options () {
+      if (Array.isArray(this.options) && this.options.length > 0) {
+        return this.options
+      } else if (Array.isArray(this.actions) && this.actions.length > 0) {
+        return this.actions
+      } else {
+        return []
       }
     }
   }

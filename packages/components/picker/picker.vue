@@ -74,11 +74,12 @@ export default {
       this._value = false
     },
     onDone () {
+      let index = this.indexs[0]
       if (
-        this.indexs[0]
+        index
       ) {
         this._value = false
-        this.$emit('change', this.options[this.indexs[0]])
+        this.$emit('change', this._options[index])
       } else {
         let Megalo = Megalo || false
         let title = '请选择'

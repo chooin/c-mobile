@@ -54,7 +54,7 @@
       min-height: 20px;
       border-width: 0;
       padding: 0;
-      color: $text;
+      // color: $text;
     }
     textarea,
     .textarea {
@@ -68,7 +68,7 @@
       text-align: justify;
       word-wrap: break-word;
       word-break: normal;
-      color: $text;
+      // color: $text;
     }
   }
   &.c-input__fullline {

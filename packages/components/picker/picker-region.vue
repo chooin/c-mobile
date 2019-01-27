@@ -62,6 +62,7 @@ export default {
   data () {
     return {
       isMiniProgramIsIPhoneX,
+      isUpdated: true,
       indexs: [],
       provinces: [],
       cities: [
@@ -83,29 +84,14 @@ export default {
       type: Number,
       default: true
     },
-    provinceId: {
-      type: Number,
-      default: null
-    },
-    cityId: {
-      type: Number,
-      default: null
-    },
-    districtId: {
-      type: Number,
-      default: null
+    ids: {
+      type: Array,
+      default: () => []
     }
-  },
-  mounted () {
-    this.initData()
   },
   methods: {
     initData () {
-      let indexs = this.getIndexs([
-        this.provinceId,
-        this.cityId,
-        this.districtId
-      ])
+      let indexs = this.getIndexs(this.ids)
 
       this.setProvices(indexs)
       this.setCities(indexs)
@@ -116,9 +102,8 @@ export default {
       }, 100)
     },
     onCancel () {
-      this.initData()
-
       this._value = false
+      this.isUpdated = true
     },
     onDone () {
       if (
@@ -129,6 +114,7 @@ export default {
         let ids = this.getIds(this.indexs)
 
         this._value = false
+        this.isUpdated = true
         this.$emit('change', ids)
       } else {
         let Megalo = Megalo || false
@@ -294,6 +280,13 @@ export default {
   computed: {
     _value: {
       get () {
+        if (
+          this.value &&
+          this.isUpdated
+        ) {
+          this.initData()
+          this.isUpdated = false
+        }
         return this.value
       },
       set (v) {

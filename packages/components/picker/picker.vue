@@ -39,6 +39,7 @@ export default {
   data () {
     return {
       isMiniProgramIsIPhoneX,
+      isUpdated: true,
       indexs: []
     }
   },
@@ -56,22 +57,17 @@ export default {
       default: () => []
     }
   },
-  mounted () {
-    this.initData()
-  },
   methods: {
     initData () {
-      let indexs = [
-        this.id
-      ]
+      let indexs = this.getIndexs(this.id)
+
       setTimeout(() => {
         this.indexs = indexs
-      })
+      }, 100)
     },
     onCancel () {
-      this.initData()
-
       this._value = false
+      this.isUpdated = true
     },
     onDone () {
       let index = this.indexs[0]
@@ -79,6 +75,7 @@ export default {
         index
       ) {
         this._value = false
+        this.isUpdated = true
         this.$emit('change', this._options[index])
       } else {
         let Megalo = Megalo || false
@@ -97,11 +94,26 @@ export default {
     },
     onChange (e) {
       this.indexs = e.detail.value
+    },
+    getIndexs (id) {
+      let indexs = []
+      if (id) {
+        let index = this._options.findIndex(item => item.id === id)
+        indexs.push(index)
+      }
+      return indexs
     }
   },
   computed: {
     _value: {
       get () {
+        if (
+          this.value &&
+          this.isUpdated
+        ) {
+          this.initData()
+          this.isUpdated = false
+        }
         return this.value
       },
       set (v) {

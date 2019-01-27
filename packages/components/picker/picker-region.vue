@@ -68,13 +68,13 @@ export default {
       cities: [
         {
           id: 0,
-          name: '市'
+          name: '请选择市'
         }
       ],
       districts: [
         {
           id: 0,
-          name: '区'
+          name: '请选择区'
         }
       ]
     }
@@ -162,7 +162,7 @@ export default {
       this.provinces = [
         {
           id: 0,
-          name: '省'
+          name: '请选择省'
         },
         ...originProvince
       ]
@@ -170,18 +170,18 @@ export default {
     setCities (indexs) {
       this.cities = [{
         id: 0,
-        name: '市'
+        name: '请选择市'
       }]
       this.districts = [{
         id: 0,
-        name: '区'
+        name: '请选择区'
       }]
       let province = this.provinces[indexs[0]]
       if (province) {
         let preId = province.id / 10000
         let cities = [{
           id: 0,
-          name: '市'
+          name: '请选择市'
         }]
         for (let item of originCity) {
           if (String(item.id).indexOf(preId) === 0) {
@@ -194,14 +194,14 @@ export default {
     setDistricts (indexs) {
       this.districts = [{
         id: 0,
-        name: '区'
+        name: '请选择区'
       }]
       let city = this.cities[indexs[1]]
       if (city) {
         let preId = city.id / 100
         let districts = [{
           id: 0,
-          name: '区'
+          name: '请选择区'
         }]
         for (let item of originDistrict) {
           if (String(item.id).indexOf(preId) === 0) {
@@ -217,7 +217,7 @@ export default {
         let provinces = [
           {
             id: 0,
-            name: '省'
+            name: '请选择省'
           },
           ...originProvince
         ]
@@ -229,7 +229,7 @@ export default {
       if (ids[1]) {
         let cities = [{
           id: 0,
-          name: '市'
+          name: '请选择市'
         }]
         let pre = parseInt(ids[1] / 10000)
         for (let item of originCity) {
@@ -245,7 +245,7 @@ export default {
       if (ids[2]) {
         let districts = [{
           id: 0,
-          name: '区'
+          name: '请选择区'
         }]
         let pre = parseInt(ids[2] / 100)
         for (let item of originDistrict) {

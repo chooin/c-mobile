@@ -35,6 +35,11 @@ button.c-input {
     }
   }
   &.c-input__addon {
+    .c-input-body {
+      p {
+        padding: 5px 0;
+      }
+    }
     &.c-input__next {
       &:active {
         background: #d9d9d9;

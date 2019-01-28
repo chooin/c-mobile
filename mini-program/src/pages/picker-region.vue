@@ -8,16 +8,18 @@
     <c-button type="primary" @click="onClick">show picker</c-button>
     <c-picker-region
       v-model="visible"
-      :province-id="province.id"
-      :city-id="city.id"
-      :district-id="district.id"
+      :ids="[
+        province.id,
+        city.id,
+        district.id
+      ]"
       @change="pickerRegionChange">
     </c-picker-region>
   </div>
 </template>
 
 <script>
-import cButton from '../../../packages/components/button/button'
+import cButton from '../../../packages/components/button/button.vue'
 import cPickerRegion from '../../../packages/components/picker/picker-region.vue'
 
 export default {

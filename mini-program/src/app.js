@@ -13,27 +13,25 @@ export default {
     // pages 的首个页面会被编译成首页
     pages: [
       'pages/picker-region',
-      'pages/hello',
-      'pages/my/index',
     ],
-    tabBar: {
-      color: '#333',
-      selectedColor: '#007d37',
-      list: [
-        {
-        pagePath: 'pages/hello',
-        text: 'home',
-        iconPath: 'static/imgs/home.png',
-        selectedIconPath: 'static/imgs/home_on.png',
-        },
-        {
-        pagePath: 'pages/my/index',
-        text: 'my',
-        iconPath: 'static/imgs/mine.png',
-        selectedIconPath: 'static/imgs/mine_on.png',
-        }
-      ]
-    },
+    // tabBar: {
+    //   color: '#333',
+    //   selectedColor: '#007d37',
+    //   list: [
+    //     {
+    //     pagePath: 'pages/hello',
+    //     text: 'home',
+    //     iconPath: 'static/imgs/home.png',
+    //     selectedIconPath: 'static/imgs/home_on.png',
+    //     },
+    //     {
+    //     pagePath: 'pages/my/index',
+    //     text: 'my',
+    //     iconPath: 'static/imgs/mine.png',
+    //     selectedIconPath: 'static/imgs/mine_on.png',
+    //     }
+    //   ]
+    // },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

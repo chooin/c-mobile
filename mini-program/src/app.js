@@ -12,7 +12,10 @@ export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
-      'pages/picker-region',
+      'pages/index',
+      'pages/button',
+      'pages/picker',
+      'pages/confirm',
     ],
     // tabBar: {
     //   color: '#333',

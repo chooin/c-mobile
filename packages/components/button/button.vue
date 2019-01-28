@@ -62,10 +62,10 @@ export default {
       type: [Boolean, String],
       default: false
     },
-    text: { // mpvue 对 slot 支持不好！
-      type: String,
-      default: ''
-    },
+    // text: { // mpvue 对 slot 支持不好！，废弃
+    //   type: String,
+    //   default: ''
+    // },
     openType: { // 仅小程序支持
       type: String,
       default: null

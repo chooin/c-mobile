@@ -26,8 +26,9 @@
     <c-picker
       v-model="visible.picker"
       :options="options"
-      :id="sex"
-      @change="pickerChange">
+      :id="sex.id"
+      @change="pickerChange"
+      required>
     </c-picker>
   </div>
 </template>

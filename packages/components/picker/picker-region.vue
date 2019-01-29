@@ -87,6 +87,10 @@ export default {
     ids: {
       type: Array,
       default: () => []
+    },
+    required: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -117,20 +121,30 @@ export default {
         this.isUpdated = true
         this.$emit('change', ids)
       } else {
-        let Megalo = Megalo || false
-        let title
-        if (!this.indexs[2]) title = '请选择区'
-        if (!this.indexs[1]) title = '请选择市'
-        if (!this.indexs[0]) title = '请选择省'
-        let toast = {
-          title,
-          icon: 'none',
-          duration: 2000
-        }
-        if (Megalo) {
-          Megalo.showToast(toast)
+        if (this.required) {
+          let Megalo = Megalo || false
+          let title
+          if (!this.indexs[2]) title = '请选择区'
+          if (!this.indexs[1]) title = '请选择市'
+          if (!this.indexs[0]) title = '请选择省'
+          let toast = {
+            title,
+            icon: 'none',
+            duration: 2000
+          }
+          if (Megalo) {
+            Megalo.showToast(toast)
+          } else {
+            wx.showToast(toast)
+          }
         } else {
-          wx.showToast(toast)
+          this._value = false
+          this.isUpdated = true
+          this.$emit('change', [
+            { id: null, name: null },
+            { id: null, name: null },
+            { id: null, name: null }
+          ])
         }
       }
     },

@@ -4,9 +4,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  transform: translateY(100%);
-  transition: all 500ms;
-  transition-timing-function: ease;
+  visibility: hidden;
   z-index: 1050;
   .c-picker-region__content {
     position: absolute;
@@ -14,6 +12,8 @@
     bottom: 0;
     width: 100%;
     z-index: 2;
+    transition: all 500ms ease;
+    transform: translateY(100%);
     .c-picker-region__action {
       height: 40px;
       position: relative;
@@ -38,9 +38,6 @@
         font-size: 15px;
         font-weight: 600;
         color: $primary;
-      }
-      &::before {
-        @include borderLine('top');
       }
       &::after {
         @include borderLine('bottom');
@@ -75,7 +72,13 @@
     }
   }
   &.c-picker-region__visible {
-    transform: translateY(0);
+    visibility: visible;
+    .c-picker-region__content {
+      transform: translateY(0);
+    }
+    .c-picker-region__cover {
+      opacity: .75;
+    }
   }
   .c-picker-region__cover {
     position: absolute;
@@ -84,5 +87,8 @@
     width: 100vw;
     height: 100vh;
     z-index: 1;
+    transition: all 300ms;
+    background: #282828;
+    opacity: 0;
   }
 }

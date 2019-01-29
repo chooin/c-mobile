@@ -13,6 +13,7 @@ export default {
     // pages 的首个页面会被编译成首页
     pages: [
       'pages/index',
+      'pages/flex',
       'pages/button',
       'pages/picker',
       'pages/confirm',

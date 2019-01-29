@@ -28,7 +28,7 @@ export default {
     return {
       components: [
         'button',
-        // 'flex',
+        'flex',
         // 'header',
         // 'switch',
         // 'input-group',

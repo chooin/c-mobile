@@ -17,6 +17,7 @@ export default {
       'pages/button',
       'pages/picker',
       'pages/confirm',
+      'pages/input-group',
     ],
     // tabBar: {
     //   color: '#333',

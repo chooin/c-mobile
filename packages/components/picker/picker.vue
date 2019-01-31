@@ -19,7 +19,7 @@
             v-for="(item, index) in _options"
             :key="index"
             :class="{
-              placeholder: item.id === 0
+              placeholder: item.id === null
             }">
             {{ item.name }}
           </div>
@@ -32,7 +32,8 @@
 
 <script>
 import {
-  isMiniProgramIsIPhoneX
+  isMiniProgramIsIPhoneX,
+  getObjectType
 } from '../../utils'
 
 export default {
@@ -110,7 +111,11 @@ export default {
     },
     getIndexs (id) {
       let indexs = []
-      if (id) {
+      if (getObjectType(id) === 'Null' || getObjectType(id) === 'Undefined') {
+        return [
+          0
+        ]
+      } else {
         let index = this._options.findIndex(item => item.id === id)
         indexs.push(index)
       }
@@ -136,7 +141,7 @@ export default {
     _options () {
       return [
         {
-          id: 0,
+          id: null,
           name: '请选择'
         },
         ...this.options

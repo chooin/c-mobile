@@ -19,7 +19,7 @@
             v-for="(item, index) in provinces"
             :key="index"
             :class="{
-              placeholder: item.id === 0
+              placeholder: item.id === null
             }">
             {{ item.name }}
           </div>
@@ -29,7 +29,7 @@
             v-for="(item, index) in cities"
             :key="index"
             :class="{
-              placeholder: item.id === 0
+              placeholder: item.id === null
             }">
             {{ item.name }}
           </div>
@@ -39,7 +39,7 @@
             v-for="(item, index) in districts"
             :key="index"
             :class="{
-              placeholder: item.id === 0
+              placeholder: item.id === null
             }">
             {{ item.name }}
           </div>
@@ -52,7 +52,8 @@
 
 <script>
 import {
-  isMiniProgramIsIPhoneX
+  isMiniProgramIsIPhoneX,
+  getObjectType
 } from '../../utils'
 import originProvince from './data/province'
 import originCity from './data/city'
@@ -67,13 +68,13 @@ export default {
       provinces: [],
       cities: [
         {
-          id: 0,
+          id: null,
           name: '请选择市'
         }
       ],
       districts: [
         {
-          id: 0,
+          id: null,
           name: '请选择区'
         }
       ]
@@ -175,7 +176,7 @@ export default {
     setProvices () {
       this.provinces = [
         {
-          id: 0,
+          id: null,
           name: '请选择省'
         },
         ...originProvince
@@ -183,18 +184,18 @@ export default {
     },
     setCities (indexs) {
       this.cities = [{
-        id: 0,
+        id: null,
         name: '请选择市'
       }]
       this.districts = [{
-        id: 0,
+        id: null,
         name: '请选择区'
       }]
       let province = this.provinces[indexs[0]]
       if (province) {
         let preId = province.id / 10000
         let cities = [{
-          id: 0,
+          id: null,
           name: '请选择市'
         }]
         for (let item of originCity) {
@@ -207,14 +208,14 @@ export default {
     },
     setDistricts (indexs) {
       this.districts = [{
-        id: 0,
+        id: null,
         name: '请选择区'
       }]
       let city = this.cities[indexs[1]]
       if (city) {
         let preId = city.id / 100
         let districts = [{
-          id: 0,
+          id: null,
           name: '请选择区'
         }]
         for (let item of originDistrict) {
@@ -227,22 +228,24 @@ export default {
     },
     getIndexs (ids) {
       let indexs = []
-      if (ids[0]) {
+      if (getObjectType(ids[0]) === 'Null' || getObjectType(ids[0]) === 'Undefined') {
+        indexs.push(0)
+      } else {
         let provinces = [
           {
-            id: 0,
+            id: null,
             name: '请选择省'
           },
           ...originProvince
         ]
         let index = provinces.findIndex(item => item.id === ids[0])
         indexs.push(index < 0 ? 0 : index)
-      } else {
-        indexs.push(0)
       }
-      if (ids[1]) {
+      if (getObjectType(ids[1]) === 'Null' || getObjectType(ids[1]) === 'Undefined') {
+        indexs.push(0)
+      } else {
         let cities = [{
-          id: 0,
+          id: null,
           name: '请选择市'
         }]
         let pre = parseInt(ids[1] / 10000)
@@ -253,12 +256,12 @@ export default {
         }
         let index = cities.findIndex(item => item.id === ids[1])
         indexs.push(index < 0 ? 0 : index)
-      } else {
-        indexs.push(0)
       }
-      if (ids[2]) {
+      if (getObjectType(ids[2]) === 'Null' || getObjectType(ids[2]) === 'Undefined') {
+        indexs.push(0)
+      } else {
         let districts = [{
-          id: 0,
+          id: null,
           name: '请选择区'
         }]
         let pre = parseInt(ids[2] / 100)
@@ -269,8 +272,6 @@ export default {
         }
         let index = districts.findIndex(item => item.id === ids[2])
         indexs.push(index < 0 ? 0 : index)
-      } else {
-        indexs.push(0)
       }
       return indexs
     },

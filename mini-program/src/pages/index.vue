@@ -31,7 +31,7 @@ export default {
         'flex',
         // 'header',
         // 'switch',
-        // 'input-group',
+        'input-group',
         // 'icon',
         // 'tab',
         // 'tabbar',

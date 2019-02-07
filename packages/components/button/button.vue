@@ -19,7 +19,7 @@
     }"
     @click="onClick">
     <span class="c-button__text">
-      <slot>{{ text }}</slot>
+      <slot></slot>
     </span>
   </button>
 </template>

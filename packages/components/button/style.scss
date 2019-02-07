@@ -37,42 +37,55 @@
 
   &.c-button__primary,
   &.c-button__primary:hover {
-    color: #fff;
     background: $primary;
+    .c-button__text {
+      color: #fff;
+    }
   }
 
   &.c-button__success,
   &.c-button__success:hover {
-    color: #fff;
     background: $success;
+    .c-button__text {
+      color: #fff;
+    }
   }
 
   &.c-button__warning,
   &.c-button__warning:hover {
-    color: #fff;
     background: $warning;
+    .c-button__text {
+      color: #fff;
+    }
   }
 
   &.c-button__danger,
   &.c-button__danger:hover {
-    color: #fff;
     background: $danger;
+    .c-button__text {
+      color: #fff;
+    }
   }
 
   &.c-button__o,
   &.c-button__o:hover {
-    color: $text;
-    border-radius: 6px;
+    border-radius: 3px;
     position: relative;
     background: inherit;
+    .c-button__text {
+      color: $text;
+    }
     &::after {
       @include borderLine('round');
+      border-color: #ccc;
       border-radius: inherit;
     }
 
     &.c-button__primary,
     &.c-button__primary:hover {
-      color: $primary;
+      .c-button__text {
+        color: $primary;
+      }
       &::after {
         border-color: $primary;
       }
@@ -80,7 +93,9 @@
 
     &.c-button__success,
     &.c-button__success:hover {
-      color: $success;
+      .c-button__text {
+        color: $success;
+      }
       &::after {
         border-color: $success;
       }
@@ -88,7 +103,9 @@
 
     &.c-button__warning,
     &.c-button__warning:hover {
-      color: $warning;
+      .c-button__text {
+        color: $warning;
+      }
       &::after {
         border-color: $warning;
       }
@@ -96,7 +113,9 @@
 
     &.c-button__danger,
     &.c-button__danger:hover {
-      color: $danger;
+      .c-button__text {
+        color: $danger;
+      }
       &::after {
         border-color: $danger;
       }

@@ -179,7 +179,7 @@ export default {
           id: null,
           name: '请选择省'
         },
-        ...originProvince
+        ...this._originProvince
       ]
     },
     setCities (indexs) {
@@ -198,7 +198,7 @@ export default {
           id: null,
           name: '请选择市'
         }]
-        for (let item of originCity) {
+        for (let item of this._originCity) {
           if (String(item.id).indexOf(preId) === 0) {
             cities.push(item)
           }
@@ -218,7 +218,7 @@ export default {
           id: null,
           name: '请选择区'
         }]
-        for (let item of originDistrict) {
+        for (let item of this._originDistrict) {
           if (String(item.id).indexOf(preId) === 0) {
             districts.push(item)
           }
@@ -236,7 +236,7 @@ export default {
             id: null,
             name: '请选择省'
           },
-          ...originProvince
+          ...this._originProvince
         ]
         let index = provinces.findIndex(item => item.id === ids[0])
         indexs.push(index < 0 ? 0 : index)
@@ -249,7 +249,7 @@ export default {
           name: '请选择市'
         }]
         let pre = parseInt(ids[1] / 10000)
-        for (let item of originCity) {
+        for (let item of this._originCity) {
           if (String(item.id).indexOf(pre) === 0) {
             cities.push(item)
           }
@@ -265,7 +265,7 @@ export default {
           name: '请选择区'
         }]
         let pre = parseInt(ids[2] / 100)
-        for (let item of originDistrict) {
+        for (let item of this._originDistrict) {
           if (String(item.id).indexOf(pre) === 0) {
             districts.push(item)
           }
@@ -307,6 +307,36 @@ export default {
       set (v) {
         this.$emit('input', v)
       }
+    },
+    _originProvince () {
+      let items = []
+      for (let item of originProvince) {
+        items.push({
+          id: parseInt(item.slice(0, 6)),
+          name: item.slice(6)
+        })
+      }
+      return items
+    },
+    _originCity () {
+      let items = []
+      for (let item of originCity) {
+        items.push({
+          id: parseInt(item.slice(0, 6)),
+          name: item.slice(6)
+        })
+      }
+      return items
+    },
+    _originDistrict () {
+      let items = []
+      for (let item of originDistrict) {
+        items.push({
+          id: parseInt(item.slice(0, 6)),
+          name: item.slice(6)
+        })
+      }
+      return items
     }
   }
 }

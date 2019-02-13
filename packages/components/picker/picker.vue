@@ -32,8 +32,7 @@
 
 <script>
 import {
-  isMiniProgramIsIPhoneX,
-  getObjectType
+  isMiniProgramIsIPhoneX
 } from '../../utils'
 
 export default {
@@ -111,7 +110,7 @@ export default {
     },
     getIndexs (id) {
       let indexs = []
-      if (getObjectType(id) === 'Null' || getObjectType(id) === 'Undefined') {
+      if (id === null || typeof id === 'undefined') {
         return [
           0
         ]

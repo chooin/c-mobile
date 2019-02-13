@@ -228,7 +228,7 @@ export default {
     },
     getIndexs (ids) {
       let indexs = []
-      if (getObjectType(ids[0]) === 'Null' || getObjectType(ids[0]) === 'Undefined') {
+      if (ids[0] === null || typeof ids[0] === 'undefined') {
         indexs.push(0)
       } else {
         let provinces = [
@@ -241,7 +241,7 @@ export default {
         let index = provinces.findIndex(item => item.id === ids[0])
         indexs.push(index < 0 ? 0 : index)
       }
-      if (getObjectType(ids[1]) === 'Null' || getObjectType(ids[1]) === 'Undefined') {
+      if (ids[1] === null || typeof ids[1] === 'undefined') {
         indexs.push(0)
       } else {
         let cities = [{
@@ -257,7 +257,7 @@ export default {
         let index = cities.findIndex(item => item.id === ids[1])
         indexs.push(index < 0 ? 0 : index)
       }
-      if (getObjectType(ids[2]) === 'Null' || getObjectType(ids[2]) === 'Undefined') {
+      if (ids[2] === null || typeof ids[2] === 'undefined') {
         indexs.push(0)
       } else {
         let districts = [{

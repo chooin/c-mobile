@@ -4,14 +4,12 @@
     type="type"
     :open-type="openType"
     :class="[
-      type ? 'c-button__' + type : '',
-      icon ? 'c-button__icon-' + icon : '',
+      type ? `c-button__${type}` : '',
+      icon ? `c-button__icon-${icon}` : '',
       {
         'c-button__o': o,
         'c-button__disabled': disabled,
-        'c-button__small': small,
-        'c-button__is-miniprogram': isMiniProgram,
-        'c-button__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
+        'c-button__small': small
       }
     ]"
     :style="{
@@ -25,11 +23,7 @@
 </template>
 
 <script>
-import {
-  to,
-  isMiniProgram,
-  isMiniProgramIsIPhoneX
-} from '../../utils'
+import to from '../../utils/to'
 
 export default {
   name: 'CButton',
@@ -62,19 +56,9 @@ export default {
       type: [Boolean, String],
       default: false
     },
-    // text: { // mpvue 对 slot 支持不好！，废弃
-    //   type: String,
-    //   default: ''
-    // },
     openType: { // 仅小程序支持
       type: String,
       default: null
-    }
-  },
-  data () {
-    return {
-      isMiniProgram,
-      isMiniProgramIsIPhoneX
     }
   },
   methods: {
@@ -91,10 +75,7 @@ export default {
       return this.borderRadius === null ? this.borderRadius : `${this.borderRadius}px`
     },
     _icon () {
-      if (
-        typeof this.icon === 'boolean' &&
-        this.icon === true
-      ) {
+      if (typeof this.icon === 'boolean' && this.icon) {
         return 'left'
       } else {
         if (this.icon) {

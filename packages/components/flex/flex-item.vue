@@ -3,7 +3,7 @@
     class="c-flex-item"
     :style="{
       flex,
-      margin: '0 ' + gutter / 2 + 'px'
+      margin: `0 ${gutter / 2}px`
     }"
     @click="onClick">
     <slot></slot>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { to } from '../../utils'
+import to from '../../utils/to'
 
 export default {
   name: 'cFlexItem',

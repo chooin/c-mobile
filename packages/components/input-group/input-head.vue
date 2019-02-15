@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import { to, isBrowser } from '../../utils'
+import to from '../../utils/to'
+import { isBrowser } from '../../utils/device'
 
 export default {
   name: 'cInputHead',

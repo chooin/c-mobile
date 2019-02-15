@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { to } from '../../utils'
+import to from '../../utils/to'
 
 export default {
   name: 'cInputBody',

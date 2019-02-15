@@ -10,7 +10,7 @@
 <script>
 import {
   isMiniProgramIsIPhoneX
-} from '../../utils'
+} from '../../utils/device'
 
 export default {
   name: 'c-safe-area',

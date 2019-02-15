@@ -51,10 +51,7 @@
 </template>
 
 <script>
-import {
-  isMiniProgramIsIPhoneX,
-  getObjectType
-} from '../../utils'
+import { isMiniProgramIsIPhoneX } from '../../utils/device'
 import originProvince from './data/province'
 import originCity from './data/city'
 import originDistrict from './data/district'

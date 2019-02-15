@@ -31,9 +31,7 @@
 </template>
 
 <script>
-import {
-  isMiniProgramIsIPhoneX
-} from '../../utils'
+import { isMiniProgramIsIPhoneX } from '../../utils/device'
 
 export default {
   data () {

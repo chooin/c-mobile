@@ -79,7 +79,7 @@ export default {
   },
   props: {
     value: {
-      type: Number,
+      type: Boolean,
       default: true
     },
     ids: {
@@ -133,6 +133,7 @@ export default {
           if (Megalo) {
             Megalo.showToast(toast)
           } else {
+            /* eslint-disable */
             wx.showToast(toast)
           }
         } else {

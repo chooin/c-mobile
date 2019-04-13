@@ -3,6 +3,7 @@
     class="c-button"
     type="type"
     :open-type="openType"
+    :form-type="formType"
     :class="[
       type ? `c-button__${type}` : '',
       icon ? `c-button__icon-${icon}` : '',
@@ -57,6 +58,10 @@ export default {
       default: false
     },
     openType: { // 仅小程序支持
+      type: String,
+      default: null
+    },
+    formType: {
       type: String,
       default: null
     }

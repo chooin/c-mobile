@@ -97,7 +97,7 @@ export default {
     required: {
       type: Boolean,
       default: false
-    },
+    }
   },
   methods: {
     onClick () {

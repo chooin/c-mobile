@@ -10,7 +10,7 @@
     <div
       v-show="$slots.title || title"
       class="c-input-upload__title">
-      {{ title }}<slot name="title"></slot>
+      <span style="color: #f00" v-if="required">*</span>{{ title }}<slot name="title"></slot>
     </div>
     <div
       v-show="amount"
@@ -70,6 +70,10 @@ export default {
     accept: {
       type: String,
       default: 'image/*'
+    },
+    required: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

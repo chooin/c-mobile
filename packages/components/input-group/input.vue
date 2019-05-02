@@ -93,7 +93,11 @@ export default {
     className: {
       type: String,
       default: null
-    }
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
   },
   methods: {
     onClick () {

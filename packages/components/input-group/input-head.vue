@@ -5,6 +5,7 @@
       'min-width': labelWidth
     }"
     @click="onClick">
+    <span style="color: #f00" v-if="required">*</span>
     <slot></slot>
   </div>
 </template>
@@ -36,6 +37,9 @@ export default {
       } else {
         return '110px'
       }
+    },
+    required () {
+      return this.$parent.required
     }
   }
 }

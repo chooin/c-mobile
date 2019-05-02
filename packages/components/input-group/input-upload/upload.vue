@@ -49,7 +49,7 @@ export default {
     },
     allowUpload: {
       type: Boolean,
-      default: true
+      default: false
     },
     showUploadInput: {
       type: Boolean,
@@ -65,7 +65,7 @@ export default {
     },
     allowDelete: {
       type: Boolean,
-      default: true
+      default: false
     },
     accept: {
       type: String,

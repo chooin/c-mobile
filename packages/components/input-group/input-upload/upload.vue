@@ -10,30 +10,31 @@
     <div
       v-show="$slots.title || title"
       class="c-input-upload__title">
-      <span style="color: #f00" v-if="required">*</span>{{ title }}<slot name="title"></slot>
+      <span style="color: #f00" v-if="required">*</span>{{ title }}
+      <slot name="title"></slot>
     </div>
     <div
       v-show="amount"
       class="c-input-upload__amount">
-      {{ amount }}
+      {{ amount.current }}/{{ amount.max }}
     </div>
     <div class="c-input-upload__files">
       <slot></slot>
-      <template v-if="$slots['upload-btn']">
-        <div class="c-input-upload__btn">
-          <slot name="upload-btn"></slot>
+      <template v-if="$slots['upload-button']">
+        <div class="c-input-upload__button">
+          <slot name="upload-button"></slot>
         </div>
       </template>
       <div
         v-else
-        v-show="allowUpload"
-        class="c-input-upload__btn"
+        v-show="_allowUpload"
+        class="c-input-upload__button"
         @click="onClick">
         <input
-          v-show="showUploadInput"
-          type="file"
+          v-show="inputUpload"
           @change="onFileChange"
-          :accept="accept">
+          :accept="accept"
+          type="file">
       </div>
     </div>
   </div>
@@ -49,14 +50,14 @@ export default {
     },
     allowUpload: {
       type: Boolean,
-      default: false
+      default: null
     },
-    showUploadInput: {
+    inputUpload: {
       type: Boolean,
       default: false
     },
     amount: {
-      type: String,
+      type: Object,
       default: null
     },
     noborderTop: {
@@ -78,10 +79,23 @@ export default {
   },
   methods: {
     onClick () {
-      this.$emit('choose-image')
+      this.$emit('upload')
     },
     onFileChange (file) {
       this.$emit('change', file)
+    }
+  },
+  computed: {
+    _allowUpload () {
+      if (typeof this.allowUpload === 'boolean') return this.allowUpload
+      if (
+        this.amount &&
+        this.amount.max &&
+        this.amount.max > this.amount.current) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }

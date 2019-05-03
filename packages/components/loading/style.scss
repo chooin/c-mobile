@@ -1,3 +1,15 @@
+@keyframes c-loading {
+  0% {
+    transform: translate(-50%, -50%)
+               rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%)
+               rotate(360deg);
+  }
+}
+
+
 .c-loading {
   position: fixed;
   width: 100%;
@@ -32,7 +44,7 @@
         box-sizing: border-box;
         border-top-color: transparent;
         border-radius: 50%;
-        animation: c-mobile-loading 0.8s linear infinite;
+        animation: c-loading 0.8s linear infinite;
         z-index: 1;
       }
     }

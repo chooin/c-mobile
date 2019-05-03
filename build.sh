@@ -1,5 +1,7 @@
 #!/bin/bash
 
+nvm use 8
+
 echo "请选择需要编译的环境: (\033[35m默认 web\033[0m)"
 echo "\t \033[35m 1) \033[0m 编译 c-mobile"
 echo "\t \033[35m 2) \033[0m 编译 web，并发布"

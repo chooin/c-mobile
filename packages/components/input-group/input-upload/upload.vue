@@ -16,7 +16,7 @@
     <div
       v-show="amount"
       class="c-input-upload__amount">
-      {{ amount.current }}/{{ amount.max }}
+      {{ amount }}/{{ maxAmount }}
     </div>
     <div class="c-input-upload__files">
       <slot></slot>
@@ -57,7 +57,11 @@ export default {
       default: false
     },
     amount: {
-      type: Object,
+      type: Number,
+      default: null
+    },
+    maxAmount: {
+      type: Number,
       default: null
     },
     noborderTop: {
@@ -90,8 +94,7 @@ export default {
       if (typeof this.allowUpload === 'boolean') return this.allowUpload
       if (
         this.amount &&
-        this.amount.max &&
-        this.amount.max > this.amount.current) {
+        this.maxAmount > this.amount) {
         return true
       } else {
         return false

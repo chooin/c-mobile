@@ -172,7 +172,7 @@
       </c-input>
     </c-input-group>
 
-    <c-radio-group v-model="raidoValue" @change="onChange">
+    <c-radio-group v-model="raidoValue" @change="onEvent">
       <c-input-group :title="`品牌：${raidoValue}`">
         <c-input>
           <c-input-body>
@@ -278,9 +278,11 @@
       </c-input>
       <c-input-upload
         title="上传图片（允许删除，<input file /> 上传）"
-        amount="1/2"
-        show-upload-input
-        allow-upload>
+        :amount="{
+          current: 1,
+          max: 5
+        }"
+        input-upload>
         <c-input-upload-file src=" " />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
@@ -288,18 +290,16 @@
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
       </c-input-upload>
       <c-input-upload
-        amount="1/2"
-        allow-upload
-        :allow-delete="false">
-        <template slot="title">
-          <c-text type="danger">*</c-text>上传图片（不允许删除，事件上传）
-        </template>
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
-        <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
-        <div slot="upload-btn"></div>
+        title="上传图片（不允许删除，事件上传）"
+        @upload="onEvent('onUpload')"
+        :amount="{
+          current: 1,
+          max: 2
+        }"
+        allow-delete
+        required>
+        <c-input-upload-file @delete="onEvent('onDelete')" @click="onEvent('onClick')" src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
+        <!-- <div slot="upload-button"></div> -->
       </c-input-upload>
     </c-input-group>
   </div>
@@ -314,8 +314,8 @@ export default {
     }
   },
   methods: {
-    onChange (v) {
-      this.$Toast(v)
+    onEvent (e) {
+      this.$Toast(e)
     }
   }
 }

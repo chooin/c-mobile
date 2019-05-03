@@ -278,10 +278,8 @@
       </c-input>
       <c-input-upload
         title="上传图片（允许删除，<input file /> 上传）"
-        :amount="{
-          current: 1,
-          max: 5
-        }"
+        :amount="1"
+        :max-amount="6"
         input-upload>
         <c-input-upload-file src=" " />
         <c-input-upload-file src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />
@@ -292,10 +290,8 @@
       <c-input-upload
         title="上传图片（不允许删除，事件上传）"
         @upload="onEvent('onUpload')"
-        :amount="{
-          current: 1,
-          max: 2
-        }"
+        :amount="1"
+        :max-amount="5"
         allow-delete
         required>
         <c-input-upload-file @delete="onEvent('onDelete')" @click="onEvent('onClick')" src="//m.360buyimg.com/mobilecms/s220x220_jfs/t5869/20/124121910/48020/da8d9594/591d7582Nb8573479.jpg!q70.jpg" />

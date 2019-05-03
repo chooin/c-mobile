@@ -1,18 +1,18 @@
 <template>
   <div class="v-button">
-    <c-button type="primary" small>primary</c-button>
+    <c-button type="primary" small loading>primary</c-button>
     <c-button type="success" small>success</c-button>
     <c-button type="warning" small>warning</c-button>
     <c-button type="danger" small>danger</c-button>
     <div style="height: 1.5rem"></div>
     <c-button o small>primary</c-button>
-    <c-button type="primary" o small>primary</c-button>
+    <c-button type="primary" o small loading>primary</c-button>
     <c-button type="success" o small>success</c-button>
     <c-button type="warning" o small>warning</c-button>
     <c-button type="danger" o small>danger</c-button>
     <div style="height: 1.5rem"></div>
     <c-button>default</c-button>
-    <c-button type="primary">primary</c-button>
+    <c-button type="primary" loading>primary</c-button>
     <c-button type="success">success</c-button>
     <c-button type="warning">warning</c-button>
     <c-button type="danger">danger</c-button>
@@ -24,8 +24,8 @@
     </c-button>
     <c-button o>primary</c-button>
     <c-button type="primary" o>primary</c-button>
-    <c-button type="primary" disabled>primary disabled</c-button>
-    <c-button type="warning" disabled o>warning disabled</c-button>
+    <c-button type="primary" disabled loading>primary disabled</c-button>
+    <c-button type="warning" disabled o loading>warning disabled</c-button>
     <c-button type="danger" disabled o>danger disabled</c-button>
     <c-button type="success" disabled o>success disabled</c-button>
     <c-container

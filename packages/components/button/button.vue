@@ -10,7 +10,8 @@
       {
         'c-button__o': o,
         'c-button__disabled': disabled,
-        'c-button__small': small
+        'c-button__small': small,
+        'c-button__loading': loading
       }
     ]"
     :style="{
@@ -42,6 +43,10 @@ export default {
       default: false
     },
     small: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     },

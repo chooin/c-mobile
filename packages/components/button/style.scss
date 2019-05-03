@@ -1,5 +1,17 @@
+@keyframes c-button {
+  0% {
+    transform: translate(-50%, -50%)
+               rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%)
+               rotate(360deg);
+  }
+}
+
 .c-button,
 .c-button:hover {
+  position: relative;
   color: $text;
   background: #ccc;
   border-radius: 3px;
@@ -16,6 +28,32 @@
   -webkit-user-select: none;
   user-select: none;
   box-sizing: border-box;
+  &.c-button__loading {
+    &::before {
+      animation: c-button 500ms infinite linear;
+      border: 2px solid #fff;
+      border-radius: 100%;
+      border-top-color: transparent !important;
+      content: " ";
+      display: block;
+      height: 16px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+    }
+    .c-button__text {
+      opacity: 0;
+    }
+    &.c-button__small {
+      &::before {
+        width: 10px;
+        height: 10px;
+        border-width: 1px;
+      }
+    }
+  }
 
   .c-button__text {
     display: inline-block;
@@ -69,6 +107,11 @@
     border-radius: 3px;
     position: relative;
     background: inherit;
+    &.c-button__loading {
+      &::before {
+        border-color: #999;
+      }
+    }
     .c-button__text {
       color: $text;
     }
@@ -80,6 +123,11 @@
 
     &.c-button__primary,
     &.c-button__primary:hover {
+      &.c-button__loading {
+        &::before {
+          border-color: $primary;
+        }
+      }
       .c-button__text {
         color: $primary;
       }
@@ -90,6 +138,11 @@
 
     &.c-button__success,
     &.c-button__success:hover {
+      &.c-button__loading {
+        &::before {
+          border-color: $success;
+        }
+      }
       .c-button__text {
         color: $success;
       }
@@ -100,6 +153,11 @@
 
     &.c-button__warning,
     &.c-button__warning:hover {
+      &.c-button__loading {
+        &::before {
+          border-color: $warning;
+        }
+      }
       .c-button__text {
         color: $warning;
       }
@@ -110,6 +168,11 @@
 
     &.c-button__danger,
     &.c-button__danger:hover {
+      &.c-button__loading {
+        &::before {
+          border-color: $danger;
+        }
+      }
       .c-button__text {
         color: $danger;
       }

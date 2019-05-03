@@ -14,7 +14,7 @@
       <slot name="title"></slot>
     </div>
     <div
-      v-show="amount"
+      v-show="amount !== null"
       class="c-input-upload__amount">
       {{ amount }}/{{ maxAmount }}
     </div>
@@ -93,7 +93,7 @@ export default {
     _allowUpload () {
       if (typeof this.allowUpload === 'boolean') return this.allowUpload
       if (
-        this.amount &&
+        this.amount !== null &&
         this.maxAmount > this.amount) {
         return true
       } else {

@@ -24,8 +24,8 @@
     </c-button>
     <c-button o>primary</c-button>
     <c-button type="primary" o>primary</c-button>
-    <c-button type="primary" disabled loading>primary disabled</c-button>
-    <c-button type="warning" disabled o loading>warning disabled</c-button>
+    <c-button type="primary" loading>primary disabled</c-button>
+    <c-button type="warning" o loading>warning disabled</c-button>
     <c-button type="danger" disabled o>danger disabled</c-button>
     <c-button type="success" disabled o>success disabled</c-button>
     <c-container

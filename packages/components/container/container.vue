@@ -3,7 +3,7 @@
     ref="container"
     class="c-container"
     :class="[
-      fixed ? 'c-container__fixed-' + fixed : '',
+      fixed ? `c-container__fixed-${fixed}` : '',
       {
         'c-container__safe-area': _safeArea
       }

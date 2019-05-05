@@ -9,7 +9,7 @@
       icon ? `c-button__icon-${icon}` : '',
       {
         'c-button__o': o,
-        'c-button__disabled': disabled,
+        'c-button__disabled': _disabled,
         'c-button__small': small,
         'c-button__loading': loading
       }
@@ -73,7 +73,7 @@ export default {
   },
   methods: {
     onClick () {
-      if (this.disabled) return
+      if (this._disabled) return
       to({
         vm: this,
         to: this.to
@@ -94,6 +94,9 @@ export default {
           return false
         }
       }
+    },
+    _disabled () {
+      return this.disabled || this.loading
     }
   }
 }

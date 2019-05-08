@@ -17,7 +17,8 @@
     :style="{
       borderRadius: _borderRadius
     }"
-    @click="onClick">
+    @click="onClick"
+    hover-class="button-hover">
     <span class="c-button__text">
       <slot></slot>
     </span>

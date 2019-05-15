@@ -1,6 +1,9 @@
 <template>
   <form
     v-if="isBrowser"
+    :style="{
+      backgroundColor
+    }"
     :class="{
       'c-search__cancel-visible': _visible
     }"
@@ -14,16 +17,27 @@
       type="search"
       ref="search"
       class="c-search__input"
+      :style="{
+        backgroundColor: inputBackgroundColor
+      }"
       :placeholder="placeholder"
       v-model="_value"
       @keyup="onKeyUp"
     />
-    <i class="c-search__cancel-button" @click="onCancel">
+    <i
+      :style="{
+        backgroundColor: inputBackgroundColor
+      }"
+      class="c-search__cancel-button"
+      @click="onCancel">
       <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPgogICAgICAgIDxwYXRoIGZpbGw9IiNiYmIiIGQ9Ik0xNC4xOCAxMy4wMDhsLTMuMDA4LTMuMDA4IDMuMDA4LTMuMDA4LTEuMTcyLTEuMTcyLTMuMDA4IDMuMDA4LTMuMDA4LTMuMDA4LTEuMTcyIDEuMTcyIDMuMDA4IDMuMDA4LTMuMDA4IDMuMDA4IDEuMTcyIDEuMTcyIDMuMDA4LTMuMDA4IDMuMDA4IDMuMDA4ek0xMCAxLjY4YzQuNjA5IDAgOC4zMiAzLjcxMSA4LjMyIDguMzJzLTMuNzExIDguMzItOC4zMiA4LjMyLTguMzItMy43MTEtOC4zMi04LjMyIDMuNzExLTguMzIgOC4zMi04LjMyeiI+PC9wYXRoPgogICAgICA8L3N2Zz4=" />
     </i>
   </form>
   <div
     v-else
+    :style="{
+      backgroundColor
+    }"
     :class="{
       'c-search__cancel-visible': _visible
     }"
@@ -35,12 +49,20 @@
       type="text"
       ref="search"
       class="c-search__input"
+      :style="{
+        backgroundColor: inputBackgroundColor
+      }"
       :placeholder="placeholder"
       v-model="_value"
       :focus="_autofocus"
       @confirm="onConfirm"
     />
-    <i class="c-search__cancel-button" @click="onCancel">
+    <i
+      :style="{
+        backgroundColor: inputBackgroundColor
+      }"
+      class="c-search__cancel-button"
+      @click="onCancel">
       <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPgogICAgICAgIDxwYXRoIGZpbGw9IiNiYmIiIGQ9Ik0xNC4xOCAxMy4wMDhsLTMuMDA4LTMuMDA4IDMuMDA4LTMuMDA4LTEuMTcyLTEuMTcyLTMuMDA4IDMuMDA4LTMuMDA4LTMuMDA4LTEuMTcyIDEuMTcyIDMuMDA4IDMuMDA4LTMuMDA4IDMuMDA4IDEuMTcyIDEuMTcyIDMuMDA4LTMuMDA4IDMuMDA4IDMuMDA4ek0xMCAxLjY4YzQuNjA5IDAgOC4zMiAzLjcxMSA4LjMyIDguMzJzLTMuNzExIDguMzItOC4zMiA4LjMyLTguMzItMy43MTEtOC4zMi04LjMyIDMuNzExLTguMzIgOC4zMi04LjMyeiI+PC9wYXRoPgogICAgICA8L3N2Zz4=" />
     </i>
   </div>
@@ -72,7 +94,15 @@ export default {
     focus: {
       type: Boolean,
       default: false
-    }
+    },
+    backgroundColor: {
+      type: String,
+      default: null
+    },
+    inputBackgroundColor: {
+      type: String,
+      default: null
+    },
   },
   mounted () {
     this.isBrowser && this._autofocus && this.$refs.search.focus()

@@ -1,6 +1,6 @@
 .c-search {
   background: #ddd;
-  padding: 10px;
+  padding: 10px 15px;
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -8,9 +8,8 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10px;
+    bottom: 10px;
+    left: 15px;
     img {
       position: absolute;
       top: 50%;
@@ -42,9 +41,8 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
+    bottom: 10px;
+    right: 15px;
     background: #fff;
     border-radius: 0 3px 3px 0;
     display: none;
@@ -58,7 +56,7 @@
     }
   }
   &.c-search__cancel-visible {
-    padding: 10px 40px 10px 10px;
+    padding: 10px 45px 10px 10px;
     .c-search__input {
       border-radius: 3px 0 0 3px;
     }

@@ -12,7 +12,6 @@
 
 <script>
 import to from '../../utils/to'
-import { isBrowser } from '../../utils/device'
 
 export default {
   name: 'cInputHead',
@@ -32,11 +31,7 @@ export default {
   },
   computed: {
     labelWidth () {
-      if (isBrowser) {
-        return this.$parent.labelWidth
-      } else {
-        return '110px'
-      }
+      return this.$parent.labelWidth || '110px'
     },
     required () {
       return this.$parent.required

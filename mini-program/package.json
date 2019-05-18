@@ -15,7 +15,7 @@
   "devDependencies": {
     "@megalo/entry": "^0.1.1",
     "@megalo/px2rpx-loader": "^0.1.1",
-    "@megalo/target": "^0.6.2",
+    "@megalo/target": "^0.7.1",
     "@megalo/template-compiler": "^0.7.3",
     "babel-core": "6",
     "babel-loader": "^7.1.5",

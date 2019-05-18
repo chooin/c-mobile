@@ -1,5 +1,7 @@
 <template>
-  <div
+  <form
+    v-if="useForm"
+    @click="onClick"
     ref="container"
     class="c-container"
     :class="[
@@ -13,7 +15,25 @@
       padding,
       zIndex: _zIndex
     }"
-  >
+    report-submit>
+    <slot></slot>
+  </form>
+  <div
+    v-else
+    @click="onClick"
+    ref="container"
+    class="c-container"
+    :class="[
+      fixed ? `c-container__fixed-${fixed}` : '',
+      {
+        'c-container__safe-area': _safeArea
+      }
+    ]"
+    :style="{
+      backgroundColor,
+      padding,
+      zIndex: _zIndex
+    }">
     <slot></slot>
   </div>
 </template>
@@ -48,6 +68,10 @@ export default {
     zIndex: {
       type: Number,
       default: null
+    },
+    useForm: { // 小程序支持
+      type: Boolean,
+      default: false
     }
   },
   beforeMount () {
@@ -66,6 +90,9 @@ export default {
     this.componentRemove()
   },
   methods: {
+    onClick (e) {
+      this.$emit('click', e)
+    },
     componentInit () {
       if (
         this.fixed &&

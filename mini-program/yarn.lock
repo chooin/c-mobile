@@ -41,16 +41,17 @@
     regularjs "^0.6.0"
     vue-template-compiler "2.5.17"
 
-"@megalo/target@^0.6.2":
-  version "0.6.2"
-  resolved "http://registry.npm.taobao.org/@megalo/target/download/@megalo/target-0.6.2.tgz#eb11f55e2efd2b588da3e98c5e80973e1c1469ea"
-  integrity sha1-6xH1Xi79K1iNo+mMXoCXPhwUaeo=
+"@megalo/target@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.npmjs.org/@megalo/target/-/target-0.7.1.tgz#e7e8b4b9a4bc0f0f35969eec948e94db302e549b"
+  integrity sha512-hi+KGzqsG79uTuGY3oxbselR6NJ2GVG9OYCjb7vre08rgmHbTbBTP5MvCUiuar9MV+j48nCsN039ffbVSMTWww==
   dependencies:
     "@megalo/regular-template-compiler" "^0.3.0"
     "@megalo/template-compiler" "*"
     "@vue/component-compiler-utils" "^2.5.0"
     babel-generator "^6.26.1"
     babelon "^1.0.5"
+    chalk "^2.4.2"
     copy-webpack-plugin "^4.5.2"
     hash-sum "^1.0.2"
     js-yaml "^3.12.0"
@@ -75,7 +76,7 @@
   resolved "http://registry.npm.taobao.org/@megalo/vhtml-plugin/download/@megalo/vhtml-plugin-0.1.2.tgz#508f77d1f2ecc040b3c2c9fd7b2349be50c5fd06"
   integrity sha1-UI930fLswECzwsn9eyNJvlDF/QY=
 
-"@vue/component-compiler-utils@^2.0.0", "@vue/component-compiler-utils@^2.5.0":
+"@vue/component-compiler-utils@^2.0.0":
   version "2.5.0"
   resolved "http://registry.npm.taobao.org/@vue/component-compiler-utils/download/@vue/component-compiler-utils-2.5.0.tgz#411846d582d393f701f747517ddd29275ce64ca4"
   integrity sha1-QRhG1YLTk/cB90dRfd0pJ1zmTKQ=
@@ -89,6 +90,21 @@
     prettier "1.13.7"
     source-map "^0.7.3"
     vue-template-es2015-compiler "^1.6.0"
+
+"@vue/component-compiler-utils@^2.5.0":
+  version "2.6.0"
+  resolved "https://registry.npmjs.org/@vue/component-compiler-utils/-/component-compiler-utils-2.6.0.tgz#aa46d2a6f7647440b0b8932434d22f12371e543b"
+  integrity sha512-IHjxt7LsOFYc0DkTncB7OXJL7UzwOLPPQCfEUNyxL2qt+tF12THV+EO33O1G2Uk4feMSWua3iD39Itszx0f0bw==
+  dependencies:
+    consolidate "^0.15.1"
+    hash-sum "^1.0.2"
+    lru-cache "^4.1.2"
+    merge-source-map "^1.1.0"
+    postcss "^7.0.14"
+    postcss-selector-parser "^5.0.0"
+    prettier "1.16.3"
+    source-map "~0.6.1"
+    vue-template-es2015-compiler "^1.9.0"
 
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
@@ -4761,6 +4777,15 @@ postcss@^6.0.1, postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
+postcss@^7.0.14:
+  version "7.0.16"
+  resolved "https://registry.npmjs.org/postcss/-/postcss-7.0.16.tgz#48f64f1b4b558cb8b52c88987724359acb010da2"
+  integrity sha512-MOo8zNSlIqh22Uaa3drkdIAgUGEL+AD1ESiSdmElLUmE2uVDo1QloiT/IfW9qRw8Gw+Y/w69UVMGwbufMSftxA==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
 postcss@^7.0.2, postcss@^7.0.7:
   version "7.0.14"
   resolved "http://registry.npm.taobao.org/postcss/download/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
@@ -4774,6 +4799,11 @@ prettier@1.13.7:
   version "1.13.7"
   resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
   integrity sha1-hQ87iveEpJpuotLqp+0UKKNLcoE=
+
+prettier@1.16.3:
+  version "1.16.3"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-1.16.3.tgz#8c62168453badef702f34b45b6ee899574a6a65d"
+  integrity sha512-kn/GU6SMRYPxUakNXhpP0EedT/KmaPzr0H5lIsDogrykbaxOpOfAFfk5XA7DZrJyMAv1wlMV3CPcZruGXVVUZw==
 
 prettier@^1.13.4:
   version "1.16.1"
@@ -6149,6 +6179,11 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.8.2"
   resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.8.2.tgz#dd73e80ba58bb65dd7a8aa2aeef6089cf6116f2a"
   integrity sha1-3XPoC6WLtl3XqKoq7vYInPYRbyo=
+
+vue-template-es2015-compiler@^1.9.0:
+  version "1.9.1"
+  resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
+  integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
 watchpack@^1.5.0:
   version "1.6.0"

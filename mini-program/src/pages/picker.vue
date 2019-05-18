@@ -13,6 +13,12 @@
           <c-text placeholder="请选择性别">{{ sex && sex.id ? sex.name : null }}</c-text>
         </c-input-body>
       </c-input>
+      <c-input addon next @click="visible.date = true">
+        <c-input-head>性别</c-input-head>
+        <c-input-body>
+          <c-text placeholder="日期"></c-text>
+        </c-input-body>
+      </c-input>
     </c-input-group>
     <c-picker-region
       v-model="visible.pickerRegion"
@@ -30,6 +36,12 @@
       @change="pickerChange"
       required>
     </c-picker>
+    <c-picker-date
+      v-model="visible.date"
+      :date="date"
+      begin="2018-09-09"
+      end="2020-10-10"
+      @change="pickerDateChange" />
   </div>
 </template>
 
@@ -41,6 +53,7 @@ import cInputBody from '../../../packages/components/input-group/input-body.vue'
 import cText from '../../../packages/components/text/text.vue'
 import cPicker from '../../../packages/components/picker/picker.vue'
 import cPickerRegion from '../../../packages/components/picker/picker-region.vue'
+import cPickerDate from '../../../packages/components/picker/picker-date.vue'
 
 export default {
   data () {
@@ -71,9 +84,11 @@ export default {
           name: '女滴'
         }
       ],
+      date: null,
       visible: {
         pickerRegion: false,
-        picker: false
+        picker: false,
+        date: false
       }
     }
   },
@@ -84,7 +99,8 @@ export default {
     cInputBody,
     cText,
     cPicker,
-    cPickerRegion
+    cPickerRegion,
+    cPickerDate
   },
   methods: {
     pickerRegionChange (e) {
@@ -96,6 +112,9 @@ export default {
     },
     pickerChange (e) {
       this.sex = e
+    },
+    pickerDateChange (e) {
+      this.date = e
     }
   }
 }

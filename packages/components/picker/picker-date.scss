@@ -1,0 +1,94 @@
+.c-picker-date {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  z-index: 1050;
+  .c-picker-date__content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    transition: all 400ms ease;
+    transform: translateY(100%);
+    .c-picker-date__action {
+      height: 40px;
+      position: relative;
+      background: #fff;
+      .c-picker-date__cancel {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+        font-size: 15px;
+        color: $text-light;
+      }
+      .c-picker-date__done {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+        font-size: 15px;
+        font-weight: 600;
+        color: $primary;
+      }
+      &::after {
+        @include borderLine('bottom');
+      }
+    }
+    picker-view {
+      background: #fcfcfc;
+      display: flex;
+      height: 200px;
+      picker-view-column {
+        flex: 1;
+        height: 200px;
+        width: 33.3333333vw;
+        div {
+          line-height: 38px;
+          width: 100%;
+          text-align: center;
+          font-size: 14px;
+          &.placeholder {
+            color: $text-placeholder;
+          }
+        }
+      }
+    }
+  }
+  .indicator-style {
+    height: 38px;
+  }
+  &.c-picker-date__is-iphonex {
+    .c-picker-date__content {
+      border-bottom: #f0f0f0 34px solid;
+    }
+  }
+  &.c-picker-date__visible {
+    visibility: visible;
+    .c-picker-date__content {
+      transform: translateY(0);
+    }
+    .c-picker-date__cover {
+      opacity: .75;
+    }
+  }
+  .c-picker-date__cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    transition: all 300ms;
+    background: #282828;
+    opacity: 0;
+  }
+}

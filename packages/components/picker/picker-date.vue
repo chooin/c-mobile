@@ -35,27 +35,6 @@
             {{ item }}日
           </div>
         </picker-view-column>
-        <!-- <picker-view-column>
-          <div
-            v-for="(item, index) in hours"
-            :key="index">
-            {{ item }}时
-          </div>
-        </picker-view-column>
-        <picker-view-column>
-          <div
-            v-for="(item, index) in minutes"
-            :key="index">
-            {{ item }}分
-          </div>
-        </picker-view-column> -->
-        <!-- <picker-view-column>
-          <div
-            v-for="(item, index) in seconds"
-            :key="index">
-            {{ item }}秒
-          </div>
-        </picker-view-column> -->
       </picker-view>
     </div>
     <i class="c-picker-date__cover" @touchstart="onCancel"></i>
@@ -132,6 +111,7 @@ export default {
       }
       if (e.detail.value[0] !== this.indexs[0]) {
         this.setMonths(e.detail.value)
+        this.setDays(e.detail.value)
         this.indexs = [
           e.detail.value[0],
           0,
@@ -140,7 +120,11 @@ export default {
         return
       }
     },
-    setMinMax (date) {
+    onCancel () {
+      this._value = false
+      this.isUpdated = true
+    },
+    getMinMax (date) {
       let minYear = this.begin
         ? this.getYear(this.begin)
         : 1970
@@ -184,7 +168,7 @@ export default {
       let {
         minYear,
         maxYear
-      } = this.setMinMax()
+      } = this.getMinMax()
       let years = []
       for (let i = minYear; i <= maxYear; i++) {
         years.push(i)
@@ -192,12 +176,11 @@ export default {
       this.years = years
     },
     setMonths (indexs) {
-      console.log('set-months')
       let date = this.getDate(indexs)
       let {
         minMonth,
         maxMonth
-      } = this.setMinMax(date)
+      } = this.getMinMax(date)
       let months = []
       for (let i = minMonth; i <= maxMonth; i++) {
         months.push(i)
@@ -205,14 +188,11 @@ export default {
       this.months = months
     },
     setDays (indexs) {
-      console.log('set-days')
       let date = this.getDate(indexs)
-      console.log(date)
-      console.log(indexs)
       let {
         minDay,
         maxDay
-      } = this.setMinMax(date)
+      } = this.getMinMax(date)
       let days = []
       for (let i = minDay; i <= maxDay; i++) {
         days.push(i)
@@ -240,10 +220,10 @@ export default {
         ? this.years[indexs[0]]
         : null
       let month = indexs && typeof indexs[1] === 'number'
-        ? this.months[indexs[1]]
+        ? (this.months[indexs[1]] < 10 ? `0${this.months[indexs[1]]}` : this.months[indexs[1]])
         : null
       let day = indexs && typeof indexs[2] === 'number'
-        ? this.days[indexs[2]]
+        ? (this.days[indexs[2]] < 10 ? `0${this.days[indexs[2]]}` : this.days[indexs[2]])
         : null
       if (year && month && day) {
         return `${year}-${month}-${day}`

@@ -16,7 +16,7 @@
       <c-input addon next @click="visible.date = true">
         <c-input-head>性别</c-input-head>
         <c-input-body>
-          <c-text placeholder="日期"></c-text>
+          <c-text placeholder="日期">{{ date }}</c-text>
         </c-input-body>
       </c-input>
     </c-input-group>

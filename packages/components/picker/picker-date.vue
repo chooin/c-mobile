@@ -25,14 +25,14 @@
           <div
             v-for="(item, index) in months"
             :key="index">
-            {{ item }}月
+            {{ item | formatMMDD }}月
           </div>
         </picker-view-column>
         <picker-view-column>
           <div
             v-for="(item, index) in days"
             :key="index">
-            {{ item }}日
+            {{ item | formatMMDD }}日
           </div>
         </picker-view-column>
       </picker-view>
@@ -52,10 +52,7 @@ export default {
       indexs: [],
       years: [],
       months: [],
-      days: [],
-      hours: [],
-      minutes: [],
-      seconds: []
+      days: []
     }
   },
   props: {
@@ -86,150 +83,258 @@ export default {
   },
   methods: {
     initData () {
-      let indexs = this.getIndexs(this.date)
-      this.setYears()
-      this.setMonths()
-      this.setDays()
+      let y
+      let m
+      let d
+      if (this.date) {
+        [
+          y,
+          m,
+          d
+        ] = this.date.split('-')
+      }
+
+      this.years = this.getYears()
+      let yIndex = this.getIndex({ item: y, items: this.years })
+      let year = this.years[yIndex]
+
+      this.months = this.getMonths({
+        year
+      })
+      let mIndex = this.getIndex({ item: m, items: this.months })
+      let month = this.months[mIndex]
+
+      this.days = this.getDays({
+        year,
+        month
+      })
+      let dIndex = this.getIndex({ item: d, items: this.days })
+      let day = this.days[dIndex]
+
+      let indexs = [
+        yIndex,
+        mIndex,
+        dIndex
+      ]
 
       setTimeout(() => {
         this.indexs = indexs
       }, 100)
     },
+    getIndex ({
+      item,
+      items
+    }) {
+      if (
+        item &&
+        items &&
+        Array.isArray(items)
+      ) {
+        item = parseInt(item)
+        return items.findIndex(v => v === item) === -1
+          ? 0
+          : items.findIndex(v => v === item)
+      }
+      return 0
+    },
     onChange (e) {
       if (e.detail.value[2] !== this.indexs[2]) {
-        this.indexs = e.detail.value
+        setTimeout(() => {
+          this.indexs = e.detail.value
+        }, 100)
         return
       }
       if (e.detail.value[1] !== this.indexs[1]) {
-        this.setDays(e.detail.value)
-        this.indexs = [
-          e.detail.value[0],
-          e.detail.value[1],
-          0
+        let [
+          yIndex,
+          mIndex,
+          dIndex
+        ] = e.detail.value
+        let [
+          oYIndex,
+          oMIndex,
+          oDIndex
+        ] = this.indexs
+
+        let year = this.years[yIndex]
+        let month = this.months[mIndex]
+        let oDay = this.days[oDIndex]
+        this.days = this.getDays({
+          year,
+          month
+        })
+        dIndex = this.getIndex({ item: oDay, items: this.days })
+
+        let indexs = [
+          yIndex,
+          mIndex,
+          dIndex
         ]
+
+        setTimeout(() => {
+          this.indexs = indexs
+        }, 100)
         return
       }
       if (e.detail.value[0] !== this.indexs[0]) {
-        this.setMonths(e.detail.value)
-        this.setDays(e.detail.value)
-        this.indexs = [
-          e.detail.value[0],
-          0,
-          0
+        let [
+          yIndex,
+          mIndex,
+          dIndex
+        ] = e.detail.value
+        let [
+          oYIndex,
+          oMIndex,
+          oDIndex
+        ] = this.indexs
+
+        let year = this.years[yIndex]
+        let oMonth = this.months[oMIndex]
+        let oDay = this.days[oDIndex]
+        this.months = this.getMonths({
+          year
+        })
+        mIndex = this.getIndex({ item: oMonth, items: this.months })
+        let month = this.months[mIndex]
+        this.days = this.getDays({
+          year,
+          month
+        })
+        dIndex = this.getIndex({ item: oDay, items: this.days })
+
+        let indexs = [
+          yIndex,
+          mIndex,
+          dIndex
         ]
+
+        setTimeout(() => {
+          this.indexs = indexs
+        }, 100)
         return
       }
+    },
+    onDone () {
+      let [
+        yIndex,
+        mIndex,
+        dIndex
+      ] = this.indexs
+      this.$emit('change', `${this.years[yIndex]}-${this.plusZero(this.months[mIndex])}-${this.plusZero(this.days[dIndex])}`)
+      this._value = false
+      this.isUpdated = true
     },
     onCancel () {
       this._value = false
       this.isUpdated = true
     },
-    getMinMax (date) {
-      let minYear = this.begin
-        ? this.getYear(this.begin)
-        : 1970
-      let maxYear = this.end
-        ? this.getYear(this.end)
-        : 2100
-      let currentYear = date
-        ? this.getYear(date)
-        : minYear
-      let minMonth = this.begin && currentYear === minYear
-        ? this.getMonth(this.begin)
-        : 1
-      let maxMonth = this.end && currentYear === maxYear
-        ? this.getMonth(this.end)
-        : 12
-      let currentMonth = date
-        ? this.getMonth(date)
-        : minMonth
-      let minDay = this.begin && currentYear === minYear && currentMonth === minMonth
-        ? this.getDay(this.begin)
-        : 1
-      let maxDay = this.begin && currentYear === maxYear && currentMonth === maxMonth
-        ? this.getDay(this.begin)
-        : new Date(currentYear, currentMonth, 0).getDate()
-      let currentDay = date
-        ? this.getDay(date)
-        : minDay
-      return {
-        minYear,
-        maxYear,
-        currentYear,
-        minMonth,
-        maxMonth,
-        currentMonth,
-        minDay,
-        maxDay,
-        currentDay
+    getYears () { // 获取有多少个年
+      let minYear = 1970
+      let maxYear = 2100
+
+      if (this.begin) {
+        let [
+          y
+        ] = this.begin.split('-')
+        minYear = parseInt(y, 10)
       }
-    },
-    setYears () {
-      let {
-        minYear,
-        maxYear
-      } = this.getMinMax()
+      if (this.end) {
+        let [
+          y
+        ] = this.end.split('-')
+        maxYear = parseInt(y, 10)
+      }
+
       let years = []
       for (let i = minYear; i <= maxYear; i++) {
         years.push(i)
       }
-      this.years = years
+      return years
     },
-    setMonths (indexs) {
-      let date = this.getDate(indexs)
-      let {
-        minMonth,
-        maxMonth
-      } = this.getMinMax(date)
+    getMonths ({
+      year
+    }) { // 获取当前年下有多少个月
+      let beginTime = null
+      if (this.begin) {
+        let [
+          y,
+          m
+        ] = this.begin.split('-')
+        beginTime = Date.parse(`${y}-${this.plusZero(m)}-01`)
+      }
+      let endTime = null
+      if (this.end) {
+        let [
+          y,
+          m
+        ] = this.end.split('-')
+        endTime = Date.parse(`${y}-${this.plusZero(m)}-01`)
+      }
       let months = []
-      for (let i = minMonth; i <= maxMonth; i++) {
-        months.push(i)
+      for (let i = 1; i <= 12; i++) {
+        let currentTime = Date.parse(`${year}-${this.plusZero(i)}-01`)
+        if (beginTime && endTime) {
+          if (
+            beginTime <= currentTime &&
+            endTime >= currentTime
+          ) {
+            months.push(i)
+          }
+        } else if (beginTime && !endTime) {
+          if (beginTime <= currentTime) {
+            months.push(i)
+          }
+        } else if (!beginTime && endTime) {
+          if (endTime >= currentTime) {
+            months.push(i)
+          }
+        } else {
+          months.push(i)
+        }
       }
-      this.months = months
+      return months
     },
-    setDays (indexs) {
-      let date = this.getDate(indexs)
-      let {
-        minDay,
-        maxDay
-      } = this.getMinMax(date)
+    getDays ({
+      year,
+      month
+    }) { // 获取当前年月下有多少个天
+      let beginTime = null
+      if (this.begin) {
+        beginTime = Date.parse(this.begin)
+      }
+      let endTime = null
+      if (this.end) {
+        endTime = Date.parse(this.end)
+      }
       let days = []
-      for (let i = minDay; i <= maxDay; i++) {
-        days.push(i)
+      for (let i = 1; i <= 31; i++) {
+        let currentTime = Date.parse(`${year}-${this.plusZero(month)}-${this.plusZero(i)}`)
+        if (beginTime && endTime) {
+          if (
+            beginTime <= currentTime &&
+            endTime >= currentTime
+          ) {
+            days.push(i)
+          }
+        } else if (beginTime && !endTime) {
+          if (beginTime <= currentTime) {
+            days.push(i)
+          }
+        } else if (!beginTime && endTime) {
+          if (endTime >= currentTime) {
+            days.push(i)
+          }
+        } else {
+          days.push(i)
+        }
       }
-      this.days = days
+      return days
     },
-    getYear (date) {
-      return new Date(date).getFullYear()
-    },
-    getMonth (date) {
-      return new Date(date).getMonth() + 1
-    },
-    getDay (date) {
-      return new Date(date).getDate()
-    },
-    getIndexs (date) {
-      if (date === null || typeof date === 'undefined') {
-        return [0, 0, 0]
-      } else {
-
-      }
-    },
-    getDate (indexs) {
-      let year = indexs && typeof indexs[0] === 'number'
-        ? this.years[indexs[0]]
-        : null
-      let month = indexs && typeof indexs[1] === 'number'
-        ? (this.months[indexs[1]] < 10 ? `0${this.months[indexs[1]]}` : this.months[indexs[1]])
-        : null
-      let day = indexs && typeof indexs[2] === 'number'
-        ? (this.days[indexs[2]] < 10 ? `0${this.days[indexs[2]]}` : this.days[indexs[2]])
-        : null
-      if (year && month && day) {
-        return `${year}-${month}-${day}`
-      } else {
-        return null
-      }
+    plusZero (n) {
+      n = parseInt(n)
+      return n < 10
+        ? `0${n}`
+        : String(n)
     }
   },
   computed: {
@@ -247,6 +352,14 @@ export default {
       set (v) {
         this.$emit('input', v)
       }
+    }
+  },
+  filters: {
+    formatMMDD: (n) => {
+      n = parseInt(n)
+      return n < 10
+        ? `0${n}`
+        : String(n)
     }
   }
 }

@@ -61,6 +61,8 @@ export default {
   },
   methods: {
     initData () {
+      this.isUpdated = false
+
       let indexs = this.getIndexs(this.id)
 
       setTimeout(() => {
@@ -129,7 +131,6 @@ export default {
           this.isUpdated
         ) {
           this.initData()
-          this.isUpdated = false
         }
         return this.value
       },

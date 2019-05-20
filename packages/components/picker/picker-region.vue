@@ -93,6 +93,8 @@ export default {
   },
   methods: {
     initData () {
+      this.isUpdated = false
+
       let indexs = this.getIndexs(this.ids)
 
       this.setProvices(indexs)
@@ -299,7 +301,6 @@ export default {
           this.isUpdated
         ) {
           this.initData()
-          this.isUpdated = false
         }
         return this.value
       },

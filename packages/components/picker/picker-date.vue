@@ -83,6 +83,8 @@ export default {
   },
   methods: {
     initData () {
+      this.isUpdated = false
+
       let y
       let m
       let d
@@ -109,7 +111,6 @@ export default {
         month
       })
       let dIndex = this.getIndex({ item: d, items: this.days })
-      let day = this.days[dIndex]
 
       let indexs = [
         yIndex,
@@ -151,8 +152,8 @@ export default {
           dIndex
         ] = e.detail.value
         let [
-          oYIndex,
-          oMIndex,
+          ,
+          ,
           oDIndex
         ] = this.indexs
 
@@ -183,7 +184,7 @@ export default {
           dIndex
         ] = e.detail.value
         let [
-          oYIndex,
+          ,
           oMIndex,
           oDIndex
         ] = this.indexs
@@ -345,7 +346,6 @@ export default {
           this.isUpdated
         ) {
           this.initData()
-          this.isUpdated = false
         }
         return this.value
       },

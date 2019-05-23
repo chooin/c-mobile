@@ -15,7 +15,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.5",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
-    "@vue/cli-service": "^3.0.0-rc.5",
+    "@vue/cli-service": "^3.7.0",
     "cross-env": "^5.2.0",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",

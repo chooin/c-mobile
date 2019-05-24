@@ -120,7 +120,7 @@ export default {
 
       setTimeout(() => {
         this.indexs = indexs
-      }, 100)
+      }, 200)
     },
     getIndex ({
       item,
@@ -142,7 +142,7 @@ export default {
       if (e.detail.value[2] !== this.indexs[2]) {
         setTimeout(() => {
           this.indexs = e.detail.value
-        }, 100)
+        }, 200)
         return
       }
       if (e.detail.value[1] !== this.indexs[1]) {
@@ -174,7 +174,7 @@ export default {
 
         setTimeout(() => {
           this.indexs = indexs
-        }, 100)
+        }, 200)
         return
       }
       if (e.detail.value[0] !== this.indexs[0]) {
@@ -211,7 +211,7 @@ export default {
 
         setTimeout(() => {
           this.indexs = indexs
-        }, 100)
+        }, 200)
         return
       }
     },

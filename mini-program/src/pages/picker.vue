@@ -39,8 +39,7 @@
     <c-picker-date
       v-model="visible.date"
       :date="date"
-      begin="2018-08-26"
-      end="2020-05-26"
+      end="2090-05-26"
       @change="pickerDateChange" />
   </div>
 </template>

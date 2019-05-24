@@ -64,7 +64,11 @@ export default {
       type: String,
       default: null
     },
-    begin: {
+    begin: { // 即将废弃
+      type: String,
+      default: null
+    },
+    start: {
       type: String,
       default: null
     },
@@ -156,17 +160,21 @@ export default {
         let year = this.years[yIndex]
         let month = this.months[mIndex]
         let oDay = this.days[oDIndex]
-        this.days = this.getDays({
+        let days = this.getDays({
           year,
           month
         })
-        dIndex = this.getIndex({ item: oDay, items: this.days })
-
-        this.indexs = [ // 修复 picker 无法定位到指定位置
-          yIndex,
-          mIndex,
-          0
-        ]
+        dIndex = this.getIndex({ item: oDay, items: days })
+        if (days.toString() !== this.days.toString()) {
+          this.days = days
+        }
+        if (dIndex !== oDIndex) {
+          this.indexs = [ // 修复 picker 中 div 个数不够导致无法定位的问题
+            yIndex,
+            mIndex,
+            0
+          ]
+        }
 
         setTimeout(() => {
           this.indexs = [
@@ -192,22 +200,33 @@ export default {
         let year = this.years[yIndex]
         let oMonth = this.months[oMIndex]
         let oDay = this.days[oDIndex]
-        this.months = this.getMonths({
+        let months = this.getMonths({
           year
         })
-        mIndex = this.getIndex({ item: oMonth, items: this.months })
-        let month = this.months[mIndex]
-        this.days = this.getDays({
+        mIndex = this.getIndex({ item: oMonth, items: months })
+        let month = months[mIndex]
+        let days = this.getDays({
           year,
           month
         })
-        dIndex = this.getIndex({ item: oDay, items: this.days })
+        dIndex = this.getIndex({ item: oDay, items: days })
 
-        this.indexs = [ // 修复 picker 无法定位到指定位置
-          yIndex,
-          0,
-          0
-        ]
+        if (months.toString() !== this.months.toString()) {
+          this.months = months
+        }
+        if (days.toString() !== this.days.toString()) {
+          this.days = days
+        }
+        if (
+          mIndex !== oMIndex ||
+          dIndex !== oDIndex
+        ) {
+          this.indexs = [ // 修复 picker 中 div 个数不够导致无法定位的问题
+            yIndex,
+            0,
+            0
+          ]
+        }
 
         setTimeout(() => {
           this.indexs = [
@@ -237,16 +256,16 @@ export default {
       let minYear = 1970
       let maxYear = 2100
 
-      if (this.begin) {
+      if (this._start) {
         let [
           y
-        ] = this.begin.split('-')
+        ] = this._start.split('-')
         minYear = parseInt(y, 10)
       }
-      if (this.end) {
+      if (this._end) {
         let [
           y
-        ] = this.end.split('-')
+        ] = this._end.split('-')
         maxYear = parseInt(y, 10)
       }
 
@@ -260,19 +279,19 @@ export default {
       year
     }) { // 获取当前年下有多少个月
       let beginTime = null
-      if (this.begin) {
+      if (this._start) {
         let [
           y,
           m
-        ] = this.begin.split('-')
+        ] = this._start.split('-')
         beginTime = Date.parse(`${y}-${this.plusZero(m)}-01`)
       }
       let endTime = null
-      if (this.end) {
+      if (this._end) {
         let [
           y,
           m
-        ] = this.end.split('-')
+        ] = this._end.split('-')
         endTime = Date.parse(`${y}-${this.plusZero(m)}-01`)
       }
       let months = []
@@ -304,12 +323,12 @@ export default {
       month
     }) { // 获取当前年月下有多少个天
       let beginTime = null
-      if (this.begin) {
-        beginTime = Date.parse(this.begin)
+      if (this._start) {
+        beginTime = Date.parse(this._start)
       }
       let endTime = null
-      if (this.end) {
-        endTime = Date.parse(this.end)
+      if (this._end) {
+        endTime = Date.parse(this._end)
       }
       let days = []
       for (let i = 1; i <= 31; i++) {
@@ -356,6 +375,18 @@ export default {
       set (v) {
         this.$emit('input', v)
       }
+    },
+    _start () { // 时间格式错误返回空
+      let start = this.start || this.begin
+      return /^\d{4}-((0[1-9])|(1[0-2]))-((0[1-9])|([12]\d)|(3[01]))$/.test(start)
+        ? start
+        : null
+    },
+    _end () { // 时间格式错误返回空
+      let end = this.end
+      return /^\d{4}-((0[1-9])|(1[0-2]))-((0[1-9])|([12]\d)|(3[01]))$/.test(end)
+        ? end
+        : null
     }
   },
   filters: {

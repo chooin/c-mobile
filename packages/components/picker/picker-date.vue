@@ -118,9 +118,7 @@ export default {
         dIndex
       ]
 
-      setTimeout(() => {
-        this.indexs = indexs
-      }, 200)
+      this.indexs = indexs
     },
     getIndex ({
       item,
@@ -140,9 +138,7 @@ export default {
     },
     onChange (e) {
       if (e.detail.value[2] !== this.indexs[2]) {
-        setTimeout(() => {
-          this.indexs = e.detail.value
-        }, 200)
+        this.indexs = e.detail.value
         return
       }
       if (e.detail.value[1] !== this.indexs[1]) {
@@ -171,10 +167,15 @@ export default {
           mIndex,
           dIndex
         ]
+        this.indexs = [ // 修复 picker 无法定位到指定位置
+          yIndex,
+          mIndex,
+          0
+        ]
 
         setTimeout(() => {
           this.indexs = indexs
-        }, 200)
+        })
         return
       }
       if (e.detail.value[0] !== this.indexs[0]) {
@@ -208,10 +209,15 @@ export default {
           mIndex,
           dIndex
         ]
+        this.indexs = [ // 修复 picker 无法定位到指定位置
+          yIndex,
+          0,
+          0
+        ]
 
         setTimeout(() => {
           this.indexs = indexs
-        }, 200)
+        })
         return
       }
     },

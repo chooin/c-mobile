@@ -112,13 +112,13 @@ export default {
       })
       let dIndex = this.getIndex({ item: d, items: this.days })
 
-      let indexs = [
-        yIndex,
-        mIndex,
-        dIndex
-      ]
-
-      this.indexs = indexs
+      setTimeout(() => {
+        this.indexs = [
+          yIndex,
+          mIndex,
+          dIndex
+        ]
+      })
     },
     getIndex ({
       item,
@@ -162,11 +162,6 @@ export default {
         })
         dIndex = this.getIndex({ item: oDay, items: this.days })
 
-        let indexs = [
-          yIndex,
-          mIndex,
-          dIndex
-        ]
         this.indexs = [ // 修复 picker 无法定位到指定位置
           yIndex,
           mIndex,
@@ -174,7 +169,11 @@ export default {
         ]
 
         setTimeout(() => {
-          this.indexs = indexs
+          this.indexs = [
+            yIndex,
+            mIndex,
+            dIndex
+          ]
         })
         return
       }
@@ -204,11 +203,6 @@ export default {
         })
         dIndex = this.getIndex({ item: oDay, items: this.days })
 
-        let indexs = [
-          yIndex,
-          mIndex,
-          dIndex
-        ]
         this.indexs = [ // 修复 picker 无法定位到指定位置
           yIndex,
           0,
@@ -216,7 +210,11 @@ export default {
         ]
 
         setTimeout(() => {
-          this.indexs = indexs
+          this.indexs = [
+            yIndex,
+            mIndex,
+            dIndex
+          ]
         })
         return
       }

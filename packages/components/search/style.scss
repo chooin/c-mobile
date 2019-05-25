@@ -4,64 +4,70 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  .c-search__icon-search {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 10px;
-    left: 15px;
-    img {
+  .c-search__cell {
+    position: relative;
+    .c-search__icon-search {
+      width: 30px;
+      height: 30px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
+      bottom: 0;
+      left: 0;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+      }
     }
-  }
-  .c-search__input {
-    background: #fff;
-    border: none;
-    height: 30px;
-    line-height: 16px;
-    font-size: 14px;
-    width: 100%;
-    border-radius: 3px;
-    padding: 7px 10px 7px 32px;
-    -webkit-appearance: none;
-    box-sizing: border-box;
-    &::-webkit-input-placeholder {
-      color: $text-light;
+    .c-search__input {
+      background: #fff;
+      border: none;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      width: 100%;
+      border-radius: 3px;
+      padding: 0 10px 0 32px;
+      -webkit-appearance: none;
+      box-sizing: border-box;
+      &::-webkit-input-placeholder {
+        color: $text-light;
+      }
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
     }
-    &::-webkit-search-cancel-button {
+    .c-search__cancel-button {
+      width: 45px;
+      height: 30px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 0 3px 3px 0;
       display: none;
-    }
-  }
-  .c-search__cancel-button {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    background: #fff;
-    border-radius: 0 3px 3px 0;
-    display: none;
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+      }
     }
   }
   &.c-search__cancel-visible {
-    padding: 10px 45px 10px 15px;
-    .c-search__input {
-      border-radius: 3px 0 0 3px;
-    }
-    .c-search__cancel-button {
-      display: block;
+    .c-search__cell {
+      padding: 0 45px 0 0;
+      .c-search__input {
+        border-radius: 3px 0 0 3px;
+      }
+      .c-search__cancel-button {
+        display: block;
+      }
     }
   }
 }

@@ -7,16 +7,20 @@
     :class="[
       fixed ? `c-container__fixed-${fixed}` : '',
       {
-        'c-container__safe-area': _safeArea
+        'c-container__safe-area': _safeArea,
+        'c-container__back': back
       }
     ]"
     :style="{
       backgroundColor,
       padding,
-      zIndex: _zIndex
+      zIndex: _zIndex,
+      paddingTop,
+      paddingRight
     }"
     report-submit>
     <slot></slot>
+    <i class="c-container__icon-back" @click="onBack"></i>
   </form>
   <div
     v-else
@@ -26,26 +30,32 @@
     :class="[
       fixed ? `c-container__fixed-${fixed}` : '',
       {
-        'c-container__safe-area': _safeArea
+        'c-container__safe-area': _safeArea,
+        'c-container__back': back
       }
     ]"
     :style="{
       backgroundColor,
       padding,
-      zIndex: _zIndex
+      zIndex: _zIndex,
+      paddingTop,
+      paddingRight
     }">
     <slot></slot>
+    <i class="c-container__icon-back" @click="onBack"></i>
   </div>
 </template>
 
 <script>
-import { isBrowser } from '../../utils'
+import { isBrowser, isMiniProgram, to } from '../../utils'
 
 export default {
   name: 'cContainer',
   data () {
     return {
-      element: null
+      element: null,
+      paddingTop: null,
+      paddingRight: null
     }
   },
   props: {
@@ -70,6 +80,10 @@ export default {
       default: null
     },
     useForm: { // 小程序支持
+      type: Boolean,
+      default: false
+    },
+    back: {
       type: Boolean,
       default: false
     }
@@ -139,6 +153,21 @@ export default {
           }
         }
       }
+      if (
+        this.fixed &&
+        isMiniProgram
+      ) {
+        if (this.fixed === 'top') {
+            /* eslint-disable */
+            Megalo.getSystemInfo().then(getSystemInfo => {
+              let menuButton = Megalo.getMenuButtonBoundingClientRect()
+
+              this.paddingTop = `${getSystemInfo.statusBarHeight}px`
+              this.paddingRight = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
+            })
+            /* eslint-disable */
+        }
+      }
     },
     componentRemove () {
       if (
@@ -147,6 +176,12 @@ export default {
       ) {
         this.element && this.element.remove()
       }
+    },
+    onBack () {
+      to({
+        vm: this,
+        to: -1
+      })
     }
   },
   computed: {

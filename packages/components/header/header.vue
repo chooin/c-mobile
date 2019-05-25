@@ -98,7 +98,10 @@ export default {
       } else if (typeof this._left.click === 'function') {
         this._left.click()
       } else if (this._left.back) {
-        this.$router.go(-1)
+        to({
+          vm: this,
+          to: -1
+        })
       }
     },
     onRight () {

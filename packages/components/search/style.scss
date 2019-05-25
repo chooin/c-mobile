@@ -25,11 +25,11 @@
       background: #fff;
       border: none;
       height: 30px;
-      line-height: 30px;
+      line-height: 16px;
       font-size: 14px;
       width: 100%;
       border-radius: 3px;
-      padding: 0 10px 0 32px;
+      padding: 7px 10px 7px 32px;
       -webkit-appearance: none;
       box-sizing: border-box;
       text-align: left;
@@ -40,7 +40,7 @@
         display: none;
       }
     }
-    .c-search__cancel-button {
+    .c-search__icon-cancel {
       width: 45px;
       height: 30px;
       position: absolute;
@@ -66,7 +66,7 @@
       .c-search__input {
         border-radius: 3px 0 0 3px;
       }
-      .c-search__cancel-button {
+      .c-search__icon-cancel {
         display: block;
       }
     }

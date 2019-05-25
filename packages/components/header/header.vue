@@ -144,7 +144,7 @@ export default {
   mounted () {
     if (this.autoTitle) {
       this.$nextTick(() => {
-        this.defaultTitle = document.title
+        this.defaultTitle = document && document.title
       })
     }
   }

@@ -540,10 +540,6 @@ export default {
       year,
       month
     }) { // 获取当前年月下有多少个天
-      console.log(
-        type,
-        year,
-        month)
       let start = type === 'l' ? this._lStart : this._rStart
       let end = type === 'l' ? this._lEnd : this._rEnd
       let beginTime = null

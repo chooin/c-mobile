@@ -7,7 +7,8 @@
     }">
     <div class="c-picker-region__content">
       <div class="c-picker-region__action">
-        <div class="c-picker-region__cancel" @click="onCancel">取消</div>
+        <div v-if="placeholder" class="c-picker-region__placeholder">{{ placeholder }}</div>
+        <div v-else class="c-picker-region__cancel" @click="onCancel">取消</div>
         <div class="c-picker-region__done" @click="onDone">完成</div>
       </div>
       <picker-view
@@ -89,6 +90,10 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    placeholder: {
+      type: String,
+      default: null
     }
   },
   methods: {

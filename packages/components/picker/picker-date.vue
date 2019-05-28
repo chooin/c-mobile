@@ -7,7 +7,8 @@
     }">
     <div class="c-picker-date__content">
       <div class="c-picker-date__action">
-        <div class="c-picker-date__cancel" @click="onCancel">取消</div>
+        <div v-if="placeholder" class="c-picker-date__placeholder">{{ placeholder }}</div>
+        <div v-else class="c-picker-date__cancel" @click="onCancel">取消</div>
         <div class="c-picker-date__done" @click="onDone">完成</div>
       </div>
       <picker-view
@@ -83,6 +84,10 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    placeholder: {
+      type: String,
+      default: null
     }
   },
   methods: {
@@ -331,7 +336,7 @@ export default {
         endTime = Date.parse(this._end)
       }
       let days = []
-      for (let i = 1; i <= 31; i++) {
+      for (let i = 1; i <= new Date(year, month, 0).getDate(); i++) {
         let currentTime = Date.parse(`${year}-${this.plusZero(month)}-${this.plusZero(i)}`)
         if (beginTime && endTime) {
           if (

@@ -1,4 +1,4 @@
-.c-picker-region {
+.c-picker-daterange {
   position: fixed;
   left: 0;
   top: 0;
@@ -6,7 +6,7 @@
   height: 100vh;
   visibility: hidden;
   z-index: 1050;
-  .c-picker-region__content {
+  .c-picker-daterange__content {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -14,12 +14,12 @@
     z-index: 2;
     transition: all 400ms ease;
     transform: translateY(100%);
-    .c-picker-region__action {
+    .c-picker-daterange__action {
       height: 40px;
       position: relative;
       background: #fff;
-      .c-picker-region__cancel,
-      .c-picker-region__placeholder {
+      .c-picker-daterange__cancel,
+      .c-picker-daterange__placeholder {
         position: absolute;
         left: 0;
         top: 0;
@@ -29,10 +29,10 @@
         font-size: 15px;
         color: $text-light;
       }
-      .c-picker-region__placeholder {
+      .c-picker-daterange__placeholder {
         color: $text-placeholder;
       }
-      .c-picker-region__done {
+      .c-picker-daterange__done {
         position: absolute;
         right: 0;
         top: 0;
@@ -51,10 +51,11 @@
       background: #fcfcfc;
       display: flex;
       height: 200px;
+      position: relative;
       picker-view-column {
         flex: 1;
         height: 200px;
-        width: 33.3333333vw;
+        width: 100vw;
         div {
           line-height: 38px;
           width: 100%;
@@ -65,26 +66,48 @@
           }
         }
       }
+      .separator {
+        height: 100%;
+        width: 20px;
+        background: #fff;
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          background: #fcfcfc;
+          width: 20px;
+          height: 38px;
+          line-height: 38px;
+          &::before {
+            @include borderLine('top');
+          }
+          &::after {
+            @include borderLine('bottom');
+          }
+        }
+      }
     }
   }
   .indicator-style {
     height: 38px;
   }
-  &.c-picker-region__is-iphonex {
-    .c-picker-region__content {
+  &.c-picker-daterange__is-iphonex {
+    .c-picker-daterange__content {
       border-bottom: #f0f0f0 34px solid;
     }
   }
-  &.c-picker-region__visible {
+  &.c-picker-daterange__visible {
     visibility: visible;
-    .c-picker-region__content {
+    .c-picker-daterange__content {
       transform: translateY(0);
     }
-    .c-picker-region__cover {
+    .c-picker-daterange__cover {
       opacity: .75;
     }
   }
-  .c-picker-region__cover {
+  .c-picker-daterange__cover {
     position: absolute;
     left: 0;
     top: 0;

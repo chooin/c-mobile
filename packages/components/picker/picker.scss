@@ -18,7 +18,8 @@
       height: 40px;
       position: relative;
       background: #fff;
-      .c-picker__cancel {
+      .c-picker__cancel,
+      .c-picker__placeholder {
         position: absolute;
         left: 0;
         top: 0;
@@ -27,6 +28,9 @@
         padding: 0 15px;
         font-size: 15px;
         color: $text-light;
+      }
+      .c-picker__placeholder {
+        color: $text-placeholder;
       }
       .c-picker__done {
         position: absolute;

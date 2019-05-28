@@ -14,9 +14,15 @@
         </c-input-body>
       </c-input>
       <c-input addon next @click="visible.date = true">
-        <c-input-head>性别</c-input-head>
+        <c-input-head>date</c-input-head>
         <c-input-body>
           <c-text placeholder="日期">{{ date }}</c-text>
+        </c-input-body>
+      </c-input>
+      <c-input addon next @click="visible.daterange = true">
+        <c-input-head>daterange</c-input-head>
+        <c-input-body>
+          <c-text placeholder="日期区间">{{ daterange ? `${daterange[0]} 到 ${daterange[1]}` : null }}</c-text>
         </c-input-body>
       </c-input>
     </c-input-group>
@@ -41,6 +47,15 @@
       :date="date"
       end="2090-05-26"
       @change="pickerDateChange" />
+    <c-picker-daterange
+      v-model="visible.daterange"
+      :daterange="daterange"
+      l-start="2019-06-01"
+      l-end="2019-06-07"
+      r-start="2019-08-26"
+      r-end="2039-01-26"
+      @change="pickerDaterangeChange"
+      placeholder="请选择开始和结束时间" />
   </div>
 </template>
 
@@ -53,6 +68,7 @@ import cText from '../../../packages/components/text/text.vue'
 import cPicker from '../../../packages/components/picker/picker.vue'
 import cPickerRegion from '../../../packages/components/picker/picker-region.vue'
 import cPickerDate from '../../../packages/components/picker/picker-date.vue'
+import cPickerDaterange from '../../../packages/components/picker/picker-daterange.vue'
 
 export default {
   data () {
@@ -87,8 +103,13 @@ export default {
       visible: {
         pickerRegion: false,
         picker: false,
-        date: false
-      }
+        date: false,
+        daterange: true
+      },
+      daterange: [
+        '2019-01-01',
+        '2020-02-02'
+      ]
     }
   },
   components: {
@@ -99,7 +120,8 @@ export default {
     cText,
     cPicker,
     cPickerRegion,
-    cPickerDate
+    cPickerDate,
+    cPickerDaterange
   },
   methods: {
     pickerRegionChange (e) {
@@ -114,6 +136,9 @@ export default {
     },
     pickerDateChange (e) {
       this.date = e
+    },
+    pickerDaterangeChange (e) {
+      this.daterange = e
     }
   }
 }

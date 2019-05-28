@@ -188,7 +188,7 @@ export default {
           rMIndex,
           rDIndex
         ]
-      })
+      }, 100)
     },
     getIndex ({
       item,

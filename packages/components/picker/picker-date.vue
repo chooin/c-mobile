@@ -127,7 +127,7 @@ export default {
           mIndex,
           dIndex
         ]
-      })
+      }, 100)
     },
     getIndex ({
       item,

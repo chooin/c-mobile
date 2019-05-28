@@ -104,7 +104,7 @@ export default {
         pickerRegion: false,
         picker: false,
         date: false,
-        daterange: true
+        daterange: false
       },
       daterange: [
         '2019-01-01',
@@ -130,6 +130,8 @@ export default {
         this.city,
         this.district
       ] = e
+
+      console.log(e)
     },
     pickerChange (e) {
       this.sex = e

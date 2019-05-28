@@ -317,8 +317,8 @@ export default {
       let items = []
       for (let item of originProvince) {
         items.push({
-          id: parseInt(item.slice(0, 6)),
-          name: item.slice(6)
+          id: parseInt(`${item.slice(0, 2)}0000`, 10),
+          name: item.slice(2)
         })
       }
       return items
@@ -326,9 +326,15 @@ export default {
     _originCity () {
       let items = []
       for (let item of originCity) {
+        let id = item.slice(0, 6)
+        let name = item.slice(6)
+        if (isNaN(id)) {
+          id = `${item.slice(0, 4)}00`
+          name = item.slice(4)
+        }
         items.push({
-          id: parseInt(item.slice(0, 6)),
-          name: item.slice(6)
+          id: parseInt(id, 10),
+          name
         })
       }
       return items
@@ -337,7 +343,7 @@ export default {
       let items = []
       for (let item of originDistrict) {
         items.push({
-          id: parseInt(item.slice(0, 6)),
+          id: parseInt(item.slice(0, 6), 10),
           name: item.slice(6)
         })
       }

@@ -49,7 +49,10 @@
 </template>
 
 <script>
-import to from '../../utils/to'
+import {
+  isBrowser,
+  to
+ } from '../../utils'
 
 export default {
   name: 'cHeader',
@@ -146,9 +149,11 @@ export default {
   },
   mounted () {
     if (this.autoTitle) {
-      this.$nextTick(() => {
-        this.defaultTitle = document && document.title
-      })
+      if (isBrowser) {
+        this.$nextTick(() => {
+          this.defaultTitle = document && document.title
+        })
+      }
     }
   }
 }

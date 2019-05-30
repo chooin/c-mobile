@@ -6,7 +6,12 @@
       {
         'c-header__noborder-bottom': noborderBottom || noborder
       }
-    ]">
+    ]"
+    :style="{
+      paddingTop,
+      paddingRight,
+      paddingBottom
+    }">
     <span
       v-if="$slots.left"
       class="c-header__left">
@@ -17,7 +22,8 @@
         'c-header__back': _left.back
       }"
       :style="{
-        color: _left.color
+        color: _left.color,
+        bottom: _left.back ? paddingBottom : null
       }"
       @click="onLeft"
       v-else-if="_left.text || _left.back"
@@ -25,12 +31,10 @@
       {{ _left.close ? '' : _left.text }}
     </span>
     <span class="c-header__close" v-if="_left.close" @click="onClose"><i></i></span>
-    <h1 v-if="$slots.title">
-      <slot name="title"></slot>
-    </h1>
-    <h1 v-else-if="title || defaultTitle">
-      {{ title === undefined || title === null ? defaultTitle : title }}
-    </h1>
+    <template v-if="$slots.default">
+      <slot></slot>
+    </template>
+    <template v-else-if="defaultTitle">{{ defaultTitle }}</template>
     <span
       v-if="$slots.right"
       class="c-header__right">
@@ -51,14 +55,18 @@
 <script>
 import {
   isBrowser,
-  to
+  to,
+  isMiniProgram
  } from '../../utils'
 
 export default {
   name: 'cHeader',
   data () {
     return {
-      defaultTitle: ''
+      defaultTitle: '',
+      paddingTop: null,
+      paddingRight: null,
+      paddingBottom: null
     }
   },
   props: {
@@ -74,10 +82,6 @@ export default {
       type: Object,
       default: () => {}
     },
-    title: {
-      type: String,
-      default: null
-    },
     right: {
       type: Object,
       default: () => {}
@@ -89,9 +93,27 @@ export default {
     noborder: {
       type: Boolean,
       default: false
+    },
+    className: {
+      type: String,
+      default: null
     }
   },
   methods: {
+    componentInit () {
+      if (isMiniProgram) {
+        /* eslint-disable */
+        Megalo.getSystemInfo().then(getSystemInfo => {
+          let menuButton = Megalo.getMenuButtonBoundingClientRect()
+          console.log(menuButton)
+
+          this.paddingTop = `${menuButton.top}px`
+          this.paddingRight = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
+          this.paddingBottom = '9px';
+        })
+        /* eslint-disable */
+      }
+    },
     onLeft () {
       if (this._left.to) {
         to({
@@ -155,6 +177,7 @@ export default {
         })
       }
     }
+    this.componentInit()
   }
 }
 </script>

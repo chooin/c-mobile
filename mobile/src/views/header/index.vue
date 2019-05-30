@@ -9,7 +9,6 @@
           close: closeClick,
           text: 'Back'
         }"
-        title="标题"
         :right="{
           text: '联系我们',
           color: '#39f',
@@ -23,20 +22,20 @@
         back: true,
         text: '微信'
       }"
-      title="没有下划线"
       :right="{
         text: '联系我们',
         color: '#39f'
       }"
       noborder-bottom
-    />
+    >
+    没有下划线
+    </c-header>
     <div style="height: 1.5rem; width: 100%;"></div>
     <c-header
       type="primary"
       :left="{
         back: true
       }"
-      title="标题"
       :right="{
         text: '联系我们',
         click: () => {}
@@ -49,7 +48,6 @@
         back: true,
         text: 'Back'
       }"
-      title="标题"
       :right="{
         text: '联系我们',
         click: () => {}
@@ -62,7 +60,6 @@
         back: true,
         text: 'Back'
       }"
-      title="标题"
       :right="{
         text: '联系我们',
         click: () => {}
@@ -75,7 +72,6 @@
         back: true,
         text: 'Back'
       }"
-      title="标题"
       :right="{
         text: '联系我们',
         click: () => {}
@@ -86,9 +82,7 @@
       <template slot="left">
         左边
       </template>
-      <template slot="title">
-        标题
-      </template>
+      标题
       <template slot="right">
         右边
       </template>

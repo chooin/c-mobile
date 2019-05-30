@@ -14,9 +14,7 @@
     :style="{
       backgroundColor,
       padding,
-      zIndex: _zIndex,
-      paddingTop,
-      paddingRight
+      zIndex: _zIndex
     }"
     report-submit>
     <slot></slot>
@@ -47,15 +45,13 @@
 </template>
 
 <script>
-import { isBrowser, isMiniProgram, to } from '../../utils'
+import { isBrowser, to } from '../../utils'
 
 export default {
   name: 'cContainer',
   data () {
     return {
-      element: null,
-      paddingTop: null,
-      paddingRight: null
+      element: null
     }
   },
   props: {
@@ -151,21 +147,6 @@ export default {
               }
             })
           }
-        }
-      }
-      if (
-        this.fixed &&
-        isMiniProgram
-      ) {
-        if (this.fixed === 'top') {
-            /* eslint-disable */
-            Megalo.getSystemInfo().then(getSystemInfo => {
-              let menuButton = Megalo.getMenuButtonBoundingClientRect()
-
-              this.paddingTop = `${getSystemInfo.statusBarHeight}px`
-              this.paddingRight = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
-            })
-            /* eslint-disable */
         }
       }
     },

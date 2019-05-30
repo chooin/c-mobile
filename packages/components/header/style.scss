@@ -6,27 +6,20 @@
   background: #fff;
   -webkit-user-select: none;
   user-select: none;
-  h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 44px;
-    line-height: 44px;
-    text-align: center;
-    width: 60%;
-    font-size: 17px;
-    margin: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-weight: bold;
-    color: #000;
-  }
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 120px;
+  font-weight: bold;
+  color: #000;
+  line-height: 44px;
+  text-align: center;
+  font-size: 17px;
   .c-header__left,
   .c-header__right {
     position: absolute;
-    top: 0;
+    bottom: 0;
     height: 44px;
     line-height: 44px;
     z-index: 1;
@@ -38,6 +31,7 @@
     text-overflow: ellipsis;
     text-decoration: none;
     font-size: 15px;
+    font-weight: normal;
   }
   .c-header__left {
     left: 0;
@@ -45,15 +39,15 @@
       padding-left: 25px;
       &::after {
         content: "";
-        transform: rotate(135deg);
         border: solid #000;
         border-width: 0 2px 2px 0;
         width: 13px;
         height: 13px;
         display: block;
         position: absolute;
-        top: 14px;
+        top: 50%;
         left: 13px;
+        transform: translateY(-50%) rotate(135deg);
       }
     }
   }
@@ -97,7 +91,7 @@
   &.c-header__success,
   &.c-header__warning,
   &.c-header__danger {
-    h1,
+    color: #fff;
     .c-header__left,
     .c-header__right {
       color: #fff;

@@ -10,7 +10,8 @@
     :style="{
       paddingTop,
       paddingRight,
-      paddingBottom
+      paddingBottom,
+      paddingLeft
     }">
     <span
       v-if="$slots.left"
@@ -66,7 +67,8 @@ export default {
       defaultTitle: '',
       paddingTop: null,
       paddingRight: null,
-      paddingBottom: null
+      paddingBottom: null,
+      paddingLeft: null
     }
   },
   props: {
@@ -110,6 +112,7 @@ export default {
           this.paddingTop = `${menuButton.top}px`
           this.paddingRight = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
           this.paddingBottom = '9px';
+          this.paddingLeft = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
         })
         /* eslint-disable */
       }

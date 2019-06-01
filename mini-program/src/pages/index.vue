@@ -29,7 +29,7 @@ export default {
       components: [
         'button',
         'flex',
-        // 'header',
+        'header',
         // 'switch',
         'input-group',
         // 'icon',
@@ -41,11 +41,11 @@ export default {
         // 'sidebar',
         // 'text',
         // 'loading',
-        // 'search',
+        'search',
         // 'keyboard',
         // 'radio',
-        // 'container',
-        // 'load-more',
+        'container',
+        'load-more',
         'picker'
       ]
     }

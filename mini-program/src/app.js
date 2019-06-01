@@ -18,6 +18,10 @@ export default {
       'pages/picker',
       'pages/confirm',
       'pages/input-group',
+      'pages/search',
+      'pages/header',
+      'pages/container',
+      'pages/load-more'
     ],
     // tabBar: {
     //   color: '#333',

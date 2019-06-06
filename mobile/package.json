@@ -10,6 +10,7 @@
   "dependencies": {
     "c-mobile": "^0.5.10",
     "fstream": "^1.0.12",
+    "js-yaml": "^3.13.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },

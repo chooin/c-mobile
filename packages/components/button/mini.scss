@@ -5,8 +5,14 @@
   overflow: visible;
 
   .c-button__text {
-    display: block;
+    display: inline-block;
     line-height: 1.5;
+  }
+
+  cover-view {
+    &.c-button__text {
+      display: block;
+    }
   }
 
   &.c-button__small +

@@ -19,7 +19,7 @@
       borderRadius: _borderRadius
     }"
     @click="onClick"
-    hover-class="button-hover">
+    hover-class="c-button-hover">
     <cover-view class="c-button__text">
       <slot></slot>
     </cover-view>
@@ -44,7 +44,7 @@
       borderRadius: _borderRadius
     }"
     @click="onClick"
-    hover-class="button-hover">
+    hover-class="c-button-hover">
     <span class="c-button__text">
       <slot></slot>
     </span>

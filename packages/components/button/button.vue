@@ -111,6 +111,11 @@ export default {
       })
     }
   },
+  mounted () {
+    /* eslint-disable */
+    if (this._coverView && this.loading) console.warn('c-button cover-view 状态不支持 loading')
+    /* eslint-disable */
+  },
   computed: {
     _borderRadius () {
       return this.borderRadius === null ? this.borderRadius : `${this.borderRadius}px`

@@ -18,7 +18,6 @@
     }"
     report-submit>
     <slot></slot>
-    <i class="c-container__icon-back" @click="onBack"></i>
   </form>
   <div
     v-else
@@ -40,12 +39,11 @@
       paddingRight
     }">
     <slot></slot>
-    <i class="c-container__icon-back" @click="onBack"></i>
   </div>
 </template>
 
 <script>
-import { isBrowser, to } from '../../utils'
+import { isBrowser } from '../../utils'
 
 export default {
   name: 'cContainer',
@@ -157,12 +155,6 @@ export default {
       ) {
         this.element && this.element.remove()
       }
-    },
-    onBack () {
-      to({
-        vm: this,
-        to: -1
-      })
     }
   },
   computed: {

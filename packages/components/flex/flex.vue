@@ -1,5 +1,12 @@
 <template>
+  <cover-view
+    v-if="coverView"
+    class="c-flex"
+    @click="onClick">
+    <slot></slot>
+  </cover-view>
   <div
+    v-else
     class="c-flex"
     @click="onClick">
     <slot></slot>
@@ -19,6 +26,10 @@ export default {
     to: {
       type: [String, Object],
       default: null
+    },
+    coverView: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

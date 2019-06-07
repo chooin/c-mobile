@@ -1,7 +1,14 @@
 @import "./style.scss";
 
-.c-button {
+.c-button,
+.c-button:hover {
   overflow: visible;
+
+  .c-button__text {
+    display: block;
+    line-height: 1.5;
+  }
+
   &.c-button__small +
   &.c-button__small {
     margin-right: 5px;

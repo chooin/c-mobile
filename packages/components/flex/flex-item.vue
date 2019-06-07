@@ -1,5 +1,16 @@
 <template>
+  <cover-view
+    v-if="coverView"
+    class="c-flex-item"
+    :style="{
+      flex,
+      margin: `0 ${gutter / 2}px`
+    }"
+    @click="onClick">
+    <slot></slot>
+  </cover-view>
   <div
+    v-else
     class="c-flex-item"
     :style="{
       flex,
@@ -37,6 +48,11 @@ export default {
     gutter: {
       get () {
         return this.$parent.gutter || 0
+      }
+    },
+    coverView: {
+      get () {
+        return this.$parent.coverView || false
       }
     }
   }

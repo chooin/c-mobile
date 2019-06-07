@@ -1,5 +1,31 @@
 <template>
+  <cover-view
+    v-if="_coverView"
+    class="c-button"
+    type="type"
+    :open-type="openType"
+    :form-type="formType"
+    :class="[
+      type ? `c-button__${type}` : '',
+      icon ? `c-button__icon-${icon}` : '',
+      {
+        'c-button__o': o,
+        'c-button__disabled': _disabled,
+        'c-button__small': small,
+        'c-button__loading': loading
+      }
+    ]"
+    :style="{
+      borderRadius: _borderRadius
+    }"
+    @click="onClick"
+    hover-class="button-hover">
+    <cover-view class="c-button__text">
+      <slot></slot>
+    </cover-view>
+  </cover-view>
   <button
+    v-else
     class="c-button"
     type="type"
     :open-type="openType"
@@ -67,9 +93,13 @@ export default {
       type: String,
       default: null
     },
-    formType: {
+    formType: { // 仅小程序支持
       type: String,
       default: null
+    },
+    coverView: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -98,6 +128,11 @@ export default {
     },
     _disabled () {
       return this.disabled || this.loading
+    },
+    _coverView: {
+      get () {
+        return this.coverView || this.$parent.coverView || false
+      }
     }
   }
 }

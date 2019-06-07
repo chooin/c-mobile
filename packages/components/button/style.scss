@@ -22,7 +22,6 @@
   display: block;
   cursor: pointer;
   text-decoration: none;
-  line-height: 1.5;
   border: none;
   -webkit-user-select: none;
   user-select: none;
@@ -56,6 +55,7 @@
 
   .c-button__text {
     display: inline-block;
+    line-height: 1.5;
   }
 
   &[disabled=disabled],

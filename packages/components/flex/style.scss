@@ -3,6 +3,7 @@
   -webkit-box-flex: 1;
   width: 100%;
   flex-wrap: wrap;
+  box-sizing: border-box;
   .c-flex-item {
     display: block;
     flex: 1;

@@ -1,6 +1,5 @@
 <template>
   <form
-    v-if="isBrowser"
     :style="{
       backgroundColor
     }"
@@ -16,48 +15,16 @@
       </i>
       <input
         type="search"
+        confirm-type="search"
         ref="search"
         class="c-search__input"
         :style="{
           backgroundColor: inputBackgroundColor
         }"
+        :focus="_autofocus"
         :placeholder="placeholder"
         v-model="_value"
         @keyup="onKeyUp"
-      />
-      <i
-        :style="{
-          backgroundColor: inputBackgroundColor
-        }"
-        class="c-search__icon-cancel"
-        @click="onCancel">
-        <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPgogICAgICAgIDxwYXRoIGZpbGw9IiNiYmIiIGQ9Ik0xNC4xOCAxMy4wMDhsLTMuMDA4LTMuMDA4IDMuMDA4LTMuMDA4LTEuMTcyLTEuMTcyLTMuMDA4IDMuMDA4LTMuMDA4LTMuMDA4LTEuMTcyIDEuMTcyIDMuMDA4IDMuMDA4LTMuMDA4IDMuMDA4IDEuMTcyIDEuMTcyIDMuMDA4LTMuMDA4IDMuMDA4IDMuMDA4ek0xMCAxLjY4YzQuNjA5IDAgOC4zMiAzLjcxMSA4LjMyIDguMzJzLTMuNzExIDguMzItOC4zMiA4LjMyLTguMzItMy43MTEtOC4zMi04LjMyIDMuNzExLTguMzIgOC4zMi04LjMyeiI+PC9wYXRoPgogICAgICA8L3N2Zz4=" />
-      </i>
-    </div>
-  </form>
-  <div
-    v-else
-    :style="{
-      backgroundColor
-    }"
-    :class="{
-      'c-search__cancel-visible': _visible
-    }"
-    class="c-search">
-    <div class="c-search__cell">
-      <i class="c-search__icon-search">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAUVBMVEVHcEyXl5eYmJiampqYmJiXl5eZmZmfn5+Xl5eZmZmYmJiZmZmYmJiYmJiZmZmYmJiYmJiXl5eZmZmYmJiYmJiZmZmYmJiZmZmYmJiYmJiZmZnQfvzOAAAAGnRSTlMAQO8wzyDwEGCAwKDgsI9wn2+vf9BQkD/fv0Hu6jsAAAGYSURBVHhe7ZXbcsMgDEQxmItw8DWJE/7/QzuDxtO0Waw07lOn+xh0srBCWP0t+XX173BmuutcpO+T+ZFjf8tfdOv9q+ii85P08hI+FRTgk2w7PgAuRveAj15g2w1MwfKCHdJGt7u01Uw6+lLmyTGtrezbPTn4TvSe2TagtcDmc42lwp4MXjWnQhNmLfsyi2j2xsfmYzWqqgsHUjcmtSOqWqdy4N1O+hJaAgvFOKhdhVLk8e8nJagkfsFxXSX4iiMrs2QkuCnzBbN2SpTjvMFfRhmO4C4cg0m8IbjuOBxwD3BHh18PrJXhFsEKDAyQxZf7jOcCRXPGMSYJTngCDNo33vUFTZvcrLk2twSeMNAS7jK2br30TXC+/sbMwqY3Y9it3NfYvrBx/1Uf/c6319n9Vz23oMC2vHarZzJk1vKtxPOWhUQps3RvPlHTawYlOri88eMyreu0jEwCGn9Jsc4miLQnB0h+ewSa8SfSdVYpQEM8pEf7OHAxorGaga4xdkQ8KwIt6jj9T6sjdDhCkzpAW/WmmpQadVAfoDRGmZ0wK20AAAAASUVORK5CYII=" />
-      </i>
-      <input
-        type="text"
-        ref="search"
-        class="c-search__input"
-        :style="{
-          backgroundColor: inputBackgroundColor
-        }"
-        :placeholder="placeholder"
-        v-model="_value"
-        :focus="_autofocus"
         @confirm="onConfirm"
       />
       <i
@@ -69,7 +36,7 @@
         <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPgogICAgICAgIDxwYXRoIGZpbGw9IiNiYmIiIGQ9Ik0xNC4xOCAxMy4wMDhsLTMuMDA4LTMuMDA4IDMuMDA4LTMuMDA4LTEuMTcyLTEuMTcyLTMuMDA4IDMuMDA4LTMuMDA4LTMuMDA4LTEuMTcyIDEuMTcyIDMuMDA4IDMuMDA4LTMuMDA4IDMuMDA4IDEuMTcyIDEuMTcyIDMuMDA4LTMuMDA4IDMuMDA4IDMuMDA4ek0xMCAxLjY4YzQuNjA5IDAgOC4zMiAzLjcxMSA4LjMyIDguMzJzLTMuNzExIDguMzItOC4zMiA4LjMyLTguMzItMy43MTEtOC4zMi04LjMyIDMuNzExLTguMzIgOC4zMi04LjMyeiI+PC9wYXRoPgogICAgICA8L3N2Zz4=" />
       </i>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -77,11 +44,6 @@ import { isBrowser } from '../../utils'
 
 export default {
   name: 'cSearch',
-  data () {
-    return {
-      isBrowser
-    }
-  },
   props: {
     value: {
       type: String,
@@ -109,7 +71,7 @@ export default {
     },
   },
   mounted () {
-    this.isBrowser && this._autofocus && this.$refs.search.focus()
+    isBrowser && this._autofocus && this.$refs.search.focus()
   },
   methods: {
     onKeyUp (keyCode) {

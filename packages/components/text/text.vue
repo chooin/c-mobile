@@ -1,9 +1,45 @@
 <template>
-  <div
+  <cover-view
+    v-if="_coverView"
     class="c-text"
     :class="[
-      type ? 'c-text__' + type : '',
-      align ? 'c-text__' + align: '',
+      type ? `c-text__${type}` : '',
+      align ? `c-text__${align}`: '',
+      {
+        'c-text__light': light,
+        'c-text__block': block,
+        'c-text__cursor': cursor,
+        'c-text__empty': isEmpty,
+        'c-text__placeholder': isPlaceholder
+      }
+    ]"
+    :style="{
+      fontFamily,
+      fontSize: _fontSize,
+      color
+    }"
+    @click="onClick">
+    <template
+      v-if="
+        text !== null &&
+        text !== undefined &&
+        text !== ''
+      ">
+      {{ text }}
+    </template>
+    <template v-else-if="isPlaceholder">
+      {{ placeholder }}
+    </template>
+    <cover-view v-else class="c-text__content">
+      <slot>{{ text }}</slot>
+    </cover-view>
+  </cover-view>
+  <div
+    v-else
+    class="c-text"
+    :class="[
+      type ? `c-text__${type}` : '',
+      align ? `c-text__${align}`: '',
       {
         'c-text__light': light,
         'c-text__block': block,
@@ -94,6 +130,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    coverView: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -136,6 +176,11 @@ export default {
         }
       } else {
         return null
+      }
+    },
+    _coverView: {
+      get () {
+        return this.coverView || this.$parent.coverView || false
       }
     }
   },

@@ -28,8 +28,11 @@
       ">
       {{ text }}
     </template>
+    <template v-else-if="isPlaceholder">
+      <cover-view class="c-text__content">{{ placeholder }}</cover-view>
+    </template>
     <cover-view v-else class="c-text__content">
-      <slot>{{ text }}{{ isPlaceholder ? placeholder : null }}</slot>
+      <slot>{{ text }}</slot>
     </cover-view>
   </cover-view>
   <div
@@ -61,8 +64,11 @@
       ">
       {{ text }}
     </template>
+    <template v-else-if="isPlaceholder">
+      <span class="c-text__content">{{ placeholder }}</span>
+    </template>
     <span v-else class="c-text__content">
-      <slot>{{ text }}{{ isPlaceholder ? placeholder : null }}</slot>
+      <slot>{{ text }}</slot>
     </span>
   </div>
 </template>

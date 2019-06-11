@@ -117,21 +117,23 @@
     color: $text-placeholder !important;
   }
   &.c-text__next {
-    padding-right: 15px;
-    position: relative;
-    &::after {
-      content: " ";
-      transform: rotate(-45deg)
-                  translateY(-50%);
-      border: solid #cacaca;
-      border-width: 0 2px 2px 0;
-      width: 8px;
-      height: 8px;
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 1px;
-      margin-top: -1px; // 手机端需要 -1px
+    .c-text__content {
+      padding-right: 15px;
+      position: relative;
+      &::after {
+        content: " ";
+        transform: rotate(-45deg)
+                   translateY(-50%);
+        border: solid #cacaca;
+        border-width: 0 2px 2px 0;
+        width: 8px;
+        height: 8px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 1px;
+        margin-top: -1px; // 手机端需要 -1px
+      }
     }
   }
 }

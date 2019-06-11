@@ -10,7 +10,8 @@
         'c-text__block': block,
         'c-text__cursor': cursor,
         'c-text__empty': isEmpty,
-        'c-text__placeholder': isPlaceholder
+        'c-text__placeholder': isPlaceholder,
+        'c-text__next': next
       }
     ]"
     :style="{
@@ -27,11 +28,8 @@
       ">
       {{ text }}
     </template>
-    <template v-else-if="isPlaceholder">
-      {{ placeholder }}
-    </template>
     <cover-view v-else class="c-text__content">
-      <slot>{{ text }}</slot>
+      <slot>{{ text }}{{ isPlaceholder ? placeholder : null }}</slot>
     </cover-view>
   </cover-view>
   <div
@@ -45,7 +43,8 @@
         'c-text__block': block,
         'c-text__cursor': cursor,
         'c-text__empty': isEmpty,
-        'c-text__placeholder': isPlaceholder
+        'c-text__placeholder': isPlaceholder,
+        'c-text__next': next
       }
     ]"
     :style="{
@@ -62,11 +61,8 @@
       ">
       {{ text }}
     </template>
-    <template v-else-if="isPlaceholder">
-      {{ placeholder }}
-    </template>
     <span v-else class="c-text__content">
-      <slot>{{ text }}</slot>
+      <slot>{{ text }}{{ isPlaceholder ? placeholder : null }}</slot>
     </span>
   </div>
 </template>
@@ -132,6 +128,10 @@ export default {
       default: false
     },
     coverView: {
+      type: Boolean,
+      default: false
+    },
+    next: {
       type: Boolean,
       default: false
     }

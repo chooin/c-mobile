@@ -26,12 +26,13 @@
     <c-text block @click="alert">事件</c-text>
     <c-text block light>浅灰色</c-text>
     <c-text placeholder="placeholder">{{ placeholder }}</c-text>
-    <c-text align="left">左边</c-text>
-    <c-text align="center">中间</c-text>
-    <c-text align="right">右边</c-text>
+    <c-text align="left" next>左边</c-text>
+    <c-text align="center" next>中间</c-text>
+    <c-text align="right" next>右边</c-text>
     <c-text block cursor placeholder="placeholder" font-size="50"></c-text>
     <c-text block cursor font-size="50">内容</c-text>
     <c-text block font-family="SimSun" font-size="100">宋体</c-text>
+    <c-text align="right" next>next</c-text>
   </div>
 </template>
 

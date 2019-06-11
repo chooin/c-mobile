@@ -71,4 +71,27 @@
       }
     }
   }
+  &.c-search__round {
+    .c-search__icon-search {
+      left: 5px;
+    }
+    .c-search__input {
+      border-radius: 32px;
+      padding-left: 37px;
+    }
+    .c-search__icon-cancel {
+      border-radius: 0 32px 32px 0;
+    }
+    &.c-search__cancel-visible {
+      .c-search__cell {
+        padding: 0 45px 0 0;
+        .c-search__input {
+          border-radius: 32px 0 0 32px;
+        }
+        .c-search__icon-cancel {
+          display: block;
+        }
+      }
+    }
+  }
 }

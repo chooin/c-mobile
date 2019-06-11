@@ -1,6 +1,8 @@
 <template>
   <div class="v-search">
     <c-search v-model="search" @keyup-enter="keyupEnter" autofocus @change="onChange" />
+    <div style="margin-top: 15px"></div>
+    <c-search v-model="search" @keyup-enter="keyupEnter" autofocus @change="onChange" round />
   </div>
 </template>
 

@@ -4,7 +4,8 @@
       backgroundColor
     }"
     :class="{
-      'c-search__cancel-visible': _visible
+      'c-search__cancel-visible': _visible,
+      'c-search__round': round
     }"
     class="c-search"
     action=""
@@ -69,6 +70,10 @@ export default {
       type: String,
       default: null
     },
+    round: {
+      type: Boolean,
+      default: false
+    }
   },
   mounted () {
     isBrowser && this._autofocus && this.$refs.search.focus()

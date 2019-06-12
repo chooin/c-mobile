@@ -43,6 +43,7 @@
         />
         <c-tabbar-item
           @click="$_to('/pages/cart/index')"
+          badge="132"
           src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
           active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
           text="购物车"

@@ -46,17 +46,17 @@
       b {
         position: absolute;
         left: 50%;
-        top: 5px;
-        transform: translateX(-50%);
-        margin-left: 18px;
-        height: 16px;
-        min-width: 16px;
-        line-height: 16px;
-        padding: 0 5px;
+        top: 3px;
+        height: 13px;
+        min-width: 13px;
+        line-height: 13px;
         color: #fff;
-        font-size: 12px;
-        border-radius: 16px;
-        background: $danger;
+        font-size: 9px;
+        border-radius: 3px;
+        background: #FF765D;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 3px;
         &:empty {
           display: none;
         }

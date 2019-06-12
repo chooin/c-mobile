@@ -7,8 +7,7 @@
     :class="[
       fixed ? `c-container__fixed-${fixed}` : '',
       {
-        'c-container__safe-area': _safeArea,
-        'c-container__back': back
+        'c-container__safe-area': _safeArea
       }
     ]"
     :style="{
@@ -27,8 +26,7 @@
     :class="[
       fixed ? `c-container__fixed-${fixed}` : '',
       {
-        'c-container__safe-area': _safeArea,
-        'c-container__back': back
+        'c-container__safe-area': _safeArea
       }
     ]"
     :style="{
@@ -74,10 +72,6 @@ export default {
       default: null
     },
     useForm: { // 小程序支持
-      type: Boolean,
-      default: false
-    },
-    back: {
       type: Boolean,
       default: false
     }

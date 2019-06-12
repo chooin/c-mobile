@@ -66,6 +66,14 @@
       @include borderLine('top');
     }
   }
+  &.c-tabbar__shadow {
+    .c-tabbar__cell {
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+      &::before {
+        border-top: none;
+      }
+    }
+  }
   &.c-tabbar__primary {
     .c-tabbar__cell {
       .c-tabbar-item {

@@ -27,7 +27,7 @@
       />
     </c-tabbar>
     <c-container fixed="bottom" background-color="#f5f5f5" safe-area>
-      <c-tabbar>
+      <c-tabbar shadow>
         <c-tabbar-item
           active
           to="/pages/home/index"

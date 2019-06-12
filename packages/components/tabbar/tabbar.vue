@@ -4,7 +4,8 @@
     :class="[
       type ? `c-tabbar__${type}` : '',
       {
-        'c-tabbar__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX
+        'c-tabbar__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX,
+        'c-tabbar__shadow': shadow
       }
     ]">
     <div class="c-tabbar__cell">
@@ -27,6 +28,10 @@ export default {
     type: {
       type: String,
       default: ''
+    },
+    shadow: {
+      type: Boolean,
+      default: false
     }
   }
 }

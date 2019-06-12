@@ -2,8 +2,8 @@
   <i
     class="c-icon"
     :class="[
-      'icon-' + name,
-      type ? 'c-icon__' + type : '',
+      `icon-${name}`,
+      type ? `c-icon__${type}` : '',
       {
         'c-icon__has-background': backgroundColor
       }

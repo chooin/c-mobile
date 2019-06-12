@@ -1,39 +1,58 @@
 <template>
   <div class="v-tabbar">
-    <c-tabbar type="success">
-      <c-tabbar-item current>
-        <c-icon name="wishlist" />
-        <c-text>收藏</c-text>
-      </c-tabbar-item>
-      <c-tabbar-item>
-        <c-icon name="search" />
-        <c-text>探索</c-text>
-      </c-tabbar-item>
-      <c-tabbar-item>
-        <c-icon name="user" />
-        <c-text>我</c-text>
-      </c-tabbar-item>
+    <c-tabbar type="primary">
+      <c-tabbar-item
+        to="/pages/home/index"
+        src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+        active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+        text="首页"
+      />
+      <c-tabbar-item
+        to="/pages/company/index"
+        src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+        active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+        text="公司"
+      />
+      <c-tabbar-item
+        @click="$_to('/pages/cart/index')"
+        src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+        active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+        text="购物车"
+      />
+      <c-tabbar-item
+        to="/pages/user/index"
+        src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+        active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+        text="我的"
+      />
     </c-tabbar>
-
-    <c-tabbar type="danger">
-      <c-tabbar-item icon="wishlist" text="收藏" current />
-      <c-tabbar-item icon="search" text="探索" />
-      <c-tabbar-item icon="user" text="我" />
-    </c-tabbar>
-    <c-container fixed="bottom" safe-area>
+    <c-container fixed="bottom" background-color="#f5f5f5" safe-area>
       <c-tabbar>
-        <c-tabbar-item>
-          <c-icon name="wishlist" type="success" />
-          <c-text>收藏</c-text>
-        </c-tabbar-item>
-        <c-tabbar-item>
-          <c-icon name="search" />
-          <c-text>探索</c-text>
-        </c-tabbar-item>
-        <c-tabbar-item :badge="8">
-          <c-icon name="user" type="success" />
-          <c-text type="success">我</c-text>
-        </c-tabbar-item>
+        <c-tabbar-item
+          active
+          to="/pages/home/index"
+          src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+          active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+          text="首页"
+        />
+        <c-tabbar-item
+          to="/pages/company/index"
+          src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+          active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+          text="公司"
+        />
+        <c-tabbar-item
+          @click="$_to('/pages/cart/index')"
+          src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+          active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+          text="购物车"
+        />
+        <c-tabbar-item
+          to="/pages/user/index"
+          src="https://image3.suning.cn/uimg/cms/img/154518777766983546.png?from=mobile"
+          active-src="https://image1.suning.cn/uimg/cms/img/154518776962642834.png?from=mobile"
+          text="我的"
+        />
       </c-tabbar>
     </c-container>
   </div>

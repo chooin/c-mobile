@@ -1,85 +1,115 @@
 .c-tabbar {
   width: 100%;
-  background: #f5f5f5;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-user-select: none;
-  user-select: none;
-  box-sizing: unset;
   height: 50px;
-  .c-tabbar-item {
-    position: relative;
-    padding: 5px 0;
+  box-sizing: border-box;
+  .c-tabbar__cell {
+    width: 100%;
+    background: #f5f5f5;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: unset;
     height: 50px;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    flex: 1;
-    i {
-      height: 24px;
-      line-height: 24px;
-      font-size: 20px;
+    box-sizing: border-box;
+    .c-tabbar-item {
+      position: relative;
+      padding: 5px 0;
+      height: 50px;
       display: block;
-    }
-    .c-text {
-      font-size: 12px;
-      height: 16px;
-      line-height: 16px;
-      display: block;
-      color: $text;
-    }
-    b {
-      position: absolute;
-      left: 50%;
-      top: 5px;
-      transform: translateX(-50%);
-      margin-left: 18px;
-      height: 16px;
-      min-width: 16px;
-      line-height: 16px;
-      padding: 0 5px;
-      color: #fff;
-      font-size: 12px;
-      border-radius: 16px;
-      background: $danger;
-      &:empty {
-        display: none;
+      text-align: center;
+      cursor: pointer;
+      flex: 1;
+      box-sizing: border-box;
+      i {
+        height: 24px;
+        line-height: 24px;
+        font-size: 20px;
+        display: block;
+        position: relative;
+        img {
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
+      p {
+        font-size: 12px;
+        height: 16px;
+        line-height: 16px;
+        display: block;
+        color: $text;
+      }
+      b {
+        position: absolute;
+        left: 50%;
+        top: 5px;
+        transform: translateX(-50%);
+        margin-left: 18px;
+        height: 16px;
+        min-width: 16px;
+        line-height: 16px;
+        padding: 0 5px;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 16px;
+        background: $danger;
+        &:empty {
+          display: none;
+        }
+      }
+    }
+    &::before {
+      @include borderLine('top');
     }
   }
   &.c-tabbar__primary {
-    .c-tabbar__current {
-      i,
-      .c-text {
-        color: $primary;
+    .c-tabbar__cell {
+      .c-tabbar-item {
+        &.c-tabbar__current,
+        &.c-tabbar__active {
+          i,
+          p {
+            color: $primary;
+          }
+        }
       }
     }
   }
   &.c-tabbar__success {
-    .c-tabbar__current {
-      i,
-      .c-text {
-        color: $success;
+    .c-tabbar__cell {
+      .c-tabbar__current,
+      .c-tabbar__active {
+        i,
+        p {
+          color: $success;
+        }
       }
     }
   }
   &.c-tabbar__warning {
-    .c-tabbar__current {
-      i,
-      .c-text {
-        color: $warning;
+    .c-tabbar__cell {
+      .c-tabbar__current,
+      .c-tabbar__active {
+        i,
+        p {
+          color: $warning;
+        }
       }
     }
   }
   &.c-tabbar__danger {
-    .c-tabbar__current {
-      i,
-      .c-text {
-        color: $danger;
+    .c-tabbar__cell {
+      .c-tabbar__current,
+      .c-tabbar__active {
+        i,
+        p {
+          color: $danger;
+        }
       }
     }
-  }
-  &::before {
-    @include borderLine('top');
   }
 }

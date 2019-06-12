@@ -1,8 +1,21 @@
 @import "./style.scss";
 
 .c-tabbar {
+  .c-tabbar__cell {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+  .c-tabbar__cover {
+    height: 50px;
+    width: 100%;
+  }
   &.c-tabbar__is-miniprogram-is-iphonex {
     height: 84px;
     padding-bottom: 34px;
+    .c-tabbar__cell {
+      height: 84px;
+      padding-bottom: 34px;
+    }
   }
 }

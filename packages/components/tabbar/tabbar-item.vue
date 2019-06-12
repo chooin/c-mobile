@@ -2,12 +2,14 @@
   <div
     class="c-tabbar-item"
     :class="{
-      'c-tabbar__current': current
+      'c-tabbar__active': _active
     }"
     @click="onClick">
     <slot>
-      <c-icon v-show="icon" :name="icon" />
-      <c-text v-show="text">{{ text }}</c-text>
+      <i>
+        <img :src="_active ? activeSrc : src" />
+      </i>
+      <p v-show="text">{{ text }}</p>
     </slot>
     <b v-show="badge">{{ badge }}</b>
   </div>
@@ -15,6 +17,7 @@
 
 <script>
 import to from '../../utils/to'
+import { isMiniProgramIsIPhoneX } from '../../utils/device'
 
 export default {
   name: 'cTabbarItem',
@@ -27,9 +30,9 @@ export default {
       type: Boolean,
       default: false
     },
-    icon: {
-      type: String,
-      default: null
+    active: {
+      type: Boolean,
+      default: false
     },
     text: {
       type: String,
@@ -38,14 +41,41 @@ export default {
     badge: {
       type: Number,
       default: null
+    },
+    src: {
+      type: String,
+      default: null
+    },
+    activeSrc: {
+      type: String,
+      default: null
     }
   },
   methods: {
     onClick () {
-      to({
-        vm: this,
-        to: this.to
-      })
+      if (
+        isMiniProgramIsIPhoneX &&
+        this.to
+      ) {
+        /* eslint-disable */
+        let Megalo = Megalo || wx || false
+        if (Megalo) {
+          Megalo.reLaunch({
+            url: this.to
+          })
+        }
+        /* eslint-disable */
+      } else {
+        to({
+          vm: this,
+          to: this.to
+        })
+      }
+    }
+  },
+  computed: {
+    _active () {
+      return this.active || this.current
     }
   }
 }

@@ -24,8 +24,7 @@
         }"
         :focus="_autofocus"
         :placeholder="placeholder"
-        :placeholder-class="placeholderClass"
-        :placeholder-style="placeholderStyle"
+        placeholder-class="c-search__placeholder"
         v-model="_value"
         @keyup="onKeyUp"
         @confirm="onConfirm"
@@ -55,14 +54,6 @@ export default {
     placeholder: {
       type: String,
       default: ''
-    },
-    placeholderClass: {
-      type: String,
-      default: null
-    },
-    placeholderStyle: {
-      type: Object,
-      default: null
     },
     autofocus: {
       type: Boolean,

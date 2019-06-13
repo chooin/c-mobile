@@ -40,7 +40,6 @@
         @confirm="onConfirm"
       />
       <i
-        v-if="!to"
         :style="{
           backgroundColor: inputBackgroundColor
         }"
@@ -125,7 +124,11 @@ export default {
       }
     },
     _visible () {
-      if (typeof this.value === 'string' && this.value.trim() !== '') {
+      if (
+        typeof this.value === 'string' &&
+        this.value.trim() !== '' &&
+        !this.to
+      ) {
         return true
       } else {
         return false

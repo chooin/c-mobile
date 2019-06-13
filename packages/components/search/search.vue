@@ -40,6 +40,7 @@
         @confirm="onConfirm"
       />
       <i
+        v-if="!to"
         :style="{
           backgroundColor: inputBackgroundColor
         }"

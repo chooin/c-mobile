@@ -1,6 +1,6 @@
 .c-container {
   position: relative;
-  // background: #f00;
+  display: block;
   &.c-container__fixed-top,
   &.c-container__fixed-bottom {
     position: fixed;

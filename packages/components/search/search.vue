@@ -12,7 +12,7 @@
     onsubmit="return false;">
     <div class="c-search__cell">
       <i class="c-search__icon-search">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAAAUVBMVEVHcEyXl5eYmJiampqYmJiXl5eZmZmfn5+Xl5eZmZmYmJiZmZmYmJiYmJiZmZmYmJiYmJiXl5eZmZmYmJiYmJiZmZmYmJiZmZmYmJiYmJiZmZnQfvzOAAAAGnRSTlMAQO8wzyDwEGCAwKDgsI9wn2+vf9BQkD/fv0Hu6jsAAAGYSURBVHhe7ZXbcsMgDEQxmItw8DWJE/7/QzuDxtO0Waw07lOn+xh0srBCWP0t+XX173BmuutcpO+T+ZFjf8tfdOv9q+ii85P08hI+FRTgk2w7PgAuRveAj15g2w1MwfKCHdJGt7u01Uw6+lLmyTGtrezbPTn4TvSe2TagtcDmc42lwp4MXjWnQhNmLfsyi2j2xsfmYzWqqgsHUjcmtSOqWqdy4N1O+hJaAgvFOKhdhVLk8e8nJagkfsFxXSX4iiMrs2QkuCnzBbN2SpTjvMFfRhmO4C4cg0m8IbjuOBxwD3BHh18PrJXhFsEKDAyQxZf7jOcCRXPGMSYJTngCDNo33vUFTZvcrLk2twSeMNAS7jK2br30TXC+/sbMwqY3Y9it3NfYvrBx/1Uf/c6319n9Vz23oMC2vHarZzJk1vKtxPOWhUQps3RvPlHTawYlOri88eMyreu0jEwCGn9Jsc4miLQnB0h+ewSa8SfSdVYpQEM8pEf7OHAxorGaga4xdkQ8KwIt6jj9T6sjdDhCkzpAW/WmmpQadVAfoDRGmZ0wK20AAAAASUVORK5CYII=" />
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAM1BMVEUAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAr6XIYAAAAEHRSTlMA7xCA32Awz79AcJ+QIFCwFs9njwAAANNJREFUOMvtk90OgzAIRouC/e++93/aqclCLFq9WbKLnUs8BYHW/QjTIiJxutNiIOwEGWtQuF16CSuUk6TMWJkvvBmAj5/k/tIUAKU7l5ylcp8hAVStmIHchQoQ7PgIqCcxM9AG5LP2krNlohEX4NXHwlbFQOA+5AFnYZAJjcX70v5pM+FkgWU8Hh0u1ZOtVnvazqzoEo4p7aVAdZaGoznD/rZ+YTm8ClouTXCeJRXeNTVtmwrHyavZIwHQ5zoy3RSbyLKtU80h3zVf7pGZqbk/D3gDeQoM2LnjNc8AAAAASUVORK5CYII=" />
       </i>
       <input
         type="search"
@@ -24,6 +24,8 @@
         }"
         :focus="_autofocus"
         :placeholder="placeholder"
+        :placeholder-class="placeholderClass"
+        :placeholder-style="placeholderStyle"
         v-model="_value"
         @keyup="onKeyUp"
         @confirm="onConfirm"
@@ -53,6 +55,14 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    },
+    placeholderClass: {
+      type: String,
+      default: null
+    },
+    placeholderStyle: {
+      type: Object,
+      default: null
     },
     autofocus: {
       type: Boolean,

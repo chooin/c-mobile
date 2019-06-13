@@ -1,6 +1,7 @@
 @import "./style.scss";
 
 .c-search {
+  display: block;
   .c-search__cell {
     height: 32px;
     .c-search__input {

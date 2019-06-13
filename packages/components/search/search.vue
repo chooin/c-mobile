@@ -1,5 +1,6 @@
 <template>
   <form
+    @click="onClick"
     :style="{
       backgroundColor
     }"
@@ -14,7 +15,16 @@
       <i class="c-search__icon-search">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAM1BMVEUAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAr6XIYAAAAEHRSTlMA7xCA32Awz79AcJ+QIFCwFs9njwAAANNJREFUOMvtk90OgzAIRouC/e++93/aqclCLFq9WbKLnUs8BYHW/QjTIiJxutNiIOwEGWtQuF16CSuUk6TMWJkvvBmAj5/k/tIUAKU7l5ylcp8hAVStmIHchQoQ7PgIqCcxM9AG5LP2krNlohEX4NXHwlbFQOA+5AFnYZAJjcX70v5pM+FkgWU8Hh0u1ZOtVnvazqzoEo4p7aVAdZaGoznD/rZ+YTm8ClouTXCeJRXeNTVtmwrHyavZIwHQ5zoy3RSbyLKtU80h3zVf7pGZqbk/D3gDeQoM2LnjNc8AAAAASUVORK5CYII=" />
       </i>
+      <div
+        v-if="to"
+        :style="{
+          backgroundColor: inputBackgroundColor
+        }"
+        :placeholder="placeholder"
+        class="c-search__input c-search__placeholder"
+      >{{ _value ? _value : placeholder }}</div>
       <input
+        v-else
         type="search"
         confirm-type="search"
         ref="search"
@@ -42,7 +52,7 @@
 </template>
 
 <script>
-import { isBrowser } from '../../utils'
+import { isBrowser, to } from '../../utils'
 
 export default {
   name: 'cSearch',
@@ -74,12 +84,24 @@ export default {
     round: {
       type: Boolean,
       default: false
+    },
+    to: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
     isBrowser && this._autofocus && this.$refs.search.focus()
   },
   methods: {
+    onClick () {
+      if (this.to) {
+        to({
+          vm: this,
+          to: this.to
+        })
+      }
+    },
     onKeyUp (keyCode) {
       if (keyCode.key === 'Enter') this.$emit('keyup-enter', this._value)
     },

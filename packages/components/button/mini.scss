@@ -4,6 +4,7 @@
 .c-button:hover {
   overflow: visible;
   line-height: 1.5;
+  transition: opacity 200ms;
 
   .c-button__text {
     display: inline-block;
@@ -19,9 +20,6 @@
   &.c-button__small +
   &.c-button__small {
     margin-right: 5px;
-  }
-  &::after {
-    border-width: 0;
   }
 }
 

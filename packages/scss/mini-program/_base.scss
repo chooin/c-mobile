@@ -1,0 +1,10 @@
+button {
+  border-radius: 0;
+  &::after {
+    border-width: 0;
+  }
+}
+
+form {
+  display: block;
+}

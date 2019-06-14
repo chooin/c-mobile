@@ -60,7 +60,7 @@ export default {
         /* eslint-disable */
         let Megalo = Megalo || wx || false
         if (Megalo) {
-          Megalo.reLaunch({
+          Megalo.redirectTo({
             url: this.to
           })
         }

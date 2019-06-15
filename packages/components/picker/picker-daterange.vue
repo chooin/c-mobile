@@ -36,7 +36,7 @@
             {{ item | formatMMDD }}日
           </div>
         </picker-view-column>
-        <div class="separator"><i>到</i></div>
+        <div class="separator"><i>{{ separator }}</i></div>
         <picker-view-column>
           <div
             v-for="(item, index) in rYears"
@@ -121,6 +121,10 @@ export default {
     placeholder: {
       type: String,
       default: null
+    },
+    separator: {
+      type: String,
+      default: '至'
     }
   },
   methods: {

@@ -18,7 +18,9 @@
       <div
         v-if="to"
         :style="{
-          backgroundColor: inputBackgroundColor
+          backgroundColor: inputBackgroundColor,
+          height: _inputHeight,
+          padding: _inputPadding
         }"
         :placeholder="placeholder"
         class="c-search__input c-search__placeholder"
@@ -30,7 +32,9 @@
         ref="search"
         class="c-search__input"
         :style="{
-          backgroundColor: inputBackgroundColor
+          backgroundColor: inputBackgroundColor,
+          height: _inputHeight,
+          padding: _inputPadding
         }"
         :focus="_autofocus"
         :placeholder="placeholder"
@@ -88,10 +92,14 @@ export default {
     to: {
       type: Boolean,
       default: false
+    },
+    inputHeight: {
+      type: [String, Number],
+      default: 36
     }
   },
   mounted () {
-    isBrowser && this._autofocus && this.$refs.search.focus()
+    isBrowser && this._autofocus && this.$refs.search && this.$refs.search.focus()
   },
   methods: {
     onClick () {
@@ -136,6 +144,40 @@ export default {
     },
     _autofocus () {
       return this.autofocus || this.focus
+    },
+    _inputHeight () {
+      if (this.inputHeight) {
+        if (
+          typeof this.inputHeight === 'string' &&
+          this.inputHeight.indexOf('px') > -1
+        ) {
+          return this.inputHeight
+        } else {
+          return `${this.inputHeight}px`
+        }
+      } {
+        return null
+      }
+    },
+    _inputPadding () {
+      if (this.inputHeight) {
+        let inputHeight
+        if (
+          typeof this.inputHeight === 'string' &&
+          this.inputHeight.indexOf('px') > -1
+        ) {
+          inputHeight = parseInt(this.inputHeight.replace('px', ''), 10)
+        } else {
+          inputHeight = this.inputHeight
+        }
+        if (isBrowser) {
+          return `${(inputHeight - 16) / 2}px 10px ${(inputHeight - 16) / 2}px 32px`
+        } else {
+          return `0 10px 0 32px`
+        }
+      } else {
+        return '7px 10px 7px 32px'
+      }
     }
   }
 }

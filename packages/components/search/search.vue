@@ -47,7 +47,8 @@
       />
       <i
         :style="{
-          backgroundColor: inputBackgroundColor
+          backgroundColor: inputBackgroundColor,
+          borderRadius: _inputHeight
         }"
         class="c-search__icon-cancel"
         @click="onCancel">

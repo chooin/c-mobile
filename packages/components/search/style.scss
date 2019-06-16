@@ -81,12 +81,16 @@
     }
     .c-search__icon-cancel {
       border-radius: 0 32px 32px 0;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
     }
     &.c-search__cancel-visible {
       .c-search__cell {
         padding: 0 45px 0 0;
         .c-search__input {
           border-radius: 32px 0 0 32px;
+          border-top-right-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
         }
         .c-search__icon-cancel {
           display: block;

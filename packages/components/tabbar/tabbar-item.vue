@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     onClick () {
-      if (this.active) return
+      if (this._active) return
       if (
         isMiniProgramIsIPhoneX &&
         this.to

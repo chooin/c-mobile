@@ -20,7 +20,8 @@
         :style="{
           backgroundColor: inputBackgroundColor,
           height: _inputHeight,
-          padding: _inputPadding
+          padding: _inputPadding,
+          borderRadius: _inputHeight
         }"
         :placeholder="placeholder"
         class="c-search__input c-search__placeholder"
@@ -34,7 +35,8 @@
         :style="{
           backgroundColor: inputBackgroundColor,
           height: _inputHeight,
-          padding: _inputPadding
+          padding: _inputPadding,
+          borderRadius: _inputHeight
         }"
         :focus="_autofocus"
         :placeholder="placeholder"

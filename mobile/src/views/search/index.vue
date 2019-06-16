@@ -4,6 +4,10 @@
     <div style="margin-top: 15px"></div>
     <c-search v-model="search" @keyup-enter="keyupEnter"
       background-color="#fff"
+      input-background-color="#f0f1f2" input-height="100" autofocus @change="onChange" round />
+    <div style="margin-top: 15px"></div>
+    <c-search v-model="search" @keyup-enter="keyupEnter"
+      background-color="#fff"
       input-background-color="#f0f1f2" autofocus @change="onChange" round />
   </div>
 </template>

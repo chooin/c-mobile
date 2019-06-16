@@ -95,7 +95,7 @@ export default {
     },
     inputHeight: {
       type: [String, Number],
-      default: 36
+      default: null
     }
   },
   mounted () {

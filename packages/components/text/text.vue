@@ -5,6 +5,7 @@
     :class="[
       type ? `c-text__${type}` : '',
       align ? `c-text__${align}`: '',
+      className ? className : '',
       {
         'c-text__light': light,
         'c-text__block': block,
@@ -41,6 +42,7 @@
     :class="[
       type ? `c-text__${type}` : '',
       align ? `c-text__${align}`: '',
+      className ? className : '',
       {
         'c-text__light': light,
         'c-text__block': block,
@@ -140,6 +142,10 @@ export default {
     next: {
       type: Boolean,
       default: false
+    },
+    className: {
+      type: String,
+      default: null
     }
   },
   methods: {

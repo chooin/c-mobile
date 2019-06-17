@@ -120,6 +120,9 @@
     .c-text__content {
       padding-right: 15px;
       position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       &::after {
         content: " ";
         transform: rotate(-45deg)

@@ -17,7 +17,6 @@
 
 <script>
 import to from '../../utils/to'
-import { isMiniProgramIsIPhoneX } from '../../utils/device'
 
 export default {
   name: 'cTabbarItem',
@@ -54,24 +53,11 @@ export default {
   methods: {
     onClick () {
       if (this._active) return
-      if (
-        isMiniProgramIsIPhoneX &&
-        this.to
-      ) {
-        /* eslint-disable */
-        let Megalo = Megalo || wx || false
-        if (Megalo) {
-          Megalo.reLaunch({
-            url: this.to
-          })
-        }
-        /* eslint-disable */
-      } else {
-        to({
-          vm: this,
-          to: this.to
-        })
-      }
+      to({
+        vm: this,
+        to: this.to,
+        replace: true
+      })
     }
   },
   computed: {

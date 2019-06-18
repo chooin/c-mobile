@@ -115,7 +115,7 @@
       opacity: .5;
     }
   }
-  &.c-actionsheet__has-title {
+  &.c-actionsheet__title {
     .c-actionsheet__content {
       .c-actionsheet__header {
         display: block;
@@ -136,7 +136,7 @@
     }
   }
   &.c-actionsheet__actions-empty {
-    &.c-actionsheet__has-title {
+    &.c-actionsheet__title {
       .c-actionsheet__content {
         .c-actionsheet__header {
           border-radius: 12px;

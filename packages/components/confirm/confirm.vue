@@ -2,7 +2,7 @@
   <div
     class="c-confirm"
     :class="{
-      'c-confirm__has-title': title
+      'c-confirm__title': title
     }">
     <div class="c-confirm__cell">
       <div class="c-confirm__title" v-if="title">

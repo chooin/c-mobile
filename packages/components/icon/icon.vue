@@ -5,7 +5,7 @@
       `icon-${name}`,
       type ? `c-icon__${type}` : '',
       {
-        'c-icon__has-background': backgroundColor
+        'c-icon__background': backgroundColor
       }
     ]"
     :style="{

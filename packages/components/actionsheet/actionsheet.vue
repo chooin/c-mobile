@@ -3,7 +3,7 @@
     class="c-actionsheet"
     :class="{
       'c-actionsheet__visible': value,
-      'c-actionsheet__has-title': title || description,
+      'c-actionsheet__title': title || description,
       'c-actionsheet__actions-empty': Array.isArray(_options) && _options.length === 0
     }"
     @click="onCancel">

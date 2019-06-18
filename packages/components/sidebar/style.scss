@@ -10,7 +10,7 @@
   transform: translateX(100%);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  &.c-sidebar__has-head {
+  &.c-sidebar__head {
     .c-sidebar__body {
       height: calc(100% - 50px);
     }

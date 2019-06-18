@@ -4,7 +4,7 @@
     :class="[
       {
         'c-sidebar__visible': visible,
-        'c-sidebar__has-head': $slots.head
+        'c-sidebar__head': $slots.head
       }
     ]">
     <slot name="head"></slot>

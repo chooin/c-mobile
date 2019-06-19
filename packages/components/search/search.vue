@@ -15,24 +15,14 @@
       <i class="c-search__icon-search">
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAM1BMVEUAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAr6XIYAAAAEHRSTlMA7xCA32Awz79AcJ+QIFCwFs9njwAAANNJREFUOMvtk90OgzAIRouC/e++93/aqclCLFq9WbKLnUs8BYHW/QjTIiJxutNiIOwEGWtQuF16CSuUk6TMWJkvvBmAj5/k/tIUAKU7l5ylcp8hAVStmIHchQoQ7PgIqCcxM9AG5LP2krNlohEX4NXHwlbFQOA+5AFnYZAJjcX70v5pM+FkgWU8Hh0u1ZOtVnvazqzoEo4p7aVAdZaGoznD/rZ+YTm8ClouTXCeJRXeNTVtmwrHyavZIwHQ5zoy3RSbyLKtU80h3zVf7pGZqbk/D3gDeQoM2LnjNc8AAAAASUVORK5CYII=" />
       </i>
-      <div
-        v-if="to"
-        :style="{
-          backgroundColor: inputBackgroundColor,
-          height: _inputHeight,
-          lineHeight: _inputHeight,
-          padding: _inputPadding,
-          borderRadius: _inputHeight
-        }"
-        :placeholder="placeholder"
-        class="c-search__input c-search__placeholder"
-      >{{ _value ? _value : placeholder }}</div>
       <input
-        v-else
         type="search"
         confirm-type="search"
         ref="search"
         class="c-search__input"
+        :class="{
+          'c-search__input-disabled': to
+        }"
         :style="{
           backgroundColor: inputBackgroundColor,
           height: _inputHeight,
@@ -43,10 +33,12 @@
         :placeholder="placeholder"
         placeholder-class="c-search__placeholder"
         v-model="_value"
+        :disabled="_disabled"
         @keyup="onKeyUp"
         @confirm="onConfirm"
       />
       <i
+        v-if="!_disabled"
         :style="{
           backgroundColor: inputBackgroundColor,
           borderRadius: _inputHeight
@@ -94,8 +86,8 @@ export default {
       default: false
     },
     to: {
-      type: Boolean,
-      default: false
+      type: String,
+      default: null
     },
     inputHeight: {
       type: [String, Number],
@@ -182,6 +174,9 @@ export default {
       } else {
         return '7px 10px 7px 32px'
       }
+    },
+    _disabled () {
+      return this.to !== null
     }
   }
 }

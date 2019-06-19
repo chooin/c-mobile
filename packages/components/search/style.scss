@@ -33,6 +33,9 @@
       -webkit-appearance: none;
       box-sizing: border-box;
       text-align: left;
+      &.c-search__input-disabled {
+        color: $text-placeholder;
+      }
       &::-webkit-input-placeholder {
         color: $text-light;
       }

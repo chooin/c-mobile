@@ -20,6 +20,7 @@
         :style="{
           backgroundColor: inputBackgroundColor,
           height: _inputHeight,
+          lineHeight: _inputHeight,
           padding: _inputPadding,
           borderRadius: _inputHeight
         }"

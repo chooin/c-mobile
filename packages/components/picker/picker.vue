@@ -2,7 +2,6 @@
   <div
     class="c-picker"
     :class="{
-      'c-picker__is-iphonex': isMiniProgramIsIPhoneX,
       'c-picker__visible': _value
     }">
     <div class="c-picker__content">
@@ -32,12 +31,9 @@
 </template>
 
 <script>
-import { isMiniProgramIsIPhoneX } from '../../utils/device'
-
 export default {
   data () {
     return {
-      isMiniProgramIsIPhoneX,
       isUpdated: true,
       indexs: []
     }

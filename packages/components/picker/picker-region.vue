@@ -2,7 +2,6 @@
   <div
     class="c-picker-region"
     :class="{
-      'c-picker-region__is-iphonex': isMiniProgramIsIPhoneX,
       'c-picker-region__visible': _value
     }">
     <div class="c-picker-region__content">
@@ -52,7 +51,6 @@
 </template>
 
 <script>
-import { isMiniProgramIsIPhoneX } from '../../utils/device'
 import originProvince from './data/province'
 import originCity from './data/city'
 import originDistrict from './data/district'
@@ -60,7 +58,6 @@ import originDistrict from './data/district'
 export default {
   data () {
     return {
-      isMiniProgramIsIPhoneX,
       isUpdated: true,
       indexs: [],
       provinces: [],

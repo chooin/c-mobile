@@ -2,7 +2,6 @@
   <div
     class="c-picker-daterange"
     :class="{
-      'c-picker-daterange__is-iphonex': isMiniProgramIsIPhoneX,
       'c-picker-daterange__visible': _value
     }">
     <div class="c-picker-daterange__content">
@@ -65,12 +64,9 @@
 </template>
 
 <script>
-import { isMiniProgramIsIPhoneX } from '../../utils/device'
-
 export default {
   data () {
     return {
-      isMiniProgramIsIPhoneX,
       isUpdated: true,
       indexs: [],
       lYears: [],

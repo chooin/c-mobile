@@ -14,6 +14,7 @@
     z-index: 2;
     transition: all 400ms ease;
     transform: translateY(100%);
+    border-bottom: #f0f0f0 env(safe-area-inset-bottom) solid;
     .c-picker-daterange__action {
       height: 40px;
       position: relative;
@@ -92,11 +93,6 @@
   }
   .indicator-style {
     height: 38px;
-  }
-  &.c-picker-daterange__is-iphonex {
-    .c-picker-daterange__content {
-      border-bottom: #f0f0f0 34px solid;
-    }
   }
   &.c-picker-daterange__visible {
     visibility: visible;

@@ -4,7 +4,6 @@
     :class="[
       type ? `c-tabbar__${type}` : '',
       {
-        'c-tabbar__is-miniprogram-is-iphonex': isMiniProgramIsIPhoneX,
         'c-tabbar__shadow': shadow
       }
     ]">
@@ -15,15 +14,8 @@
 </template>
 
 <script>
-import { isMiniProgramIsIPhoneX } from '../../utils/device'
-
 export default {
   name: 'cTabbar',
-  data () {
-    return {
-      isMiniProgramIsIPhoneX
-    }
-  },
   props: {
     type: {
       type: String,

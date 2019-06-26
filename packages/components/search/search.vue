@@ -156,7 +156,7 @@ export default {
       }
     },
     _inputPadding () {
-      if (this.inputHeight) {
+      if (this.inputHeight || !isBrowser) {
         let inputHeight
         if (
           typeof this.inputHeight === 'string' &&

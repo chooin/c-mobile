@@ -17,7 +17,7 @@
     <slot></slot>
   </div>
   <button
-    v-else-if="openType"
+    v-else-if="_useButton"
     class="c-input"
     :open-type="openType"
     :class="[
@@ -66,6 +66,10 @@ export default {
       type: Boolean,
       default: false
     },
+    useButton: { // 仅小程序支持
+      type: Boolean,
+      default: false
+    },
     openType: { // 仅小程序支持
       type: String,
       default: null
@@ -111,6 +115,10 @@ export default {
   computed: {
     labelWidth () {
       return this.$parent.labelWidth
+    },
+    _useButton () {
+      if (this.useButton) return true
+      if (this.openType) return true
     }
   }
 }

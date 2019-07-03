@@ -123,6 +123,7 @@ export default {
     _useButton () {
       if (this.useButton) return true
       if (this.openType) return true
+      return false
     }
   }
 }

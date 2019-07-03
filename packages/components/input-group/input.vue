@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="useDiv"
+    v-if="useDiv && visible"
     class="c-input"
     :class="[
       className,
@@ -17,7 +17,7 @@
     <slot></slot>
   </div>
   <button
-    v-else-if="_useButton"
+    v-else-if="_useButton && visible"
     class="c-input"
     :open-type="openType"
     :class="[
@@ -34,7 +34,7 @@
     <slot></slot>
   </button>
   <label
-    v-else
+    v-else-if="visible"
     class="c-input"
     :class="[
       className,
@@ -101,6 +101,10 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    visible: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {

@@ -105,13 +105,16 @@ export default {
     componentInit () {
       if (isMiniProgram) {
         /* eslint-disable */
-        Megalo.getSystemInfo().then(getSystemInfo => {
-          let menuButton = Megalo.getMenuButtonBoundingClientRect()
+        let Megalo = Megalo || wx
+        Megalo.getSystemInfo({
+          success: getSystemInfo => {
+            let menuButton = Megalo.getMenuButtonBoundingClientRect()
 
-          this.paddingTop = `${menuButton.top}px`
-          this.paddingRight = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
-          this.paddingBottom = '9px'
-          this.paddingLeft = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
+            this.paddingTop = `${menuButton.top}px`
+            this.paddingRight = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
+            this.paddingBottom = '9px'
+            this.paddingLeft = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
+          }
         })
         /* eslint-disable */
       }

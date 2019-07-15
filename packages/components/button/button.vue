@@ -1,8 +1,7 @@
 <template>
   <cover-view
     v-if="_coverView"
-    class="c-button"
-    type="type"
+    @click="onClick"
     :open-type="openType"
     :form-type="formType"
     :class="[
@@ -18,16 +17,16 @@
     :style="{
       borderRadius: _borderRadius
     }"
-    @click="onClick"
-    hover-class="c-button-hover">
+    hover-class="c-button-hover"
+    class="c-button">
     <cover-view class="c-button__text">
       <slot></slot>
     </cover-view>
   </cover-view>
   <button
     v-else
-    class="c-button"
-    type="type"
+    @click="onClick"
+    @getphonenumber="onGetphonenumber"
     :open-type="openType"
     :form-type="formType"
     :class="[
@@ -43,8 +42,8 @@
     :style="{
       borderRadius: _borderRadius
     }"
-    @click="onClick"
-    hover-class="c-button-hover">
+    hover-class="c-button-hover"
+    class="c-button">
     <span class="c-button__text">
       <slot></slot>
     </span>
@@ -97,7 +96,7 @@ export default {
       type: String,
       default: null
     },
-    coverView: {
+    coverView: { // 仅小程序支持
       type: Boolean,
       default: false
     }
@@ -109,6 +108,9 @@ export default {
         vm: this,
         to: this.to
       })
+    },
+    onGetphonenumber (v) {
+      this.$emit('getphonenumber', v)
     }
   },
   mounted () {

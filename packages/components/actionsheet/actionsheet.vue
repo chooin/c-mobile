@@ -22,18 +22,31 @@
       </div>
       <div class="c-actionsheet__actions">
         <ul>
-          <li
-            v-for="(item, index) in _options"
-            :key="index"
-            @click.stop="onAction(item)"
-            :style="{
-              color: item.color
-            }">
-            {{ item.text }}
-          </li>
+          <template v-for="(item, index) in _options">
+            <button
+              v-if="item.openType"
+              :key="index"
+              @click.stop="onOption(item)"
+              :style="{
+                color: item.color
+              }"
+              :open-type="item.openType">{{ item.text }}</button>
+            <li
+              v-else
+              :key="index"
+              @click.stop="onOption(item)"
+              :style="{
+                color: item.color
+              }">{{ item.text }}</li>
+          </template>
         </ul>
       </div>
-      <div class="c-actionsheet__cancel" @click.stop="onCancel">
+      <div
+        @click.stop="onCancel"
+        :style="{
+          color: cancelColor
+        }"
+        class="c-actionsheet__cancel">
         {{ cancelText }}
       </div>
     </div>
@@ -66,13 +79,17 @@ export default {
       type: String,
       default: 'Cancel'
     },
+    cancelColor: {
+      type: String,
+      default: null
+    },
     visible: {
       type: Boolean,
       default: false
     }
   },
   methods: {
-    onAction (item) {
+    onOption (item) {
       if (item.click) item.click()
       this._value = false
     },

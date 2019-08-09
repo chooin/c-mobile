@@ -8,6 +8,10 @@
     <c-button type="primary" @click="btn5Click">显示 actionsheet</c-button>
     <c-actionsheet
       :actions="actionsheet.actions"
+      :cancel-style="{
+        color: '#000000',
+        fontWeight: 'bold'
+      }"
       title="2017年12月13日，谷歌正式宣布谷歌AI中国中心（Google AI China Center）在北京成立"
       description="1999年下半年，谷歌网站“Google”正式启用。[3]  2010年3月23日，宣布关闭在中国大。"
       cancel-text="取消"

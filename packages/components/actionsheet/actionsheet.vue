@@ -28,7 +28,8 @@
               :key="index"
               @click.stop="onOption(item)"
               :style="{
-                color: item.color
+                color: item.color,
+                fontWeight: item.bold || 'normal'
               }"
               :open-type="item.openType">{{ item.text }}</button>
             <li
@@ -36,16 +37,15 @@
               :key="index"
               @click.stop="onOption(item)"
               :style="{
-                color: item.color
+                color: item.color,
+                fontWeight: item.bold || 'normal'
               }">{{ item.text }}</li>
           </template>
         </ul>
       </div>
       <div
         @click.stop="onCancel"
-        :style="{
-          color: cancelColor
-        }"
+        :style="cancelStyle"
         class="c-actionsheet__cancel">
         {{ cancelText }}
       </div>
@@ -79,9 +79,9 @@ export default {
       type: String,
       default: 'Cancel'
     },
-    cancelColor: {
-      type: String,
-      default: null
+    cancelStyle: {
+      type: Object,
+      default: () => {}
     },
     visible: {
       type: Boolean,

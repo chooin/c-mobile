@@ -7,7 +7,7 @@
         'c-switch__disabled': disabled,
         'c-switch__checked': _value,
         'c-switch__small': small,
-        'c-switch__loading': disabled ? false : isLoading
+        'c-switch__before-change-loading': disabled ? false : isLoading
       }
     ]"
     @click="onClick">
@@ -42,7 +42,7 @@ export default {
       type: Boolean,
       default: false
     },
-    loading: {
+    beforeChangeLoading: {
       type: Boolean,
       default: false
     },
@@ -51,10 +51,8 @@ export default {
   methods: {
     onClick () {
       if (this.disabled) return
+      if (this.beforeChangeLoading) this.isLoading = true
       let value = !this._value
-      if (this.loading) {
-        this.isLoading = true
-      }
       this.vibrateShort()
       if (this.beforeChange) {
         this.beforeChange(() => {

@@ -21,27 +21,15 @@
         </p>
       </div>
       <div class="c-actionsheet__actions">
-        <ul>
-          <template v-for="(item, index) in _options">
-            <button
-              v-if="item.openType"
-              :key="index"
-              @click.stop="onOption(item)"
-              :style="{
-                color: item.color,
-                fontWeight: item.bold || 'normal'
-              }"
-              :open-type="item.openType">{{ item.text }}</button>
-            <li
-              v-else
-              :key="index"
-              @click.stop="onOption(item)"
-              :style="{
-                color: item.color,
-                fontWeight: item.bold || 'normal'
-              }">{{ item.text }}</li>
-          </template>
-        </ul>
+        <button
+          v-for="(item, index) in _options"
+          :key="index"
+          @click.stop="onOption(item)"
+          :style="{
+            color: item.color,
+            fontWeight: item.bold || 'normal'
+          }"
+          :open-type="item.openType">{{ item.text }}</button>
       </div>
       <div
         @click.stop="onCancel"

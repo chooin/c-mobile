@@ -12,6 +12,18 @@
     <div style="height: 1.5rem"></div>
     <c-switch v-model="disabled" @change="change" type="danger" disabled /> {{ disabled }}
     <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" small /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" small type="primary" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" small type="success" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="value" @change="change" small type="warning" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    beforeChange <c-switch v-model="value" @change="change" small type="danger" loading :before-change="beforeChange" /> {{ value }}
+    <div style="height: 1.5rem"></div>
+    <c-switch v-model="disabled" @change="change" small type="danger" disabled /> {{ disabled }}
+    <div style="height: 1.5rem"></div>
   </div>
 </template>
 

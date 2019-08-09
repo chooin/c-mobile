@@ -8,7 +8,7 @@
     <div style="height: 1.5rem"></div>
     <c-switch v-model="value" @change="change" type="warning" /> {{ value }}
     <div style="height: 1.5rem"></div>
-    beforeChange <c-switch v-model="value" @change="change" type="danger" loading :before-change="beforeChange" /> {{ value }}
+    beforeChange <c-switch v-model="value" @change="change" type="danger" before-change-loading :before-change="beforeChange" /> {{ value }}
     <div style="height: 1.5rem"></div>
     <c-switch v-model="disabled" @change="change" type="danger" disabled /> {{ disabled }}
     <div style="height: 1.5rem"></div>
@@ -32,8 +32,7 @@ export default {
   data () {
     return {
       value: false,
-      disabled: true,
-      loading: false
+      disabled: true
     }
   },
   methods: {
@@ -41,7 +40,6 @@ export default {
       this.$Toast(`${v}`)
     },
     beforeChange (next) {
-      this.loading = true
       this.$Confirm({
         title: '提示',
         text: 'beforeChange',
@@ -50,14 +48,12 @@ export default {
             text: '确定',
             click: () => {
               next()
-              this.loading = false
             }
           },
           {
             text: '取消',
             click: () => {
               this.$Toast('已取消操作')
-              this.loading = false
             }
           }
         ]

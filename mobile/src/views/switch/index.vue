@@ -20,7 +20,7 @@
     <div style="height: 1.5rem"></div>
     <c-switch v-model="value" @change="change" small type="warning" /> {{ value }}
     <div style="height: 1.5rem"></div>
-    beforeChange <c-switch v-model="value" @change="change" small type="danger" loading :before-change="beforeChange" /> {{ value }}
+    beforeChange <c-switch v-model="value" @change="change" small type="danger" before-change-loading :before-change="beforeChange" /> {{ value }}
     <div style="height: 1.5rem"></div>
     <c-switch v-model="disabled" @change="change" small type="danger" disabled /> {{ disabled }}
     <div style="height: 1.5rem"></div>

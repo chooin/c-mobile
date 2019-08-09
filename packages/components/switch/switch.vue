@@ -6,6 +6,7 @@
       {
         'c-switch__disabled': disabled,
         'c-switch__checked': _value,
+        'c-switch__small': small,
         'c-switch__loading': disabled ? false : isLoading
       }
     ]"
@@ -34,6 +35,10 @@ export default {
       default: ''
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    small: {
       type: Boolean,
       default: false
     },

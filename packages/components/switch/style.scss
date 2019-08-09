@@ -138,4 +138,33 @@
       }
     }
   }
+  &.c-switch__small {
+    width: 44px;
+    height: 22px;
+    .c-switch__core {
+      &::before {
+        width: 42px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: #ffffff;
+      }
+      i {
+        top: 1px;
+        left: 1px;
+        width: 18px;
+        height: 18px;
+        &::after {
+          border-radius: 18px;
+          box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.14);
+        }
+      }
+    }
+    &.c-switch__checked {
+      .c-switch__core {
+        i {
+          transform: translateX(22px);
+        }
+      }
+    }
+  }
 }

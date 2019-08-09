@@ -6,7 +6,8 @@
       'c-actionsheet__title': title || description,
       'c-actionsheet__actions-empty': Array.isArray(_options) && _options.length === 0
     }"
-    @click="onCancel">
+    @click="onCancel"
+    catchtouchmove>
     <div
       class="c-actionsheet__content">
       <div

@@ -11,14 +11,13 @@
   .c-actionsheet__content {
     position: absolute;
     left: 50%;
-    bottom: 10px;
-    width: calc(100% - 20px);
+    bottom: 0;
+    width: 100%;
     z-index: 1;
     transform: translate(-50%, 100%);
     transition: all .3s ease;
+    background: #fff;
     .c-actionsheet__header {
-      background: #fff;
-      border-radius: 12px 12px 0 0;
       padding: 12px 0;
       position: relative;
       display: none;
@@ -44,7 +43,7 @@
       }
       &::before {
         @include borderLine('bottom');
-        border-color: $border-dark;
+        border-color: $border;
       }
     }
     .c-actionsheet__actions {
@@ -52,44 +51,42 @@
         padding: 0;
         li {
           list-style: none;
-          background: #fff;
-          height: 57px;
+          height: 50px;
           text-align: center;
-          line-height: 57px;
+          line-height: 50px;
           color: rgb(0, 122, 255);
-          font-size: 20px;
+          font-size: 16px;
           position: relative;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
           padding: 0 25px;
           &:first-child {
-            border-radius: 12px 12px 0 0;
             &::before {
               border-top: none;
             }
           }
-          &:last-child {
-            border-bottom-right-radius: 12px;
-            border-bottom-left-radius: 12px;
-          }
           &::before {
             @include borderLine('top');
-            border-color: $border-dark;
+            border-color: $border;
+          }
+          &:active {
+            background: #fafafa;
           }
         }
       }
     }
     .c-actionsheet__cancel {
-      background: #fff;
-      height: 57px;
-      border-radius: 12px;
       text-align: center;
-      line-height: 57px;
+      line-height: 50px;
       color: rgb(0, 122, 255);
-      font-size: 20px;
-      margin-top: 7px;
-      font-weight: bold;
+      font-size: 16px;
+      border-top: 7px solid #f8f8f8;
+      height: calc(50px + constant(safe-area-inset-bottom));
+      height: calc(50px + env(safe-area-inset-bottom));
+      &:active {
+        background: #fafafa;
+      }
     }
   }
   &::before {
@@ -106,9 +103,6 @@
   &.c-actionsheet__visible {
     visibility: visible;
     .c-actionsheet__content {
-      padding-bottom: 10px;
-      padding-bottom: constant(safe-area-inset-bottom);
-      padding-bottom: env(safe-area-inset-bottom);
       transform: translate(-50%, 0);
     }
     &::before {
@@ -120,26 +114,12 @@
       .c-actionsheet__header {
         display: block;
       }
-      .c-actionsheet__actions {
-        ul {
-          li {
-            &:first-child {
-              border-radius: 0;
-            }
-            &:last-child {
-              border-bottom-right-radius: 12px;
-              border-bottom-left-radius: 12px;
-            }
-          }
-        }
-      }
     }
   }
   &.c-actionsheet__actions-empty {
     &.c-actionsheet__title {
       .c-actionsheet__content {
         .c-actionsheet__header {
-          border-radius: 12px;
           &::before {
             border: none;
           }

@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { isMiniProgram } from '../../utils/device'
+
 export default {
   name: 'cSwitch',
   props: {
@@ -35,6 +37,7 @@ export default {
     onClick () {
       if (this.disabled) return
       let value = !this.value
+      this.vibrateShort()
       if (this.beforeChange) {
         this.beforeChange(() => {
           this.$emit('input', value)
@@ -43,6 +46,18 @@ export default {
       } else {
         this.$emit('input', value)
         this.$emit('change', value)
+      }
+    },
+    vibrateShort () {
+      if (isMiniProgram) {
+        let Megalo = Megalo || false
+        if (Megalo) {
+          Megalo.vibrateShort()
+        } else {
+          /* eslint-disable */
+          wx.vibrateShort()
+          /* eslint-disable */
+        }
       }
     }
   },

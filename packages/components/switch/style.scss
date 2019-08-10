@@ -25,9 +25,9 @@
     top: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid $border;
+    border: 1px solid #EBEBEB;
     border-radius: 16px;
-    background: $border;
+    background: #fff;
     box-sizing: border-box;
     &::before {
       content: "";

@@ -42,16 +42,22 @@ export default {
       type: Boolean,
       default: false
     },
+    beforeChange: {
+      type: Function
+    },
+    beforeChangeData: {},
     beforeChangeLoading: {
       type: Boolean,
-      default: false
-    },
-    beforeChange: Function
+      default: true
+    }
   },
   methods: {
     onClick () {
       if (this.disabled) return
-      if (this.beforeChangeLoading) this.isLoading = true
+      if (
+        this.beforeChange &&
+        this.beforeChangeLoading
+      ) this.isLoading = true
       let value = !this._value
       this.vibrateShort()
       if (this.beforeChange) {
@@ -59,7 +65,7 @@ export default {
           this.$emit('input', value)
           this.$emit('change', value)
           this.isLoading = false
-        })
+        }, this.beforeChangeData)
       } else {
         this.$emit('input', value)
         this.$emit('change', value)

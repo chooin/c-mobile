@@ -17,6 +17,7 @@
     transform: translate(-50%, 100%);
     transition: all .3s ease;
     background: #fff;
+    will-change: transform;
     .c-actionsheet__header {
       padding: 12px 0;
       position: relative;
@@ -97,6 +98,7 @@
     height: 100%;
     background: rgb(40, 40, 40);
     opacity: 0;
+    will-change: opacity;
     transition: all .3s ease;
   }
   &.c-actionsheet__visible {

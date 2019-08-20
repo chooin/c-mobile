@@ -61,10 +61,24 @@
 
   &.c-text__center {
     text-align: center !important;
+    &.c-text__cursor {
+      &::before {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
 
   &.c-text__right {
     text-align: right !important;
+  }
+
+  .c-text__content {
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: top;
   }
 
   &.c-text__cursor {
@@ -83,8 +97,6 @@
       border-radius: 4px;
     }
     .c-text__content {
-      position: relative;
-      vertical-align: top;
       &::before {
         display: block;
         content: " ";
@@ -119,10 +131,6 @@
   &.c-text__next {
     .c-text__content {
       padding-right: 15px;
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
       &::after {
         content: " ";
         transform: rotate(-45deg)

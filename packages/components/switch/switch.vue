@@ -43,9 +43,8 @@ export default {
       default: false
     },
     beforeChange: {
-      type: Function
+      type: [Function, Object]
     },
-    beforeChangeData: {},
     beforeChangeLoading: {
       type: Boolean,
       default: true
@@ -61,11 +60,22 @@ export default {
       let value = !this._value
       this.vibrateShort()
       if (this.beforeChange) {
-        this.beforeChange(() => {
-          this.$emit('input', value)
-          this.$emit('change', value)
-          this.isLoading = false
-        }, this.beforeChangeData)
+        if (typeof this.beforeChange === 'function') {
+          this.beforeChange(() => {
+            this.$emit('input', value)
+            this.$emit('change', value)
+            this.isLoading = false
+          })
+        } else if (
+          typeof this.beforeChange === 'object' &&
+          typeof this.beforeChange.beforeChange === 'function'
+        ) {
+          this.beforeChange.beforeChange(() => {
+            this.$emit('input', value)
+            this.$emit('change', value)
+            this.isLoading = false
+          }, this.beforeChange.data)
+        }
       } else {
         this.$emit('input', value)
         this.$emit('change', value)

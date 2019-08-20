@@ -15,11 +15,7 @@
         'c-text__next': next
       }
     ]"
-    :style="{
-      fontFamily,
-      fontSize: _fontSize,
-      color
-    }"
+    :style="componentStyle"
     @click="onClick">
     <template
       v-if="
@@ -30,9 +26,9 @@
       {{ text }}
     </template>
     <template v-else-if="isPlaceholder">
-      <cover-view class="c-text__content">{{ placeholder }}</cover-view>
+      <cover-view :style="componentStyle" class="c-text__content">{{ placeholder }}</cover-view>
     </template>
-    <cover-view v-else class="c-text__content">
+    <cover-view v-else :style="componentStyle" class="c-text__content">
       <slot>{{ text }}</slot>
     </cover-view>
   </cover-view>
@@ -52,11 +48,7 @@
         'c-text__next': next
       }
     ]"
-    :style="{
-      fontFamily,
-      fontSize: _fontSize,
-      color
-    }"
+    :style="componentStyle"
     @click="onClick">
     <template
       v-if="
@@ -67,9 +59,9 @@
       {{ text }}
     </template>
     <template v-else-if="isPlaceholder">
-      <span class="c-text__content">{{ placeholder }}</span>
+      <span :style="componentStyle" class="c-text__content">{{ placeholder }}</span>
     </template>
-    <span v-else class="c-text__content">
+    <span v-else :style="componentStyle" class="c-text__content">
       <slot>{{ text }}</slot>
     </span>
   </div>
@@ -99,10 +91,6 @@ export default {
       type: Boolean,
       default: false
     },
-    fontFamily: {
-      type: String,
-      default: ''
-    },
     to: {
       type: [String, Object],
       default: null
@@ -118,14 +106,6 @@ export default {
     cursor: {
       type: Boolean,
       default: false
-    },
-    fontSize: {
-      type: [Number, String],
-      default: null
-    },
-    color: {
-      type: String,
-      default: null
     },
     align: {
       type: String,
@@ -146,6 +126,14 @@ export default {
     className: {
       type: String,
       default: null
+    },
+    componentStyle: {
+      type: Object,
+      default: () => {}
+    },
+    style: {
+      type: Object,
+      default: () => {}
     }
   },
   methods: {
@@ -179,24 +167,13 @@ export default {
     }
   },
   computed: {
-    _fontSize () {
-      if (this.fontSize) {
-        if (isNaN(this.fontSize)) {
-          return this.fontSize
-        } else {
-          return `${this.fontSize}px`
-        }
-      } else {
-        return null
-      }
-    },
     _coverView: {
       get () {
         return this.coverView || this.$parent.coverView || false
       }
     }
   },
-  created () {
+  mounted () {
     this.setIsEmptyOrIsPlaceholder()
   },
   beforeUpdate () {

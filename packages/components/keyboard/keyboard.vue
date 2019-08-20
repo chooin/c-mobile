@@ -5,7 +5,7 @@
       class="c-keyboard">
       <div class="c-keyboard__done" v-if="description || doneText">
         <div class="c-keyboard__description">{{ description }}</div>
-        <div class="c-keyboard__done-btn" @click="doneClick">{{ doneText }}</div>
+        <div class="c-keyboard__done-button" @click="doneClick">{{ doneText }}</div>
       </div>
       <div class="c-keyboard__key-group">
         <c-keyboard-key text="1" @click="onClick" />
@@ -33,14 +33,17 @@
 
 <script>
 import cKeyboardKey from './keyboard-key.vue'
+import { isBrowser } from '../../utils'
 
 export default {
   name: 'cKeyboard',
   mounted () {
-    if (typeof window.ontouchstart === 'undefined') {
-      document.addEventListener('click', this.hideKeyboard, true)
-    } else {
-      document.addEventListener('touchstart', this.hideKeyboard, true)
+    if (isBrowser) {
+      if (typeof window.ontouchstart === 'undefined') {
+        document.addEventListener('click', this.hideKeyboard, true)
+      } else {
+        document.addEventListener('touchstart', this.hideKeyboard, true)
+      }
     }
   },
   props: {
@@ -60,7 +63,7 @@ export default {
       type: String,
       default: null
     },
-    allowHide: {
+    supportHide: {
       type: Boolean,
       default: true
     }
@@ -73,7 +76,7 @@ export default {
       this.$emit('delete')
     },
     doneClick () {
-      if (this.allowHide) {
+      if (this.supportHide) {
         this._value = false
         this.$emit('hide')
       }
@@ -81,7 +84,7 @@ export default {
     },
     hideKeyboard (e) {
       if (
-        this.allowHide &&
+        this.supportHide &&
         this._value !== false &&
         e.target.className.indexOf('c-keyboard') === -1
       ) {
@@ -104,7 +107,7 @@ export default {
     },
     _value: {
       get () {
-        return this.allowHide ? this.value : true
+        return this.supportHide ? this.value : true
       },
       set (value) {
         this.$emit('input', value)
@@ -115,10 +118,12 @@ export default {
     cKeyboardKey
   },
   beforeDestroy () {
-    if (typeof window.ontouchstart === 'undefined') {
-      document.removeEventListener('click', this.hideKeyboard, true)
-    } else {
-      document.removeEventListener('touchstart', this.hideKeyboard, true)
+    if (isBrowser) {
+      if (typeof window.ontouchstart === 'undefined') {
+        document.removeEventListener('click', this.hideKeyboard, true)
+      } else {
+        document.removeEventListener('touchstart', this.hideKeyboard, true)
+      }
     }
   }
 }

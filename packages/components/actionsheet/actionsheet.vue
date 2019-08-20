@@ -4,7 +4,7 @@
     :class="{
       'c-actionsheet__visible': value,
       'c-actionsheet__title': title || description,
-      'c-actionsheet__actions-empty': Array.isArray(_options) && _options.length === 0
+      'c-actionsheet__options-empty': Array.isArray(_options) && _options.length === 0
     }"
     @click="onCancel"
     catchtouchmove>
@@ -20,7 +20,7 @@
           {{ description }}
         </p>
       </div>
-      <div class="c-actionsheet__actions">
+      <div class="c-actionsheet__options">
         <button
           v-for="(item, index) in _options"
           :key="index"

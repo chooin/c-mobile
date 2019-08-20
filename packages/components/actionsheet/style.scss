@@ -47,7 +47,7 @@
         border-color: $border;
       }
     }
-    .c-actionsheet__actions {
+    .c-actionsheet__options {
       padding: 0;
       button {
         list-style: none;
@@ -117,7 +117,7 @@
       }
     }
   }
-  &.c-actionsheet__actions-empty {
+  &.c-actionsheet__options-empty {
     &.c-actionsheet__title {
       .c-actionsheet__content {
         .c-actionsheet__header {

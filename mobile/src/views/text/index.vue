@@ -29,9 +29,12 @@
     <c-text align="left" next>左边</c-text>
     <c-text align="center" next>中间</c-text>
     <c-text align="right" next>右边</c-text>
-    <c-text block cursor placeholder="placeholder" font-size="50"></c-text>
+    <c-text block cursor placeholder="placeholder" :content-style="{
+      fontSize: '50px'
+    }"></c-text>
     <c-text block cursor font-size="50">内容</c-text>
-    <c-text block font-family="SimSun" font-size="100">宋体</c-text>
+    <c-text align="center" placeholder="placeholder" cursor>w</c-text>
+    <c-text block>宋体</c-text>
     <c-text align="right" next>next</c-text>
   </div>
 </template>

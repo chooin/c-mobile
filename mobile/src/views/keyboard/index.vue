@@ -25,7 +25,7 @@
       </c-input>
     </c-input-group>
     <c-keyboard
-      allow-hide
+      support-hide
       type="idcard"
       v-model="show"
       done-text="完成"

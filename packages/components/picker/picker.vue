@@ -7,8 +7,8 @@
     <div class="c-picker__content">
       <div class="c-picker__action">
         <div v-if="placeholder" class="c-picker__placeholder">{{ placeholder }}</div>
-        <div v-else class="c-picker__cancel" @click="onCancel">取消</div>
-        <div class="c-picker__done" @click="onDone">完成</div>
+        <div v-else class="c-picker__cancel" @click="onCancel">{{ cancelText }}</div>
+        <div class="c-picker__done" @click="onDone">{{ doneText }}</div>
       </div>
       <picker-view
         indicator-class="indicator-style"
@@ -58,6 +58,18 @@ export default {
     placeholder: {
       type: String,
       default: null
+    },
+    doneText: {
+      type: String,
+      default: '完成'
+    },
+    cancelText: {
+      type: String,
+      default: '取消'
+    },
+    nullText: {
+      type: String,
+      default: '请选择'
     }
   },
   methods: {
@@ -85,7 +97,7 @@ export default {
       } else {
         if (this.required) {
           let Megalo = Megalo || false
-          let title = '请选择'
+          let title = this.nullText
           let toast = {
             title,
             icon: 'none',
@@ -143,7 +155,7 @@ export default {
       return [
         {
           id: null,
-          name: '请选择'
+          name: this.nullText
         },
         ...this.options
       ]

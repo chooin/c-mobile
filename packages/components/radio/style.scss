@@ -1,6 +1,5 @@
 .c-radio-group {
   .c-radio {
-    padding-left: 20px;
     font-size: 14px;
     position: relative;
     .c-radio__core {
@@ -8,10 +7,9 @@
       height: 16px;
       position: absolute;
       top: 50%;
-      left: 0;
       transform: translateY(-50%);
       border: 1px solid;
-      border-color: $primary;
+      border-color: #d9d9d9;
       border-radius: 50%;
       box-sizing: border-box;
       &::after {
@@ -41,7 +39,6 @@
   &.c-radio-group__success {
     .c-radio {
       .c-radio__core {
-        border-color: $success;
         &::after {
           background-color: $success;
         }
@@ -52,7 +49,6 @@
   &.c-radio-group__warning {
     .c-radio {
       .c-radio__core {
-        border-color: $warning;
         &::after {
           background-color: $warning;
         }
@@ -63,7 +59,6 @@
   &.c-radio-group__danger {
     .c-radio {
       .c-radio__core {
-        border-color: $danger;
         &::after {
           background-color: $danger;
         }
@@ -78,6 +73,23 @@
         &::after {
           background-color: #ccc;
         }
+      }
+    }
+  }
+
+  &.c-radio-group__left {
+    .c-radio {
+      padding-left: 20px;
+      .c-radio__core {
+        left: 0;
+      }
+    }
+  }
+  &.c-radio-group__right {
+    .c-radio {
+      padding-right: 20px;
+      .c-radio__core {
+        right: 0;
       }
     }
   }

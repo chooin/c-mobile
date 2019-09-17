@@ -2,7 +2,8 @@
   <div
     class="c-radio-group"
     :class="[
-      type ? 'c-radio-group__' + type : '',
+      `c-radio-group__${align}`,
+      type ? `c-radio-group__${type}` : '',
       {
         'c-radio-group__disabled': disabled
       }
@@ -22,6 +23,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    align: {
+      type: String,
+      default: 'left'
     },
     value: {}
   },

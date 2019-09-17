@@ -39,6 +39,10 @@ button.c-input {
       p {
         padding: 5px 0;
       }
+      .c-radio {
+        height: 30px;
+        line-height: 30px;
+      }
     }
     &.c-input__next {
       &:active {

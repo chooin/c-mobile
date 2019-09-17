@@ -14,7 +14,10 @@
     z-index: 2;
     transition: all 400ms ease;
     transform: translateY(100%);
-    border-bottom: #f0f0f0 env(safe-area-inset-bottom) solid;
+    // border-bottom: #f0f0f0 env(safe-area-inset-bottom) solid;
+    border: 0 solid #f0f0f0;
+    border-bottom-width: 0;
+    border-bottom-width: env(safe-area-inset-bottom);
     .c-picker-date__action {
       height: 40px;
       position: relative;

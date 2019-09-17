@@ -3,8 +3,8 @@
     font-size: 14px;
     position: relative;
     .c-radio__core {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -14,8 +14,8 @@
       box-sizing: border-box;
       &::after {
         position: absolute;
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
         left: 2px;
         top: 2px;
         border-radius: 100%;

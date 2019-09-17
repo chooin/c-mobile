@@ -39,10 +39,6 @@ button.c-input {
       p {
         padding: 5px 0;
       }
-      .c-radio {
-        height: 30px;
-        line-height: 30px;
-      }
     }
     &.c-input__next {
       &:active {
@@ -53,6 +49,42 @@ button.c-input {
   &.c-input__addon.c-input__next:active + .c-input {
     &::before {
       border-top: none;
+    }
+  }
+}
+
+.c-radio-group {
+  .c-input {
+    padding: 0;
+    .c-input-body {
+      .c-radio {
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  &.c-radio-group__left {
+    .c-input {
+      padding-right: 15px;
+      .c-radio {
+        padding-left: 35px;
+        .c-radio__core {
+          left: 15px;
+        }
+      }
+    }
+  }
+
+  &.c-radio-group__right {
+    .c-input {
+      padding-left: 15px;
+      .c-radio {
+        padding-right: 35px;
+        .c-radio__core {
+          right: 15px;
+        }
+      }
     }
   }
 }

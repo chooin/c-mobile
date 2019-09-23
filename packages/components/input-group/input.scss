@@ -202,21 +202,28 @@
   }
 }
 
-label {
-  &.c-input {
-    &.c-input__next {
-      &:active {
-        background: $border;
-        opacity: 1;
-        &::before {
-          border-top: none;
-        }
+.c-input {
+  &.c-input__next,
+  &.c-input__active {
+    &:active {
+      background: $border;
+      opacity: 1;
+      &::before {
+        border-top: none;
       }
     }
   }
 }
-label.c-input.c-input__next:active + .c-input {
+
+.c-input.c-input__next:active + .c-input {
   &::before {
     border-top: none;
   }
 }
+
+.c-input.c-input__active:active + .c-input {
+  &::before {
+    border-top: none;
+  }
+}
+

@@ -7,6 +7,7 @@
       {
         'c-input__addon': addon,
         'c-input__next': next,
+        'c-input__active': active,
         'c-input__icon': icon,
         'c-input__checked': checked,
         'c-input__noborder-top': noborderTop
@@ -25,6 +26,7 @@
       {
         'c-input__addon': addon,
         'c-input__next': next,
+        'c-input__active': active,
         'c-input__icon': icon,
         'c-input__checked': checked,
         'c-input__noborder-top': noborderTop
@@ -41,6 +43,7 @@
       {
         'c-input__addon': addon,
         'c-input__next': next,
+        'c-input__active': active,
         'c-input__icon': icon,
         'c-input__checked': checked,
         'c-input__noborder-top': noborderTop
@@ -105,6 +108,10 @@ export default {
     visible: {
       type: Boolean,
       default: true
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

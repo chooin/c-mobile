@@ -25,6 +25,11 @@
           v-for="(item, index) in _options"
           :key="index"
           @click.stop="onOption(item)"
+          :session-from="item.sessionFrom"
+          :send-message-title="item.itemMessageTitle"
+          :send-message-path="item.itemMessagePath"
+          :send-message-img="item.itemMessageImg"
+          :show-message-card="item.itemMessageCard"
           :style="{
             color: item.color,
             fontWeight: item.bold || 'normal'

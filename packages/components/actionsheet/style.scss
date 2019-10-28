@@ -62,6 +62,9 @@
         text-overflow: ellipsis;
         padding: 0 25px;
         background: #fff;
+        border: none;
+        display: block;
+        width: 100%;
         &:first-child {
           &::before {
             border-top: none;

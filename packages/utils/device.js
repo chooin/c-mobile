@@ -1,22 +1,34 @@
 /* eslint-disable */
-const isBrowser = typeof window !== 'undefined'
-const isNode = typeof global === 'object' && global['process']
-let systemInfo
-if (!isBrowser && !isNode) systemInfo = wx && wx.getSystemInfoSync()
-const isMiniProgram = !isBrowser && systemInfo
-const isMiniProgramIsIPhoneX = isMiniProgram && systemInfo.model.indexOf('iPhone X') > -1
-const isIPhoneX = isMiniProgramIsIPhoneX
+let isBrowser = false
+let isMiniProgram = false
+let isMiniProgramIsIPhoneX = false
+let isIPhoneX = false
+let isNode = false
+
+if (typeof window !== 'undefined') {
+  isBrowser = true
+} else if (wx && wx.getSystemInfoSync()) {
+  isMiniProgram = true
+  if (wx.getSystemInfoSync().model.indexOf('iPhone X') > -1) {
+    isMiniProgramIsIPhoneX = true
+    isIPhoneX = true
+  }
+} else if (typeof global === 'object' && global['process']) {
+  isNode = true
+}
 
 export default {
   isBrowser,
   isMiniProgram,
   isMiniProgramIsIPhoneX,
-  isIPhoneX
+  isIPhoneX,
+  isNode
 }
 
 export {
   isBrowser,
   isMiniProgram,
   isMiniProgramIsIPhoneX,
-  isIPhoneX
+  isIPhoneX,
+  isNode
 }

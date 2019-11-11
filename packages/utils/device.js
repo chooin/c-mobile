@@ -4,12 +4,13 @@ let isMiniProgram = false
 let isMiniProgramIsIPhoneX = false
 let isIPhoneX = false
 let isNode = false
+let Megalo = Megalo || wx
 
 if (typeof window !== 'undefined') {
   isBrowser = true
-} else if (wx && wx.getSystemInfoSync()) {
+} else if (Megalo && Megalo.getSystemInfoSync()) {
   isMiniProgram = true
-  if (wx.getSystemInfoSync().model.indexOf('iPhone X') > -1) {
+  if (Megalo.getSystemInfoSync().model.indexOf('iPhone X') > -1) {
     isMiniProgramIsIPhoneX = true
     isIPhoneX = true
   }

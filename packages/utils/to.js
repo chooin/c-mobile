@@ -4,7 +4,12 @@ const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
 
 const isTelPhone = v => getObjectType(v) === 'String' && v.indexOf('tel:') === 0
 
-const createQueryUrl = (to) => {
+const noop = () => {}
+
+/* eslint-disable */
+let Megalo = Megalo || wx
+
+const createQueryUrl = to => {
   let toType = getObjectType(to)
   if (toType === 'String') {
     return to
@@ -19,11 +24,9 @@ const createQueryUrl = (to) => {
       getObjectType(to.query) === 'Object' &&
       Object.keys(to.query).length > 0
     ) {
-      let querys = []
-      for (let i in to.query) {
-        querys.push(`${i}=${to.query[i]}`)
-      }
-      search = `${url.indexOf('?') === -1 ? '?' : '&'}${querys.join('&')}`
+      to.query.forEach((item, index) => {
+        search += `${index === 0 && url.indexOf('?') === -1 ? '?' : '&'}${index}=${item}`
+      })
     }
     return `${url}${search}`
   }
@@ -65,10 +68,8 @@ export default ({
         }
       } else {
         if (
-          (
-            toType === 'String' &&
-            to.indexOf('/') === 0
-          )
+          toType === 'String' &&
+          to.indexOf('/') === 0
         ) { // Vue router 操作
           if (vm) {
             if (replace) {
@@ -85,10 +86,11 @@ export default ({
             to.path.indexOf('http://') === 0 ||
             to.path.indexOf('https://') === 0
           ) {
+            to = createQueryUrl(to)
             if (replace) {
-              window.location.replace(createQueryUrl(to))
+              window.location.replace(to)
             } else {
-              window.location.href = createQueryUrl(to)
+              window.location.href = to
             }
           } else {
             if (replace) {
@@ -107,24 +109,24 @@ export default ({
       }
     } else if (isMiniProgram) { // 小程序
       if (toType === 'Number') {
-        wx.navigateBack({
-          delta: to > 0 ? to : -1 * to
+        Megalo.navigateBack({
+          delta: to > 0 ? to : -to
         })
       } else if (isTelPhone(to)) { // 拨打电话
-        wx.makePhoneCall({
+        Megalo.makePhoneCall({
           phoneNumber: to.replace('tel:', '')
         })
       } else {
         to = {
           url: createQueryUrl(to),
-          success: success ? success : () => {},
-          fail: fail ? fail : () => {},
-          complete: fail ? fail : () => {}
+          success: success ? success : noop,
+          fail: fail ? fail : noop,
+          complete: complete ? complete : noop
         }
         if (replace) {
-          wx.redirectTo(to)
+          Megalo.redirectTo(to)
         } else {
-          wx.navigateTo(to)
+          Megalo.navigateTo(to)
         }
       }
     }

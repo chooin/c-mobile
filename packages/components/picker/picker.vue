@@ -96,20 +96,14 @@ export default {
         this.$emit('change', this._options[index])
       } else {
         if (this.required) {
-          let Megalo = Megalo || false
+          let Megalo = Megalo || wx
           let title = this.nullText
           let toast = {
             title,
             icon: 'none',
             duration: 2000
           }
-          if (Megalo) {
-            Megalo.showToast(toast)
-          } else {
-            /* eslint-disable */
-            wx.showToast(toast)
-            /* eslint-disable */
-          }
+          Megalo.showToast(toast)
         } else {
           this._value = false
           this.isUpdated = true

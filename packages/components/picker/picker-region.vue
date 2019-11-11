@@ -124,7 +124,7 @@ export default {
         this.$emit('change', ids)
       } else {
         if (this.required) {
-          let Megalo = Megalo || false
+          let Megalo = Megalo || wx
           let title
           if (!this.indexs[2]) title = '请选择区'
           if (!this.indexs[1]) title = '请选择市'
@@ -134,13 +134,7 @@ export default {
             icon: 'none',
             duration: 2000
           }
-          if (Megalo) {
-            Megalo.showToast(toast)
-          } else {
-            /* eslint-disable */
-            wx.showToast(toast)
-            /* eslint-disable */
-          }
+          Megalo.showToast(toast)
         } else {
           this._value = false
           this.isUpdated = true

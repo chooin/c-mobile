@@ -84,14 +84,8 @@ export default {
     },
     vibrateShort () {
       if (isMiniProgram) {
-        let Megalo = Megalo || false
-        if (Megalo) {
-          Megalo.vibrateShort()
-        } else {
-          /* eslint-disable */
-          wx.vibrateShort()
-          /* eslint-disable */
-        }
+        let Megalo = Megalo || wx
+        Megalo.vibrateShort()
       }
     }
   },

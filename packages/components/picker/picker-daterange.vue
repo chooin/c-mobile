@@ -437,18 +437,12 @@ export default {
         rMIndex,
         rDIndex
       ] = this.indexs
-      let Megalo = Megalo || false
+      let Megalo = Megalo || wx
       let lDate = `${this.lYears[lYIndex]}-${this.plusZero(this.lMonths[lMIndex])}-${this.plusZero(this.lDays[lDIndex])}`
       let rDate = `${this.rYears[rYIndex]}-${this.plusZero(this.rMonths[rMIndex])}-${this.plusZero(this.rDays[rDIndex])}`
       if (Date.parse(lDate) > Date.parse(rDate)) {
         let toast = '开始日期不能大于结束日期'
-        if (Megalo) {
-          Megalo.showToast(toast)
-        } else {
-          /* eslint-disable */
-          wx.showToast(toast)
-          /* eslint-disable */
-        }
+        Megalo.showToast(toast)
         return
       }
       this.$emit('change', [

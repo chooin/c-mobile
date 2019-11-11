@@ -6,9 +6,6 @@ const isTelPhone = v => getObjectType(v) === 'String' && v.indexOf('tel:') === 0
 
 const noop = () => {}
 
-/* eslint-disable */
-let Megalo = Megalo || wx
-
 const createQueryUrl = to => {
   let toType = getObjectType(to)
   if (toType === 'String') {
@@ -108,6 +105,7 @@ export default ({
         }
       }
     } else if (isMiniProgram) { // 小程序
+      let Megalo = Megalo || wx
       if (toType === 'Number') {
         Megalo.navigateBack({
           delta: to > 0 ? to : -to

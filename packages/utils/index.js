@@ -6,17 +6,21 @@ import device, {
   isBrowser,
   isMiniProgram,
   isMiniProgramIsIPhoneX,
-  isIPhoneX
+  isIPhoneX,
+  isNode
 } from './device'
 import getObjectType from './get-object-type'
 
 export {
   to,
   createQueryUrl,
+
   device,
   isBrowser,
   isMiniProgram,
   isMiniProgramIsIPhoneX,
   isIPhoneX,
+  isNode,
+
   getObjectType
 }

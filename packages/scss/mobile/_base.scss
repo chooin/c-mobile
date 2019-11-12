@@ -1,7 +1,7 @@
 @charset "utf-8";
 // 取消 Chrome 浏览器自动填充颜色
 :-webkit-autofill {
-  box-shadow: 0 0 0 px2rem(100) #fff inset;
+  box-shadow: 0 0 0 100px #fff inset;
   -webkit-text-fill-color: #574751;
   color: #574751;
 }

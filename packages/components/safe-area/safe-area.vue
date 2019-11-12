@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'c-safe-area',
+  name: 'cSafeArea',
   props: {
     height: {
       type: Number,

@@ -48,7 +48,3 @@
     border: 1px solid $border;
   }
 }
-
-@function px2rem($px) {
-  @return $px / 37.5 * 1rem;
-}

@@ -84,8 +84,10 @@ export default {
     },
     vibrateShort () {
       if (isMiniProgram) {
+        /* eslint-disable */
         let Megalo = Megalo || wx
         Megalo.vibrateShort()
+        /* eslint-disable */
       }
     }
   },

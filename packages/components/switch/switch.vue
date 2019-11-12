@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { isMiniProgram } from '../../utils/device'
+import { Megalo } from '../../utils/device'
 
 export default {
   name: 'cSwitch',
@@ -83,12 +83,7 @@ export default {
       }
     },
     vibrateShort () {
-      if (isMiniProgram) {
-        /* eslint-disable */
-        let Megalo = Megalo || wx
-        Megalo.vibrateShort()
-        /* eslint-disable */
-      }
+      Megalo && Megalo.vibrateShort()
     }
   },
   computed: {

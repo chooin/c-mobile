@@ -7,7 +7,8 @@ import device, {
   isMiniProgram,
   isMiniProgramIsIPhoneX,
   isIPhoneX,
-  isNode
+  isNode,
+  Megalo
 } from './device'
 import getObjectType from './get-object-type'
 
@@ -21,6 +22,7 @@ export {
   isMiniProgramIsIPhoneX,
   isIPhoneX,
   isNode,
+  Megalo,
 
   getObjectType
 }

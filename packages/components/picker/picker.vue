@@ -31,6 +31,10 @@
 </template>
 
 <script>
+import {
+  Megalo
+} from '../../utils/device'
+
 export default {
   data () {
     return {
@@ -96,14 +100,13 @@ export default {
         this.$emit('change', this._options[index])
       } else {
         if (this.required) {
-          let Megalo = Megalo || wx
           let title = this.nullText
           let toast = {
             title,
             icon: 'none',
             duration: 2000
           }
-          Megalo.showToast(toast)
+          Megalo && Megalo.showToast(toast)
         } else {
           this._value = false
           this.isUpdated = true

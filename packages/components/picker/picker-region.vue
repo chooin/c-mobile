@@ -51,6 +51,9 @@
 </template>
 
 <script>
+import {
+  Megalo
+ } from '../../utils/device'
 import originProvince from './data/province'
 import originCity from './data/city'
 import originDistrict from './data/district'
@@ -124,7 +127,6 @@ export default {
         this.$emit('change', ids)
       } else {
         if (this.required) {
-          let Megalo = Megalo || wx
           let title
           if (!this.indexs[2]) title = '请选择区'
           if (!this.indexs[1]) title = '请选择市'
@@ -134,7 +136,7 @@ export default {
             icon: 'none',
             duration: 2000
           }
-          Megalo.showToast(toast)
+          Megalo && Megalo.showToast(toast)
         } else {
           this._value = false
           this.isUpdated = true

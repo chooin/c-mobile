@@ -4,7 +4,7 @@ let isMiniProgram = false
 let isMiniProgramIsIPhoneX = false
 let isIPhoneX = false
 let isNode = false
-let Megalo = Megalo || wx
+let Megalo = typeof Megalo === 'undefined' ? (typeof wx === 'undefined' ? false : wx) : Megalo
 
 if (typeof window !== 'undefined') {
   isBrowser = true
@@ -18,12 +18,15 @@ if (typeof window !== 'undefined') {
   isNode = true
 }
 
+Megalo = isMiniProgram ? Megalo : false
+
 export default {
   isBrowser,
   isMiniProgram,
   isMiniProgramIsIPhoneX,
   isIPhoneX,
-  isNode
+  isNode,
+  Megalo
 }
 
 export {
@@ -31,5 +34,6 @@ export {
   isMiniProgram,
   isMiniProgramIsIPhoneX,
   isIPhoneX,
-  isNode
+  isNode,
+  Megalo
 }

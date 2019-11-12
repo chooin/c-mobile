@@ -57,7 +57,7 @@
 import {
   isBrowser,
   to,
-  isMiniProgram
+  Megalo
  } from '../../utils'
 
 export default {
@@ -103,9 +103,7 @@ export default {
   },
   methods: {
     componentInit () {
-      if (isMiniProgram) {
-        /* eslint-disable */
-        let Megalo = Megalo || wx
+      if (Megalo) {
         Megalo.getSystemInfo({
           success: getSystemInfo => {
             let menuButton = Megalo.getMenuButtonBoundingClientRect()
@@ -116,7 +114,6 @@ export default {
             this.paddingLeft = `${menuButton.width + (getSystemInfo.windowWidth - menuButton.right) * 2}px`
           }
         })
-        /* eslint-disable */
       }
     },
     onLeft () {

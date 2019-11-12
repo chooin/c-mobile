@@ -1,4 +1,4 @@
-import { isBrowser, isMiniProgram } from './device'
+import { isBrowser, isMiniProgram, Megalo } from './device'
 
 const getObjectType = v => Object.prototype.toString.call(v).slice(8, -1)
 
@@ -105,7 +105,6 @@ export default ({
         }
       }
     } else if (isMiniProgram) { // 小程序
-      let Megalo = Megalo || wx
       if (toType === 'Number') {
         Megalo.navigateBack({
           delta: to > 0 ? to : -to

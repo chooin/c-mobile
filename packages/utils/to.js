@@ -21,8 +21,8 @@ const createQueryUrl = to => {
       getObjectType(to.query) === 'Object' &&
       Object.keys(to.query).length > 0
     ) {
-      to.query.forEach((item, index) => {
-        search += `${index === 0 && url.indexOf('?') === -1 ? '?' : '&'}${index}=${item}`
+      Object.keys(to.query).forEach((key, index) => {
+        search += `${index === 0 && url.indexOf('?') === -1 ? '?' : '&'}${key}=${to.query[key]}`
       })
     }
     return `${url}${search}`

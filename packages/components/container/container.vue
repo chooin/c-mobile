@@ -32,9 +32,7 @@
     :style="{
       backgroundColor,
       padding,
-      zIndex: _zIndex,
-      paddingTop,
-      paddingRight
+      zIndex: _zIndex
     }">
     <slot></slot>
   </div>

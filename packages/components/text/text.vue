@@ -130,10 +130,6 @@ export default {
     componentStyle: {
       type: Object,
       default: () => {}
-    },
-    style: {
-      type: Object,
-      default: () => {}
     }
   },
   methods: {

@@ -98,7 +98,7 @@ export default {
         this.fixed &&
         isBrowser
       ) {
-        let className = null
+        let className
         if (
           this.$refs.container &&
           this.$refs.container.firstChild &&
@@ -107,29 +107,30 @@ export default {
         ) {
           className = `c-container-cover__fixed-${this.fixed}__${this.$refs.container.firstChild.classList[0]}`
         }
-        if (document.querySelectorAll(`.${className}`).length === 0) {
+        if (
+          className &&
+          document.querySelectorAll(`.${className}`).length === 0
+        ) {
           this.element = document.createElement('div')
           this.element.className = className
+          let clientHeight = this.$refs.container.clientHeight
+          clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
+          this.element.style.paddingTop = `${clientHeight}px`
+
           if (this.fixed === 'top') { // 悬浮在顶部
-            let clientHeight = this.$refs.container.clientHeight
-            clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
-            this.element.style.paddingTop = `${clientHeight}px`
             document.body.insertBefore(this.element, document.body.firstChild)
           } else if (this.fixed === 'bottom') { // 悬浮在底部
             this.$nextTick(() => {
               if (
-                this.$refs.container && // 修复马上杀死会出 bug，勿删除
-                this.element // 修复马上杀死会出 bug，勿删除
-              ) {
+                this.$refs.container &&
+                this.element
+              ) { // 出现异步，修复马上杀死会出 bug，勿删除
                 if (this._safeArea) { // 有安全区域的时候
                   this.element.classList.add('c-container-cover__fixed-bottom-safe-area')
                   let paddingBottom = this.$refs.container.style.paddingBottom.replace('px', '')
                   paddingBottom =  Number.isNaN(paddingBottom) ? 0 : parseInt(paddingBottom)
                   this.$refs.container.style.paddingBottom = `${paddingBottom}px`
                 }
-                let clientHeight = this.$refs.container.clientHeight
-                clientHeight = Number.isNaN(clientHeight) ? 0 : parseInt(clientHeight)
-                this.element.style.paddingTop = `${clientHeight}px`
                 if (!this.backgroundColor) { // 设置默认颜色
                   this.$refs.container.style.backgroundColor = window.getComputedStyle(this.$refs.container.firstChild).backgroundColor
                 }

@@ -7,7 +7,7 @@
         'c-switch__disabled': disabled,
         'c-switch__checked': _value,
         'c-switch__small': small,
-        'c-switch__before-change-loading': disabled ? false : isLoading
+        'c-switch__before-change-loading': _isLoading
       }
     ]"
     @click="onClick">
@@ -58,7 +58,7 @@ export default {
         this.beforeChangeLoading
       ) this.isLoading = true
       let value = !this._value
-      this.vibrateShort()
+      Megalo && Megalo.vibrateShort()
       if (this.beforeChange) {
         if (typeof this.beforeChange === 'function') {
           this.beforeChange(() => {
@@ -81,15 +81,21 @@ export default {
         this.$emit('change', value)
         this.isLoading = false
       }
-    },
-    vibrateShort () {
-      Megalo && Megalo.vibrateShort()
     }
   },
   computed: {
     _value: {
       get () {
         return this.value
+      }
+    },
+    _isLoading: {
+      get () {
+        if (this.disabled) {
+          return false
+        } else {
+          return this.isLoading
+        }
       }
     }
   }

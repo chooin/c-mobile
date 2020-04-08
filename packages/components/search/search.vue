@@ -12,8 +12,18 @@
     action=""
     onsubmit="return false;">
     <div class="c-search__cell">
-      <i class="c-search__icon-search">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAM1BMVEUAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAr6XIYAAAAEHRSTlMA7xCA32Awz79AcJ+QIFCwFs9njwAAANNJREFUOMvtk90OgzAIRouC/e++93/aqclCLFq9WbKLnUs8BYHW/QjTIiJxutNiIOwEGWtQuF16CSuUk6TMWJkvvBmAj5/k/tIUAKU7l5ylcp8hAVStmIHchQoQ7PgIqCcxM9AG5LP2krNlohEX4NXHwlbFQOA+5AFnYZAJjcX70v5pM+FkgWU8Hh0u1ZOtVnvazqzoEo4p7aVAdZaGoznD/rZ+YTm8ClouTXCeJRXeNTVtmwrHyavZIwHQ5zoy3RSbyLKtU80h3zVf7pGZqbk/D3gDeQoM2LnjNc8AAAAASUVORK5CYII=" />
+      <i
+        class="c-search__icon-search"
+        :style="{
+          left: isMiniProgram && round ? '5px' : null,
+          width: isMiniProgram ? '30px' : null
+        }">
+        <img
+          :style="{
+            width: isMiniProgram ? '20px' : null,
+            height: isMiniProgram ? '20px' : null
+          }"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAM1BMVEUAAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAr6XIYAAAAEHRSTlMA7xCA32Awz79AcJ+QIFCwFs9njwAAANNJREFUOMvtk90OgzAIRouC/e++93/aqclCLFq9WbKLnUs8BYHW/QjTIiJxutNiIOwEGWtQuF16CSuUk6TMWJkvvBmAj5/k/tIUAKU7l5ylcp8hAVStmIHchQoQ7PgIqCcxM9AG5LP2krNlohEX4NXHwlbFQOA+5AFnYZAJjcX70v5pM+FkgWU8Hh0u1ZOtVnvazqzoEo4p7aVAdZaGoznD/rZ+YTm8ClouTXCeJRXeNTVtmwrHyavZIwHQ5zoy3RSbyLKtU80h3zVf7pGZqbk/D3gDeQoM2LnjNc8AAAAASUVORK5CYII=" />
       </i>
       <input
         type="search"
@@ -27,7 +37,8 @@
           backgroundColor: inputBackgroundColor,
           height: _inputHeight,
           padding: _inputPadding,
-          borderRadius: _inputHeight
+          borderRadius: _inputHeight,
+          fontSize: isMiniProgram ? '14px' : null
         }"
         :focus="_autofocus"
         :placeholder="placeholder"
@@ -41,21 +52,32 @@
         v-if="!_disabled"
         :style="{
           backgroundColor: inputBackgroundColor,
-          borderRadius: _inputHeight
+          borderRadius: _inputHeight,
+          width: isMiniProgram ? '45px' : null
         }"
         class="c-search__icon-cancel"
         @click="onCancel">
-        <img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPgogICAgICAgIDxwYXRoIGZpbGw9IiNiYmIiIGQ9Ik0xNC4xOCAxMy4wMDhsLTMuMDA4LTMuMDA4IDMuMDA4LTMuMDA4LTEuMTcyLTEuMTcyLTMuMDA4IDMuMDA4LTMuMDA4LTMuMDA4LTEuMTcyIDEuMTcyIDMuMDA4IDMuMDA4LTMuMDA4IDMuMDA4IDEuMTcyIDEuMTcyIDMuMDA4LTMuMDA4IDMuMDA4IDMuMDA4ek0xMCAxLjY4YzQuNjA5IDAgOC4zMiAzLjcxMSA4LjMyIDguMzJzLTMuNzExIDguMzItOC4zMiA4LjMyLTguMzItMy43MTEtOC4zMi04LjMyIDMuNzExLTguMzIgOC4zMi04LjMyeiI+PC9wYXRoPgogICAgICA8L3N2Zz4=" />
+        <img
+          :style="{
+            width: isMiniProgram ? '20px' : null,
+            height: isMiniProgram ? '20px' : null
+          }"
+          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPgogICAgICAgIDxwYXRoIGZpbGw9IiNiYmIiIGQ9Ik0xNC4xOCAxMy4wMDhsLTMuMDA4LTMuMDA4IDMuMDA4LTMuMDA4LTEuMTcyLTEuMTcyLTMuMDA4IDMuMDA4LTMuMDA4LTMuMDA4LTEuMTcyIDEuMTcyIDMuMDA4IDMuMDA4LTMuMDA4IDMuMDA4IDEuMTcyIDEuMTcyIDMuMDA4LTMuMDA4IDMuMDA4IDMuMDA4ek0xMCAxLjY4YzQuNjA5IDAgOC4zMiAzLjcxMSA4LjMyIDguMzJzLTMuNzExIDguMzItOC4zMiA4LjMyLTguMzItMy43MTEtOC4zMi04LjMyIDMuNzExLTguMzIgOC4zMi04LjMyeiI+PC9wYXRoPgogICAgICA8L3N2Zz4=" />
       </i>
     </div>
   </form>
 </template>
 
 <script>
-import { isBrowser, to } from '../../utils'
+import { isBrowser, to, isMiniProgram } from '../../utils'
 
 export default {
   name: 'cSearch',
+  data () {
+    return {
+      isMiniProgram
+    }
+  },
   props: {
     value: {
       type: String,

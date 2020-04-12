@@ -25,6 +25,7 @@
       text-align: center;
       font-size: 14px;
       color: $text-light;
+      width: 90%;
     }
     &::before {
       @include borderLine('top', 16px);

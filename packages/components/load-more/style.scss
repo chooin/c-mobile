@@ -10,43 +10,67 @@
 }
 
 .c-load-more {
-  position: relative;
-  height: 60px;
   background: inherit;
+  .c-load-more__content {
+    background: inherit;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+  }
   &.c-load-more__end {
-    span {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      padding: 0 10px;
-      z-index: 2;
-      background: inherit;
-      text-align: center;
-      font-size: 14px;
-      color: $text-light;
-      width: 90%;
-    }
-    &::before {
-      @include borderLine('top', 16px);
-      top: 50%;
-      width: calc(100% - 32px);
+    .c-load-more__content {
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 10px;
+        z-index: 2;
+        background: inherit;
+        text-align: center;
+        font-size: 14px;
+        color: $text-light;
+        max-width: 90%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &::before {
+          @include borderLine('top');
+          top: 50%;
+          left: 0;
+          transform: translateX(-100%) scaleY(0.5);
+          width: 40px;
+        }
+        &::after {
+          @include borderLine('top');
+          left: unset;
+          top: 50%;
+          right: 0;
+          transform: translateX(100%) scaleY(0.5);
+          width: 40px;
+        }
+      }
     }
   }
   &.c-load-more__loading {
-    &::before {
-      animation: c-load-more 500ms infinite linear;
-      border: 2px solid #a6a6a6;
-      border-radius: 100%;
-      border-top-color: transparent;
-      content: " ";
-      display: block;
-      height: 16px;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 16px;
+    .c-load-more__content {
+      &::before {
+        animation: c-load-more 500ms infinite linear;
+        border: 2px solid #a6a6a6;
+        border-radius: 100%;
+        border-top-color: transparent;
+        content: " ";
+        display: block;
+        height: 16px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 16px;
+      }
     }
+  }
+  &.c-load-more_safe-area {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }

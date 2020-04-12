@@ -2,16 +2,21 @@
   <div
     class="c-load-more"
     :class="[
-      loading ? 'c-load-more__loading' : 'c-load-more__end'
+      loading ? 'c-load-more__loading' : 'c-load-more__end',
+      {
+        'c-load-more_safe-area': safeArea
+      }
     ]"
   >
-    <span
-      v-if="!loading"
-      :style="{
-        backgroundColor,
-        color
-      }"
-    >{{ text }}</span>
+    <div class="c-load-more__content">
+      <span
+        v-if="!loading"
+        :style="{
+          backgroundColor,
+          color
+        }"
+      >{{ text }}</span>
+    </div>
   </div>
 </template>
 
@@ -34,6 +39,10 @@ export default {
     color: {
       type: String,
       default: null
+    },
+    safeArea: {
+      type: Boolean,
+      default: false
     }
   }
 }

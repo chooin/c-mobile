@@ -4,7 +4,7 @@ let isMiniProgram = false
 let isMiniProgramIsIPhoneX = false
 let isIPhoneX = false
 let isNode = false
-let Megalo = typeof Megalo === 'undefined' ? (typeof wx === 'undefined' ? false : wx) : Megalo
+var Megalo = typeof Megalo === 'undefined' ? (typeof wx === 'undefined' ? false : wx) : Megalo
 
 if (typeof window !== 'undefined') {
   isBrowser = true

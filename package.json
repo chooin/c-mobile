@@ -46,11 +46,9 @@
   "peerDependencies": {
     "vue": ">= 2.4.4"
   },
-  "typings": "types/index.d.ts",
   "files": [
     "dist",
-    "packages",
-    "types"
+    "packages"
   ],
   "dependencies": {
     "tar": "^4.4.8"

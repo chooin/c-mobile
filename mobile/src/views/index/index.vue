@@ -39,6 +39,8 @@ export default {
         'radio',
         'container',
         'load-more',
+        'white-space',
+        'wing-blank',
       ]
     }
   }

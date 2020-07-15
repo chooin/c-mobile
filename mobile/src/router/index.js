@@ -21,6 +21,8 @@ import keyboard from '@/views/keyboard'
 import radio from '@/views/radio'
 import container from '@/views/container'
 import LoadMore from '@/views/load-more'
+import WhiteSpace from '@/views/white-space'
+import WingBlank from '@/views/wing-blank'
 
 Vue.use(Router)
 
@@ -105,6 +107,14 @@ export default new Router({
     {
       path: '/load-more',
       component: LoadMore
+    },
+    {
+      path: '/white-space',
+      component: WhiteSpace
+    },
+    {
+      path: '/wing-blank',
+      component: WingBlank
     },
     {
       path: '/*',

@@ -24,6 +24,8 @@ import {
 } from '../packages/components/radio'
 import Container from '../packages/components/container'
 import LoadMore from '../packages/components/load-more'
+import WhiteSpace from '../packages/components/white-space'
+import WingBlank from '../packages/components/wing-blank'
 
 import Toast from '../packages/components/toast'
 import Confirm from '../packages/components/confirm'
@@ -54,7 +56,9 @@ const components = [
   Radio,
   RadioGroup,
   Container,
-  LoadMore
+  LoadMore,
+  WhiteSpace,
+  WingBlank
 ]
 
 const install = Vue => {

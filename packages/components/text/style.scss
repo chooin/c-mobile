@@ -147,4 +147,9 @@
       }
     }
   }
+  &.c-text__bold {
+    .c-text__content {
+      font-weight: bold;
+    }
+  }
 }

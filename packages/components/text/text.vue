@@ -12,7 +12,8 @@
         'c-text__cursor': cursor,
         'c-text__empty': isEmpty,
         'c-text__placeholder': isPlaceholder,
-        'c-text__next': next
+        'c-text__next': next,
+        'c-text__bold': bold
       }
     ]"
     :style="componentStyle"
@@ -45,7 +46,8 @@
         'c-text__cursor': cursor,
         'c-text__empty': isEmpty,
         'c-text__placeholder': isPlaceholder,
-        'c-text__next': next
+        'c-text__next': next,
+        'c-text__bold': bold
       }
     ]"
     :style="componentStyle"
@@ -86,6 +88,10 @@ export default {
     type: {
       type: String,
       default: ''
+    },
+    bold: {
+      type: Boolean,
+      default: false
     },
     light: {
       type: Boolean,

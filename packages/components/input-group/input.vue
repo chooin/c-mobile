@@ -10,7 +10,8 @@
         'c-input__active': active,
         'c-input__icon': icon,
         'c-input__checked': checked,
-        'c-input__noborder-top': noborderTop
+        'c-input__noborder-top': noborderTop,
+        'c-input__direction-column': direction === 'column'
       }
     ]"
     @touchstart="() => {}"
@@ -29,7 +30,8 @@
         'c-input__active': active,
         'c-input__icon': icon,
         'c-input__checked': checked,
-        'c-input__noborder-top': noborderTop
+        'c-input__noborder-top': noborderTop,
+        'c-input__direction-column': direction === 'column'
       }
     ]"
     @click="onClick">
@@ -46,7 +48,8 @@
         'c-input__active': active,
         'c-input__icon': icon,
         'c-input__checked': checked,
-        'c-input__noborder-top': noborderTop
+        'c-input__noborder-top': noborderTop,
+        'c-input__direction-column': direction === 'column'
       }
     ]"
     @touchstart="() => {}"
@@ -112,6 +115,10 @@ export default {
     active: {
       type: Boolean,
       default: false
+    },
+    direction: {
+      type: String,
+      default: 'row' // ? row, column
     }
   },
   methods: {

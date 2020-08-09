@@ -22,6 +22,7 @@
     box-sizing: border-box;
     color: $text;
     font-size: 14px;
+    font-weight: bold;
     b {
       position: absolute;
       right: 0;
@@ -130,7 +131,7 @@
       }
     }
   }
-  .c-input-upload__amount{
+  .c-input-upload__amount {
     position: absolute;
     right: 10px;
     top: 10px;

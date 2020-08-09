@@ -24,6 +24,7 @@
     text-overflow: ellipsis;
     min-width: 100px;
     color: $text;
+    font-weight: bold;
   }
   .c-input-body {
     flex: 1;
@@ -198,6 +199,13 @@
   &.c-input__noborder-top {
     &::before {
       border: none !important;
+    }
+  }
+  &.c-input__direction-column {
+    display: block;
+    .c-input-head,
+    .c-input-body {
+      width: 100%;
     }
   }
 }

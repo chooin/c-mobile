@@ -90,6 +90,29 @@
           </select>
         </c-input-body>
       </c-input>
+      <c-input addon next direction="column">
+        <c-input-head>
+          column
+        </c-input-head>
+        <c-input-body>
+          column
+        </c-input-body>
+        <c-input-body>
+          column
+        </c-input-body>
+        <c-input-body>
+          column
+        </c-input-body>
+        <c-input-body>
+          column
+        </c-input-body>
+        <c-input-body>
+          column
+        </c-input-body>
+        <c-input-body>
+          column
+        </c-input-body>
+      </c-input>
       <c-input addon next icon>
         <c-input-head>
           <c-icon name="user" background-color="#39f" color="#fff" size="3rem" round />Devin

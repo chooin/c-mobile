@@ -17,12 +17,12 @@ case "$BUILD_ENV" in
   1)
     rm -rf ./dist/*
     yarn
-    yarn run build
+    yarn build
     ;;
   *)
     cd mobile
     yarn
-    yarn run build
+    yarn build
     cd -
     cdn deploy production
     ;;

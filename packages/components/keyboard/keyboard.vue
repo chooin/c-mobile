@@ -5,7 +5,7 @@
       class="c-keyboard">
       <div class="c-keyboard__done" v-if="description || doneText">
         <div class="c-keyboard__description">{{ description }}</div>
-        <div class="c-keyboard__done-button" @click="doneClick">{{ doneText }}</div>
+        <div class="c-keyboard__done-button" @click="onDone">{{ doneText }}</div>
       </div>
       <div class="c-keyboard__key-group">
         <c-keyboard-key text="1" @click="onClick" />
@@ -75,7 +75,7 @@ export default {
     onDelete () {
       this.$emit('delete')
     },
-    doneClick () {
+    onDone () {
       if (this.supportHide) {
         this._value = false
         this.$emit('hide')

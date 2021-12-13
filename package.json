@@ -7,6 +7,7 @@
   "unpkg": "dist/index.js",
   "author": "zhuning <chooin@126.com>",
   "scripts": {
+    "deploy": "cd mobile && yarn && yarn build",
     "build": "npm-run-all build:*",
     "build:umd": "rollup --config scripts/rollup.umd.config.js --format umd --file dist/index.umd.js",
     "build:es": "rollup --config scripts/rollup.es.config.js --format es --file dist/index.esm.js",
